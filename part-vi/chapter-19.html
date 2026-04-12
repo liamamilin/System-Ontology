@@ -1,0 +1,2504 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>24&nbsp; Ontology → Blueprint Kernel Mapping – System Ontology</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../part-vi/chapter-20.html" rel="next">
+<link href="../part-v/chapter-18.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part-vi/chapter-19.html">Part VI - Mapping</a></li><li class="breadcrumb-item"><a href="../part-vi/chapter-19.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Kernel Mapping</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">System Ontology</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About This Book</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Front Matter</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preface — Why Ontology Comes Second</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/reader-contract.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reader Contract</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/notation-conventions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Notation &amp; Conventions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/ontology-as-engineering-artifact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ontology as an Engineering Artifact</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I - Ontology Fundamentals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">What Ontology Is (In Engineering Terms)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Ontology Stack</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ontology Design Principles</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II - Core Entities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">System, Boundary, and Context</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Capability and Requirement Entities</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Components: The Structural Building Blocks</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Interfaces and Contracts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Entities and State</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Workflow and Execution Units</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III - Core Relations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Relation Types (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Boundaries and Coupling Relations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Interaction Models as Relation Patterns</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV - Type System</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">System Type Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Component Type Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Architecture Style Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Pattern Hooks: Making Ontology Pattern-Aware</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part V - Constraints &amp; Quality Attributes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-v/chapter-17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Quality Attributes as First-Class Entities</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-v/chapter-18.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Risk, Failure Modes, and Trust</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part VI - Mapping</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-vi/chapter-19.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Kernel Mapping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-vi/chapter-20.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Extraction Signals &amp; Mapping Rules</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Capstone</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../capstone/chapter-21.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Ontology Release, Governance, and Evolution</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Appendix A — System Ontology v0.1 (YAML / JSON Schema)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Appendix B — Entity Dictionary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-c.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Appendix C — Relation Dictionary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-d.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Appendix D — System Type Decision Tree</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Appendix E — Example Ontology Instances</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-f.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Appendix F — Glossary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-g.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Appendix G — Projection Mapping Cheat Sheet</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Epilogue — From Ontology to Blueprint Structure</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#mapping-the-kernel-slots-to-ontology" id="toc-mapping-the-kernel-slots-to-ontology" class="nav-link active" data-scroll-target="#mapping-the-kernel-slots-to-ontology"><span class="header-section-number">24.0.1</span> Mapping the Kernel Slots to Ontology</a></li>
+  <li><a href="#kernel-slot-mapping-examples" id="toc-kernel-slot-mapping-examples" class="nav-link" data-scroll-target="#kernel-slot-mapping-examples"><span class="header-section-number">24.1</span> Kernel Slot Mapping Examples</a>
+  <ul class="collapse">
+  <li><a href="#example-e-commerce-platform" id="toc-example-e-commerce-platform" class="nav-link" data-scroll-target="#example-e-commerce-platform"><span class="header-section-number">24.1.1</span> Example: E-commerce Platform</a></li>
+  <li><a href="#example-data-analytics-pipeline" id="toc-example-data-analytics-pipeline" class="nav-link" data-scroll-target="#example-data-analytics-pipeline"><span class="header-section-number">24.1.2</span> Example: Data Analytics Pipeline</a></li>
+  <li><a href="#example-ai-agent-system" id="toc-example-ai-agent-system" class="nav-link" data-scroll-target="#example-ai-agent-system"><span class="header-section-number">24.1.3</span> Example: AI Agent System</a></li>
+  <li><a href="#minimal-attribute-sets" id="toc-minimal-attribute-sets" class="nav-link" data-scroll-target="#minimal-attribute-sets"><span class="header-section-number">24.1.4</span> Minimal Attribute Sets</a></li>
+  </ul></li>
+  <li><a href="#minimal-attribute-set-examples" id="toc-minimal-attribute-set-examples" class="nav-link" data-scroll-target="#minimal-attribute-set-examples"><span class="header-section-number">24.2</span> Minimal Attribute Set Examples</a>
+  <ul class="collapse">
+  <li><a href="#system-entity-attributes" id="toc-system-entity-attributes" class="nav-link" data-scroll-target="#system-entity-attributes"><span class="header-section-number">24.2.1</span> System Entity Attributes</a></li>
+  <li><a href="#component-entity-attributes" id="toc-component-entity-attributes" class="nav-link" data-scroll-target="#component-entity-attributes"><span class="header-section-number">24.2.2</span> Component Entity Attributes</a></li>
+  <li><a href="#capability-entity-attributes" id="toc-capability-entity-attributes" class="nav-link" data-scroll-target="#capability-entity-attributes"><span class="header-section-number">24.2.3</span> Capability Entity Attributes</a></li>
+  <li><a href="#interface-entity-attributes" id="toc-interface-entity-attributes" class="nav-link" data-scroll-target="#interface-entity-attributes"><span class="header-section-number">24.2.4</span> Interface Entity Attributes</a></li>
+  <li><a href="#data-entity-attributes" id="toc-data-entity-attributes" class="nav-link" data-scroll-target="#data-entity-attributes"><span class="header-section-number">24.2.5</span> Data Entity Attributes</a></li>
+  <li><a href="#workflow-entity-attributes" id="toc-workflow-entity-attributes" class="nav-link" data-scroll-target="#workflow-entity-attributes"><span class="header-section-number">24.2.6</span> Workflow Entity Attributes</a></li>
+  </ul></li>
+  <li><a href="#projection-examples" id="toc-projection-examples" class="nav-link" data-scroll-target="#projection-examples"><span class="header-section-number">24.3</span> Projection Examples</a>
+  <ul class="collapse">
+  <li><a href="#architecture-view-example" id="toc-architecture-view-example" class="nav-link" data-scroll-target="#architecture-view-example"><span class="header-section-number">24.3.1</span> Architecture View Example</a></li>
+  <li><a href="#specification-view-example" id="toc-specification-view-example" class="nav-link" data-scroll-target="#specification-view-example"><span class="header-section-number">24.3.2</span> Specification View Example</a></li>
+  <li><a href="#operations-view-example" id="toc-operations-view-example" class="nav-link" data-scroll-target="#operations-view-example"><span class="header-section-number">24.3.3</span> Operations View Example</a></li>
+  <li><a href="#blueprint-projections" id="toc-blueprint-projections" class="nav-link" data-scroll-target="#blueprint-projections"><span class="header-section-number">24.3.4</span> Blueprint Projections</a></li>
+  <li><a href="#generating-multiple-views-from-one-system" id="toc-generating-multiple-views-from-one-system" class="nav-link" data-scroll-target="#generating-multiple-views-from-one-system"><span class="header-section-number">24.3.5</span> Generating Multiple Views from One System</a></li>
+  </ul></li>
+  <li><a href="#comprehensive-multi-view-example" id="toc-comprehensive-multi-view-example" class="nav-link" data-scroll-target="#comprehensive-multi-view-example"><span class="header-section-number">24.4</span> Comprehensive Multi-View Example</a>
+  <ul class="collapse">
+  <li><a href="#base-ontology-real-time-analytics-system" id="toc-base-ontology-real-time-analytics-system" class="nav-link" data-scroll-target="#base-ontology-real-time-analytics-system"><span class="header-section-number">24.4.1</span> Base Ontology: Real-Time Analytics System</a></li>
+  <li><a href="#generated-architecture-view" id="toc-generated-architecture-view" class="nav-link" data-scroll-target="#generated-architecture-view"><span class="header-section-number">24.4.2</span> Generated Architecture View</a></li>
+  <li><a href="#generated-specification-view" id="toc-generated-specification-view" class="nav-link" data-scroll-target="#generated-specification-view"><span class="header-section-number">24.4.3</span> Generated Specification View</a></li>
+  <li><a href="#generated-operations-view" id="toc-generated-operations-view" class="nav-link" data-scroll-target="#generated-operations-view"><span class="header-section-number">24.4.4</span> Generated Operations View</a></li>
+  <li><a href="#view-transformation-summary" id="toc-view-transformation-summary" class="nav-link" data-scroll-target="#view-transformation-summary"><span class="header-section-number">24.4.5</span> View Transformation Summary</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part-vi/chapter-19.html">Part VI - Mapping</a></li><li class="breadcrumb-item"><a href="../part-vi/chapter-19.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Kernel Mapping</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Kernel Mapping</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The ontology defined in this volume provides the <strong>semantic vocabulary</strong> for representing systems. However, architectural knowledge within the Blueprint Architecture framework is ultimately organized through the <strong>Blueprint Kernel</strong>, introduced in the Foundations volume.</p>
+<p>The kernel provides a stable structural container consisting of six slots:</p>
+<ul>
+<li><p>Goal</p></li>
+<li><p>Capabilities</p></li>
+<li><p>Components</p></li>
+<li><p>Interfaces</p></li>
+<li><p>Data</p></li>
+<li><p>Workflows</p></li>
+</ul>
+<p>The ontology and the kernel therefore operate at different layers. The kernel defines <strong>where information is organized</strong>, while the ontology defines <strong>what entities populate that structure</strong>.</p>
+<p>This section describes how ontology entities map onto the blueprint kernel and how different architectural views can be generated from the same underlying representation.</p>
+<section id="mapping-the-kernel-slots-to-ontology" class="level3" data-number="24.0.1">
+<h3 data-number="24.0.1" class="anchored" data-anchor-id="mapping-the-kernel-slots-to-ontology"><span class="header-section-number">24.0.1</span> Mapping the Kernel Slots to Ontology</h3>
+<p>Each kernel slot corresponds to a set of ontology entities and relations.</p>
+<p><strong>Goal</strong></p>
+<p>The goal slot represents the purpose of the system. It is typically associated with system-level capability entities and contextual descriptions of system objectives.</p>
+<p>Within the ontology, the goal slot is represented through:</p>
+<ul>
+<li><p>system entities</p></li>
+<li><p>high-level capability entities</p></li>
+<li><p>stakeholder context relationships</p></li>
+</ul>
+<p><strong>Capabilities</strong></p>
+<p>The capabilities slot contains entities representing the functional abilities of the system.</p>
+<p>Within the ontology, these are represented directly by <strong>capability entities</strong> and their hierarchical relationships within capability trees.</p>
+<p>These entities capture what the system is designed to accomplish independently of implementation details.</p>
+<p><strong>Components</strong></p>
+<p>The components slot contains the structural units that implement system capabilities.</p>
+<p>Within the ontology, this slot is populated by <strong>component entities</strong> and their structural relationships such as containment, dependency, and invocation.</p>
+<p>These entities define the architectural structure of the system.</p>
+<p><strong>Interfaces</strong></p>
+<p>The interfaces slot contains the interaction points between components or between the system and external actors.</p>
+<p>Within the ontology, these are represented by <strong>interface entities</strong> and their associated contracts.</p>
+<p>These interfaces define the communication boundaries that connect system elements.</p>
+<p><strong>Data</strong></p>
+<p>The data slot represents the information structures managed by the system.</p>
+<p>In the ontology, this slot corresponds to <strong>data entities</strong>, along with relations describing data access, persistence, and data flow.</p>
+<p><strong>Workflows</strong></p>
+<p>The workflows slot represents execution structures that coordinate system behavior.</p>
+<p>Within the ontology, workflows are represented through workflow entities and execution units such as tasks and steps.</p>
+<p>These entities capture how system activities are orchestrated over time.</p>
+<p>Through this mapping, the ontology provides the semantic elements that populate the blueprint kernel structure.</p>
+</section>
+<section id="kernel-slot-mapping-examples" class="level2" data-number="24.1">
+<h2 data-number="24.1" class="anchored" data-anchor-id="kernel-slot-mapping-examples"><span class="header-section-number">24.1</span> Kernel Slot Mapping Examples</h2>
+<section id="example-e-commerce-platform" class="level3" data-number="24.1.1">
+<h3 data-number="24.1.1" class="anchored" data-anchor-id="example-e-commerce-platform"><span class="header-section-number">24.1.1</span> Example: E-commerce Platform</h3>
+<pre><code>System: E-commerce Platform
+
+GOAL SLOT:
+  System Entity: E-commercePlatform
+    - Type: Web Application
+    - Description: Online retail platform for product sales
+    - Context: B2C commerce domain
+
+  High-Level Capability: OnlineShopping
+    - Type: Capability
+    - Description: Enable customers to browse and purchase products
+    - Relation: part_of(E-commercePlatform)
+
+  Stakeholder Context:
+    - Customer: Wants to buy products easily
+    - Merchant: Wants to sell products and manage inventory
+    - Admin: Wants to monitor platform operations
+
+CAPABILITIES SLOT:
+  Capability: ProductCatalog
+    - Type: Capability
+    - Description: Browse and search products
+    - Sub-capabilities:
+      - ProductSearch
+      - ProductFiltering
+      - ProductDetails
+
+  Capability: OrderManagement
+    - Type: Capability
+    - Description: Process and manage orders
+    - Sub-capabilities:
+      - CartManagement
+      - Checkout
+      - OrderTracking
+
+  Capability: PaymentProcessing
+    - Type: Capability
+    - Description: Process payments securely
+    - Sub-capabilities:
+      - PaymentMethodSelection
+      - PaymentAuthorization
+      - PaymentConfirmation
+
+COMPONENTS SLOT:
+  Component: WebFrontend
+    - Type: Frontend
+    - Description: User interface for web browser
+    - Relations:
+      - calls(API Gateway)
+      - depends_on(Content Delivery Network)
+
+  Component: API Gateway
+    - Type: API Gateway
+    - Description: Routes API requests to services
+    - Relations:
+      - calls(Product Service)
+      - calls(Order Service)
+      - calls(Payment Service)
+
+  Component: Product Service
+    - Type: API Service
+    - Description: Manages product catalog
+    - Relations:
+      - reads(Product Database)
+      - owns(Product Data Entities)
+
+  Component: Order Service
+    - Type: API Service
+    - Description: Manages order processing
+    - Relations:
+      - calls(Payment Service)
+      - writes(Order Database)
+      - owns(Order Data Entities)
+
+  Component: Payment Service
+    - Type: API Service
+    - Description: Processes payments
+    - Relations:
+      - depends_on(External Payment Gateway)
+      - writes(Transaction Database)
+
+  Component: Product Database
+    - Type: Storage
+    - Description: Stores product information
+    - Relations:
+      - contains(Product Data Entities)
+
+  Component: Order Database
+    - Type: Storage
+    - Description: Stores order information
+    - Relations:
+      - contains(Order Data Entities)
+
+INTERFACES SLOT:
+  Interface: ProductAPI
+    - Type: API Interface
+    - Description: REST API for product operations
+    - Operations:
+      - GET /products (list products)
+      - GET /products/{id} (get product details)
+      - GET /products/search (search products)
+
+  Interface: OrderAPI
+    - Type: API Interface
+    - Description: REST API for order operations
+    - Operations:
+      - POST /cart (add to cart)
+      - POST /checkout (place order)
+      - GET /orders/{id} (get order status)
+
+  Interface: PaymentAPI
+    - Type: API Interface
+    - Description: REST API for payment operations
+    - Operations:
+      - POST /payment/methods (list payment methods)
+      - POST /payment/authorize (authorize payment)
+      - POST /payment/confirm (confirm payment)
+
+DATA SLOT:
+  Data Entity: Product
+    - Type: Business Entity
+    - Description: Product information
+    - Attributes:
+      - productId (string)
+      - name (string)
+      - description (string)
+      - price (decimal)
+      - inventory (integer)
+
+  Data Entity: Order
+    - Type: Business Entity
+    - Description: Order information
+    - Attributes:
+      - orderId (string)
+      - customerId (string)
+      - items (array of OrderItem)
+      - totalAmount (decimal)
+      - status (string)
+
+  Data Entity: OrderItem
+    - Type: Business Entity
+    - Description: Order line item
+    - Attributes:
+      - productId (string)
+      - quantity (integer)
+      - unitPrice (decimal)
+
+  Data Entity: Payment
+    - Type: Business Entity
+    - Description: Payment information
+    - Attributes:
+      - paymentId (string)
+      - orderId (string)
+      - amount (decimal)
+      - method (string)
+      - status (string)
+
+WORKFLOWS SLOT:
+  Workflow: ProductSearchWorkflow
+    - Type: Workflow
+    - Description: Search for products
+    - Steps:
+      1. User enters search query
+      2. WebFrontend calls ProductAPI.search
+      3. Product Service queries Product Database
+      4. Product Service returns results
+      5. WebFrontend displays results
+
+  Workflow: OrderPlacementWorkflow
+    - Type: Workflow
+    - Description: Place an order
+    - Steps:
+      1. User adds items to cart
+      2. User initiates checkout
+      3. Order Service creates order
+      4. Order Service calls Payment Service
+      5. Payment Service processes payment
+      6. Order Service confirms order
+      7. Order Service updates Order Database
+
+  Workflow: PaymentProcessingWorkflow
+    - Type: Workflow
+    - Description: Process payment
+    - Steps:
+      1. Order Service requests payment
+      2. Payment Service validates payment method
+      3. Payment Service calls External Payment Gateway
+      4. External Payment Gateway processes payment
+      5. Payment Service receives result
+      6. Payment Service updates Transaction Database
+      7. Payment Service returns result to Order Service</code></pre>
+</section>
+<section id="example-data-analytics-pipeline" class="level3" data-number="24.1.2">
+<h3 data-number="24.1.2" class="anchored" data-anchor-id="example-data-analytics-pipeline"><span class="header-section-number">24.1.2</span> Example: Data Analytics Pipeline</h3>
+<pre><code>System: Data Analytics Pipeline
+
+GOAL SLOT:
+  System Entity: AnalyticsPipeline
+    - Type: Data Pipeline
+    - Description: Process and analyze data streams
+    - Context: Data analytics domain
+
+  High-Level Capability: RealTimeAnalytics
+    - Type: Capability
+    - Description: Analyze data in real-time
+    - Relation: part_of(AnalyticsPipeline)
+
+CAPABILITIES SLOT:
+  Capability: DataIngestion
+    - Type: Capability
+    - Description: Ingest data from multiple sources
+    - Sub-capabilities:
+      - StreamIngestion
+      - BatchIngestion
+      - DataValidation
+
+  Capability: DataTransformation
+    - Type: Capability
+    - Description: Transform and enrich data
+    - Sub-capabilities:
+      - DataCleaning
+      - DataAggregation
+      - DataEnrichment
+
+  Capability: DataAnalysis
+    - Type: Capability
+    - Description: Analyze processed data
+    - Sub-capabilities:
+      - PatternDetection
+      - AnomalyDetection
+      - TrendAnalysis
+
+COMPONENTS SLOT:
+  Component: Data Ingestion Service
+    - Type: Worker
+    - Description: Ingest data from sources
+    - Relations:
+      - emits(Data Events)
+      - writes(Ingestion Database)
+
+  Component: Data Transformation Service
+    - Type: Worker
+    - Description: Transform and enrich data
+    - Relations:
+      - consumes(Data Events)
+      - emits(Transformed Events)
+      - writes(Transformation Database)
+
+  Component: Data Analysis Service
+    - Type: Worker
+    - Description: Analyze transformed data
+    - Relations:
+      - consumes(Transformed Events)
+      - writes(Analytics Database)
+      - emits(Alert Events)
+
+  Component: Message Queue
+    - Type: Queue/Broker
+    - Description: Buffer data events
+    - Relations:
+      - contains(Data Events)
+      - contains(Transformed Events)
+
+  Component: Ingestion Database
+    - Type: Storage
+    - Description: Store raw data
+    - Relations:
+      - contains(Raw Data Entities)
+
+  Component: Transformation Database
+    - Type: Storage
+    - Description: Store transformed data
+    - Relations:
+      - contains(Transformed Data Entities)
+
+  Component: Analytics Database
+    - Type: Storage
+    - Description: Store analytics results
+    - Relations:
+      - contains(Analytics Data Entities)
+
+INTERFACES SLOT:
+  Interface: DataIngestionAPI
+    - Type: Event Interface
+    - Description: API for ingesting data
+    - Events:
+      - DataReceived (data payload)
+      - IngestionComplete (ingestion ID)
+
+  Interface: DataTransformationAPI
+    - Type: Event Interface
+    - Description: API for transformation results
+    - Events:
+      - TransformationComplete (transformation ID)
+      - TransformationFailed (error details)
+
+  Interface: AnalyticsAPI
+    - Type: API Interface
+    - Description: API for querying analytics
+    - Operations:
+      - GET /analytics/trends (get trends)
+      - GET /analytics/anomalies (get anomalies)
+      - GET /analytics/patterns (get patterns)
+
+DATA SLOT:
+  Data Entity: RawData
+    - Type: Technical Entity
+    - Description: Raw data from source
+    - Attributes:
+      - dataId (string)
+      - source (string)
+      - timestamp (datetime)
+      - payload (object)
+
+  Data Entity: TransformedData
+    - Type: Technical Entity
+    - Description: Transformed data
+    - Attributes:
+      - dataId (string)
+      - transformationId (string)
+      - cleaned (boolean)
+      - enriched (boolean)
+
+  Data Entity: AnalyticsResult
+    - Type: Technical Entity
+    - Description: Analytics result
+    - Attributes:
+      - resultId (string)
+      - type (string)
+      - value (object)
+      - confidence (float)
+
+WORKFLOWS SLOT:
+  Workflow: DataIngestionWorkflow
+    - Type: Workflow
+    - Description: Ingest data from source
+    - Steps:
+      1. Data source sends data
+      2. Data Ingestion Service receives data
+      3. Data Ingestion Service validates data
+      4. Data Ingestion Service stores raw data
+      5. Data Ingestion Service emits DataReceived event
+
+  Workflow: DataTransformationWorkflow
+    - Type: Workflow
+    - Description: Transform data
+    - Steps:
+      1. Message Queue delivers DataReceived event
+      2. Data Transformation Service consumes event
+      3. Data Transformation Service cleans data
+      4. Data Transformation Service enriches data
+      5. Data Transformation Service stores transformed data
+      6. Data Transformation Service emits TransformationComplete event
+
+  Workflow: DataAnalysisWorkflow
+    - Type: Workflow
+    - Description: Analyze data
+    - Steps:
+      1. Message Queue delivers TransformationComplete event
+      2. Data Analysis Service consumes event
+      3. Data Analysis Service detects patterns
+      4. Data Analysis Service detects anomalies
+      5. Data Analysis Service analyzes trends
+      6. Data Analysis Service stores analytics results
+      7. Data Analysis Service emits alert if anomaly detected</code></pre>
+</section>
+<section id="example-ai-agent-system" class="level3" data-number="24.1.3">
+<h3 data-number="24.1.3" class="anchored" data-anchor-id="example-ai-agent-system"><span class="header-section-number">24.1.3</span> Example: AI Agent System</h3>
+<pre><code>System: AI Agent System
+
+GOAL SLOT:
+  System Entity: AIAgentSystem
+    - Type: Agent System
+    - Description: AI-powered task automation
+    - Context: AI automation domain
+
+  High-Level Capability: TaskAutomation
+    - Type: Capability
+    - Description: Automate complex tasks
+    - Relation: part_of(AIAgentSystem)
+
+CAPABILITIES SLOT:
+  Capability: TaskUnderstanding
+    - Type: Capability
+    - Description: Understand user tasks
+    - Sub-capabilities:
+      - IntentRecognition
+      - ParameterExtraction
+      - ContextRetrieval
+
+  Capability: ToolSelection
+    - Type: Capability
+    - Description: Select appropriate tools
+    - Sub-capabilities:
+      - ToolMatching
+      - CapabilityDiscovery
+      - ToolCompatibilityCheck
+
+  Capability: TaskExecution
+    - Type: Capability
+    - Description: Execute tasks using tools
+    - Sub-capabilities:
+      - ToolInvocation
+      - ResultAggregation
+      - ErrorHandling
+
+COMPONENTS SLOT:
+  Component: Agent Orchestrator
+    - Type: Orchestrator
+    - Description: Coordinate agent behavior
+    - Relations:
+      - calls(Task Understanding Service)
+      - calls(Tool Selection Service)
+      - calls(Task Execution Service)
+
+  Component: Task Understanding Service
+    - Type: API Service
+    - Description: Understand user tasks
+    - Relations:
+      - owns(Language Model)
+      - reads(Context Database)
+
+  Component: Tool Selection Service
+    - Type: API Service
+    - Description: Select tools for tasks
+    - Relations:
+      - reads(Tool Registry)
+      - owns(Matching Algorithm)
+
+  Component: Task Execution Service
+    - Type: API Service
+    - Description: Execute tasks
+    - Relations:
+      - calls(External Tools)
+      - writes(Execution Database)
+
+  Component: Language Model
+    - Type: Model/Engine
+    - Description: Process natural language
+    - Relations:
+      - part_of(Task Understanding Service)
+
+  Component: Tool Registry
+    - Type: Storage
+    - Description: Store tool information
+    - Relations:
+      - contains(Tool Data Entities)
+
+  Component: Context Database
+    - Type: Storage
+    - Description: Store conversation context
+    - Relations:
+      - contains(Context Data Entities)
+
+  Component: Execution Database
+    - Type: Storage
+    - Description: Store execution history
+    - Relations:
+      - contains(Execution Data Entities)
+
+INTERFACES SLOT:
+  Interface: AgentAPI
+    - Type: API Interface
+    - Description: API for agent interaction
+    - Operations:
+      - POST /agent/task (submit task)
+      - GET /agent/status/{id} (get task status)
+      - GET /agent/result/{id} (get task result)
+
+  Interface: ToolAPI
+    - Type: Command Interface
+    - Description: API for tool invocation
+    - Operations:
+      - POST /tool/{toolName}/invoke (invoke tool)
+      - GET /tool/{toolName}/status (get tool status)
+
+DATA SLOT:
+  Data Entity: Tool
+    - Type: Technical Entity
+    - Description: Tool information
+    - Attributes:
+      - toolId (string)
+      - name (string)
+      - description (string)
+      - capabilities (array)
+      - parameters (object)
+
+  Data Entity: Context
+    - Type: Technical Entity
+    - Description: Conversation context
+    - Attributes:
+      - contextId (string)
+      - conversationId (string)
+      - messages (array)
+      - timestamp (datetime)
+
+  Data Entity: Execution
+    - Type: Technical Entity
+    - Description: Task execution record
+    - Attributes:
+      - executionId (string)
+      - taskId (string)
+      - toolsUsed (array)
+      - results (array)
+      - status (string)
+
+WORKFLOWS SLOT:
+  Workflow: TaskProcessingWorkflow
+    - Type: Workflow
+    - Description: Process user task
+    - Steps:
+      1. User submits task to Agent Orchestrator
+      2. Agent Orchestrator calls Task Understanding Service
+      3. Task Understanding Service extracts intent and parameters
+      4. Task Understanding Service retrieves context
+      5. Task Understanding Service returns understanding
+      6. Agent Orchestrator calls Tool Selection Service
+      7. Tool Selection Service matches tools to task
+      8. Tool Selection Service returns tool selection
+      9. Agent Orchestrator calls Task Execution Service
+      10. Task Execution Service invokes selected tools
+      11. Task Execution Service aggregates results
+      12. Task Execution Service returns final result
+
+  Workflow: ToolInvocationWorkflow
+    - Type: Workflow
+    - Description: Invoke external tool
+    - Steps:
+      1. Task Execution Service calls tool API
+      2. External tool processes request
+      3. External tool returns result
+      4. Task Execution Service handles errors if any
+      5. Task Execution Service stores execution record
+      6. Task Execution Service returns result</code></pre>
+</section>
+<section id="minimal-attribute-sets" class="level3" data-number="24.1.4">
+<h3 data-number="24.1.4" class="anchored" data-anchor-id="minimal-attribute-sets"><span class="header-section-number">24.1.4</span> Minimal Attribute Sets</h3>
+<p>For blueprint representations to remain consistent across systems, each ontology entity must include a minimal set of attributes.</p>
+<p>These attributes provide the essential metadata required to describe architectural elements while avoiding unnecessary complexity.</p>
+<p>Typical minimal attributes include:</p>
+<ul>
+<li><p><strong>identifier</strong> — a unique name for the entity</p></li>
+<li><p><strong>type</strong> — the ontology type of the entity</p></li>
+<li><p><strong>description</strong> — a concise explanation of the entity’s role</p></li>
+<li><p><strong>relations</strong> — references to related entities</p></li>
+<li><p><strong>scope</strong> — the architectural context in which the entity exists</p></li>
+</ul>
+<p>Additional attributes may be added when necessary, but these minimal fields ensure that blueprint representations remain structurally comparable.</p>
+<p>Minimal attribute sets enable blueprint datasets to be stored, indexed, and analyzed consistently.</p>
+</section>
+</section>
+<section id="minimal-attribute-set-examples" class="level2" data-number="24.2">
+<h2 data-number="24.2" class="anchored" data-anchor-id="minimal-attribute-set-examples"><span class="header-section-number">24.2</span> Minimal Attribute Set Examples</h2>
+<section id="system-entity-attributes" class="level3" data-number="24.2.1">
+<h3 data-number="24.2.1" class="anchored" data-anchor-id="system-entity-attributes"><span class="header-section-number">24.2.1</span> System Entity Attributes</h3>
+<pre><code>System Entity: EcommercePlatform
+
+Minimal Attributes:
+  - identifier: "EcommercePlatform"
+  - type: "Web Application"
+  - description: "Online retail platform for product sales"
+  - relations:
+      - contains: ["WebFrontend", "APIGateway", "ProductService", "OrderService", "PaymentService"]
+      - implements: ["OnlineShopping", "PaymentProcessing", "OrderManagement"]
+  - scope: "System"
+
+Additional Attributes (optional):
+  - version: "1.0.0"
+  - owner: "Retail Company"
+  - domain: "E-commerce"
+  - deployment: "Cloud"
+  - technology: ["React", "Node.js", "PostgreSQL", "Redis"]</code></pre>
+</section>
+<section id="component-entity-attributes" class="level3" data-number="24.2.2">
+<h3 data-number="24.2.2" class="anchored" data-anchor-id="component-entity-attributes"><span class="header-section-number">24.2.2</span> Component Entity Attributes</h3>
+<pre><code>Component Entity: ProductService
+
+Minimal Attributes:
+  - identifier: "ProductService"
+  - type: "API Service"
+  - description: "Manages product catalog and inventory"
+  - relations:
+      - part_of: ["EcommercePlatform"]
+      - calls: ["ProductDatabase"]
+      - owns: ["Product", "ProductCategory"]
+      - implements: ["ProductCatalog"]
+  - scope: "Component"
+
+Additional Attributes (optional):
+  - language: "Node.js"
+  - framework: "Express"
+  - port: 3001
+  - endpoints: 8
+  - scaling: "horizontal"
+  - reliability: "high"</code></pre>
+</section>
+<section id="capability-entity-attributes" class="level3" data-number="24.2.3">
+<h3 data-number="24.2.3" class="anchored" data-anchor-id="capability-entity-attributes"><span class="header-section-number">24.2.3</span> Capability Entity Attributes</h3>
+<pre><code>Capability Entity: ProductCatalog
+
+Minimal Attributes:
+  - identifier: "ProductCatalog"
+  - type: "Capability"
+  - description: "Enable users to browse and search products"
+  - relations:
+      - part_of: ["OnlineShopping"]
+      - implemented_by: ["ProductService"]
+      - contains: ["ProductSearch", "ProductFiltering", "ProductDetails"]
+  - scope: "Capability"
+
+Additional Attributes (optional):
+  - priority: "high"
+  - complexity: "medium"
+  - dependencies: ["ProductDatabase"]
+  - performance_requirement: "Response time &lt; 200ms"</code></pre>
+</section>
+<section id="interface-entity-attributes" class="level3" data-number="24.2.4">
+<h3 data-number="24.2.4" class="anchored" data-anchor-id="interface-entity-attributes"><span class="header-section-number">24.2.4</span> Interface Entity Attributes</h3>
+<pre><code>Interface Entity: ProductAPI
+
+Minimal Attributes:
+  - identifier: "ProductAPI"
+  - type: "API Interface"
+  - description: "REST API for product operations"
+  - relations:
+      - provided_by: ["ProductService"]
+      - used_by: ["WebFrontend", "APIGateway"]
+      - exposes: ["ProductSearch", "ProductFiltering", "ProductDetails"]
+  - scope: "Interface"
+
+Additional Attributes (optional):
+  - protocol: "HTTP/REST"
+  - authentication: "JWT"
+  - rate_limit: "1000 requests/minute"
+  - version: "v2"
+  - documentation: "/api/docs/products"</code></pre>
+</section>
+<section id="data-entity-attributes" class="level3" data-number="24.2.5">
+<h3 data-number="24.2.5" class="anchored" data-anchor-id="data-entity-attributes"><span class="header-section-number">24.2.5</span> Data Entity Attributes</h3>
+<pre><code>Data Entity: Product
+
+Minimal Attributes:
+  - identifier: "Product"
+  - type: "Business Entity"
+  - description: "Product information"
+  - relations:
+      - owned_by: ["ProductService"]
+      - stored_in: ["ProductDatabase"]
+      - accessed_by: ["ProductService", "OrderService"]
+  - scope: "Data"
+
+Additional Attributes (optional):
+  - schema_version: "1.0"
+  - primary_key: "productId"
+  - indexes: ["name", "category", "price"]
+  - lifecycle: "persistent"
+  - sensitivity: "low"</code></pre>
+</section>
+<section id="workflow-entity-attributes" class="level3" data-number="24.2.6">
+<h3 data-number="24.2.6" class="anchored" data-anchor-id="workflow-entity-attributes"><span class="header-section-number">24.2.6</span> Workflow Entity Attributes</h3>
+<pre><code>Workflow Entity: OrderPlacementWorkflow
+
+Minimal Attributes:
+  - identifier: "OrderPlacementWorkflow"
+  - type: "Workflow"
+  - description: "Process order from cart to confirmation"
+  - relations:
+      - orchestrated_by: ["OrderService"]
+      - involves: ["PaymentService", "ProductService"]
+      - triggers: ["CheckoutInitiated"]
+      - produces: ["OrderCreated", "PaymentProcessed"]
+  - scope: "Workflow"
+
+Additional Attributes (optional):
+  - duration: "Typically 2-5 seconds"
+  - reliability: "99.9%"
+  - max_concurrent: 100
+  - error_handling: "Retry with exponential backoff"</code></pre>
+</section>
+</section>
+<section id="projection-examples" class="level2" data-number="24.3">
+<h2 data-number="24.3" class="anchored" data-anchor-id="projection-examples"><span class="header-section-number">24.3</span> Projection Examples</h2>
+<section id="architecture-view-example" class="level3" data-number="24.3.1">
+<h3 data-number="24.3.1" class="anchored" data-anchor-id="architecture-view-example"><span class="header-section-number">24.3.1</span> Architecture View Example</h3>
+<pre><code>Architecture View: E-commerce Platform
+
+Focus: Component relationships, dependencies, communication paths
+
+Visual Structure:
+  ┌─────────────────────────────────────────────────────────┐
+  │                    E-commerce Platform                   │
+  └─────────────────────────────────────────────────────────┘
+                          │
+                          ▼
+  ┌─────────────────────────────────────────────────────────┐
+  │                     API Gateway                          │
+  │  (Routes requests to services, handles authentication)  │
+  └─────────────────────────────────────────────────────────┘
+           │               │               │               │
+           ▼               ▼               ▼               ▼
+  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
+  │   Product    │  │    Order     │  │   Payment    │  │    User      │
+  │   Service    │  │   Service    │  │   Service    │  │   Service    │
+  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘
+         │                 │                 │                 │
+         ▼                 ▼                 ▼                 ▼
+  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
+  │   Product    │  │    Order     │  │ Transaction  │  │    User      │
+  │   Database   │  │   Database   │  │   Database   │  │   Database   │
+  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘
+
+Key Relationships:
+  - API Gateway → Product Service: gRPC, synchronous
+  - API Gateway → Order Service: gRPC, synchronous
+  - API Gateway → Payment Service: gRPC, synchronous
+  - Product Service → Product Database: SQL query
+  - Order Service → Order Database: SQL transaction
+  - Order Service → Payment Service: gRPC, synchronous
+  - Payment Service → Transaction Database: SQL transaction
+
+Use Case: System architect designing the platform structure
+  - Understand component dependencies
+  - Identify communication bottlenecks
+  - Plan component boundaries
+  - Design deployment topology</code></pre>
+</section>
+<section id="specification-view-example" class="level3" data-number="24.3.2">
+<h3 data-number="24.3.2" class="anchored" data-anchor-id="specification-view-example"><span class="header-section-number">24.3.2</span> Specification View Example</h3>
+<pre><code>Specification View: E-commerce Platform
+
+Focus: Capabilities, interfaces, contracts
+
+System Capabilities:
+  Online Shopping:
+    - Product Catalog
+      • Search products by name, category, price
+      • Filter products by attributes
+      • View product details
+    - Cart Management
+      • Add items to cart
+      • Update cart quantities
+      • Remove items from cart
+    - Checkout
+      • Select shipping address
+      • Select payment method
+      • Place order
+    - Order Management
+      • View order status
+      • Track order progress
+      • View order history
+
+  Payment Processing:
+    - Payment Methods
+      • Credit card
+      • Debit card
+      • PayPal
+      • Gift card
+    - Payment Processing
+      • Authorize payment
+      • Capture payment
+      • Refund payment
+
+API Contracts:
+
+  Product API (REST):
+    GET /api/v2/products
+      - Query params: category, price_min, price_max, search
+      - Response: Array&lt;Product&gt;
+      - Rate limit: 1000 requests/minute
+      - Authentication: Required (JWT)
+
+    GET /api/v2/products/{id}
+      - Path param: id (string)
+      - Response: Product
+      - Rate limit: 1000 requests/minute
+      - Authentication: Required (JWT)
+
+  Order API (REST):
+    POST /api/v2/cart
+      - Request: CartItem
+      - Response: Cart
+      - Rate limit: 100 requests/minute
+      - Authentication: Required (JWT)
+
+    POST /api/v2/checkout
+      - Request: CheckoutRequest
+      - Response: Order
+      - Rate limit: 10 requests/minute
+      - Authentication: Required (JWT)
+
+  Payment API (REST):
+    POST /api/v2/payment/authorize
+      - Request: PaymentAuthorization
+      - Response: PaymentAuthorizationResponse
+      - Rate limit: 10 requests/minute
+      - Authentication: Required (JWT)
+
+Data Contracts:
+
+  Product:
+    productId: string (UUID)
+    name: string
+    description: string
+    price: decimal (2 decimal places)
+    inventory: integer
+    category: string
+    imageUrl: string (optional)
+
+  Order:
+    orderId: string (UUID)
+    customerId: string (UUID)
+    items: array&lt;OrderItem&gt;
+    totalAmount: decimal (2 decimal places)
+    status: enum (pending, processing, shipped, delivered, cancelled)
+    createdAt: datetime
+    updatedAt: datetime
+
+Constraints:
+  - Performance: API response time &lt; 200ms (95th percentile)
+  - Availability: 99.9% uptime
+  - Security: All APIs require JWT authentication
+  - Consistency: Orders must be atomic (all-or-nothing)
+
+Use Case: Product manager documenting platform capabilities
+  - Understand what the platform does
+  - Plan integration with external systems
+  - Define API contracts
+  - Set performance requirements</code></pre>
+</section>
+<section id="operations-view-example" class="level3" data-number="24.3.3">
+<h3 data-number="24.3.3" class="anchored" data-anchor-id="operations-view-example"><span class="header-section-number">24.3.3</span> Operations View Example</h3>
+<pre><code>Operations View: E-commerce Platform
+
+Focus: Runtime structure, deployment, monitoring, reliability
+
+Deployment Topology:
+  ┌─────────────────────────────────────────────────────────┐
+  │                    Cloud Provider                        │
+  └─────────────────────────────────────────────────────────┘
+                          │
+          ┌───────────────┼───────────────┐
+          ▼               ▼               ▼
+  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
+  │  CDN Region  │  │  App Region  │  │  DB Region   │
+  │    (3 zones) │  │    (3 zones) │  │   (3 zones)  │
+  └──────────────┘  └──────────────┘  └──────────────┘
+          │               │               │
+          ▼               ▼               ▼
+  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
+  │  CDN Nodes   │  │   Services   │  │   Databases  │
+  │  (auto-scale)│  │  (auto-scale)│  │  (HA cluster)│
+  └──────────────┘  └──────────────┘  └──────────────┘
+
+Service Configuration:
+  API Gateway:
+    - Replicas: 3 per zone (9 total)
+    - Scaling: Auto-scale based on CPU (50-80%)
+    - Load balancer: Cloud provider LB
+    - Health check: /health (every 5s)
+
+  Product Service:
+    - Replicas: 2 per zone (6 total)
+    - Scaling: Auto-scale based on requests
+    - Memory: 2GB per replica
+    - CPU: 1 vCPU per replica
+
+  Order Service:
+    - Replicas: 2 per zone (6 total)
+    - Scaling: Auto-scale based on queue length
+    - Memory: 4GB per replica
+    - CPU: 2 vCPU per replica
+
+  Payment Service:
+    - Replicas: 2 per zone (6 total)
+    - Scaling: Manual (fixed)
+    - Memory: 2GB per replica
+    - CPU: 1 vCPU per replica
+
+Database Configuration:
+  Product Database:
+    - Type: PostgreSQL (managed)
+    - Replicas: 1 primary, 2 replicas
+    - Backup: Daily, 7-day retention
+    - Failover: Automatic
+    - Connection pool: 20 connections per service
+
+  Order Database:
+    - Type: PostgreSQL (managed)
+    - Replicas: 1 primary, 2 replicas
+    - Backup: Hourly, 30-day retention
+    - Failover: Automatic
+    - Connection pool: 20 connections per service
+
+Monitoring Structure:
+  Metrics:
+    - Request rate (per service)
+    - Response time (p50, p95, p99)
+    - Error rate (4xx, 5xx)
+    - Queue length (for async processing)
+    - Database connection usage
+    - CPU and memory utilization
+
+  Logging:
+    - Application logs (JSON format)
+    - Access logs (API Gateway)
+    - Error logs (with stack traces)
+    - Audit logs (user actions)
+    - Retention: 30 days
+
+  Alerting:
+    - Critical: Service down (&gt; 1 min)
+    - Critical: Error rate &gt; 5%
+    - Warning: Response time &gt; 500ms (p95)
+    - Warning: Queue length &gt; 1000
+    - Warning: Database connections &gt; 80%
+
+Reliability Mechanisms:
+  Retry:
+    - Configured for: Product Service, Order Service, Payment Service
+    - Attempts: 3
+    - Backoff: Exponential (100ms initial, max 10s)
+
+  Circuit Breaker:
+    - Configured for: External Payment Gateway
+    - Failure threshold: 5 consecutive failures
+    - Timeout: 60 seconds before retry
+    - Fallback: Queue for manual processing
+
+  Graceful Degradation:
+    - Level 1: Disable product recommendations
+    - Level 2: Disable product reviews
+    - Level 3: Disable product search (use cache only)
+
+  Isolation:
+    - Resource quotas per service
+    - Database connection limits
+    - Network segmentation (DMZ)
+
+Use Case: DevOps engineer managing platform operations
+  - Deploy and scale services
+  - Monitor system health
+  - Troubleshoot issues
+  - Plan capacity
+  - Implement reliability mechanisms</code></pre>
+</section>
+<section id="blueprint-projections" class="level3" data-number="24.3.4">
+<h3 data-number="24.3.4" class="anchored" data-anchor-id="blueprint-projections"><span class="header-section-number">24.3.4</span> Blueprint Projections</h3>
+<p>Different stakeholders require different representations of the same system architecture.</p>
+<p>A system architect may focus on component relationships, while an operations engineer may focus on runtime behavior. A product designer may instead focus on system capabilities and user interactions.</p>
+<p>To accommodate these perspectives, blueprint representations support <strong>projections</strong>.</p>
+<p>A projection is a transformation of the ontology graph into a view tailored for a particular audience or purpose.</p>
+<p>Three projections commonly appear within the Blueprint Architecture framework.</p>
+<p><strong>Architecture View</strong></p>
+<p>The architecture view focuses on structural relationships between components, interfaces, and data flows.</p>
+<p>This view emphasizes component dependencies, communication paths, and system boundaries.</p>
+<p>It is typically used by system architects and engineers responsible for system design.</p>
+<p><strong>Specification View</strong></p>
+<p>The specification view emphasizes system capabilities, interfaces, and constraints.</p>
+<p>This view is often used for system documentation, integration contracts, and design specifications.</p>
+<p>Specification views make it easier to understand what the system does and how it can be interacted with.</p>
+<p><strong>Operations View</strong></p>
+<p>The operations view focuses on runtime structure and operational concerns.</p>
+<p>It includes deployment topology, scaling boundaries, monitoring structures, and reliability mechanisms.</p>
+<p>This view supports system operators and infrastructure engineers.</p>
+<p>All of these views originate from the same ontology representation but emphasize different subsets of entities and relations.</p>
+</section>
+<section id="generating-multiple-views-from-one-system" class="level3" data-number="24.3.5">
+<h3 data-number="24.3.5" class="anchored" data-anchor-id="generating-multiple-views-from-one-system"><span class="header-section-number">24.3.5</span> Generating Multiple Views from One System</h3>
+<p>Consider a system that processes incoming data streams, transforms the data, and exposes processed results through an API.</p>
+<p>Within the ontology representation, this system might include:</p>
+<ul>
+<li><p>a data ingestion component</p></li>
+<li><p>a transformation engine</p></li>
+<li><p>a storage component</p></li>
+<li><p>an API interface</p></li>
+<li><p>a workflow coordinating data processing steps</p></li>
+</ul>
+<p>From this representation, different projections can be generated.</p>
+<p>The <strong>architecture view</strong> highlights the structural arrangement of components and their dependencies.</p>
+<p>The <strong>specification view</strong> focuses on the capabilities of the system, the interfaces it exposes, and the data structures it manages.</p>
+<p>The <strong>operations view</strong> highlights runtime characteristics such as scaling workers, monitoring pipelines, and failure handling mechanisms.</p>
+<p>Although these views appear different, they all originate from the <strong>same underlying ontology graph</strong>.</p>
+<p>This ability to generate multiple representations from a single structural model is essential for making blueprint representations usable across diverse engineering roles.</p>
+</section>
+</section>
+<section id="comprehensive-multi-view-example" class="level2" data-number="24.4">
+<h2 data-number="24.4" class="anchored" data-anchor-id="comprehensive-multi-view-example"><span class="header-section-number">24.4</span> Comprehensive Multi-View Example</h2>
+<section id="base-ontology-real-time-analytics-system" class="level3" data-number="24.4.1">
+<h3 data-number="24.4.1" class="anchored" data-anchor-id="base-ontology-real-time-analytics-system"><span class="header-section-number">24.4.1</span> Base Ontology: Real-Time Analytics System</h3>
+<pre><code>System: RealTimeAnalyticsSystem
+
+Ontology Graph:
+
+System Entity:
+  - RealTimeAnalyticsSystem
+    - Type: Data Pipeline
+    - Description: Process and analyze real-time data streams
+    - Contains:
+        - DataIngestionService
+        - DataTransformationService
+        - DataAnalysisService
+        - MessageQueue
+        - IngestionDatabase
+        - AnalyticsDatabase
+    - Implements:
+        - DataIngestion
+        - DataTransformation
+        - RealTimeAnalysis
+        - Alerting
+
+Component Entities:
+  - DataIngestionService
+    - Type: Worker
+    - Calls: [MessageQueue, IngestionDatabase]
+    - Emits: DataEvents
+    - Implements: DataIngestion
+
+  - DataTransformationService
+    - Type: Worker
+    - Consumes: DataEvents
+    - Emits: TransformedEvents
+    - Calls: MessageQueue
+    - Implements: DataTransformation
+
+  - DataAnalysisService
+    - Type: Worker
+    - Consumes: TransformedEvents
+    - Emits: AlertEvents
+    - Calls: MessageQueue, AnalyticsDatabase
+    - Implements: RealTimeAnalysis, Alerting
+
+  - MessageQueue
+    - Type: Queue/Broker
+    - Contains: [DataEvents, TransformedEvents]
+
+  - IngestionDatabase
+    - Type: Storage
+    - Contains: [RawData]
+
+  - AnalyticsDatabase
+    - Type: Storage
+    - Contains: [AnalyticsResults, Alerts]
+
+Capability Entities:
+  - DataIngestion
+    - Type: Capability
+    - Sub-capabilities: [StreamIngestion, DataValidation]
+    - ImplementedBy: DataIngestionService
+
+  - DataTransformation
+    - Type: Capability
+    - Sub-capabilities: [DataCleaning, DataEnrichment, DataAggregation]
+    - ImplementedBy: DataTransformationService
+
+  - RealTimeAnalysis
+    - Type: Capability
+    - Sub-capabilities: [PatternDetection, AnomalyDetection, TrendAnalysis]
+    - ImplementedBy: DataAnalysisService
+
+  - Alerting
+    - Type: Capability
+    - Sub-capabilities: [ThresholdAlerting, AnomalyAlerting]
+    - ImplementedBy: DataAnalysisService
+
+Interface Entities:
+  - DataIngestionAPI
+    - Type: API Interface
+    - ProvidedBy: DataIngestionService
+    - Operations:
+        - POST /ingest (ingest data)
+        - GET /ingest/status (check status)
+
+  - AnalyticsAPI
+    - Type: API Interface
+    - ProvidedBy: DataAnalysisService
+    - Operations:
+        - GET /analytics/trends (get trends)
+        - GET /analytics/anomalies (get anomalies)
+        - GET /analytics/alerts (get alerts)
+
+Data Entities:
+  - RawData
+    - Type: Technical Entity
+    - Attributes: [dataId, source, timestamp, payload]
+    - StoredIn: IngestionDatabase
+
+  - TransformedData
+    - Type: Technical Entity
+    - Attributes: [dataId, cleaned, enriched, features]
+    - Flows: DataTransformationService → DataAnalysisService
+
+  - AnalyticsResults
+    - Type: Technical Entity
+    - Attributes: [resultId, type, value, confidence]
+    - StoredIn: AnalyticsDatabase
+
+  - Alerts
+    - Type: Technical Entity
+    - Attributes: [alertId, type, severity, timestamp]
+    - StoredIn: AnalyticsDatabase
+
+Workflow Entities:
+  - DataIngestionWorkflow
+    - Type: Workflow
+    - OrchestratedBy: DataIngestionService
+    - Steps:
+        1. Receive data
+        2. Validate data
+        3. Store raw data
+        4. Emit DataEvent
+
+  - DataTransformationWorkflow
+    - Type: Workflow
+    - OrchestratedBy: DataTransformationService
+    - Steps:
+        1. Consume DataEvent
+        2. Clean data
+        3. Enrich data
+        4. Emit TransformedEvent
+
+  - DataAnalysisWorkflow
+    - Type: Workflow
+    - OrchestratedBy: DataAnalysisService
+    - Steps:
+        1. Consume TransformedEvent
+        2. Detect patterns
+        3. Detect anomalies
+        4. Analyze trends
+        5. Store results
+        6. Generate alerts if needed</code></pre>
+</section>
+<section id="generated-architecture-view" class="level3" data-number="24.4.2">
+<h3 data-number="24.4.2" class="anchored" data-anchor-id="generated-architecture-view"><span class="header-section-number">24.4.2</span> Generated Architecture View</h3>
+<pre><code>Architecture View: Real-Time Analytics System
+
+Focus: Component relationships, dependencies, data flow
+
+Component Diagram:
+
+┌─────────────────────────────────────────────────────────────┐
+│              Real-Time Analytics System                     │
+└─────────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    Data Ingestion Service                   │
+│  (Ingests data, validates, stores raw data)                 │
+└─────────────────────────────────────────────────────────────┘
+        │                   │
+        │                   ▼
+        │         ┌─────────────────────────────────────────┐
+        │         │            Message Queue                │
+        │         │  (Buffers DataEvents, TransformedEvents)│
+        │         └─────────────────────────────────────────┘
+        │                   │
+        ▼                   ▼
+┌─────────────────────────────────────────────────────────────┐
+│                  Data Transformation Service                │
+│  (Cleans, enriches, aggregates data)                        │
+└─────────────────────────────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    Data Analysis Service                    │
+│  (Detects patterns, anomalies, trends, generates alerts)    │
+└─────────────────────────────────────────────────────────────┘
+        │                   │                   │
+        ▼                   ▼                   ▼
+┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐
+│ Ingestion DB     │  │  Analytics DB    │  │  Message Queue   │
+│ (stores raw data)│  │ (stores results) │  │ (emits alerts)   │
+└──────────────────┘  └──────────────────┘  └──────────────────┘
+
+Data Flow:
+  1. External Data → DataIngestionService
+  2. DataIngestionService → IngestionDatabase (store raw)
+  3. DataIngestionService → MessageQueue (DataEvent)
+  4. MessageQueue → DataTransformationService (DataEvent)
+  5. DataTransformationService → MessageQueue (TransformedEvent)
+  6. MessageQueue → DataAnalysisService (TransformedEvent)
+  7. DataAnalysisService → AnalyticsDatabase (store results)
+  8. DataAnalysisService → MessageQueue (AlertEvent if needed)
+
+Component Dependencies:
+  - DataIngestionService depends on: MessageQueue, IngestionDatabase
+  - DataTransformationService depends on: MessageQueue
+  - DataAnalysisService depends on: MessageQueue, AnalyticsDatabase
+
+Use Case: System architect designing the analytics pipeline
+  - Understand component dependencies
+  - Identify data flow bottlenecks
+  - Plan component boundaries
+  - Design deployment topology</code></pre>
+</section>
+<section id="generated-specification-view" class="level3" data-number="24.4.3">
+<h3 data-number="24.4.3" class="anchored" data-anchor-id="generated-specification-view"><span class="header-section-number">24.4.3</span> Generated Specification View</h3>
+<pre><code>Specification View: Real-Time Analytics System
+
+Focus: Capabilities, interfaces, data contracts
+
+System Capabilities:
+
+Data Ingestion:
+  - Stream Ingestion
+    • Ingest data from multiple sources (HTTP, MQTT, Kafka)
+    • Validate data format and schema
+    • Handle connection failures
+  - Data Validation
+    • Schema validation
+    • Data quality checks
+    • Duplicate detection
+
+Data Transformation:
+  - Data Cleaning
+    • Remove invalid records
+    • Handle missing values
+    • Standardize formats
+  - Data Enrichment
+    • Add metadata
+    • Join with reference data
+    • Compute derived fields
+  - Data Aggregation
+    • Window-based aggregation
+    • Group by dimensions
+    • Compute statistics
+
+Real-Time Analysis:
+  - Pattern Detection
+    • Identify recurring patterns
+    • Detect correlations
+    • Find trends
+  - Anomaly Detection
+    • Statistical anomaly detection
+    • Machine learning-based detection
+    • Threshold-based detection
+  - Trend Analysis
+    • Time series analysis
+    • Moving averages
+    • Seasonality detection
+
+Alerting:
+  - Threshold Alerting
+    • Alert when values exceed thresholds
+    • Configurable thresholds per metric
+  - Anomaly Alerting
+    • Alert when anomalies detected
+    • Severity levels (info, warning, critical)
+
+API Contracts:
+
+Data Ingestion API (REST):
+  POST /api/v1/ingest
+    - Request: { source, data, metadata }
+    - Response: { ingestionId, status, message }
+    - Rate limit: 10000 requests/minute
+    - Authentication: API Key
+
+  GET /api/v1/ingest/status/{ingestionId}
+    - Path param: ingestionId (string)
+    - Response: { ingestionId, status, processedCount, errorCount }
+    - Rate limit: 1000 requests/minute
+    - Authentication: API Key
+
+Analytics API (REST):
+  GET /api/v1/analytics/trends
+    - Query params: metric, timeRange, groupBy
+    - Response: { metric, dataPoints, trend }
+    - Rate limit: 1000 requests/minute
+    - Authentication: API Key
+
+  GET /api/v1/analytics/anomalies
+    - Query params: metric, timeRange, threshold
+    - Response: { metric, anomalies, scores }
+    - Rate limit: 1000 requests/minute
+    - Authentication: API Key
+
+  GET /api/v1/analytics/alerts
+    - Query params: severity, timeRange
+    - Response: { alerts, count, severity }
+    - Rate limit: 1000 requests/minute
+    - Authentication: API Key
+
+Data Contracts:
+
+RawData:
+  dataId: string (UUID)
+  source: string
+  timestamp: datetime (ISO 8601)
+  payload: object (JSON)
+  metadata: object (optional)
+
+TransformedData:
+  dataId: string (UUID)
+  cleaned: boolean
+  enriched: boolean
+  features: object
+  transformations: array
+
+AnalyticsResults:
+  resultId: string (UUID)
+  type: string (pattern, anomaly, trend)
+  value: object
+  confidence: float (0.0-1.0)
+  timestamp: datetime
+
+Alerts:
+  alertId: string (UUID)
+  type: string (threshold, anomaly)
+  severity: string (info, warning, critical)
+  message: string
+  timestamp: datetime
+  resolved: boolean
+
+Constraints:
+  - Performance: Ingestion latency &lt; 100ms (p95)
+  - Throughput: Process 1M events/minute
+  - Accuracy: Anomaly detection precision &gt; 95%
+  - Latency: Alert generation &lt; 5 seconds
+
+Use Case: Product manager defining analytics capabilities
+  - Understand what the system does
+  - Plan integration with data sources
+  - Define API contracts
+  - Set performance requirements</code></pre>
+</section>
+<section id="generated-operations-view" class="level3" data-number="24.4.4">
+<h3 data-number="24.4.4" class="anchored" data-anchor-id="generated-operations-view"><span class="header-section-number">24.4.4</span> Generated Operations View</h3>
+<pre><code>Operations View: Real-Time Analytics System
+
+Focus: Runtime structure, deployment, monitoring, reliability
+
+Deployment Topology:
+
+┌─────────────────────────────────────────────────────────────┐
+│                    Cloud Provider (Kubernetes)              │
+└─────────────────────────────────────────────────────────────┘
+                            │
+        ┌───────────────────┼───────────────────┐
+        ▼                   ▼                   ▼
+┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐
+│  Data Ingestion  │  │  Data Transform  │  │  Data Analysis   │
+│  Service Pods    │  │  Service Pods    │  │  Service Pods    │
+│  (auto-scale)    │  │  (auto-scale)    │  │  (auto-scale)    │
+└──────────────────┘  └──────────────────┘  └──────────────────┘
+        │                   │                   │
+        └───────────────────┼───────────────────┘
+                            ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    Message Queue Cluster                    │
+│              (Kafka cluster, 3 brokers)                      │
+└─────────────────────────────────────────────────────────────┘
+        │                   │
+        ▼                   ▼
+┌──────────────────┐  ┌──────────────────┐
+│  Ingestion DB    │  │  Analytics DB    │
+│  (PostgreSQL)    │  │  (PostgreSQL)    │
+│  (HA cluster)    │  │  (HA cluster)    │
+└──────────────────┘  └──────────────────┘
+
+Service Configuration:
+
+Data Ingestion Service:
+  - Pods: 3 (auto-scale 3-10)
+  - Scaling: Based on request rate (target: 1000 req/s per pod)
+  - Resources: 2CPU, 4GB RAM per pod
+  - Replicas: 3 zones
+  - Health check: /health (every 10s)
+  - Restart policy: Always
+
+Data Transformation Service:
+  - Pods: 5 (auto-scale 5-20)
+  - Scaling: Based on queue lag (target: &lt; 100 messages)
+  - Resources: 4CPU, 8GB RAM per pod
+  - Replicas: 3 zones
+  - Health check: /health (every 10s)
+  - Restart policy: Always
+
+Data Analysis Service:
+  - Pods: 3 (auto-scale 3-15)
+  - Scaling: Based on queue lag (target: &lt; 100 messages)
+  - Resources: 8CPU, 16GB RAM per pod (ML models)
+  - Replicas: 3 zones
+  - Health check: /health (every 10s)
+  - Restart policy: Always
+
+Message Queue:
+  - Brokers: 3 (Kafka cluster)
+  - Replication factor: 3
+  - Partitions: 12 per topic
+  - Retention: 7 days
+  - Availability: 99.95%
+
+Database Configuration:
+
+Ingestion Database:
+  - Type: PostgreSQL (managed)
+  - Replicas: 1 primary, 2 replicas
+  - Storage: 1TB SSD
+  - Backup: Hourly, 7-day retention
+  - Failover: Automatic (&lt; 30s)
+  - Connection pool: 50 connections
+
+Analytics Database:
+  - Type: PostgreSQL (managed)
+  - Replicas: 1 primary, 2 replicas
+  - Storage: 2TB SSD
+  - Backup: Hourly, 30-day retention
+  - Failover: Automatic (&lt; 30s)
+  - Connection pool: 50 connections
+
+Monitoring Structure:
+
+Metrics:
+  - Ingestion rate (events/second)
+  - Processing latency (p50, p95, p99)
+  - Queue lag (messages pending)
+  - Anomaly detection accuracy
+  - Alert generation rate
+  - CPU and memory utilization
+  - Database connection usage
+  - Error rates (5xx)
+
+Logging:
+  - Application logs (JSON format)
+  - Data flow logs (for debugging)
+  - Error logs (with stack traces)
+  - Audit logs (data access)
+  - Retention: 30 days
+
+Tracing:
+  - Distributed tracing (OpenTelemetry)
+  - Trace data flow through pipeline
+  - Identify bottlenecks
+  - Debug issues
+
+Alerting:
+  - Critical: Service down (&gt; 1 min)
+  - Critical: Queue lag &gt; 10000 messages
+  - Critical: Error rate &gt; 10%
+  - Warning: Processing latency &gt; 5s (p95)
+  - Warning: CPU utilization &gt; 80%
+  - Warning: Database connections &gt; 80%
+
+Reliability Mechanisms:
+
+Retry:
+  - Configured for: Database operations, API calls
+  - Attempts: 3
+  - Backoff: Exponential (100ms initial, max 5s)
+
+Circuit Breaker:
+  - Configured for: External API calls
+  - Failure threshold: 5 consecutive failures
+  - Timeout: 60 seconds before retry
+  - Fallback: Use cached data
+
+Graceful Degradation:
+  - Level 1: Disable enrichment (use basic features)
+  - Level 2: Disable anomaly detection (use threshold only)
+  - Level 3: Disable trend analysis (use moving averages)
+
+Isolation:
+  - Resource quotas per service
+  - Database connection limits
+  - Network segmentation
+  - Separate namespaces per environment
+
+Use Case: DevOps engineer managing analytics operations
+  - Deploy and scale services
+  - Monitor pipeline health
+  - Troubleshoot performance issues
+  - Plan capacity
+  - Implement reliability mechanisms</code></pre>
+</section>
+<section id="view-transformation-summary" class="level3" data-number="24.4.5">
+<h3 data-number="24.4.5" class="anchored" data-anchor-id="view-transformation-summary"><span class="header-section-number">24.4.5</span> View Transformation Summary</h3>
+<pre><code>Ontology → View Transformation:
+
+Architecture View:
+  - Extracts: Component entities and their relationships
+  - Emphasizes: Structural dependencies, communication paths
+  - Uses: contains, calls, depends_on relations
+  - Excludes: Capability details, data schemas, runtime metrics
+
+Specification View:
+  - Extracts: Capability entities, interface entities, data entities
+  - Emphasizes: Functional capabilities, API contracts, data schemas
+  - Uses: implements, exposes, contains relations
+  - Excludes: Internal component structure, deployment details
+
+Operations View:
+  - Extracts: Component entities, workflow entities, constraint entities
+  - Emphasizes: Runtime behavior, deployment topology, monitoring
+  - Uses: orchestrates, involves, governs relations
+  - Excludes: Detailed API contracts, capability hierarchies
+
+All views share:
+  - Same system identifier
+  - Same component names
+  - Same entity identifiers
+  - Same fundamental structure
+
+Different views emphasize:
+  - Different subsets of entities
+  - Different types of relationships
+  - Different levels of detail
+  - Different stakeholder perspectives
+
+Benefits:
+  - Single source of truth (ontology)
+  - Consistent terminology across views
+  - Automatic view generation
+  - View synchronization
+  - Reduced documentation overhead
+
+## Blueprint Mapping Workflow
+
+### End-to-End Mapping Process
+</code></pre>
+<p>┌─────────────────────────────────────────────────────────────────────────────────────────┐ │ BLUEPRINT MAPPING WORKFLOW │ ├─────────────────────────────────────────────────────────────────────────────────────────┤ │ │ │ STEP 1: Ontology Analysis │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ Input: System Ontology (Entities, Relations, Attributes) │ │ │ │ Actions: │ │ • Scan all entity types in ontology │ │ • Identify entity instances and their attributes │ │ • Extract relation instances and their properties │ │ • Validate entity and relation consistency │ │ │ │ Output: Entity Inventory, Relation Inventory, Validation Report │ │ │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ STEP 2: Kernel Slot Assignment │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ Input: Entity Inventory from Step 1 │ │ │ │ Kernel Slots: │ │ • Goal: System entities, high-level capabilities, stakeholder context │ │ • Capabilities: Capability entities and hierarchies │ │ • Components: Component entities and structural relationships │ │ • Interfaces: Interface entities and contracts │ │ • Data: Data entities and schemas │ │ • Workflows: Workflow entities and execution sequences │ │ │ │ Assignment Rules: │ │ • System entities → Goal slot │ │ • Capability entities → Capabilities slot │ │ • Component entities → Components slot │ │ • Interface entities → Interfaces slot │ │ • Data entities → Data slot │ │ • Workflow entities → Workflows slot │ │ │ │ Output: Populated Blueprint Kernel (6 slots) │ │ │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ STEP 3: Structural Validation │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ Input: Populated Blueprint Kernel from Step 2 │ │ │ │ Validation Checks: │ │ • Goal slot: At least one system entity │ │ • Capabilities slot: At least one capability entity │ │ • Components slot: At least one component entity │ │ • Interfaces slot: At least one interface entity (if applicable) │ │ • Data slot: At least one data entity (if applicable) │ │ • Workflows slot: At least one workflow entity (if applicable) │ │ │ │ Consistency Checks: │ │ • Components implement capabilities │ │ • Components provide interfaces │ │ • Components own data entities │ │ • Components orchestrate workflows │ │ • Relations are bidirectional (contains/part_of, etc.) │ │ │ │ Output: Validation Report (pass/fail, issues, recommendations) │ │ │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ STEP 4: Attribute Enrichment │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ Input: Validated Blueprint Kernel from Step 3 │ │ │ │ Enrichment Actions: │ │ • Add minimal attributes to all entities (identifier, type, description) │ │ • Add scope attribute (contextual level) │ │ • Add metadata (created_at, version, tags) │ │ • Add computed attributes (derived from relations) │ │ │ │ Attribute Sources: │ │ • From ontology entity definitions │ │ • From entity instance attributes │ │ • From relation properties │ │ • From external configuration files │ │ │ │ Output: Enriched Blueprint Kernel (with complete attributes) │ │ │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ STEP 5: View Generation │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ Input: Enriched Blueprint Kernel from Step 4 │ │ │ │ View Types: │ │ • Architecture View: Component relationships, dependencies, communication paths │ │ • Specification View: Capabilities, interfaces, data schemas │ │ • Operations View: Runtime behavior, deployment topology, monitoring │ │ │ │ Generation Rules: │ │ • Architecture View: Extract components + structural relations │ │ • Specification View: Extract capabilities + interfaces + data │ │ • Operations View: Extract workflows + constraints + runtime data │ │ │ │ Output: Three generated views (Architecture, Specification, Operations) │ │ │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ STEP 6: Output Generation │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ Input: Generated Views from Step 5 │ │ │ │ Output Formats: │ │ • Blueprint YAML: Machine-readable blueprint definition │ │ • Blueprint JSON: Alternative machine-readable format │ │ • Documentation: Human-readable documentation │ │ • Diagrams: Visual representations (architecture diagrams, etc.) │ │ │ │ Generation Actions: │ │ • Serialize blueprint kernel to YAML/JSON │ │ • Generate markdown documentation │ │ • Create ASCII diagrams for architecture view │ │ • Create entity-relationship diagrams │ │ │ │ Output: Blueprint Pack (YAML, JSON, documentation, diagrams) │ │ │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ STEP 7: Quality Assurance │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ Input: Blueprint Pack from Step 6 │ │ │ │ QA Checks: │ │ • Schema validation: Blueprint conforms to schema │ │ • Completeness: All required fields present │ │ • Consistency: Entity and relation naming consistent │ │ • Accuracy: Blueprint accurately represents original ontology │ │ • Usability: Blueprint can be consumed by tools and humans │ │ │ │ Output: QA Report (pass/fail, issues, remediation steps) │ │ │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ STEP 8: Publication │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ Input: Validated Blueprint Pack from Step 7 │ │ │ │ Publication Actions: │ │ • Version the blueprint (semantic versioning) │ │ • Publish to blueprint registry │ │ • Update blueprint index │ │ • Notify stakeholders │ │ • Archive previous versions │ │ │ │ Output: Published Blueprint (with version and metadata) │ │ │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ STEP 9: Maintenance and Updates │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ Input: Published Blueprint from Step 8 │ │ │ │ Maintenance Actions: │ │ • Monitor for ontology changes │ │ • Update blueprints when ontology evolves │ │ • Apply migration rules for breaking changes │ │ • Collect feedback from blueprint consumers │ │ • Improve mapping rules based on feedback │ │ │ │ Output: Updated Blueprint (next version) │ │ │ └─────────────────────────────────────────────────────────────────────────────────────────┘</p>
+<pre><code>
+### Detailed Kernel Slot Mapping Process
+</code></pre>
+<p>┌─────────────────────────────────────────────────────────────────────────────────────────┐ │ DETAILED KERNEL SLOT MAPPING PROCESS │ ├─────────────────────────────────────────────────────────────────────────────────────────┤ │ │ │ SLOT 1: Goal Mapping │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ Input Ontology Elements: │ │ • System entities (identifier, type, description) │ │ • Top-level capability entities (system-level capabilities) │ │ • Stakeholder context relationships (if available) │ │ │ │ Mapping Process: │ │ 1. Identify System Entity: │ │ - Find entity with type = “System” │ │ - Extract system identifier, type, description │ │ - Map to Goal.slot.system_entity │ │ │ │ 2. Identify System Capabilities: │ │ - Find capability entities not part_of other capabilities │ │ - Extract capability identifiers, descriptions │ │ - Map to Goal.slot.system_capabilities │ │ │ │ 3. Extract Stakeholder Context (if available): │ │ - Find context relationships (if defined) │ │ - Extract stakeholder information │ │ - Map to Goal.slot.stakeholder_context │ │ │ │ Output: Goal Slot = {system_entity, system_capabilities, stakeholder_context} │ │ │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ SLOT 2: Capabilities Mapping │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ Input Ontology Elements: │ │ • Capability entities (all levels) │ │ • Capability hierarchies (part_of relationships) │ │ • Implementation relationships (component implements capability) │ │ │ │ Mapping Process: │ │ 1. Build Capability Tree: │ │ - Start with top-level capabilities │ │ - Traverse part_of relationships recursively │ │ - Build hierarchical structure │ │ │ │ 2. Map Capability Entities: │ │ - For each capability entity: │ │ * Extract identifier, description │ │ * Extract parent/child relationships │ │ * Extract implementing components │ │ * Map to Capabilities.slot.capability_tree │ │ │ │ 3. Validate Implementation Coverage: │ │ - Ensure all capabilities have implementing components │ │ - Flag capabilities without implementations │ │ │ │ Output: Capabilities Slot = {capability_tree, implementation_map} │ │ │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ SLOT 3: Components Mapping │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ Input Ontology Elements: │ │ • Component entities (all types) │ │ • Component relationships (contains, depends_on, calls) │ │ • Component-type classifications │ │ │ │ Mapping Process: │ │ 1. Map Component Entities: │ │ - For each component entity: │ │ * Extract identifier, type, description │ │ * Extract component subtype (if specified) │ │ * Extract attributes (optional) │ │ * Map to Components.slot.component_list │ │ │ │ 2. Map Component Relationships: │ │ - Extract contains relationships (hierarchical) │ │ - Extract depends_on relationships (dependencies) │ │ - Extract calls relationships (invocations) │ │ - Map to Components.slot.relationship_graph │ │ │ │ 3. Build Component Topology: │ │ - Create component topology diagram │ │ - Identify component boundaries │ │ - Identify communication patterns │ │ │ │ Output: Components Slot = {component_list, relationship_graph, topology} │ │ │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ SLOT 4: Interfaces Mapping │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ Input Ontology Elements: │ │ • Interface entities (API, Event, Command) │ │ • Interface contracts (operations, events) │ │ • Provider relationships (component provides interface) │ │ │ │ Mapping Process: │ │ 1. Map Interface Entities: │ │ - For each interface entity: │ │ * Extract identifier, type, description │ │ * Extract interface subtype (REST, GraphQL, gRPC, etc.) │ │ * Map to Interfaces.slot.interface_list │ │ │ │ 2. Map Interface Contracts: │ │ - For API interfaces: Extract operations (methods, endpoints) │ │ - For Event interfaces: Extract events (event types, schemas) │ │ - For Command interfaces: Extract commands (command names, parameters) │ │ - Map to Interfaces.slot.interface_contracts │ │ │ │ 3. Map Provider Relationships: │ │ - Extract provides relationships │ │ - Link interfaces to providing components │ │ - Map to Interfaces.slot.provider_map │ │ │ │ Output: Interfaces Slot = {interface_list, interface_contracts, provider_map} │ │ │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ SLOT 5: Data Mapping │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ Input Ontology Elements: │ │ • Data entities (Business, Technical) │ │ • Data schemas (attributes, types) │ │ • Ownership relationships (component owns data) │ │ • Access relationships (component reads/writes data) │ │ │ │ Mapping Process: │ │ 1. Map Data Entities: │ │ - For each data entity: │ │ * Extract identifier, type, description │ │ * Extract data subtype (Business, Technical) │ │ * Map to Data.slot.data_entity_list │ │ │ │ 2. Map Data Schemas: │ │ - Extract attribute definitions (name, type, constraints) │ │ - Extract relationships between data entities │ │ - Map to Data.slot.data_schemas │ │ │ │ 3. Map Ownership and Access: │ │ - Extract owns relationships │ │ - Extract reads/writes relationships │ │ - Map to Data.slot.ownership_map, Data.slot.access_map │ │ │ │ Output: Data Slot = {data_entity_list, data_schemas, ownership_map, access_map} │ │ │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ SLOT 6: Workflows Mapping │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ Input Ontology Elements: │ │ • Workflow entities (Pipeline, Orchestrated, Choreographed, Event-Driven) │ │ • Workflow steps and sequences │ │ • Orchestration relationships (workflow orchestrated_by component) │ │ • Trigger relationships (interface triggers workflow) │ │ │ │ Mapping Process: │ │ 1. Map Workflow Entities: │ │ - For each workflow entity: │ │ * Extract identifier, type, description │ │ * Extract workflow subtype │ │ * Map to Workflows.slot.workflow_list │ │ │ │ 2. Map Workflow Steps: │ │ - Extract step definitions (name, type, description) │ │ - Extract step sequences (precedence relationships) │ │ - Map to Workflows.slot.workflow_steps │ │ │ │ 3. Map Orchestration and Triggers: │ │ - Extract orchestrated_by relationships │ │ - Extract triggers relationships │ │ - Map to Workflows.slot.orchestration_map, Workflows.slot.trigger_map │ │ │ │ Output: Workflows Slot = {workflow_list, workflow_steps, orchestration_map, trigger_map}│</p>
+<pre><code>
+### View Generation Process
+</code></pre>
+<p>┌─────────────────────────────────────────────────────────────────────────────────────────┐ │ VIEW GENERATION PROCESS │ ├─────────────────────────────────────────────────────────────────────────────────────────┤ │ │ │ ARCHITECTURE VIEW GENERATION │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ Input: Blueprint Kernel (Components Slot focus) │ │ │ │ Generation Steps: │ │ 1. Extract Component Entities: │ │ • Get all components from Components.slot.component_list │ │ • Filter by component relevance (structural focus) │ │ │ │ 2. Extract Structural Relations: │ │ • Get contains relationships (hierarchy) │ │ • Get depends_on relationships (dependencies) │ │ • Get calls relationships (communication) │ │ │ │ 3. Build Component Graph: │ │ • Create nodes for each component │ │ • Create edges for each relationship │ │ • Apply layout algorithm (hierarchical, force-directed, etc.) │ │ │ │ 4. Generate Diagram: │ │ • Render component graph as ASCII diagram │ │ • Add component type labels │ │ • Add relationship type labels │ │ │ │ Output: Architecture View (component diagram, dependency graph, communication paths) │ │ │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ SPECIFICATION VIEW GENERATION │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ Input: Blueprint Kernel (Capabilities, Interfaces, Data Slots focus) │ │ │ │ Generation Steps: │ │ 1. Extract Capability Entities: │ │ • Get all capabilities from Capabilities.slot.capability_tree │ │ • Build capability hierarchy tree │ │ │ │ 2. Extract Interface Entities: │ │ • Get all interfaces from Interfaces.slot.interface_list │ │ • Get interface contracts from Interfaces.slot.interface_contracts │ │ │ │ 3. Extract Data Entities: │ │ • Get all data entities from Data.slot.data_entity_list │ │ • Get data schemas from Data.slot.data_schemas │ │ │ │ 4. Generate Specification Document: │ │ • Create capability hierarchy section │ │ • Create interface documentation section │ │ • Create data schema section │ │ • Add cross-references between sections │ │ │ │ Output: Specification View (capability hierarchy, API documentation, data schemas) │ │ │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ OPERATIONS VIEW GENERATION │ │ ───────────────────────────────────────────────────────────────────────────────────── │ │ │ │ Input: Blueprint Kernel (Workflows, Components, Constraint Slots focus) │ │ │ │ Generation Steps: │ │ 1. Extract Workflow Entities: │ │ • Get all workflows from Workflows.slot.workflow_list │ │ • Get workflow steps from Workflows.slot.workflow_steps │ │ │ │ 2. Extract Runtime Data: │ │ • Get component deployment information │ │ • Get constraint entities from relevant slots │ │ • Extract orchestration and trigger maps │ │ │ │ 3. Build Runtime Topology: │ │ • Create deployment topology diagram │ │ • Add scaling and resilience information │ │ • Add monitoring and logging points │ │ │ │ 4. Generate Operations Document: │ │ • Create workflow execution diagrams │ │ • Create deployment topology diagram │ │ • Create monitoring and alerting specifications │ │ │ │ Output: Operations View (workflow diagrams, deployment topology, monitoring specs) │</p>
+<pre><code>
+### Mapping Example: E-commerce Platform
+</code></pre>
+<p>┌─────────────────────────────────────────────────────────────────────────────────────────┐ │ MAPPING EXAMPLE: E-COMMERCE PLATFORM │ ├─────────────────────────────────────────────────────────────────────────────────────────┤ │ │ │ INPUT ONTOLOGY: │ │ │ │ System Entity: │ │ - EcommercePlatform (type: Web Application) │ │ │ │ Capability Entities: │ │ - ProductCatalog (sub-capabilities: ProductSearch, ProductFiltering) │ │ - OrderManagement (sub-capabilities: CartManagement, Checkout) │ │ - PaymentProcessing │ │ │ │ Component Entities: │ │ - WebFrontend (type: Frontend) │ │ - APIGateway (type: API Gateway) │ │ - ProductService (type: API Service) │ │ - OrderService (type: API Service) │ │ - PaymentService (type: API Service) │ │ - ProductDatabase (type: Storage) │ │ - OrderDatabase (type: Storage) │ │ - MessageQueue (type: Queue/Broker) │ │ │ │ Interface Entities: │ │ - ProductAPI (type: API Interface) │ │ - OrderAPI (type: API Interface) │ │ - PaymentAPI (type: API Interface) │ │ │ │ Data Entities: │ │ - Product (type: Business Entity) │ │ - Order (type: Business Entity) │ │ - Payment (type: Business Entity) │ │ │ │ Workflow Entities: │ │ - ProductSearchWorkflow (type: Pipeline) │ │ - OrderPlacementWorkflow (type: Pipeline) │ │ - PaymentProcessingWorkflow (type: Pipeline) │ │ │ │ MAPPING PROCESS: │ │ │ │ STEP 1: Ontology Analysis │ │ - Entity Inventory: 1 System, 3 Capabilities, 8 Components, 3 Interfaces, │ │ 3 Data Entities, 3 Workflows │ │ - Relation Inventory: contains (8), depends_on (5), calls (6), provides (3), │ │ owns (3), orchestrated_by (3) │ │ - Validation: All entities and relations consistent │ │ │ │ STEP 2: Kernel Slot Assignment │ │ - Goal: EcommercePlatform, ProductCatalog, OrderManagement, PaymentProcessing │ │ - Capabilities: ProductCatalog, OrderManagement, PaymentProcessing (with hierarchies)│ │ - Components: WebFrontend, APIGateway, ProductService, OrderService, PaymentService, │ │ ProductDatabase, OrderDatabase, MessageQueue │ │ - Interfaces: ProductAPI, OrderAPI, PaymentAPI │ │ - Data: Product, Order, Payment │ │ - Workflows: ProductSearchWorkflow, OrderPlacementWorkflow, PaymentProcessingWorkflow │ │ │ │ STEP 3: Structural Validation │ │ - Goal slot: ✓ 1 system entity, 3 capabilities │ │ - Capabilities slot: ✓ 3 capabilities with hierarchies │ │ - Components slot: ✓ 8 components │ │ - Interfaces slot: ✓ 3 interfaces │ │ - Data slot: ✓ 3 data entities │ │ - Workflows slot: ✓ 3 workflows │ │ - Consistency: ✓ Components implement capabilities, provide interfaces, own data │ │ │ │ STEP 4: Attribute Enrichment │ │ - Added minimal attributes to all entities │ │ - Added scope attribute (system-level for system entity, component-level for others) │ │ - Added metadata (created_at: 2026-03-11, version: v1.0.0) │ │ │ │ STEP 5: View Generation │ │ - Architecture View: Component diagram with 8 components and relationships │ │ - Specification View: Capability hierarchy, API documentation, data schemas │ │ - Operations View: Workflow diagrams, deployment topology, monitoring specs │ │ │ │ STEP 6: Output Generation │ │ - Blueprint YAML: Complete blueprint definition │ │ - Blueprint JSON: Alternative format │ │ - Documentation: Markdown documentation │ │ - Diagrams: ASCII component diagram, workflow diagrams │ │ │ │ OUTPUT BLUEPRINT: │ │ │ │ blueprint: │ │ version: “1.0.0” │ │ system: │ │ identifier: “EcommercePlatform” │ │ type: “Web Application” │ │ description: “Online retail platform” │ │ capabilities: │ │ - identifier: “ProductCatalog” │ │ description: “Browse and search products” │ │ contains: [“ProductSearch”, “ProductFiltering”] │ │ - identifier: “OrderManagement” │ │ description: “Process and manage orders” │ │ contains: [“CartManagement”, “Checkout”] │ │ - identifier: “PaymentProcessing” │ │ description: “Process payments securely” │ │ components: │ │ - identifier: “WebFrontend” │ │ type: “Frontend” │ │ calls: [“APIGateway”] │ │ - identifier: “APIGateway” │ │ type: “API Gateway” │ │ calls: [“ProductService”, “OrderService”, “PaymentService”] │ │ - identifier: “ProductService” │ │ type: “API Service” │ │ implements: [“ProductCatalog”] │ │ calls: [“ProductDatabase”] │ │ owns: [“Product”] │ │ - identifier: “OrderService” │ │ type: “API Service” │ │ implements: [“OrderManagement”] │ │ calls: [“OrderDatabase”, “PaymentService”] │ │ owns: [“Order”] │ │ - identifier: “PaymentService” │ │ type: “API Service” │ │ implements: [“PaymentProcessing”] │ │ calls: [“ExternalPaymentGateway”] │ │ owns: [“Payment”] │ │ - identifier: “ProductDatabase” │ │ type: “Storage” │ │ contains: [“Product”] │ │ - identifier: “OrderDatabase” │ │ type: “Storage” │ │ contains: [“Order”] │ │ - identifier: “MessageQueue” │ │ type: “Queue/Broker” │ │ contains: [“OrderEvents”, “PaymentEvents”] │ │ interfaces: │ │ - identifier: “ProductAPI” │ │ type: “API Interface” │ │ provided_by: “ProductService” │ │ exposes: [“ProductCatalog”] │ │ operations: [“GET /products”, “GET /products/{id}”] │ │ - identifier: “OrderAPI” │ │ type: “API Interface” │ │ provided_by: “OrderService” │ │ exposes: [“OrderManagement”] │ │ operations: [“POST /orders”, “GET /orders/{id}”] │ │ - identifier: “PaymentAPI” │ │ type: “API Interface” │ │ provided_by: “PaymentService” │ │ exposes: [“PaymentProcessing”] │ │ operations: [“POST /payment/authorize”, “POST /payment/confirm”] │ │ data: │ │ - identifier: “Product” │ │ type: “Business Entity” │ │ owned_by: “ProductService” │ │ attributes: [“productId”, “name”, “price”, “inventory”] │ │ - identifier: “Order” │ │ type: “Business Entity” │ │ owned_by: “OrderService” │ │ attributes: [“orderId”, “customerId”, “items”, “totalAmount”] │ │ - identifier: “Payment” │ │ type: “Business Entity” │ │ owned_by: “PaymentService” │ │ attributes: [“paymentId”, “orderId”, “amount”, “status”] │ │ workflows: │ │ - identifier: “ProductSearchWorkflow” │ │ type: “Pipeline” │ │ orchestrated_by: “WebFrontend” │ │ steps: [“User enters query”, “Call ProductAPI”, “Display results”] │ │ - identifier: “OrderPlacementWorkflow” │ │ type: “Pipeline” │ │ orchestrated_by: “OrderService” │ │ steps: [“Add to cart”, “Checkout”, “Create order”, “Process payment”, │ │ “Update inventory”, “Send confirmation”] │ │ - identifier: “PaymentProcessingWorkflow” │ │ type: “Pipeline” │ │ orchestrated_by: “PaymentService” │ │ steps: [“Request payment”, “Validate payment method”, “Process payment”, │ │ “Return result”] │</p>
+<pre><code>
+### Mapping Best Practices
+</code></pre>
+<p>┌─────────────────────────────────────────────────────────────────────────────────────────┐ │ MAPPING BEST PRACTICES │ ├─────────────────────────────────────────────────────────────────────────────────────────┤ │ │ │ PRACTICE 1: Validate Before Mapping │ │ │ │ ✓ Validate ontology structure before mapping │ │ ✓ Check for required entities and relations │ │ ✗ Don’t map invalid or incomplete ontologies │ │ │ │ Example: Ensure system entity exists before mapping to Goal slot │ │ │ │ PRACTICE 2: Follow Kernel Slot Definitions │ │ │ │ ✓ Use kernel slot definitions as mapping guide │ │ ✓ Ensure entities match slot requirements │ │ ✗ Don’t force-fit entities into inappropriate slots │ │ │ │ Example: Map capability entities to Capabilities slot, not Components slot │ │ │ │ PRACTICE 3: Maintain Bidirectional Relations │ │ │ │ ✓ Ensure relations are bidirectional (contains/part_of) │ │ ✓ Validate relation consistency │ │ ✗ Don’t create one-way relations │ │ │ │ Example: If A contains B, ensure B part_of A │ │ │ │ PRACTICE 4: Use Minimal Attribute Sets │ │ │ │ ✓ Include only required attributes (identifier, type, description) │ │ ✓ Add optional attributes only when necessary │ │ ✗ Don’t include unnecessary or redundant attributes │ │ │ │ Example: Include version attribute only if versioning is required │ │ │ │ PRACTICE 5: Generate Views for Multiple Stakeholders │ │ │ │ ✓ Generate all three views (Architecture, Specification, Operations) │ │ ✓ Tailor views to stakeholder needs │ │ ✗ Don’t generate only one view │ │ │ │ Example: Generate Architecture view for architects, Operations view for DevOps │ │ │ │ PRACTICE 6: Validate Output Quality │ │ │ │ ✓ Validate blueprint against schema │ │ ✓ Check for completeness and consistency │ │ ✗ Don’t publish unvalidated blueprints │ │ │ │ Example: Run schema validation before publishing │ │ │ │ PRACTICE 7: Version Blueprints Consistently │ │ │ │ ✓ Use semantic versioning (MAJOR.MINOR.PATCH) │ │ ✓ Document changes between versions │ │ ✗ Don’t use arbitrary version numbers │ │ │ │ Example: v1.0.0 → v1.1.0 (additive), v1.1.0 → v2.0.0 (breaking) │ │ │ │ PRACTICE 8: Document Mapping Decisions │ │ │ │ ✓ Record mapping decisions and rationale │ │ ✓ Document edge cases and exceptions │ │ ✗ Don’t make undocumented mapping decisions │ │ │ │ Example: Document why an entity was mapped to a specific slot │</p>
+<pre><code></code></pre>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../part-v/chapter-18.html" class="pagination-link" aria-label="Risk, Failure Modes, and Trust">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Risk, Failure Modes, and Trust</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../part-vi/chapter-20.html" class="pagination-link" aria-label="Ontology → Blueprint Extraction Signals &amp; Mapping Rules">
+        <span class="nav-page-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Extraction Signals &amp; Mapping Rules</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

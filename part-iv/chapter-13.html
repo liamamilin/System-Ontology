@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>18&nbsp; System Type Taxonomy (v0.1) – System Ontology</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../part-iv/chapter-14.html" rel="next">
+<link href="../part-iii/chapter-12.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part-iv/chapter-13.html">Part IV - Type System</a></li><li class="breadcrumb-item"><a href="../part-iv/chapter-13.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">System Type Taxonomy (v0.1)</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">System Ontology</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About This Book</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Front Matter</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preface — Why Ontology Comes Second</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/reader-contract.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reader Contract</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/notation-conventions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Notation &amp; Conventions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/ontology-as-engineering-artifact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ontology as an Engineering Artifact</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I - Ontology Fundamentals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">What Ontology Is (In Engineering Terms)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Ontology Stack</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ontology Design Principles</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II - Core Entities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">System, Boundary, and Context</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Capability and Requirement Entities</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Components: The Structural Building Blocks</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Interfaces and Contracts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Entities and State</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Workflow and Execution Units</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III - Core Relations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Relation Types (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Boundaries and Coupling Relations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Interaction Models as Relation Patterns</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV - Type System</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-13.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">System Type Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Component Type Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Architecture Style Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Pattern Hooks: Making Ontology Pattern-Aware</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part V - Constraints &amp; Quality Attributes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-v/chapter-17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Quality Attributes as First-Class Entities</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-v/chapter-18.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Risk, Failure Modes, and Trust</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part VI - Mapping</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-vi/chapter-19.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Kernel Mapping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-vi/chapter-20.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Extraction Signals &amp; Mapping Rules</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Capstone</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../capstone/chapter-21.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Ontology Release, Governance, and Evolution</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Appendix A — System Ontology v0.1 (YAML / JSON Schema)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Appendix B — Entity Dictionary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-c.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Appendix C — Relation Dictionary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-d.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Appendix D — System Type Decision Tree</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Appendix E — Example Ontology Instances</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-f.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Appendix F — Glossary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-g.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Appendix G — Projection Mapping Cheat Sheet</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Epilogue — From Ontology to Blueprint Structure</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#why-system-types-must-be-finite-and-stable" id="toc-why-system-types-must-be-finite-and-stable" class="nav-link active" data-scroll-target="#why-system-types-must-be-finite-and-stable"><span class="header-section-number">18.0.1</span> Why System Types Must Be Finite and Stable</a></li>
+  <li><a href="#primary-system-types" id="toc-primary-system-types" class="nav-link" data-scroll-target="#primary-system-types"><span class="header-section-number">18.0.2</span> Primary System Types</a></li>
+  <li><a href="#signature-components" id="toc-signature-components" class="nav-link" data-scroll-target="#signature-components"><span class="header-section-number">18.0.3</span> Signature Components</a></li>
+  <li><a href="#type-classification-rules" id="toc-type-classification-rules" class="nav-link" data-scroll-target="#type-classification-rules"><span class="header-section-number">18.0.4</span> Type Classification Rules</a></li>
+  <li><a href="#system-type-decision-tree" id="toc-system-type-decision-tree" class="nav-link" data-scroll-target="#system-type-decision-tree"><span class="header-section-number">18.1</span> System Type Decision Tree</a>
+  <ul class="collapse">
+  <li><a href="#primary-classification-decision-tree" id="toc-primary-classification-decision-tree" class="nav-link" data-scroll-target="#primary-classification-decision-tree"><span class="header-section-number">18.1.1</span> Primary Classification Decision Tree</a></li>
+  <li><a href="#detailed-classification-flowchart" id="toc-detailed-classification-flowchart" class="nav-link" data-scroll-target="#detailed-classification-flowchart"><span class="header-section-number">18.1.2</span> Detailed Classification Flowchart</a></li>
+  <li><a href="#system-type-quick-reference" id="toc-system-type-quick-reference" class="nav-link" data-scroll-target="#system-type-quick-reference"><span class="header-section-number">18.1.3</span> System Type Quick Reference</a></li>
+  <li><a href="#classification-examples" id="toc-classification-examples" class="nav-link" data-scroll-target="#classification-examples"><span class="header-section-number">18.1.4</span> Classification Examples</a></li>
+  <li><a href="#edge-cases-and-hybrid-types" id="toc-edge-cases-and-hybrid-types" class="nav-link" data-scroll-target="#edge-cases-and-hybrid-types"><span class="header-section-number">18.1.5</span> Edge Cases and Hybrid Types</a></li>
+  <li><a href="#classification-best-practices" id="toc-classification-best-practices" class="nav-link" data-scroll-target="#classification-best-practices"><span class="header-section-number">18.1.6</span> Classification Best Practices</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part-iv/chapter-13.html">Part IV - Type System</a></li><li class="breadcrumb-item"><a href="../part-iv/chapter-13.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">System Type Taxonomy (v0.1)</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">System Type Taxonomy (v0.1)</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Architectural representations benefit from a stable classification of system types. While individual systems vary widely in implementation, many share recognizable structural patterns. A taxonomy of system types enables architectural descriptions to be compared, indexed, and analyzed across large collections of systems.</p>
+<p>Within the ontology, system types provide a <strong>high-level categorization of architectural structures</strong>. They describe the dominant operational model of a system rather than its specific implementation details.</p>
+<p>The taxonomy defined in Ontology v0.1 focuses on a small set of system categories that appear consistently across software ecosystems.</p>
+<section id="why-system-types-must-be-finite-and-stable" class="level3" data-number="18.0.1">
+<h3 data-number="18.0.1" class="anchored" data-anchor-id="why-system-types-must-be-finite-and-stable"><span class="header-section-number">18.0.1</span> Why System Types Must Be Finite and Stable</h3>
+<p>A system type taxonomy must remain <strong>limited and stable</strong>.</p>
+<p>If the number of types grows without constraint, classification becomes inconsistent. Different architects may assign different type labels to similar systems, preventing meaningful comparison across blueprint datasets.</p>
+<p>A small and stable set of system types ensures that:</p>
+<ul>
+<li><p>blueprint repositories remain searchable</p></li>
+<li><p>architectural datasets remain analyzable</p></li>
+<li><p>pattern mining becomes feasible</p></li>
+<li><p>architecture intelligence systems can operate on predictable categories</p></li>
+</ul>
+<p>System types therefore function as <strong>structural anchors</strong> rather than descriptive labels. Each type represents a recurring architectural organization that appears across many systems.</p>
+<p>Because architectural styles evolve slowly compared to implementation technologies, the number of system types should remain relatively constant across ontology versions.</p>
+</section>
+<section id="primary-system-types" class="level3" data-number="18.0.2">
+<h3 data-number="18.0.2" class="anchored" data-anchor-id="primary-system-types"><span class="header-section-number">18.0.2</span> Primary System Types</h3>
+<p>Ontology v0.1 defines a set of common system types that capture the majority of contemporary software architectures.</p>
+<p><strong>CLI Tools</strong></p>
+<p>Command-line tools provide functionality through terminal interfaces. They typically execute short-lived processes initiated by user commands or scripts.</p>
+<p>CLI systems often consist of:</p>
+<ul>
+<li><p>a command interface</p></li>
+<li><p>argument parsing components</p></li>
+<li><p>execution logic modules</p></li>
+<li><p>optional integration with external systems</p></li>
+</ul>
+<p>These systems emphasize simplicity and direct user interaction.</p>
+<p><strong>Example</strong>: <code>git</code> command-line tool for version control</p>
+<pre><code>Components:
+  - CLI Interface (parses git commands)
+  - Repository Manager (handles git operations)
+  - File System (accesses .git directory)
+  
+Characteristics:
+  - Command-line interaction
+  - Short-lived execution
+  - Direct file system access
+  - Optional remote integration</code></pre>
+<p><strong>Web Applications</strong></p>
+<p>Web applications provide user-facing functionality through graphical interfaces delivered over web protocols.</p>
+<p>Typical components include:</p>
+<ul>
+<li><p>web front-end interfaces</p></li>
+<li><p>application services</p></li>
+<li><p>session management systems</p></li>
+<li><p>data persistence layers</p></li>
+</ul>
+<p>Web applications emphasize user interaction and request-driven workflows.</p>
+<p><strong>Example</strong>: E-commerce web application</p>
+<pre><code>Components:
+  - Web UI (React frontend)
+  - API Service (Node.js backend)
+  - Database (PostgreSQL)
+  - Redis Cache (session storage)
+  
+Characteristics:
+  - Browser-based UI
+  - HTTP API services
+  - Session management
+  - Data persistence</code></pre>
+<p><strong>APIs and Services</strong></p>
+<p>API systems expose programmable interfaces for external clients or other services.</p>
+<p>These systems typically include:</p>
+<ul>
+<li><p>API gateway components</p></li>
+<li><p>service implementations</p></li>
+<li><p>authentication and authorization layers</p></li>
+<li><p>data access components</p></li>
+</ul>
+<p>API-based architectures often serve as integration layers within larger system ecosystems.</p>
+<p><strong>Example</strong>: Payment processing API</p>
+<pre><code>Components:
+  - API Gateway (request routing)
+  - Auth Service (authentication)
+  - Payment Service (payment processing)
+  - Database (transaction storage)
+  
+Characteristics:
+  - Network-accessible interfaces
+  - Stateless request processing
+  - Independent scaling
+  - Integration-focused</code></pre>
+<p><strong>Workflow Engines</strong></p>
+<p>Workflow engines coordinate the execution of complex processes composed of multiple tasks or services.</p>
+<p>Typical architectural elements include:</p>
+<ul>
+<li><p>workflow definition engines</p></li>
+<li><p>task execution services</p></li>
+<li><p>scheduling systems</p></li>
+<li><p>state persistence mechanisms</p></li>
+</ul>
+<p>These systems emphasize orchestration and process coordination.</p>
+<p><strong>Example</strong>: Business process automation platform</p>
+<pre><code>Components:
+  - Workflow Orchestrator (coordinates processes)
+  - Scheduler (triggers workflows)
+  - Task Workers (execute tasks)
+  - Database (workflow state)
+  
+Characteristics:
+  - Process definitions
+  - Task orchestration
+  - Scheduling and retry
+  - Long-running processes</code></pre>
+<p><strong>Data Pipelines</strong></p>
+<p>Data pipeline systems process large volumes of data through staged transformations.</p>
+<p>Common components include:</p>
+<ul>
+<li><p>data ingestion systems</p></li>
+<li><p>transformation engines</p></li>
+<li><p>streaming or batch processing frameworks</p></li>
+<li><p>storage and analytics components</p></li>
+</ul>
+<p>Data pipelines organize system behavior around <strong>data flow</strong> rather than request-response interactions.</p>
+<p><strong>Example</strong>: Real-time analytics pipeline</p>
+<pre><code>Components:
+  - Ingestion Workers (collect data)
+  - Stream Processor (transform data)
+  - Message Broker (coordinate flow)
+  - Data Warehouse (store results)
+  
+Characteristics:
+  - Data ingestion
+  - Transformation stages
+  - Streaming or batch processing
+  - Analytics focus</code></pre>
+<p><strong>Agent Systems</strong></p>
+<p>Agent systems rely on autonomous or semi-autonomous agents that interpret goals, plan actions, and interact with tools or services.</p>
+<p>Typical elements include:</p>
+<ul>
+<li><p>agent controllers</p></li>
+<li><p>tool interfaces</p></li>
+<li><p>memory or context stores</p></li>
+<li><p>reasoning or planning modules</p></li>
+</ul>
+<p>Agent architectures emphasize dynamic decision-making and adaptive workflows.</p>
+<p><strong>Example</strong>: AI-powered task assistant</p>
+<pre><code>Components:
+  - Agent Controller (coordinates reasoning)
+  - LLM Engine (generates plans)
+  - Tool Executor (invokes tools)
+  - Memory Store (maintains context)
+  
+Characteristics:
+  - Autonomous decision-making
+  - Tool invocation
+  - Iterative reasoning
+  - Adaptive workflows</code></pre>
+<p><strong>Platforms</strong></p>
+<p>Platforms provide infrastructure or shared services upon which other applications are built.</p>
+<p>Platform systems typically include:</p>
+<ul>
+<li><p>service registries</p></li>
+<li><p>resource management systems</p></li>
+<li><p>extensibility mechanisms</p></li>
+<li><p>developer-facing interfaces</p></li>
+</ul>
+<p>Platforms act as <strong>foundational layers</strong> within larger software ecosystems.</p>
+<p><strong>Example</strong>: Cloud platform as a service</p>
+<pre><code>Components:
+  - Resource Manager (provisions infrastructure)
+  - Service Registry (discovers services)
+  - API Gateway (exposes platform APIs)
+  - Monitoring Service (tracks resources)
+  
+Characteristics:
+  - Infrastructure services
+  - Multi-tenant support
+  - Extension mechanisms
+  - Developer tools</code></pre>
+<p><strong>Libraries and SDKs</strong></p>
+<p>Libraries and software development kits provide reusable functionality for other systems.</p>
+<p>These systems typically consist of:</p>
+<ul>
+<li><p>packaged modules</p></li>
+<li><p>public APIs</p></li>
+<li><p>configuration interfaces</p></li>
+<li><p>integration documentation</p></li>
+</ul>
+<p>Libraries do not operate as independent systems but instead extend the capabilities of host applications.</p>
+<p><strong>Example</strong>: Machine learning library</p>
+<pre><code>Components:
+  - Model Definitions (ML architectures)
+  - Training Functions (model training)
+  - Inference Functions (model prediction)
+  - Utilities (data processing)
+  
+Characteristics:
+  - Packaged modules
+  - Public APIs
+  - No standalone execution
+  - Integration-focused</code></pre>
+<hr>
+</section>
+<section id="signature-components" class="level3" data-number="18.0.3">
+<h3 data-number="18.0.3" class="anchored" data-anchor-id="signature-components"><span class="header-section-number">18.0.3</span> Signature Components</h3>
+<p>Each system type is typically associated with a set of <strong>signature components</strong>. These components represent the structural patterns that characterize that type of system.</p>
+<p>For example:</p>
+<ul>
+<li><p>web applications often contain UI components, application services, and persistence layers</p></li>
+<li><p>data pipelines typically include ingestion components, transformation engines, and storage components</p></li>
+<li><p>workflow engines contain orchestration components and task execution units</p></li>
+</ul>
+<p>Signature components allow system types to be identified through the presence of particular structural patterns.</p>
+<p>These patterns also enable automated analysis of blueprint datasets. By detecting recurring component configurations, architecture intelligence systems can infer likely system types.</p>
+</section>
+<section id="type-classification-rules" class="level3" data-number="18.0.4">
+<h3 data-number="18.0.4" class="anchored" data-anchor-id="type-classification-rules"><span class="header-section-number">18.0.4</span> Type Classification Rules</h3>
+<p>Determining the type of a system requires explicit classification rules.</p>
+<p>A common approach is to represent system classification as a <strong>decision tree</strong> based on structural signals.</p>
+<p>These signals may include:</p>
+<ul>
+<li><p>the presence of user interfaces</p></li>
+<li><p>dominant interaction models</p></li>
+<li><p>workflow coordination mechanisms</p></li>
+<li><p>data processing pipelines</p></li>
+<li><p>agent decision loops</p></li>
+</ul>
+<p>For example:</p>
+<ul>
+<li><p>if the primary interaction model involves terminal commands, the system is likely a CLI tool</p></li>
+<li><p>if the system primarily exposes programmable interfaces for other systems, it may be classified as an API service</p></li>
+<li><p>if system behavior is organized around continuous data transformation stages, the system likely belongs to the data pipeline category</p></li>
+</ul>
+<p>Classification rules allow system types to be inferred automatically when analyzing blueprint repositories or extracting architectures from existing codebases.</p>
+<p>By combining a stable taxonomy with explicit classification rules, the ontology enables architectural structures to be organized into meaningful system categories that support large-scale analysis and reuse.</p>
+</section>
+<section id="system-type-decision-tree" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="system-type-decision-tree"><span class="header-section-number">18.1</span> System Type Decision Tree</h2>
+<section id="primary-classification-decision-tree" class="level3" data-number="18.1.1">
+<h3 data-number="18.1.1" class="anchored" data-anchor-id="primary-classification-decision-tree"><span class="header-section-number">18.1.1</span> Primary Classification Decision Tree</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                          SYSTEM TYPE DECISION TREE                                        │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                         │
+│ START                                                                                   │
+│   │                                                                                     │
+│   ├─ Does the system have a user interface?                                            │
+│   │   │                                                                                 │
+│   │   ├─ Yes → Is the UI web-based?                                                   │
+│   │   │   │                                                                             │
+│   │   │   ├─ Yes → Does the system expose programmatic APIs?                           │
+│   │   │   │   │                                                                         │
+│   │   │   │   ├─ Yes → Is it primarily for building applications?                     │
+│   │   │   │   │   │                                                                     │
+│   │   │   │   │   ├─ Yes → PLATFORM                                                  │
+│   │   │   │   │   │                                                                     │
+│   │   │   │   │   └─ No → WEB APPLICATION                                            │
+│   │   │   │   │                                                                         │
+│   │   │   │   └─ No → Is it primarily for data visualization?                         │
+│   │   │   │       │                                                                     │
+│   │   │   │       ├─ Yes → WEB APPLICATION (Analytics)                                │
+│   │   │   │       │                                                                     │
+│   │   │   │       └─ No → WEB APPLICATION (Content)                                   │
+│   │   │   │                                                                           │
+│   │   │   └─ No → Is the UI command-line based?                                      │
+│   │   │       │                                                                         │
+│   │   │       └─ Yes → CLI TOOL                                                       │
+│   │   │                                                                               │
+│   │   └─ No → Does the system expose programmatic interfaces?                        │
+│   │       │                                                                             │
+│   │       ├─ Yes → Is it primarily for data processing?                               │
+│   │       │   │                                                                         │
+│   │       │   ├─ Yes → Does it process data in stages?                                │
+│   │       │   │   │                                                                     │
+│   │       │   │   ├─ Yes → DATA PIPELINE                                              │
+│   │       │   │   │                                                                     │
+│   │       │   │   └─ No → API SERVICE (Data Processing)                              │
+│   │       │   │                                                                         │
+│   │       │   └─ No → Does it execute workflows?                                     │
+│   │       │       │                                                                     │
+│   │       │       ├─ Yes → WORKFLOW ENGINE                                           │
+│   │       │       │                                                                     │
+│   │       │       └─ No → API SERVICE                                                │
+│   │       │                                                                           │
+│   │       └─ No → Does it make autonomous decisions?                                 │
+│   │           │                                                                         │
+│   │           ├─ Yes → Does it use external tools/services?                           │
+│   │           │   │                                                                     │
+│   │           │   ├─ Yes → AGENT SYSTEM                                               │
+│   │           │   │                                                                     │
+│   │           │   └─ No → WORKFLOW ENGINE (AI)                                       │
+│   │           │                                                                       │
+│   │           └─ No → Is it a library/SDK?                                            │
+│   │               │                                                                     │
+│   │               └─ Yes → LIBRARY/SDK                                                │
+│   │                                                                               │
+│   └─ END (System Type Classified)                                                     │
+│                                                                                         │
+└─────────────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+</section>
+<section id="detailed-classification-flowchart" class="level3" data-number="18.1.2">
+<h3 data-number="18.1.2" class="anchored" data-anchor-id="detailed-classification-flowchart"><span class="header-section-number">18.1.2</span> Detailed Classification Flowchart</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                        DETAILED CLASSIFICATION FLOWCHART                                   │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                         │
+│  STEP 1: Identify Primary Interaction Model                                            │
+│  ─────────────────────────────────────────────────────────────────────────────────────  │
+│                                                                                         │
+│  Question: What is the primary way users or systems interact with this system?         │
+│                                                                                         │
+│  Options:                                                                               │
+│    • Terminal/Command Line → Go to Step 2A                                            │
+│    • Web Browser → Go to Step 2B                                                       │
+│    • API Calls → Go to Step 2C                                                         │
+│    • No direct interaction → Go to Step 2D                                             │
+│                                                                                         │
+│  ─────────────────────────────────────────────────────────────────────────────────────  │
+│                                                                                         │
+│  STEP 2A: Terminal/Command Line Interaction                                            │
+│  ─────────────────────────────────────────────────────────────────────────────────────  │
+│                                                                                         │
+│  Question: Is the system primarily a utility or developer tool?                        │
+│                                                                                         │
+│  • Yes, it's a utility tool → CLI TOOL                                                │
+│    Characteristics:                                                                    │
+│      - Command-line interface                                                          │
+│      - Short-lived execution                                                          │
+│      - File system access                                                              │
+│      - Optional remote integration                                                     │
+│                                                                                         │
+│  • No, it's more complex → Go to Step 3 (check for agent characteristics)             │
+│                                                                                         │
+│  ─────────────────────────────────────────────────────────────────────────────────────  │
+│                                                                                         │
+│  STEP 2B: Web Browser Interaction                                                      │
+│  ─────────────────────────────────────────────────────────────────────────────────────  │
+│                                                                                         │
+│  Question: Is the web interface the primary product or an admin dashboard?            │
+│                                                                                         │
+│  • Primary product → Go to Step 2B1                                                    │
+│  • Admin dashboard → Go to Step 2C (check for API focus)                               │
+│                                                                                         │
+│  STEP 2B1: Web Application Classification                                               │
+│  ─────────────────────────────────────────────────────────────────────────────────────  │
+│                                                                                         │
+│  Question: Does the system provide a platform for building applications?              │
+│                                                                                         │
+│  • Yes, enables app development → PLATFORM                                             │
+│    Characteristics:                                                                    │
+│      - Multi-tenant architecture                                                      │
+│      - Developer tools and APIs                                                        │
+│      - Application hosting                                                             │
+│      - User management                                                                │
+│                                                                                         │
+│  • No, it's an end-user application → WEB APPLICATION                                 │
+│    Characteristics:                                                                    │
+│      - Web UI components                                                              │
+│      - Application services                                                            │
+│      - Persistence layer                                                              │
+│      - RESTful APIs                                                                    │
+│                                                                                         │
+│  ─────────────────────────────────────────────────────────────────────────────────────  │
+│                                                                                         │
+│  STEP 2C: API Interaction                                                              │
+│  ─────────────────────────────────────────────────────────────────────────────────────  │
+│                                                                                         │
+│  Question: Is the primary purpose data processing?                                      │
+│                                                                                         │
+│  • Yes, processes data → Go to Step 2C1                                                │
+│  • No, provides services → Go to Step 2C2                                              │
+│                                                                                         │
+│  STEP 2C1: Data Processing Classification                                              │
+│  ─────────────────────────────────────────────────────────────────────────────────────  │
+│                                                                                         │
+│  Question: Does it process data in discrete stages?                                    │
+│                                                                                         │
+│  • Yes, multi-stage processing → DATA PIPELINE                                         │
+│    Characteristics:                                                                    │
+│      - Ingestion components                                                           │
+│      - Transformation engines                                                         │
+│      - Storage components                                                             │
+│      - Workflow orchestration                                                         │
+│                                                                                         │
+│  • No, single-stage processing → API SERVICE (Data Processing)                        │
+│    Characteristics:                                                                    │
+│      - API endpoints                                                                  │
+│      - Business logic                                                                │
+│      - Data access layer                                                             │
+│      - Caching layer                                                                  │
+│                                                                                         │
+│  STEP 2C2: Service Classification                                                       │
+│  ─────────────────────────────────────────────────────────────────────────────────────  │
+│                                                                                         │
+│  Question: Does it coordinate and execute workflows?                                    │
+│                                                                                         │
+│  • Yes, manages workflows → WORKFLOW ENGINE                                            │
+│    Characteristics:                                                                    │
+│      - Workflow definition                                                            │
+│      - Task execution                                                                │
+│      - State management                                                               │
+│      - Retry logic                                                                    │
+│                                                                                         │
+│  • No, provides specific services → API SERVICE                                       │
+│    Characteristics:                                                                    │
+│      - API endpoints                                                                  │
+│      - Business logic                                                                │
+│      - Integration with other services                                                │
+│      - Authentication/authorization                                                   │
+│                                                                                         │
+│  ─────────────────────────────────────────────────────────────────────────────────────  │
+│                                                                                         │
+│  STEP 2D: No Direct Interaction                                                        │
+│  ─────────────────────────────────────────────────────────────────────────────────────  │
+│                                                                                         │
+│  Question: Does it make autonomous decisions?                                          │
+│                                                                                         │
+│  • Yes, makes decisions → Go to Step 2D1                                               │
+│  • No, provides functionality → Go to Step 2D2                                         │
+│                                                                                         │
+│  STEP 2D1: Autonomous Decision Classification                                          │
+│  ─────────────────────────────────────────────────────────────────────────────────────  │
+│                                                                                         │
+│  Question: Does it use external tools or services?                                     │
+│                                                                                         │
+│  • Yes, uses external tools → AGENT SYSTEM                                            │
+│    Characteristics:                                                                    │
+│      - Decision engine                                                                │
+│      - Tool invocation                                                                │
+│      - Context management                                                             │
+│      - Autonomy                                                                       │
+│                                                                                         │
+│  • No, internal processing only → WORKFLOW ENGINE (AI)                                 │
+│    Characteristics:                                                                    │
+│      - AI/ML models                                                                  │
+│      - Inference processing                                                          │
+│      - Batch execution                                                               │
+│      - No external tools                                                              │
+│                                                                                         │
+│  STEP 2D2: Functionality Classification                                                 │
+│  ─────────────────────────────────────────────────────────────────────────────────────  │
+│                                                                                         │
+│  Question: Is it designed to be imported/used by other systems?                       │
+│                                                                                         │
+│  • Yes, library/framework → LIBRARY/SDK                                               │
+│    Characteristics:                                                                    │
+│      - Public API                                                                    │
+│      - No standalone execution                                                       │
+│      - Reusable components                                                           │
+│      - Documentation                                                                 │
+│                                                                                         │
+│  • No, standalone system → Re-evaluate (may have missed interaction model)            │
+│                                                                                         │
+│  ─────────────────────────────────────────────────────────────────────────────────────  │
+│                                                                                         │
+│  STEP 3: Agent System Verification (Optional)                                          │
+│  ─────────────────────────────────────────────────────────────────────────────────────  │
+│                                                                                         │
+│  If the system could be an agent, verify these characteristics:                       │
+│                                                                                         │
+│  ✓ Has a decision-making component (LLM, rule engine, etc.)                           │
+│  ✓ Can make autonomous choices without human intervention                              │
+│  ✓ Uses external tools or services to accomplish tasks                                 │
+│  ✓ Has goals or objectives                                                            │
+│  ✓ Can handle multi-step tasks                                                         │
+│                                                                                         │
+│  If all characteristics present → AGENT SYSTEM                                         │
+│  If some characteristics missing → Re-evaluate to other types                          │
+│                                                                                         │
+└─────────────────────────────────────────────────────────────────────────────────────────┘</code></pre>
+</section>
+<section id="system-type-quick-reference" class="level3" data-number="18.1.3">
+<h3 data-number="18.1.3" class="anchored" data-anchor-id="system-type-quick-reference"><span class="header-section-number">18.1.3</span> System Type Quick Reference</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                        SYSTEM TYPE QUICK REFERENCE                                        │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                         │
+│ System Type        │ Primary Interaction  │ Key Characteristics                        │
+├────────────────────┼───────────────────────┼───────────────────────────────────────────┤
+│ CLI Tools          │ Terminal/Command     │ Command-line interface, short-lived,     │
+│                    │                      │ file system access, optional remote       │
+├────────────────────┼───────────────────────┼───────────────────────────────────────────┤
+│ Web Applications   │ Web Browser          │ Web UI, app services, persistence,      │
+│                    │                      │ RESTful APIs                              │
+├────────────────────┼───────────────────────┼───────────────────────────────────────────┤
+│ APIs/Services      │ API Calls            │ API endpoints, business logic,            │
+│                    │                      │ integration layer, auth/authz            │
+├────────────────────┼───────────────────────┼───────────────────────────────────────────┤
+│ Workflow Engines   │ API/Workflow Def     │ Workflow definition, task execution,     │
+│                    │                      │ state management, retry logic             │
+├────────────────────┼───────────────────────┼───────────────────────────────────────────┤
+│ Data Pipelines     │ Event/Batch Trigger   │ Ingestion, transformation, storage,      │
+│                    │                      │ orchestration                            │
+├────────────────────┼───────────────────────┼───────────────────────────────────────────┤
+│ Agent Systems      │ Tool/Task Execution   │ Decision engine, tool invocation,         │
+│                    │                      │ context management, autonomy             │
+├────────────────────┼───────────────────────┼───────────────────────────────────────────┤
+│ Platforms          │ Web/Admin/API         │ Multi-tenant, dev tools, app hosting,    │
+│                    │                      │ user management                          │
+├────────────────────┼───────────────────────┼───────────────────────────────────────────┤
+│ Libraries/SDKs     │ Import/Usage         │ Public API, no standalone execution,      │
+│                    │                      │ reusable components, documentation        │
+└────────────────────┴───────────────────────┴───────────────────────────────────────────┘</code></pre>
+</section>
+<section id="classification-examples" class="level3" data-number="18.1.4">
+<h3 data-number="18.1.4" class="anchored" data-anchor-id="classification-examples"><span class="header-section-number">18.1.4</span> Classification Examples</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                          CLASSIFICATION EXAMPLES                                          │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                         │
+│ EXAMPLE 1: Git                                                                          │
+│                                                                                         │
+│   Step 1: Primary interaction → Terminal/Command Line                                   │
+│   Step 2A: Utility tool? → Yes                                                          │
+│   Result: CLI TOOL                                                                     │
+│                                                                                         │
+│   Verification:                                                                         │
+│     ✓ Command-line interface                                                           │
+│     ✓ Short-lived execution (git status, git commit)                                   │
+│     ✓ File system access (.git directory)                                              │
+│     ✓ Optional remote integration (git push, git pull)                                │
+│                                                                                         │
+│ EXAMPLE 2: Kubernetes                                                                  │
+│                                                                                         │
+│   Step 1: Primary interaction → API Calls (kubectl uses API)                           │
+│   Step 2C: Data processing? → No                                                        │
+│   Step 2C2: Coordinates workflows? → Yes                                                │
+│   Result: WORKFLOW ENGINE                                                               │
+│                                                                                         │
+│   Verification:                                                                         │
+│     ✓ Workflow definition (YAML manifests)                                             │
+│     ✓ Task execution (Pods, Jobs)                                                       │
+│     ✓ State management (etcd)                                                           │
+│     ✓ Retry logic (restart policies)                                                    │
+│                                                                                         │
+│ EXAMPLE 3: Apache Kafka                                                                │
+│                                                                                         │
+│   Step 1: Primary interaction → API Calls (producer/consumer APIs)                     │
+│   Step 2C: Data processing? → Yes                                                       │
+│   Step 2C1: Multi-stage? → No (single-stage streaming)                                 │
+│   Result: API SERVICE (Data Processing)                                                │
+│                                                                                         │
+│   Verification:                                                                         │
+│     ✓ API endpoints (producer/consumer)                                                │
+│     ✓ Business logic (message handling)                                                 │
+│     ✓ Data access layer (log storage)                                                   │
+│     ✓ Caching layer (page cache)                                                        │
+│                                                                                         │
+│ EXAMPLE 4: ChatGPT                                                                     │
+│                                                                                         │
+│   Step 1: Primary interaction → Web Browser / API                                       │
+│   Step 2B: Web interface primary? → Yes                                                  │
+│   Step 2B1: Platform for building apps? → No                                            │
+│   Result: WEB APPLICATION                                                               │
+│                                                                                         │
+│   Alternative View (as backend service):                                                │
+│   Step 1: Primary interaction → API Calls                                              │
+│   Step 2C: Data processing? → No                                                        │
+│   Step 2C2: Coordinates workflows? → No                                                  │
+│   Result: API SERVICE                                                                   │
+│                                                                                         │
+│   Note: Can be classified as both WEB APPLICATION (user-facing) and API SERVICE       │
+│         (backend), depending on perspective.                                            │
+│                                                                                         │
+│ EXAMPLE 5: Apache Airflow                                                              │
+│                                                                                         │
+│   Step 1: Primary interaction → Web Admin / Workflow Defs                               │
+│   Step 2C: API Calls (workflow definitions)                                             │
+│   Step 2C2: Coordinates workflows? → Yes                                                │
+│   Result: WORKFLOW ENGINE                                                               │
+│                                                                                         │
+│   Verification:                                                                         │
+│     ✓ Workflow definition (DAGs)                                                       │
+│     ✓ Task execution (operators)                                                        │
+│     ✓ State management (database)                                                       │
+│     ✓ Retry logic (task retries)                                                         │
+│                                                                                         │
+│ EXAMPLE 6: AutoGPT                                                                     │
+│                                                                                         │
+│   Step 1: Primary interaction → No direct interaction (autonomous)                     │
+│   Step 2D: Makes autonomous decisions? → Yes                                             │
+│   Step 2D1: Uses external tools? → Yes                                                  │
+│   Result: AGENT SYSTEM                                                                  │
+│                                                                                         │
+│   Verification:                                                                         │
+│     ✓ Decision-making component (LLM)                                                   │
+│     ✓ Autonomous choices without human intervention                                    │
+│     ✓ Uses external tools (file system, web search, etc.)                              │
+│     ✓ Has goals/objectives                                                              │
+│     ✓ Handles multi-step tasks                                                          │
+│                                                                                         │
+│ EXAMPLE 7: Vercel                                                                      │
+│                                                                                         │
+│   Step 1: Primary interaction → Web Browser                                            │
+│   Step 2B: Web interface primary? → Yes                                                  │
+│   Step 2B1: Platform for building apps? → Yes                                           │
+│   Result: PLATFORM                                                                      │
+│                                                                                         │
+│   Verification:                                                                         │
+│     ✓ Multi-tenant architecture                                                         │
+│     ✓ Developer tools and APIs                                                          │
+│     ✓ Application hosting                                                              │
+│     ✓ User management                                                                  │
+│                                                                                         │
+│ EXAMPLE 8: React Library                                                              │
+│                                                                                         │
+│   Step 1: Primary interaction → No direct interaction                                   │
+│   Step 2D: Makes autonomous decisions? → No                                              │
+│   Step 2D2: Imported/used by other systems? → Yes                                       │
+│   Result: LIBRARY/SDK                                                                   │
+│                                                                                         │
+│   Verification:                                                                         │
+│     ✓ Public API (React components, hooks)                                              │
+│     ✓ No standalone execution                                                          │
+│     ✓ Reusable components                                                              │
+│     ✓ Documentation                                                                    │
+│                                                                                         │
+│ EXAMPLE 9: Apache Spark                                                                │
+│                                                                                         │
+│   Step 1: Primary interaction → API Calls (Spark Context)                               │
+│   Step 2C: Data processing? → Yes                                                       │
+│   Step 2C1: Multi-stage? → Yes (map, reduce, etc.)                                      │
+│   Result: DATA PIPELINE                                                                 │
+│                                                                                         │
+│   Verification:                                                                         │
+│     ✓ Ingestion components (data sources)                                              │
+│     ✓ Transformation engines (Spark transformations)                                   │
+│     ✓ Storage components (HDFS, S3)                                                     │
+│     ✓ Workflow orchestration (DAG execution)                                            │
+│                                                                                         │
+│ EXAMPLE 10: Shopify Platform                                                           │
+│                                                                                         │
+│   Step 1: Primary interaction → Web Browser                                            │
+│   Step 2B: Web interface primary? → Yes                                                  │
+│   Step 2B1: Platform for building apps? → Yes                                           │
+│   Result: PLATFORM                                                                      │
+│                                                                                         │
+│   Verification:                                                                         │
+│     ✓ Multi-tenant architecture                                                         │
+│     ✓ Developer tools and APIs (Shopify Admin API)                                     │
+│     ✓ Application hosting (online stores)                                               │
+│     ✓ User management (merchants, customers)                                           │</code></pre>
+</section>
+<section id="edge-cases-and-hybrid-types" class="level3" data-number="18.1.5">
+<h3 data-number="18.1.5" class="anchored" data-anchor-id="edge-cases-and-hybrid-types"><span class="header-section-number">18.1.5</span> Edge Cases and Hybrid Types</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                      EDGE CASES AND HYBRID TYPES                                          │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                         │
+│ HYBRID TYPE 1: Web Application + API Service                                            │
+│                                                                                         │
+│   Example: Content Management System (WordPress)                                        │
+│                                                                                         │
+│   Classification Approach:                                                               │
+│     • Primary purpose = End-user application → WEB APPLICATION                          │
+│     • Secondary purpose = Programmatic access → API SERVICE                             │
+│                                                                                         │
+│   Recommendation: Classify as WEB APPLICATION (primary),                                │
+│                   note API SERVICE capabilities                                           │
+│                                                                                         │
+│ HYBRID TYPE 2: API Service + Workflow Engine                                           │
+│                                                                                         │
+│   Example: Jenkins CI/CD Pipeline                                                       │
+│                                                                                         │
+│   Classification Approach:                                                               │
+│     • Primary purpose = Execute workflows → WORKFLOW ENGINE                             │
+│     • Secondary purpose = Expose APIs → API SERVICE                                    │
+│                                                                                         │
+│   Recommendation: Classify as WORKFLOW ENGINE (primary),                                │
+│                   note API SERVICE capabilities                                           │
+│                                                                                         │
+│ HYBRID TYPE 3: Data Pipeline + Agent System                                            │
+│                                                                                         │
+│   Example: Intelligent Data Processing System                                           │
+│                                                                                         │
+│   Classification Approach:                                                               │
+│     • Primary purpose = Process data in stages → DATA PIPELINE                          │
+│     • Secondary purpose = Make autonomous decisions → AGENT SYSTEM                      │
+│                                                                                         │
+│   Recommendation: Classify as DATA PIPELINE (primary),                                  │
+│                   note AGENT SYSTEM capabilities                                         │
+│                                                                                         │
+│ HYBRID TYPE 4: Platform + Workflow Engine                                              │
+│                                                                                         │
+│   Example: GitHub Actions Platform                                                      │
+│                                                                                         │
+│   Classification Approach:                                                               │
+│     • Primary purpose = Enable app building → PLATFORM                                  │
+│     • Secondary purpose = Execute workflows → WORKFLOW ENGINE                           │
+│                                                                                         │
+│   Recommendation: Classify as PLATFORM (primary),                                       │
+│                   note WORKFLOW ENGINE capabilities                                      │
+│                                                                                         │
+│ EDGE CASE 1: Microservices Architecture                                                 │
+│                                                                                         │
+│   Example: E-commerce microservices platform                                            │
+│                                                                                         │
+│   Classification Approach:                                                               │
+│     • Overall system = PLATFORM (enables multiple services)                             │
+│     • Individual services = API SERVICES                                                │
+│                                                                                         │
+│   Recommendation: Classify each component independently based on its primary purpose   │
+│                                                                                         │
+│ EDGE CASE 2: Serverless Functions                                                      │
+│                                                                                         │
+│   Example: AWS Lambda function                                                         │
+│                                                                                         │
+│   Classification Approach:                                                               │
+│     • Single function = API SERVICE (exposed via HTTP)                                 │
+│     • Function collection = WORKFLOW ENGINE (orchestrated)                              │
+│                                                                                         │
+│   Recommendation: Classify based on deployment and orchestration model                 │
+│                                                                                         │
+│ EDGE CASE 3: Mobile Applications                                                       │
+│                                                                                         │
+│   Example: iOS/Android mobile app                                                       │
+│                                                                                         │
+│   Classification Approach:                                                               │
+│     • Frontend = CLIENT (not in ontology v0.1, treated as component)                  │
+│     • Backend = API SERVICE                                                             │
+│                                                                                         │
+│   Recommendation: Focus on backend classification, note frontend separately            │
+│                                                                                         │
+│ EDGE CASE 4: Desktop Applications                                                      │
+│                                                                                         │
+│   Example: Electron desktop app                                                        │
+│                                                                                         │
+│   Classification Approach:                                                               │
+│     • If desktop-only → Not covered in v0.1 (treat as WEB APPLICATION equivalent)       │
+│     • If syncs with web → WEB APPLICATION (primary interface)                           │
+│                                                                                         │
+│   Recommendation: Classify based on primary interaction model                           │</code></pre>
+</section>
+<section id="classification-best-practices" class="level3" data-number="18.1.6">
+<h3 data-number="18.1.6" class="anchored" data-anchor-id="classification-best-practices"><span class="header-section-number">18.1.6</span> Classification Best Practices</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                        CLASSIFICATION BEST PRACTICES                                     │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                         │
+│ PRACTICE 1: Focus on Primary Purpose                                                    │
+│                                                                                         │
+│   ✓ Identify the system's primary purpose and interaction model                        │
+│   ✓ Classify based on dominant characteristics                                        │
+│   ✗ Don't over-engineer classification for minor features                            │
+│                                                                                         │
+│   Example: A web app with an API is still a WEB APPLICATION (primary)                 │
+│                                                                                         │
+│ PRACTICE 2: Use Decision Tree Systematically                                            │
+│                                                                                         │
+│   ✓ Follow the decision tree step by step                                              │
+│   ✓ Answer questions based on actual system behavior                                   │
+│   ✗ Don't skip steps or make assumptions                                              │
+│                                                                                         │
+│   Example: Start with "Primary Interaction Model", not with system architecture       │
+│                                                                                         │
+│ PRACTICE 3: Verify with Characteristics                                                 │
+│                                                                                         │
+│   ✓ Check that the system has the key characteristics of its type                     │
+│   ✓ Verify at least 3-4 characteristics are present                                  │
+│   ✗ Don't classify based on single characteristic                                     │
+│                                                                                         │
+│   Example: A system with API endpoints isn't necessarily an API SERVICE              │
+│                                                                                         │
+│ PRACTICE 4: Handle Hybrid Systems Appropriately                                         │
+│                                                                                         │
+│   ✓ Identify primary vs secondary purposes                                             │
+│   ✓ Classify based on primary purpose                                                  │
+│   ✓ Note secondary capabilities in documentation                                      │
+│   ✗ Don't create new hybrid types without justification                               │
+│                                                                                         │
+│   Example: A platform with workflow capabilities is still a PLATFORM (primary)        │
+│                                                                                         │
+│ PRACTICE 5: Document Classification Rationale                                           │
+│                                                                                         │
+│   ✓ Record the decision path taken                                                     │
+│   ✓ Note any ambiguous characteristics                                                 │
+│   ✓ Provide justification for edge cases                                               │
+│   ✗ Don't classify without documentation                                               │
+│                                                                                         │
+│   Example: Document why a system was classified as X vs Y                             │
+│                                                                                         │
+│ PRACTICE 6: Re-evaluate When System Evolves                                            │
+│                                                                                         │
+│   ✓ Review classification when system architecture changes                              │
+│   ✓ Update classification if primary purpose changes                                   │
+│   ✗ Don't assume classification is permanent                                           │
+│                                                                                         │
+│   Example: A CLI tool that gains a web UI may become a WEB APPLICATION               │
+│                                                                                         │
+│ PRACTICE 7: Use Consistent Terminology                                                 │
+│                                                                                         │
+│   ✓ Use the same terms as the ontology                                                 │
+│   ✓ Avoid local terminology or abbreviations                                            │
+│   ✗ Don't create custom type names without justification                              │
+│                                                                                         │
+│   Example: Use "API SERVICE" not "REST API" or "Microservice"                         │
+│                                                                                         │
+│ PRACTICE 8: Consider Multiple Perspectives                                             │
+│                                                                                         │
+│   ✓ Consider how different users interact with the system                              │
+│   ✓ Classify based on overall system, not individual components                        │
+│   ✗ Don't let component diversity drive system classification                         │
+│                                                                                         │
+│   Example: A web app with worker processes is still a WEB APPLICATION                 │</code></pre>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../part-iii/chapter-12.html" class="pagination-link" aria-label="Interaction Models as Relation Patterns">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Interaction Models as Relation Patterns</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../part-iv/chapter-14.html" class="pagination-link" aria-label="Component Type Taxonomy (v0.1)">
+        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Component Type Taxonomy (v0.1)</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

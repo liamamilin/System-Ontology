@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>26&nbsp; Ontology Release, Governance, and Evolution – System Ontology</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../appendices/appendix-a.html" rel="next">
+<link href="../part-vi/chapter-20.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capstone/chapter-21.html">Capstone</a></li><li class="breadcrumb-item"><a href="../capstone/chapter-21.html"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Ontology Release, Governance, and Evolution</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">System Ontology</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About This Book</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Front Matter</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preface — Why Ontology Comes Second</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/reader-contract.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reader Contract</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/notation-conventions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Notation &amp; Conventions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/ontology-as-engineering-artifact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ontology as an Engineering Artifact</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I - Ontology Fundamentals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">What Ontology Is (In Engineering Terms)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Ontology Stack</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ontology Design Principles</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II - Core Entities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">System, Boundary, and Context</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Capability and Requirement Entities</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Components: The Structural Building Blocks</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Interfaces and Contracts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Entities and State</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Workflow and Execution Units</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III - Core Relations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Relation Types (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Boundaries and Coupling Relations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Interaction Models as Relation Patterns</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV - Type System</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">System Type Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Component Type Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Architecture Style Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Pattern Hooks: Making Ontology Pattern-Aware</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part V - Constraints &amp; Quality Attributes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-v/chapter-17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Quality Attributes as First-Class Entities</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-v/chapter-18.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Risk, Failure Modes, and Trust</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part VI - Mapping</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-vi/chapter-19.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Kernel Mapping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-vi/chapter-20.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Extraction Signals &amp; Mapping Rules</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Capstone</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../capstone/chapter-21.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Ontology Release, Governance, and Evolution</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Appendix A — System Ontology v0.1 (YAML / JSON Schema)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Appendix B — Entity Dictionary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-c.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Appendix C — Relation Dictionary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-d.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Appendix D — System Type Decision Tree</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Appendix E — Example Ontology Instances</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-f.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Appendix F — Glossary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-g.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Appendix G — Projection Mapping Cheat Sheet</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Epilogue — From Ontology to Blueprint Structure</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#scope-and-boundaries-of-v0.1" id="toc-scope-and-boundaries-of-v0.1" class="nav-link active" data-scroll-target="#scope-and-boundaries-of-v0.1"><span class="header-section-number">26.0.1</span> Scope and Boundaries of v0.1</a></li>
+  <li><a href="#scope-and-boundaries-examples" id="toc-scope-and-boundaries-examples" class="nav-link" data-scroll-target="#scope-and-boundaries-examples"><span class="header-section-number">26.1</span> Scope and Boundaries Examples</a>
+  <ul class="collapse">
+  <li><a href="#v0.1-core-entities-included" id="toc-v0.1-core-entities-included" class="nav-link" data-scroll-target="#v0.1-core-entities-included"><span class="header-section-number">26.1.1</span> v0.1 Core Entities (Included)</a></li>
+  <li><a href="#v0.1-core-relations-included" id="toc-v0.1-core-relations-included" class="nav-link" data-scroll-target="#v0.1-core-relations-included"><span class="header-section-number">26.1.2</span> v0.1 Core Relations (Included)</a></li>
+  <li><a href="#v0.1-exclusions-not-included" id="toc-v0.1-exclusions-not-included" class="nav-link" data-scroll-target="#v0.1-exclusions-not-included"><span class="header-section-number">26.1.3</span> v0.1 Exclusions (Not Included)</a></li>
+  </ul></li>
+  <li><a href="#versioning-strategy-examples" id="toc-versioning-strategy-examples" class="nav-link" data-scroll-target="#versioning-strategy-examples"><span class="header-section-number">26.2</span> Versioning Strategy Examples</a>
+  <ul class="collapse">
+  <li><a href="#additive-changes-minor-versions" id="toc-additive-changes-minor-versions" class="nav-link" data-scroll-target="#additive-changes-minor-versions"><span class="header-section-number">26.2.1</span> Additive Changes (Minor Versions)</a></li>
+  <li><a href="#breaking-changes-major-versions" id="toc-breaking-changes-major-versions" class="nav-link" data-scroll-target="#breaking-changes-major-versions"><span class="header-section-number">26.2.2</span> Breaking Changes (Major Versions)</a></li>
+  <li><a href="#version-numbering-scheme" id="toc-version-numbering-scheme" class="nav-link" data-scroll-target="#version-numbering-scheme"><span class="header-section-number">26.2.3</span> Version Numbering Scheme</a></li>
+  </ul></li>
+  <li><a href="#migration-examples" id="toc-migration-examples" class="nav-link" data-scroll-target="#migration-examples"><span class="header-section-number">26.3</span> Migration Examples</a>
+  <ul class="collapse">
+  <li><a href="#blueprint-pack-migration-v0.1-v0.2" id="toc-blueprint-pack-migration-v0.1-v0.2" class="nav-link" data-scroll-target="#blueprint-pack-migration-v0.1-v0.2"><span class="header-section-number">26.3.1</span> Blueprint Pack Migration (v0.1 → v0.2)</a></li>
+  <li><a href="#blueprint-pack-migration-v0.4-v1.0" id="toc-blueprint-pack-migration-v0.4-v1.0" class="nav-link" data-scroll-target="#blueprint-pack-migration-v0.4-v1.0"><span class="header-section-number">26.3.2</span> Blueprint Pack Migration (v0.4 → v1.0)</a></li>
+  <li><a href="#versioning-strategy" id="toc-versioning-strategy" class="nav-link" data-scroll-target="#versioning-strategy"><span class="header-section-number">26.3.3</span> Versioning Strategy</a></li>
+  <li><a href="#migration-of-blueprint-packs" id="toc-migration-of-blueprint-packs" class="nav-link" data-scroll-target="#migration-of-blueprint-packs"><span class="header-section-number">26.3.4</span> Migration of Blueprint Packs</a></li>
+  <li><a href="#collaborative-governance" id="toc-collaborative-governance" class="nav-link" data-scroll-target="#collaborative-governance"><span class="header-section-number">26.3.5</span> Collaborative Governance</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../capstone/chapter-21.html">Capstone</a></li><li class="breadcrumb-item"><a href="../capstone/chapter-21.html"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Ontology Release, Governance, and Evolution</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Ontology Release, Governance, and Evolution</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>An ontology intended for large-scale architectural representation must be treated as a <strong>long-lived engineering artifact</strong>. Unlike project-specific documentation, an ontology defines the shared language used across blueprint repositories, pattern libraries, and architecture datasets.</p>
+<p>For this reason, ontology development requires clear policies governing <strong>release scope, versioning strategy, migration procedures, and collaborative maintenance</strong>.</p>
+<p>Ontology v0.1 represents the first stable release of the Blueprint Architecture ontology. Its purpose is not to capture every possible architectural concept, but to establish a <strong>minimal and stable foundation</strong> upon which later extensions can be built.</p>
+<section id="scope-and-boundaries-of-v0.1" class="level3" data-number="26.0.1">
+<h3 data-number="26.0.1" class="anchored" data-anchor-id="scope-and-boundaries-of-v0.1"><span class="header-section-number">26.0.1</span> Scope and Boundaries of v0.1</h3>
+<p>Ontology v0.1 defines the minimal vocabulary required to represent system architecture using the Blueprint framework.</p>
+<p>The scope of this release includes:</p>
+<ul>
+<li><p>core architectural entities such as systems, components, interfaces, data entities, workflows, and capabilities</p></li>
+<li><p>a minimal set of structural relation types</p></li>
+<li><p>system and component type taxonomies</p></li>
+<li><p>quality attribute constraints and reliability hooks</p></li>
+<li><p>structural representations of interaction models and architectural styles</p></li>
+</ul>
+<p>These elements enable the ontology to represent the essential structure of most software systems while remaining compact and stable.</p>
+<p>Several topics are intentionally <strong>excluded</strong> from the scope of v0.1.</p>
+<p>The ontology does not attempt to define a comprehensive architectural pattern catalog. Patterns will be defined separately in the Architecture Patterns volume.</p>
+<p>Similarly, the ontology does not define the full set of blueprint composition rules or the algorithms used for automated blueprint extraction.</p>
+<p>These topics depend on the ontology but belong to later stages of the Blueprint Architecture framework.</p>
+<p>By limiting the scope of v0.1, the ontology establishes a stable conceptual core that can support future extensions without excessive complexity.</p>
+</section>
+<section id="scope-and-boundaries-examples" class="level2" data-number="26.1">
+<h2 data-number="26.1" class="anchored" data-anchor-id="scope-and-boundaries-examples"><span class="header-section-number">26.1</span> Scope and Boundaries Examples</h2>
+<section id="v0.1-core-entities-included" class="level3" data-number="26.1.1">
+<h3 data-number="26.1.1" class="anchored" data-anchor-id="v0.1-core-entities-included"><span class="header-section-number">26.1.1</span> v0.1 Core Entities (Included)</h3>
+<pre><code>System Ontology v0.1 Core Entities:
+
+1. System Entity
+   - Attributes: identifier, type, description, contains, implements
+   - Types: CLI Tools, Web Applications, APIs/Services, Workflow Engines, Data Pipelines, Agent Systems, Platforms, Libraries/SDKs
+   - Count: 8 primary system types
+
+2. Component Entity
+   - Attributes: identifier, type, description, part_of, calls, owns, implements
+   - Types:
+     * Frontend and Interface: UI/CLI, API Gateway, REST API, GraphQL API, gRPC API, Event Stream, Command Interface
+     * Compute: API Service, Business Logic Service, Integration Service, Worker, Workflow Engine, Rule Engine, ML Inference Engine
+     * Storage: Relational Database, Document Database, Key-Value Store, Object Storage, Vector Database, In-Memory Cache
+     * Coordination: Message Queue, Task Queue, Event Queue, Scheduler, Orchestrator
+     * Observability: Application Logger, Metrics Collector, Distributed Tracing
+   - Count: 25 primary component types
+
+3. Interface Entity
+   - Attributes: identifier, type, description, provided_by, operations, events
+   - Types: API Interface, Event Interface, Command Interface
+   - Count: 3 primary interface types
+
+4. Capability Entity
+   - Attributes: identifier, type, description, part_of, implemented_by, contains
+   - No fixed types - domain-specific hierarchies
+   - Count: Flexible (domain-defined)
+
+5. Data Entity
+   - Attributes: identifier, type, description, owned_by, stored_in, attributes
+   - Types: Business Entity, Technical Entity
+   - Count: 2 primary data entity types
+
+6. Workflow Entity
+   - Attributes: identifier, type, description, orchestrated_by, involves, steps
+   - Types: Pipeline, Orchestrated, Choreographed, Event-Driven
+   - Count: 4 primary workflow types
+
+7. Constraint Entity
+   - Attributes: identifier, type, description, applies_to, value, scope
+   - Types: Performance, Reliability, Security, Capacity
+   - Count: 4 primary constraint types
+
+8. Failure Mode Entity
+   - Attributes: identifier, type, description, affects, trigger, impact, detection, recovery
+   - Types: Component Failure, Network Failure, Data Failure, External Dependency Failure
+   - Count: 4 primary failure mode types
+
+9. Reliability Hook Entity
+   - Attributes: identifier, type, description, mitigates, implementation, benefits, risks
+   - Types: Retry, Idempotency, Graceful Degradation, Isolation
+   - Count: 4 primary reliability hook types
+
+10. Security Hook Entity
+    - Attributes: identifier, type, description, enforces, implementation, measures
+    - Types: Authentication, Authorization, Secret Boundaries
+    - Count: 3 primary security hook types
+
+11. Trust Boundary Entity
+    - Attributes: identifier, type, description, separates, trust_levels, controls
+    - Types: Network Boundary, Application Boundary, Data Boundary
+    - Count: 3 primary trust boundary types
+
+Total Core Entity Types: 11
+Total Specific Entity Types: 60+</code></pre>
+</section>
+<section id="v0.1-core-relations-included" class="level3" data-number="26.1.2">
+<h3 data-number="26.1.2" class="anchored" data-anchor-id="v0.1-core-relations-included"><span class="header-section-number">26.1.2</span> v0.1 Core Relations (Included)</h3>
+<pre><code>System Ontology v0.1 Core Relations:
+
+1. Structural Relations
+   - contains: Component containment (System → Component)
+   - part_of: Component composition (Component → System)
+   - owns: Data ownership (Component → Data Entity)
+   - governed_by: Constraint application (Entity → Constraint)
+
+2. Dependency Relations
+   - depends_on: Dependency declaration (Entity → Entity)
+   - calls: Invocation (Component → Component)
+   - implements: Capability implementation (Component → Capability)
+
+3. Interface Relations
+   - provides: Interface provision (Component → Interface)
+   - exposes: Capability exposure (Interface → Capability)
+   - conforms_to: Contract adherence (Interface → Constraint)
+
+4. Data Relations
+   - reads: Data read access (Component → Data Entity)
+   - writes: Data write access (Component → Data Entity)
+   - stores: Data storage (Storage → Data Entity)
+
+5. Event Relations
+   - emits: Event emission (Component → Event Interface)
+   - consumes: Event consumption (Component → Event Interface)
+   - triggers: Workflow trigger (Event Interface → Workflow)
+
+6. Workflow Relations
+   - orchestrated_by: Workflow orchestration (Workflow → Component)
+   - involves: Workflow participation (Workflow → Component)
+   - precedes: Workflow step ordering (Step → Step)
+
+7. Security Relations
+   - protects: Security protection (Security Hook → Entity)
+   - separates: Trust boundary separation (Trust Boundary → Entity)
+
+Total Core Relation Types: 21</code></pre>
+</section>
+<section id="v0.1-exclusions-not-included" class="level3" data-number="26.1.3">
+<h3 data-number="26.1.3" class="anchored" data-anchor-id="v0.1-exclusions-not-included"><span class="header-section-number">26.1.3</span> v0.1 Exclusions (Not Included)</h3>
+<pre><code>Excluded Topics (Intentionally Out of Scope):
+
+1. Comprehensive Pattern Catalog
+   - What: Detailed definitions of all architectural patterns
+   - Why: Patterns are domain-specific and numerous; would make ontology too large
+   - Alternative: Patterns defined in separate Architecture Patterns volume
+   - Examples: Circuit Breaker, CQRS, Event Sourcing, Saga, Repository
+
+2. Full Composition Rules
+   - What: Complete rules for combining blueprints
+   - Why: Composition is complex and application-specific
+   - Alternative: Composition rules defined in Blueprint Operations volume
+   - Examples: Blueprint merging, conflict resolution, constraint propagation
+
+3. Extraction Algorithms
+   - What: Detailed algorithms for blueprint extraction from code
+   - Why: Extraction is implementation-specific and evolving
+   - Alternative: Algorithms defined in Blueprint Extraction volume
+   - Examples: Signal detection, mapping rules, confidence calculation
+
+4. Deployment Specifications
+   - What: Complete deployment descriptors and infrastructure code
+   - Why: Deployment is platform-specific and operational
+   - Alternative: Deployment defined in Blueprint Operations volume
+   - Examples: Kubernetes manifests, Docker Compose, Terraform
+
+5. Performance Models
+   - What: Quantitative performance prediction models
+   - Why: Performance is system-specific and measurement-based
+   - Alternative: Performance analysis in Blueprint Operations volume
+   - Examples: Queueing theory, capacity planning, latency prediction
+
+6. Security Policies
+   - What: Detailed security policies and compliance rules
+   - Why: Security is domain-specific and regulated
+   - Alternative: Security policies in Blueprint Operations volume
+   - Examples: PCI DSS, GDPR, SOC 2 mappings
+
+7. Test Definitions
+   - What: Test cases and validation procedures
+   - Why: Testing is application-specific
+   - Alternative: Testing in Blueprint Operations volume
+   - Examples: Integration tests, contract tests, performance tests
+
+8. Domain-Specific Entities
+   - What: Entities specific to particular domains (e.g., healthcare, finance)
+   - Why: Domain entities would make ontology too large
+   - Alternative: Domain extensions as separate modules
+   - Examples: Patient, Transaction, Portfolio, Sensor
+
+Rationale for Exclusions:
+  - Maintain minimal core ontology
+  - Enable stability and compatibility
+  - Support domain-specific extensions
+  - Separate concerns across volumes
+  - Allow independent evolution of different aspects</code></pre>
+</section>
+</section>
+<section id="versioning-strategy-examples" class="level2" data-number="26.2">
+<h2 data-number="26.2" class="anchored" data-anchor-id="versioning-strategy-examples"><span class="header-section-number">26.2</span> Versioning Strategy Examples</h2>
+<section id="additive-changes-minor-versions" class="level3" data-number="26.2.1">
+<h3 data-number="26.2.1" class="anchored" data-anchor-id="additive-changes-minor-versions"><span class="header-section-number">26.2.1</span> Additive Changes (Minor Versions)</h3>
+<pre><code>Example 1: Adding New Component Type (v0.1 → v0.2)
+
+Change Type: Additive
+Version: v0.2
+Breaking: No
+
+What Changed:
+  - Added new component type: "Inference Server"
+  - Purpose: Represent ML inference servers as distinct component type
+  - Added to: Component Entity Types taxonomy
+
+Before (v0.1):
+  Component Types: API Service, Worker, Storage, Queue/Broker, Orchestrator, ...
+
+After (v0.2):
+  Component Types: API Service, Worker, Storage, Queue/Broker, Orchestrator, Inference Server, ...
+
+Impact:
+  - Existing blueprints: No impact (backward compatible)
+  - New blueprints: Can use new Inference Server type
+  - Migration: Not required
+  - Documentation: Updated component type documentation
+
+Example 2: Adding New Relation Type (v0.2 → v0.3)
+
+Change Type: Additive
+Version: v0.3
+Breaking: No
+
+What Changed:
+  - Added new relation type: "optimizes"
+  - Purpose: Represent optimization relationships between components
+  - Added to: Core Relations taxonomy
+
+Before (v0.2):
+  Relations: contains, depends_on, calls, implements, ...
+
+After (v0.3):
+  Relations: contains, depends_on, calls, implements, optimizes, ...
+
+Impact:
+  - Existing blueprints: No impact (backward compatible)
+  - New blueprints: Can use new optimizes relation
+  - Migration: Not required
+  - Documentation: Updated relations documentation
+
+Example 3: Adding New Attribute to Existing Entity (v0.3 → v0.4)
+
+Change Type: Additive
+Version: v0.4
+Breaking: No
+
+What Changed:
+  - Added optional attribute "version" to Component Entity
+  - Purpose: Track component versions
+  - Default: null if not specified
+
+Before (v0.3):
+  Component Entity Attributes:
+    - identifier
+    - type
+    - description
+    - part_of
+    - calls
+    - owns
+    - implements
+
+After (v0.4):
+  Component Entity Attributes:
+    - identifier
+    - type
+    - description
+    - part_of
+    - calls
+    - owns
+    - implements
+    - version (optional, default: null)
+
+Impact:
+  - Existing blueprints: No impact (optional attribute)
+  - New blueprints: Can specify version
+  - Migration: Not required (default value)
+  - Documentation: Updated entity documentation</code></pre>
+</section>
+<section id="breaking-changes-major-versions" class="level3" data-number="26.2.2">
+<h3 data-number="26.2.2" class="anchored" data-anchor-id="breaking-changes-major-versions"><span class="header-section-number">26.2.2</span> Breaking Changes (Major Versions)</h3>
+<pre><code>Example 1: Renaming Entity Type (v0.4 → v1.0)
+
+Change Type: Breaking
+Version: v1.0
+Breaking: Yes
+
+What Changed:
+  - Renamed "API Service" component type to "REST Service"
+  - Reason: More precise naming to distinguish from other API types
+  - Requires update to all blueprints using "API Service"
+
+Before (v0.4):
+  Component Types: API Service, Worker, Storage, ...
+
+After (v1.0):
+  Component Types: REST Service, GraphQL Service, Worker, Storage, ...
+
+Impact:
+  - Existing blueprints: Must update component type
+  - New blueprints: Use new REST Service type
+  - Migration: Required (automated or manual)
+  - Documentation: Updated component type documentation
+
+Migration Strategy:
+  1. Identify all blueprints using "API Service" type
+  2. Determine if service is REST, GraphQL, or gRPC
+  3. Update component type accordingly
+  4. Validate blueprint after migration
+  5. Provide migration script for automated conversion
+
+Migration Script:
+  ```yaml
+  # Migration Rule
+  - from_type: "API Service"
+    to_type: "REST Service"
+    condition: "has REST endpoints"
+    automated: true</code></pre>
+<p>Example 2: Changing Relation Semantics (v1.0 → v2.0)</p>
+<p>Change Type: Breaking Version: v2.0 Breaking: Yes</p>
+<p>What Changed: - Changed “depends_on” relation to include transitivity - Before: Direct dependencies only - After: Direct and indirect dependencies - Requires update to dependency analysis algorithms</p>
+<p>Before (v1.0): depends_on: Only direct dependencies Example: Service A → Service B → Service C - A depends_on B (direct) - B depends_on C (direct) - A does NOT depend_on C (indirect)</p>
+<p>After (v2.0): depends_on: Direct and indirect dependencies Example: Service A → Service B → Service C - A depends_on B (direct) - B depends_on C (direct) - A depends_on C (indirect)</p>
+<p>Impact: - Existing blueprints: May affect dependency analysis - New blueprints: Transitive dependencies included - Migration: Required for dependency analysis tools - Documentation: Updated relation semantics</p>
+<p>Migration Strategy: 1. Update dependency analysis algorithms 2. Re-calculate dependency graphs for all blueprints 3. Validate transitive dependencies 4. Provide migration guide for tool developers</p>
+<p>Example 3: Removing Deprecated Entity Type (v2.0 → v3.0)</p>
+<p>Change Type: Breaking Version: v3.0 Breaking: Yes</p>
+<p>What Changed: - Removed “Monolith” system type (deprecated) - Reason: “Monolith” is an architectural style, not a system type - Use “Web Application” with “Modular Monolith” style instead</p>
+<p>Before (v2.0): System Types: CLI Tools, Web Applications, Monolith, Microservices, …</p>
+<p>After (v3.0): System Types: CLI Tools, Web Applications, APIs/Services, … Architecture Styles: Layered, Modular Monolith, Microservices, …</p>
+<p>Impact: - Existing blueprints: Must update system type and add architecture style - New blueprints: Use Web Application + Modular Monolith style - Migration: Required (cannot be fully automated) - Documentation: Updated system type and architecture style documentation</p>
+<p>Migration Strategy: 1. Identify all blueprints using “Monolith” type 2. Update to “Web Application” system type 3. Add “Modular Monolith” architecture style 4. Validate blueprint after migration 5. Provide migration guide with examples</p>
+<p>Migration Example: ```yaml # Before (v2.0) system: type: Monolith name: EcommercePlatform</p>
+<p># After (v3.0) system: type: Web Application name: EcommercePlatform architecture_style: Modular Monolith <code></code></p>
+</section>
+<section id="version-numbering-scheme" class="level3" data-number="26.2.3">
+<h3 data-number="26.2.3" class="anchored" data-anchor-id="version-numbering-scheme"><span class="header-section-number">26.2.3</span> Version Numbering Scheme</h3>
+<pre><code>Semantic Versioning for Ontology:
+
+Format: MAJOR.MINOR.PATCH
+
+MAJOR (X.0.0):
+  - Breaking changes
+  - Incompatible API changes
+  - Removed entity types or relation types
+  - Changed entity or relation semantics
+  - Major structural reorganization
+  - Example: v1.0.0 → v2.0.0
+
+MINOR (x.Y.0):
+  - Additive changes
+  - New entity types or relation types
+  - New attributes added (optional)
+  - Backward compatible additions
+  - Example: v1.0.0 → v1.1.0
+
+PATCH (x.y.Z):
+  - Bug fixes
+  - Documentation updates
+  - Typo corrections
+  - No structural changes
+  - Example: v1.1.0 → v1.1.1
+
+Pre-release Versions:
+  - v0.1.0-alpha: Alpha release (experimental)
+  - v0.1.0-beta: Beta release (testing)
+  - v0.1.0-rc: Release candidate (stable, pending final review)
+
+Stable Releases:
+  - v0.1.0: First stable release
+  - v0.2.0: Second stable release (additive)
+  - v1.0.0: First major release (breaking changes)</code></pre>
+</section>
+</section>
+<section id="migration-examples" class="level2" data-number="26.3">
+<h2 data-number="26.3" class="anchored" data-anchor-id="migration-examples"><span class="header-section-number">26.3</span> Migration Examples</h2>
+<section id="blueprint-pack-migration-v0.1-v0.2" class="level3" data-number="26.3.1">
+<h3 data-number="26.3.1" class="anchored" data-anchor-id="blueprint-pack-migration-v0.1-v0.2"><span class="header-section-number">26.3.1</span> Blueprint Pack Migration (v0.1 → v0.2)</h3>
+<pre><code>Scenario: Migrating E-commerce Platform Blueprint from v0.1 to v0.2
+
+Original Blueprint (v0.1):
+  entities:
+    - type: System
+      identifier: EcommercePlatform
+      system_type: Web Application
+      contains: [ProductService, OrderService, PaymentService]
+
+    - type: Component
+      identifier: ProductService
+      component_type: API Service
+      implements: [ProductCatalog]
+      calls: [ProductDatabase]
+
+    - type: Component
+      identifier: OrderService
+      component_type: API Service
+      implements: [OrderManagement]
+      calls: [OrderDatabase, PaymentService]
+
+    - type: Component
+      identifier: PaymentService
+      component_type: API Service
+      implements: [PaymentProcessing]
+      calls: [ExternalPaymentGateway]
+
+    - type: Component
+      identifier: ProductDatabase
+      component_type: Storage
+      contains: [Product]
+
+    - type: Component
+      identifier: OrderDatabase
+      component_type: Storage
+      contains: [Order]
+
+Migration Changes (v0.1 → v0.2):
+  - No breaking changes in v0.2
+  - Added new component type: Inference Server
+  - No impact on existing blueprints
+  - Migration: Not required
+
+Result: Blueprint remains unchanged, compatible with v0.2</code></pre>
+</section>
+<section id="blueprint-pack-migration-v0.4-v1.0" class="level3" data-number="26.3.2">
+<h3 data-number="26.3.2" class="anchored" data-anchor-id="blueprint-pack-migration-v0.4-v1.0"><span class="header-section-number">26.3.2</span> Blueprint Pack Migration (v0.4 → v1.0)</h3>
+<pre><code>Scenario: Migrating E-commerce Platform Blueprint from v0.4 to v1.0
+
+Original Blueprint (v0.4):
+  entities:
+    - type: Component
+      identifier: ProductService
+      component_type: API Service
+      attributes:
+        - name: ProductService
+        - description: Manages product catalog
+
+Migration Changes (v0.4 → v1.0):
+  - Breaking change: "API Service" renamed to "REST Service"
+  - Migration required for all components
+
+Migration Steps:
+
+Step 1: Detection
+  - Scan blueprint for "API Service" type
+  - Found: ProductService, OrderService, PaymentService
+
+Step 2: Analysis
+  - Determine if each service is REST, GraphQL, or gRPC
+  - ProductService: Has REST endpoints (GET /products, POST /products) → REST Service
+  - OrderService: Has REST endpoints (POST /orders, GET /orders/{id}) → REST Service
+  - PaymentService: Has REST endpoints (POST /payment) → REST Service
+
+Step 3: Migration
+  - Update component_type for each service
+  - ProductService: API Service → REST Service
+  - OrderService: API Service → REST Service
+  - PaymentService: API Service → REST Service
+
+Migrated Blueprint (v1.0):
+  entities:
+    - type: Component
+      identifier: ProductService
+      component_type: REST Service
+      attributes:
+        - name: ProductService
+        - description: Manages product catalog
+
+    - type: Component
+      identifier: OrderService
+      component_type: REST Service
+      attributes:
+        - name: OrderService
+        - description: Manages orders
+
+    - type: Component
+      identifier: PaymentService
+      component_type: REST Service
+      attributes:
+        - name: PaymentService
+        - description: Processes payments
+
+Step 4: Validation
+  - Validate blueprint structure against v1.0 schema
+  - Check all component types are valid
+  - Verify all relations are intact
+  - Result: Validation successful
+
+Step 5: Deployment
+  - Deploy migrated blueprint to production
+  - Monitor for any issues
+  - Rollback if problems occur
+
+Migration Script (Automated):
+  ```python
+  def migrate_blueprint(blueprint_v0_4):
+      blueprint_v1_0 = copy.deepcopy(blueprint_v0_4)
+
+      for component in blueprint_v1_0['entities']:
+          if component['component_type'] == 'API Service':
+              # Check if it's a REST service
+              if is_rest_service(component):
+                  component['component_type'] = 'REST Service'
+              elif is_graphql_service(component):
+                  component['component_type'] = 'GraphQL Service'
+              elif is_grpc_service(component):
+                  component['component_type'] = 'gRPC Service'
+
+      return blueprint_v1_0</code></pre>
+<pre><code>
+### Projection Layer Migration
+</code></pre>
+<p>Scenario: Migrating Blueprint using Projection Layer</p>
+<p>Concept: - Original blueprint created with v0.1 ontology - Current ontology is v1.0 - Use projection layer to translate v0.1 → v1.0</p>
+<p>Projection Mapping (v0.1 → v1.0): - API Service → REST Service (if has REST endpoints) - API Service → GraphQL Service (if has GraphQL schema) - API Service → gRPC Service (if has gRPC definitions)</p>
+<p>Process:</p>
+<p>Step 1: Load v0.1 Blueprint blueprint_v0_1 = load_blueprint(‘ecommerce-platform-v0.1.yaml’)</p>
+<p>Step 2: Apply Projection Layer blueprint_v1_0 = project_to_v1_0(blueprint_v0_1)</p>
+<p>Projection Function: def project_to_v1_0(blueprint): projected = copy.deepcopy(blueprint) projected.ontology_version = ‘v1.0’</p>
+<pre><code>    for component in projected.components:
+        if component.type == 'API Service':
+            if has_rest_endpoints(component):
+                component.type = 'REST Service'
+            elif has_graphql_schema(component):
+                component.type = 'GraphQL Service'
+            elif has_grpc_definitions(component):
+                component.type = 'gRPC Service'
+
+    return projected</code></pre>
+<p>Step 3: Validate Projected Blueprint validation = validate_blueprint(blueprint_v1_0) if validation.errors: raise MigrationError(validation.errors)</p>
+<p>Step 4: Save Migrated Blueprint save_blueprint(blueprint_v1_0, ‘ecommerce-platform-v1.0.yaml’)</p>
+<p>Benefits: - No manual changes to original blueprint - Automatic translation to new version - Can switch between versions using different projections - Preserves historical accuracy</p>
+<p>Example Output: Original (v0.1): ProductService: type: API Service endpoints: [GET /products, POST /products]</p>
+<p>Projected (v1.0): ProductService: type: REST Service endpoints: [GET /products, POST /products]</p>
+<pre><code>
+## Collaborative Governance Examples
+
+### Governance Workflow
+</code></pre>
+<p>Scenario: Submitting Proposal to Add New Component Type</p>
+<p>Step 1: Proposal Submission</p>
+<p>Proposer: ML Engineer Proposal: Add “Inference Server” component type Rationale: ML inference servers are common and distinct from API services</p>
+<p>Proposal Document: ``` Title: Add Inference Server Component Type</p>
+<p>Summary: This proposal adds a new component type “Inference Server” to represent ML model inference servers that are distinct from API services.</p>
+<p>Motivation: - ML inference servers have unique characteristics: * Model loading and versioning * Batch vs.&nbsp;single prediction * GPU resource requirements * Model warmup and cold start - Current ontology cannot represent these distinctions - Growing adoption of ML in architecture</p>
+<p>Proposed Changes: - Add “Inference Server” to Component Entity Types - Add attributes: model_name, model_version, gpu_required - Add relation: serves (Inference Server → Model)</p>
+<p>Impact: - Additive change (no breaking changes) - Existing blueprints unaffected - New blueprints can use Inference Server type</p>
+<p>Examples: <code>component:       type: Inference Server       model_name: "fraud-detection"       model_version: "v2.1"       gpu_required: true</code></p>
+<p>Alternatives Considered: - Use existing “API Service” type * Pros: No ontology change needed * Cons: Cannot capture ML-specific attributes - Add as sub-type of “API Service” * Pros: Hierarchy maintained * Cons: Adds complexity, unclear benefit</p>
+<p>References: - ML Platforms volume, Chapter 3 - Real-world examples: TensorFlow Serving, TorchServe, Sagemaker ```</p>
+<p>Step 2: Initial Review</p>
+<p>Reviewer: Ontology Maintainer Decision: Move to community review Comments: - Proposal is well-motivated - Additive change aligns with ontology principles - Need more examples of use cases</p>
+<p>Step 3: Community Review</p>
+<p>Community Feedback: - <span class="citation" data-cites="MLArchitect">(<a href="../references.html#ref-MLArchitect" role="doc-biblioref"><strong>MLArchitect?</strong></a>)</span>: Strong support, needed for ML platform - <span class="citation" data-cites="BackendEngineer">(<a href="../references.html#ref-BackendEngineer" role="doc-biblioref"><strong>BackendEngineer?</strong></a>)</span>: Concern about ontology bloat - <span class="citation" data-cites="DevOpsEngineer">(<a href="../references.html#ref-DevOpsEngineer" role="doc-biblioref"><strong>DevOpsEngineer?</strong></a>)</span>: Useful for deployment planning - <span class="citation" data-cites="DataScientist">(<a href="../references.html#ref-DataScientist" role="doc-biblioref"><strong>DataScientist?</strong></a>)</span>: Would help model management</p>
+<p>Step 4: Technical Review</p>
+<p>Reviewer: Ontology Architect Evaluation: - Completeness: Proposal covers all necessary aspects - Consistency: Aligns with existing ontology structure - Compatibility: No breaking changes - Documentation: Needs more examples</p>
+<p>Required Changes: - Add more detailed examples - Document interaction with other entity types - Provide migration guide (if needed)</p>
+<p>Step 5: Revision</p>
+<p>Proposer: ML Engineer Revised Proposal: - Added 3 detailed examples (TensorFlow Serving, TorchServe, Sagemaker) - Documented relation with “Model” data entity - Added interaction with “GPU Resource” constraint</p>
+<p>Step 6: Final Review</p>
+<p>Reviewer: Ontology Maintainer Decision: Approved Version: v0.2 Release: Next minor release</p>
+<p>Step 7: Implementation</p>
+<p>Actions: - Update Component Entity Types documentation - Add Inference Server to ontology schema - Create examples in documentation - Update migration guide (no migration needed)</p>
+<p>Step 8: Release</p>
+<p>Release Notes (v0.2): ``` Added: - New component type: Inference Server - New attributes: model_name, model_version, gpu_required - New relation: serves (Inference Server → Model)</p>
+<p>Examples: - TensorFlow Serving example - TorchServe example - Sagemaker example</p>
+<p>Documentation: - Updated Component Entity Types section - Added ML component examples</p>
+<p>Migration: - No migration required (additive change) ```</p>
+<p>Step 9: Adoption</p>
+<p>Adoption Steps: - Update blueprint extraction tools - Update blueprint validation tools - Update documentation - Community training</p>
+<p>Adoption Metrics: - 15 blueprints updated within 1 month - 3 extraction tools enhanced - 2 new patterns using Inference Server - Community feedback: Positive</p>
+<pre><code>
+### Governance Structure
+</code></pre>
+<p>Ontology Governance Roles:</p>
+<p>Core Maintainers (3-5 people): Responsibilities: - Final approval of proposals - Maintaining consistency - Version releases - Long-term planning</p>
+<p>Criteria: - Deep understanding of ontology - Commitment to long-term maintenance - Track record of contributions - Balanced representation (academia, industry)</p>
+<p>Current Maintainers: - <span class="citation" data-cites="OntologyLead">(<a href="../references.html#ref-OntologyLead" role="doc-biblioref"><strong>OntologyLead?</strong></a>)</span> (Chair) - <span class="citation" data-cites="SystemsArchitect">(<a href="../references.html#ref-SystemsArchitect" role="doc-biblioref"><strong>SystemsArchitect?</strong></a>)</span> - <span class="citation" data-cites="StandardsExpert">(<a href="../references.html#ref-StandardsExpert" role="doc-biblioref"><strong>StandardsExpert?</strong></a>)</span></p>
+<p>Working Groups (5-10 people each): Purpose: Focus on specific domains</p>
+<p>Working Groups: - Core Entities Working Group - Relations Working Group - Types and Taxonomies Working Group - Constraints and Quality Attributes Working Group - ML and AI Components Working Group</p>
+<p>Contributors (Open to all): Responsibilities: - Submit proposals - Provide feedback - Write documentation - Create examples</p>
+<p>Contribution Process: 1. Submit proposal via GitHub 2. Community review 3. Working group evaluation 4. Maintainer approval 5. Implementation</p>
+<p>Steering Committee (Advisory): Purpose: Strategic direction</p>
+<p>Members: - Industry representatives - Academic researchers - Tool vendors - User community representatives</p>
+<p>Governance Process:</p>
+<ol type="1">
+<li>Proposal Submission
+<ul>
+<li>Template provided</li>
+<li>GitHub issue created</li>
+<li>Assigned to working group</li>
+</ul></li>
+<li>Working Group Review
+<ul>
+<li>Evaluate completeness</li>
+<li>Check consistency</li>
+<li>Assess impact</li>
+<li>Provide feedback</li>
+</ul></li>
+<li>Community Review
+<ul>
+<li>Open discussion</li>
+<li>Collect feedback</li>
+<li>Address concerns</li>
+<li>Iterate on proposal</li>
+</ul></li>
+<li>Technical Review
+<ul>
+<li>Core maintainers review</li>
+<li>Check alignment with principles</li>
+<li>Verify implementation</li>
+<li>Final decision</li>
+</ul></li>
+<li>Implementation
+<ul>
+<li>Create pull request</li>
+<li>Code review</li>
+<li>Documentation updates</li>
+<li>Test coverage</li>
+</ul></li>
+<li>Release
+<ul>
+<li>Version bump</li>
+<li>Release notes</li>
+<li>Migration guide</li>
+<li>Community announcement</li>
+</ul></li>
+</ol>
+<p>Decision Matrix:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 18%">
+<col style="width: 21%">
+<col style="width: 15%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Change Type</th>
+<th>Maintainers</th>
+<th>Working Group</th>
+<th>Community</th>
+<th>Timeline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Additive change</td>
+<td>Approve</td>
+<td>Review</td>
+<td>Discuss</td>
+<td>1-2 months</td>
+</tr>
+<tr class="even">
+<td>Breaking change</td>
+<td>Approve</td>
+<td>Review</td>
+<td>Discuss</td>
+<td>3-6 months</td>
+</tr>
+<tr class="odd">
+<td>Documentation</td>
+<td>Defer</td>
+<td>Review</td>
+<td>Optional</td>
+<td>1-2 weeks</td>
+</tr>
+<tr class="even">
+<td>Bug fix</td>
+<td>Approve</td>
+<td>Optional</td>
+<td>Optional</td>
+<td>1 week</td>
+</tr>
+<tr class="odd">
+<td>Emergency fix</td>
+<td>Approve</td>
+<td>Skip</td>
+<td>Skip</td>
+<td>1 day</td>
+</tr>
+</tbody>
+</table>
+<pre><code>
+### Release Process Examples
+</code></pre>
+<p>Scenario: Releasing Ontology v0.2</p>
+<p>Pre-Release Phase (4 weeks):</p>
+<p>Week 1: Feature Freeze - No new features accepted - Focus on completing current proposals - Bug fixes only</p>
+<p>Week 2: Documentation Review - Update all documentation - Review examples - Check consistency - Write release notes</p>
+<p>Week 3: Testing Phase - Test with sample blueprints - Validate schema - Test migration scripts - Performance testing</p>
+<p>Week 4: Candidate Release - Create release candidate (v0.2-rc1) - Community testing - Bug fixes - Finalize release</p>
+<p>Release Day:</p>
+<ol type="1">
+<li><p>Final Approval</p>
+<ul>
+<li>Core maintainers approve</li>
+<li>All tests passing</li>
+<li>Documentation complete</li>
+</ul></li>
+<li><p>Version Bump</p>
+<ul>
+<li>Update version to v0.2.0</li>
+<li>Update CHANGELOG</li>
+<li>Update schema</li>
+</ul></li>
+<li><p>Release Notes</p>
+<pre><code>Ontology v0.2.0 Release Notes
+
+Added:
+  - New component type: Inference Server
+  - New attributes: model_name, model_version, gpu_required
+  - New relation: serves (Inference Server → Model)
+
+Changed:
+  - Updated Component Entity Types documentation
+  - Added ML component examples
+  - Improved relation documentation
+
+Fixed:
+  - Bug: Relation validation for circular dependencies
+  - Bug: Attribute type checking for optional attributes
+
+Documentation:
+  - Added TensorFlow Serving example
+  - Added TorchServe example
+  - Added Sagemaker example
+  - Updated migration guide
+
+Migration:
+  - No migration required (additive change)
+
+Contributors:
+  - @MLArchitect (Inference Server proposal)
+  - @BackendEngineer (review)
+  - @DevOpsEngineer (examples)
+  - @OntologyLead (maintainer)
+
+Downloads:
+  - Schema: https://ontology.blueprint.io/v0.2/schema.yaml
+  - Documentation: https://ontology.blueprint.io/v0.2/docs
+  - Examples: https://ontology.blueprint.io/v0.2/examples</code></pre></li>
+<li><p>Publish Artifacts</p>
+<ul>
+<li>Upload schema to registry</li>
+<li>Publish documentation</li>
+<li>Tag release in git</li>
+<li>Announce to community</li>
+</ul></li>
+<li><p>Post-Release</p>
+<ul>
+<li>Monitor for issues</li>
+<li>Collect feedback</li>
+<li>Plan next release</li>
+<li>Start working on v0.3</li>
+</ul></li>
+</ol>
+<p>Release Metrics: - Features: 1 new component type - Bug fixes: 2 - Documentation: 15 pages - Examples: 3 - Contributors: 4 - Time in development: 8 weeks - Community testing: 2 weeks</p>
+<p>Release Celebration: - Blog post announcement - Community webinar - Contributor recognition - Roadmap update ```</p>
+</section>
+<section id="versioning-strategy" class="level3" data-number="26.3.3">
+<h3 data-number="26.3.3" class="anchored" data-anchor-id="versioning-strategy"><span class="header-section-number">26.3.3</span> Versioning Strategy</h3>
+<p>Ontology evolution must be governed by a clear versioning strategy.</p>
+<p>Changes to the ontology are categorized into two primary types: <strong>additive changes</strong> and <strong>breaking changes</strong>.</p>
+<p>Additive changes introduce new entities, relations, attributes, or taxonomy elements without altering the meaning of existing constructs. These changes expand the expressive capacity of the ontology while preserving compatibility with existing blueprint representations.</p>
+<p>Breaking changes modify the semantics or structure of existing ontology elements. Examples include renaming entity types, altering relation definitions, or changing the meaning of existing attributes.</p>
+<p>Because breaking changes may invalidate existing blueprint datasets, they should occur only in <strong>major version updates</strong> and must be accompanied by explicit migration guidance.</p>
+<p>Under this model, ontology versions evolve according to a structured release process in which minor releases introduce additive improvements while major releases introduce structural changes when necessary.</p>
+</section>
+<section id="migration-of-blueprint-packs" class="level3" data-number="26.3.4">
+<h3 data-number="26.3.4" class="anchored" data-anchor-id="migration-of-blueprint-packs"><span class="header-section-number">26.3.4</span> Migration of Blueprint Packs</h3>
+<p>As the ontology evolves, previously created blueprint representations must remain usable.</p>
+<p>Migration strategies ensure that <strong>blueprint packs created under earlier ontology versions can be upgraded to newer versions</strong> without requiring complete manual rewriting.</p>
+<p>One mechanism for supporting migration is the use of <strong>projection layers</strong>.</p>
+<p>In the Blueprint Architecture framework, specification-oriented representations are treated as projections derived from the underlying ontology model. When the ontology evolves, projection mappings can translate older blueprint structures into updated representations.</p>
+<p>For example, if a relation type is refined or replaced in a new ontology version, the projection layer can map the previous representation to the new structure during blueprint generation.</p>
+<p>This approach allows blueprint datasets to evolve gradually while preserving the historical architectural knowledge they contain.</p>
+</section>
+<section id="collaborative-governance" class="level3" data-number="26.3.5">
+<h3 data-number="26.3.5" class="anchored" data-anchor-id="collaborative-governance"><span class="header-section-number">26.3.5</span> Collaborative Governance</h3>
+<p>Because the ontology functions as a shared language across many systems and organizations, its evolution must be governed through collaborative processes.</p>
+<p>Ontology governance includes several responsibilities:</p>
+<ul>
+<li><p>maintaining consistent naming conventions</p></li>
+<li><p>reviewing proposals for new entity or relation types</p></li>
+<li><p>ensuring backward compatibility when extending the ontology</p></li>
+<li><p>documenting changes and migration procedures</p></li>
+</ul>
+<p>Effective governance often requires both a <strong>core maintainer group</strong> and contributions from a broader community of practitioners.</p>
+<p>Contributors may propose extensions or refinements based on practical architectural experience. Maintainers evaluate these proposals to ensure that new constructs align with the design principles of minimality, composability, and stability.</p>
+<p>Through this collaborative process, the ontology can evolve while preserving a <strong>coherent and shared architectural language</strong>.</p>
+<hr>
+<p>Ontology v0.1 establishes the first stable version of the Blueprint Architecture ontology. Its long-term value depends not only on its initial design but also on the governance structures that guide its evolution.</p>
+<p>By defining clear release boundaries, versioning rules, migration strategies, and collaborative maintenance processes, the ontology can remain a durable foundation for representing software architecture as structured and reusable knowledge.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../part-vi/chapter-20.html" class="pagination-link" aria-label="Ontology → Blueprint Extraction Signals &amp; Mapping Rules">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Extraction Signals &amp; Mapping Rules</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../appendices/appendix-a.html" class="pagination-link" aria-label="Appendix A — System Ontology v0.1 (YAML / JSON Schema)">
+        <span class="nav-page-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Appendix A — System Ontology v0.1 (YAML / JSON Schema)</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

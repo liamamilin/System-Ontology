@@ -1,0 +1,2662 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>25&nbsp; Ontology → Blueprint Extraction Signals &amp; Mapping Rules – System Ontology</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../capstone/chapter-21.html" rel="next">
+<link href="../part-vi/chapter-19.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part-vi/chapter-19.html">Part VI - Mapping</a></li><li class="breadcrumb-item"><a href="../part-vi/chapter-20.html"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Extraction Signals &amp; Mapping Rules</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">System Ontology</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About This Book</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Front Matter</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preface — Why Ontology Comes Second</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/reader-contract.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reader Contract</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/notation-conventions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Notation &amp; Conventions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/ontology-as-engineering-artifact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ontology as an Engineering Artifact</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I - Ontology Fundamentals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">What Ontology Is (In Engineering Terms)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Ontology Stack</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ontology Design Principles</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II - Core Entities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">System, Boundary, and Context</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Capability and Requirement Entities</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Components: The Structural Building Blocks</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Interfaces and Contracts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Entities and State</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Workflow and Execution Units</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III - Core Relations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Relation Types (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Boundaries and Coupling Relations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Interaction Models as Relation Patterns</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV - Type System</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">System Type Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Component Type Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Architecture Style Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Pattern Hooks: Making Ontology Pattern-Aware</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part V - Constraints &amp; Quality Attributes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-v/chapter-17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Quality Attributes as First-Class Entities</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-v/chapter-18.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Risk, Failure Modes, and Trust</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part VI - Mapping</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-vi/chapter-19.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Kernel Mapping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-vi/chapter-20.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Extraction Signals &amp; Mapping Rules</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Capstone</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../capstone/chapter-21.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Ontology Release, Governance, and Evolution</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Appendix A — System Ontology v0.1 (YAML / JSON Schema)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Appendix B — Entity Dictionary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-c.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Appendix C — Relation Dictionary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-d.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Appendix D — System Type Decision Tree</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Appendix E — Example Ontology Instances</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-f.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Appendix F — Glossary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-g.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Appendix G — Projection Mapping Cheat Sheet</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Epilogue — From Ontology to Blueprint Structure</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#repository-signals" id="toc-repository-signals" class="nav-link active" data-scroll-target="#repository-signals"><span class="header-section-number">25.0.1</span> Repository Signals</a></li>
+  <li><a href="#repository-signal-examples" id="toc-repository-signal-examples" class="nav-link" data-scroll-target="#repository-signal-examples"><span class="header-section-number">25.1</span> Repository Signal Examples</a>
+  <ul class="collapse">
+  <li><a href="#directory-structure-signals" id="toc-directory-structure-signals" class="nav-link" data-scroll-target="#directory-structure-signals"><span class="header-section-number">25.1.1</span> Directory Structure Signals</a></li>
+  <li><a href="#dependency-declaration-signals" id="toc-dependency-declaration-signals" class="nav-link" data-scroll-target="#dependency-declaration-signals"><span class="header-section-number">25.1.2</span> Dependency Declaration Signals</a></li>
+  <li><a href="#entry-point-signals" id="toc-entry-point-signals" class="nav-link" data-scroll-target="#entry-point-signals"><span class="header-section-number">25.1.3</span> Entry Point Signals</a></li>
+  <li><a href="#configuration-file-signals" id="toc-configuration-file-signals" class="nav-link" data-scroll-target="#configuration-file-signals"><span class="header-section-number">25.1.4</span> Configuration File Signals</a></li>
+  </ul></li>
+  <li><a href="#mapping-rule-examples" id="toc-mapping-rule-examples" class="nav-link" data-scroll-target="#mapping-rule-examples"><span class="header-section-number">25.2</span> Mapping Rule Examples</a>
+  <ul class="collapse">
+  <li><a href="#component-entity-mapping" id="toc-component-entity-mapping" class="nav-link" data-scroll-target="#component-entity-mapping"><span class="header-section-number">25.2.1</span> Component Entity Mapping</a></li>
+  <li><a href="#interface-entity-mapping" id="toc-interface-entity-mapping" class="nav-link" data-scroll-target="#interface-entity-mapping"><span class="header-section-number">25.2.2</span> Interface Entity Mapping</a></li>
+  <li><a href="#data-entity-mapping" id="toc-data-entity-mapping" class="nav-link" data-scroll-target="#data-entity-mapping"><span class="header-section-number">25.2.3</span> Data Entity Mapping</a></li>
+  <li><a href="#workflow-entity-mapping" id="toc-workflow-entity-mapping" class="nav-link" data-scroll-target="#workflow-entity-mapping"><span class="header-section-number">25.2.4</span> Workflow Entity Mapping</a></li>
+  <li><a href="#relation-entity-mapping" id="toc-relation-entity-mapping" class="nav-link" data-scroll-target="#relation-entity-mapping"><span class="header-section-number">25.2.5</span> Relation Entity Mapping</a></li>
+  <li><a href="#mapping-rules" id="toc-mapping-rules" class="nav-link" data-scroll-target="#mapping-rules"><span class="header-section-number">25.2.6</span> Mapping Rules</a></li>
+  <li><a href="#representing-ambiguity" id="toc-representing-ambiguity" class="nav-link" data-scroll-target="#representing-ambiguity"><span class="header-section-number">25.2.7</span> Representing Ambiguity</a></li>
+  </ul></li>
+  <li><a href="#ambiguity-representation-examples" id="toc-ambiguity-representation-examples" class="nav-link" data-scroll-target="#ambiguity-representation-examples"><span class="header-section-number">25.3</span> Ambiguity Representation Examples</a>
+  <ul class="collapse">
+  <li><a href="#confidence-score-examples" id="toc-confidence-score-examples" class="nav-link" data-scroll-target="#confidence-score-examples"><span class="header-section-number">25.3.1</span> Confidence Score Examples</a></li>
+  <li><a href="#evidence-recording-examples" id="toc-evidence-recording-examples" class="nav-link" data-scroll-target="#evidence-recording-examples"><span class="header-section-number">25.3.2</span> Evidence Recording Examples</a></li>
+  </ul></li>
+  <li><a href="#human-in-the-loop-review-examples" id="toc-human-in-the-loop-review-examples" class="nav-link" data-scroll-target="#human-in-the-loop-review-examples"><span class="header-section-number">25.4</span> Human-in-the-Loop Review Examples</a>
+  <ul class="collapse">
+  <li><a href="#review-workflow-example" id="toc-review-workflow-example" class="nav-link" data-scroll-target="#review-workflow-example"><span class="header-section-number">25.4.1</span> Review Workflow Example</a></li>
+  <li><a href="#review-interface-example" id="toc-review-interface-example" class="nav-link" data-scroll-target="#review-interface-example"><span class="header-section-number">25.4.2</span> Review Interface Example</a></li>
+  <li><a href="#review-decision-examples" id="toc-review-decision-examples" class="nav-link" data-scroll-target="#review-decision-examples"><span class="header-section-number">25.4.3</span> Review Decision Examples</a></li>
+  </ul></li>
+  <li><a href="#end-to-end-extraction-example" id="toc-end-to-end-extraction-example" class="nav-link" data-scroll-target="#end-to-end-extraction-example"><span class="header-section-number">25.5</span> End-to-End Extraction Example</a>
+  <ul class="collapse">
+  <li><a href="#complete-extraction-workflow" id="toc-complete-extraction-workflow" class="nav-link" data-scroll-target="#complete-extraction-workflow"><span class="header-section-number">25.5.1</span> Complete Extraction Workflow</a></li>
+  <li><a href="#extraction-summary-statistics" id="toc-extraction-summary-statistics" class="nav-link" data-scroll-target="#extraction-summary-statistics"><span class="header-section-number">25.5.2</span> Extraction Summary Statistics</a></li>
+  <li><a href="#human-in-the-loop-review" id="toc-human-in-the-loop-review" class="nav-link" data-scroll-target="#human-in-the-loop-review"><span class="header-section-number">25.5.3</span> Human-in-the-Loop Review</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part-vi/chapter-19.html">Part VI - Mapping</a></li><li class="breadcrumb-item"><a href="../part-vi/chapter-20.html"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Extraction Signals &amp; Mapping Rules</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Extraction Signals &amp; Mapping Rules</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The ontology defines the conceptual language used to describe system architecture. However, for blueprint datasets to be constructed at scale, architectural representations must often be derived from <strong>existing software systems</strong> rather than written manually.</p>
+<p>Blueprint extraction addresses this problem. It refers to the process of <strong>inferring ontology entities and relations from observable signals in software repositories and system artifacts</strong>.</p>
+<p>Extraction does not attempt to perfectly reconstruct architecture from code. Instead, it produces a <strong>structured architectural hypothesis</strong> that can be refined through automated analysis and human review.</p>
+<p>This section defines the signals used for extraction, the mapping rules that translate those signals into ontology structures, and the mechanisms used to handle uncertainty.</p>
+<section id="repository-signals" class="level3" data-number="25.0.1">
+<h3 data-number="25.0.1" class="anchored" data-anchor-id="repository-signals"><span class="header-section-number">25.0.1</span> Repository Signals</h3>
+<p>Software repositories contain a variety of signals that reflect architectural structure. These signals can be analyzed to infer components, interfaces, workflows, and other ontology entities.</p>
+<p>Several categories of repository signals are particularly informative.</p>
+<p><strong>Directory structure</strong></p>
+<p>The organization of directories often reflects architectural boundaries. For example, directories may correspond to modules, services, or subsystems.</p>
+<p>Directories containing source code, configuration files, or build definitions frequently indicate <strong>component boundaries</strong>.</p>
+<p><strong>Dependency declarations</strong></p>
+<p>Dependency files describe the libraries and services used by a system. Examples include package manifests, build configurations, and module dependency definitions.</p>
+<p>These declarations can reveal relationships between components and identify external dependencies.</p>
+<p><strong>Entry points</strong></p>
+<p>Executable entry points indicate where system execution begins. Examples include application start scripts, service launch commands, and workflow definitions.</p>
+<p>Entry points often correspond to <strong>service components, worker processes, or command-line interfaces</strong>.</p>
+<p><strong>Configuration files</strong></p>
+<p>Configuration files frequently contain references to system infrastructure such as message queues, databases, or external services.</p>
+<p>These references provide signals about storage components, messaging systems, and runtime dependencies.</p>
+<p><strong>Deployment descriptors</strong></p>
+<p>Deployment configurations, container definitions, or infrastructure manifests reveal how components are instantiated and connected in runtime environments.</p>
+<p>These artifacts provide signals about service boundaries, runtime topology, and scaling units.</p>
+<p>Together, these repository signals form the observable evidence from which blueprint extraction algorithms infer system structure.</p>
+</section>
+<section id="repository-signal-examples" class="level2" data-number="25.1">
+<h2 data-number="25.1" class="anchored" data-anchor-id="repository-signal-examples"><span class="header-section-number">25.1</span> Repository Signal Examples</h2>
+<section id="directory-structure-signals" class="level3" data-number="25.1.1">
+<h3 data-number="25.1.1" class="anchored" data-anchor-id="directory-structure-signals"><span class="header-section-number">25.1.1</span> Directory Structure Signals</h3>
+<pre><code>Example 1: Monolithic Web Application
+
+Repository Structure:
+  myapp/
+  ├── src/
+  │   ├── main/
+  │   │   ├── java/
+  │   │   │   ├── com/myapp/
+  │   │   │   │   ├── controller/
+  │   │   │   │   │   ├── UserController.java
+  │   │   │   │   │   ├── ProductController.java
+  │   │   │   │   │   └── OrderController.java
+  │   │   │   │   ├── service/
+  │   │   │   │   │   ├── UserService.java
+  │   │   │   │   │   ├── ProductService.java
+  │   │   │   │   │   └── OrderService.java
+  │   │   │   │   └── repository/
+  │   │   │   │       ├── UserRepository.java
+  │   │   │   │       ├── ProductRepository.java
+  │   │   │   │       └── OrderRepository.java
+  │   │   ├── resources/
+  │   │   │   ├── application.properties
+  │   │   │   └── application.yml
+  │   │   └── webapp/
+  │   │       └── WEB-INF/
+  │   │           └── web.xml
+  │   └── test/
+  └── pom.xml
+
+Signals Detected:
+  - controller/ directory → API endpoints → Interface entities
+  - service/ directory → Business logic → Component entities
+  - repository/ directory → Data access → Component entities
+  - resources/ directory → Configuration → Constraint entities
+  - pom.xml → Build definition → System entity
+
+Architectural Inference:
+  - Layered architecture (controller → service → repository)
+  - Single component (monolith)
+  - Java Spring Framework
+  - Maven build system
+
+Example 2: Microservices Architecture
+
+Repository Structure:
+  ecommerce-platform/
+  ├── services/
+  │   ├── product-service/
+  │   │   ├── src/
+  │   │   │   ├── main/
+  │   │   │   │   ├── java/ProductServiceApplication.java
+  │   │   │   │   └── resources/application.yml
+  │   │   └── pom.xml
+  │   ├── order-service/
+  │   │   ├── src/
+  │   │   │   ├── main/
+  │   │   │   │   ├── java/OrderServiceApplication.java
+  │   │   │   │   └── resources/application.yml
+  │   │   └── pom.xml
+  │   ├── payment-service/
+  │   │   ├── src/
+  │   │   │   ├── main/
+  │   │   │   │   ├── java/PaymentServiceApplication.java
+  │   │   │   │   └── resources/application.yml
+  │   │   └── pom.xml
+  │   └── user-service/
+  │       ├── src/
+  │       │   ├── main/
+  │       │   │   ├── java/UserServiceApplication.java
+  │       │   │   └── resources/application.yml
+  │       └── pom.xml
+  ├── shared/
+  │   └── common/
+  │       └── src/
+  │           └── main/
+  │               └── java/
+  │                   └── com/common/
+  │                       ├── dto/
+  │                       └── exceptions/
+  └── docker-compose.yml
+
+Signals Detected:
+  - services/ directory → Service components
+  - Each service/ subdirectory → Independent component
+  - Application.java in each → Service entry points
+  - application.yml in each → Service configuration
+  - shared/common/ → Shared library
+  - docker-compose.yml → Deployment orchestration
+
+Architectural Inference:
+  - Microservices architecture
+  - 4 independent service components
+  - Shared common library
+  - Docker-based deployment
+  - Each service has its own configuration
+
+Example 3: Data Pipeline
+
+Repository Structure:
+  data-pipeline/
+  ├── ingestion/
+  │   ├── src/
+  │   │   ├── main.py
+  │   │   ├── ingest_kafka.py
+  │   │   └── ingest_api.py
+  │   └── requirements.txt
+  ├── transformation/
+  │   ├── src/
+  │   │   ├── transform.py
+  │   │   ├── clean.py
+  │   │   └── enrich.py
+  │   └── requirements.txt
+  ├── analysis/
+  │   ├── src/
+  │   │   ├── analyze.py
+  │   │   └── models.py
+  │   └── requirements.txt
+  ├── deployment/
+  │   ├── Dockerfile
+  │   └── kubernetes/
+  │       ├── ingestion-job.yaml
+  │       ├── transformation-job.yaml
+  │       └── analysis-job.yaml
+  ├── config/
+  │   ├── pipeline.yaml
+  │   └── settings.yaml
+  └── tests/
+
+Signals Detected:
+  - ingestion/ directory → Data ingestion component
+  - transformation/ directory → Data transformation component
+  - analysis/ directory → Data analysis component
+  - deployment/kubernetes/ → Deployment definitions
+  - config/pipeline.yaml → Pipeline configuration
+  - main.py files → Entry points
+
+Architectural Inference:
+  - Pipeline architecture
+  - 3 processing stages (ingestion, transformation, analysis)
+  - Kubernetes deployment
+  - Python-based implementation
+  - Configurable pipeline workflow</code></pre>
+</section>
+<section id="dependency-declaration-signals" class="level3" data-number="25.1.2">
+<h3 data-number="25.1.2" class="anchored" data-anchor-id="dependency-declaration-signals"><span class="header-section-number">25.1.2</span> Dependency Declaration Signals</h3>
+<pre><code>Example 1: Node.js Application (package.json)
+
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "mongoose": "^7.0.0",
+    "redis": "^4.6.0",
+    "axios": "^1.4.0",
+    "jsonwebtoken": "^9.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "eslint": "^8.0.0"
+  }
+}
+
+Signals Detected:
+  - express → Web framework → API Service component
+  - mongoose → MongoDB driver → Storage component
+  - redis → Redis client → Queue/Cache component
+  - axios → HTTP client → External API calls
+  - jsonwebtoken → Authentication → Security hooks
+
+Architectural Inference:
+  - Node.js web application
+  - Uses Express framework
+  - MongoDB database
+  - Redis for caching/queuing
+  - External API integration
+  - JWT authentication
+
+Example 2: Java Spring Boot (pom.xml)
+
+&lt;dependencies&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+  &lt;/dependency&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;
+  &lt;/dependency&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.postgresql&lt;/groupId&gt;
+    &lt;artifactId&gt;postgresql&lt;/artifactId&gt;
+  &lt;/dependency&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.kafka&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-kafka&lt;/artifactId&gt;
+  &lt;/dependency&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-cloud-starter-openfeign&lt;/artifactId&gt;
+  &lt;/dependency&gt;
+&lt;/dependencies&gt;
+
+Signals Detected:
+  - spring-boot-starter-web → Web framework → API Service component
+  - spring-boot-starter-data-jpa → ORM → Data access layer
+  - postgresql → PostgreSQL driver → Storage component
+  - spring-kafka → Kafka client → Queue/Event component
+  - spring-cloud-starter-openfeign → HTTP client → External API calls
+
+Architectural Inference:
+  - Java Spring Boot application
+  - JPA for data access
+  - PostgreSQL database
+  - Kafka for messaging
+  - Feign for external API calls
+  - RESTful API service
+
+Example 3: Python Data Science (requirements.txt)
+
+pandas==2.0.0
+numpy==1.24.0
+scikit-learn==1.2.0
+tensorflow==2.13.0
+apache-airflow==2.6.0
+psycopg2-binary==2.9.0
+redis==4.5.0
+celery==5.3.0
+
+Signals Detected:
+  - pandas, numpy → Data processing → Data transformation component
+  - scikit-learn, tensorflow → ML models → Analysis component
+  - apache-airflow → Workflow orchestration → Workflow component
+  - psycopg2-binary → PostgreSQL driver → Storage component
+  - redis, celery → Task queue → Coordination component
+
+Architectural Inference:
+  - Python data science application
+  - Machine learning models
+  - Airflow for workflow orchestration
+  - PostgreSQL database
+  - Redis + Celery for task queuing
+  - Batch processing architecture</code></pre>
+</section>
+<section id="entry-point-signals" class="level3" data-number="25.1.3">
+<h3 data-number="25.1.3" class="anchored" data-anchor-id="entry-point-signals"><span class="header-section-number">25.1.3</span> Entry Point Signals</h3>
+<pre><code>Example 1: Node.js Application (index.js)
+
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get('/api/health', (req, res) =&gt; {
+  res.json({ status: 'ok' });
+});
+
+app.listen(PORT, () =&gt; {
+  console.log(`Server running on port ${PORT}`);
+});
+
+Signals Detected:
+  - app.listen() → HTTP server → API Service component
+  - app.get() → API endpoint → Interface entity
+  - PORT environment variable → Configuration → Constraint entity
+
+Architectural Inference:
+  - Express HTTP server
+  - RESTful API
+  - Port 3000 (default)
+  - Single service component
+
+Example 2: Java Spring Boot (Application.java)
+
+@SpringBootApplication
+@EnableKafka
+@EnableFeignClients
+public class PaymentServiceApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(PaymentServiceApplication.class, args);
+    }
+}
+
+Signals Detected:
+  - @SpringBootApplication → Spring Boot application → API Service component
+  - @EnableKafka → Kafka enabled → Event component
+  - @EnableFeignClients → Feign clients → External API integration
+
+Architectural Inference:
+  - Spring Boot payment service
+  - Kafka event processing
+  - External API calls via Feign
+  - Service-oriented architecture
+
+Example 3: Python Worker (worker.py)
+
+from celery import Celery
+import redis
+
+app = Celery('tasks', broker='redis://localhost:6379/0')
+
+@app.task
+def process_data(data):
+    # Process data
+    result = analyze(data)
+    return result
+
+if __name__ == '__main__':
+    app.worker_main(['worker', '--loglevel=info'])
+
+Signals Detected:
+  - Celery worker → Background worker → Worker component
+  - Redis broker → Queue component
+  - @app.task → Task definition → Workflow entity
+
+Architectural Inference:
+  - Celery background worker
+  - Redis message broker
+  - Asynchronous task processing
+  - Distributed system</code></pre>
+</section>
+<section id="configuration-file-signals" class="level3" data-number="25.1.4">
+<h3 data-number="25.1.4" class="anchored" data-anchor-id="configuration-file-signals"><span class="header-section-number">25.1.4</span> Configuration File Signals</h3>
+<pre><code>Example 1: Spring Boot (application.yml)
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mydb
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  kafka:
+    bootstrap-servers: ${KAFKA_SERVERS:localhost:9092}
+    topics:
+      input: data-input
+      output: data-output
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+
+server:
+  port: ${SERVER_PORT:8080}
+
+Signals Detected:
+  - datasource → Database connection → Storage component
+  - kafka → Kafka configuration → Queue/Event component
+  - redis → Redis configuration → Cache/Queue component
+  - server.port → Server port → Interface entity
+
+Architectural Inference:
+  - PostgreSQL database
+  - Kafka messaging
+  - Redis caching
+  - RESTful API on port 8080
+  - Externalized configuration
+
+Example 2: Docker Compose (docker-compose.yml)
+
+version: '3.8'
+services:
+  api:
+    build: ./api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+      - redis
+    environment:
+      - DB_HOST=db
+      - REDIS_HOST=redis
+
+  worker:
+    build: ./worker
+    depends_on:
+      - redis
+    environment:
+      - REDIS_HOST=redis
+
+  db:
+    image: postgres:14
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+
+volumes:
+  pgdata:
+
+Signals Detected:
+  - api service → API component
+  - worker service → Worker component
+  - db service → Storage component
+  - redis service → Queue/Cache component
+  - depends_on → Service dependencies → Relation entities
+  - ports → Network interfaces → Interface entities
+
+Architectural Inference:
+  - Microservices architecture
+  - API + Worker components
+  - PostgreSQL database
+  - Redis queue/cache
+  - Docker-based deployment
+  - Service dependencies
+
+Example 3: Kubernetes Deployment (deployment.yaml)
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: analytics-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: analytics-service
+  template:
+    spec:
+      containers:
+      - name: analytics-service
+        image: analytics-service:1.0
+        ports:
+        - containerPort: 8080
+        env:
+        - name: KAFKA_SERVERS
+          value: "kafka:9092"
+        - name: DB_HOST
+          value: "postgres:5432"
+
+Signals Detected:
+  - Deployment → Service deployment → Component entity
+  - replicas: 3 → Scaling configuration → Constraint entity
+  - containerPort: 8080 → Service port → Interface entity
+  - KAFKA_SERVERS, DB_HOST → Dependencies → Relation entities
+
+Architectural Inference:
+  - Kubernetes deployment
+  - 3 replicas (horizontal scaling)
+  - Analytics service
+  - Kafka integration
+  - PostgreSQL database
+  - Port 8080</code></pre>
+</section>
+</section>
+<section id="mapping-rule-examples" class="level2" data-number="25.2">
+<h2 data-number="25.2" class="anchored" data-anchor-id="mapping-rule-examples"><span class="header-section-number">25.2</span> Mapping Rule Examples</h2>
+<section id="component-entity-mapping" class="level3" data-number="25.2.1">
+<h3 data-number="25.2.1" class="anchored" data-anchor-id="component-entity-mapping"><span class="header-section-number">25.2.1</span> Component Entity Mapping</h3>
+<pre><code>Rule 1: Service Component Detection
+
+Signals Required:
+  - Entry point file (e.g., Application.java, index.js, main.py)
+  - HTTP server configuration (e.g., app.listen, @SpringBootApplication)
+  - API endpoint definitions (e.g., app.get, @RequestMapping)
+
+Confidence: High (0.9)
+
+Evidence:
+  - File: src/main/java/PaymentServiceApplication.java
+  - Pattern: @SpringBootApplication
+  - Pattern: SpringApplication.run()
+
+Mapping:
+  Entity: PaymentService
+  Type: API Service
+  Attributes:
+    - identifier: "PaymentService"
+    - language: "Java"
+    - framework: "Spring Boot"
+  Relations:
+    - implements: ["PaymentProcessing"]
+    - provides: ["PaymentAPI"]
+
+Rule 2: Worker Component Detection
+
+Signals Required:
+  - Worker entry point (e.g., worker.py, Worker.java)
+  - Queue/Message broker dependency (e.g., Celery, Kafka client)
+  - Task/job definitions (e.g., @app.task, @Scheduled)
+
+Confidence: High (0.85)
+
+Evidence:
+  - File: src/main/java/DataProcessorWorker.java
+  - Dependency: spring-kafka
+  - Pattern: @KafkaListener
+
+Mapping:
+  Entity: DataProcessorWorker
+  Type: Worker
+  Attributes:
+    - identifier: "DataProcessorWorker"
+    - language: "Java"
+    - framework: "Spring Kafka"
+  Relations:
+    - consumes: ["DataEvents"]
+    - processes: ["DataTransformation"]
+
+Rule 3: Storage Component Detection
+
+Signals Required:
+  - Database driver dependency (e.g., postgresql, mongoose)
+  - Database configuration (e.g., datasource, MONGODB_URI)
+  - Repository/Data access classes (e.g., @Repository, .repository/)
+
+Confidence: High (0.9)
+
+Evidence:
+  - Dependency: postgresql
+  - Configuration: spring.datasource.url=jdbc:postgresql://...
+  - Directory: src/main/java/com/myapp/repository/
+
+Mapping:
+  Entity: ProductDatabase
+  Type: Storage
+  Attributes:
+    - identifier: "ProductDatabase"
+    - databaseType: "PostgreSQL"
+  Relations:
+    - contains: ["Product", "ProductCategory"]
+    - accessed_by: ["ProductService"]
+
+Rule 4: Queue/Broker Component Detection
+
+Signals Required:
+  - Message broker dependency (e.g., kafka, redis-rabbitmq)
+  - Queue/topic configuration (e.g., spring.kafka, QUEUE_URL)
+  - Producer/consumer annotations (e.g., @KafkaListener, @RabbitListener)
+
+Confidence: High (0.9)
+
+Evidence:
+  - Dependency: spring-kafka
+  - Configuration: spring.kafka.bootstrap-servers=kafka:9092
+  - Pattern: @KafkaListener(topics = "data-input")
+
+Mapping:
+  Entity: MessageQueue
+  Type: Queue/Broker
+  Attributes:
+    - identifier: "MessageQueue"
+    - brokerType: "Kafka"
+  Relations:
+    - contains: ["DataEvents", "TransformedEvents"]</code></pre>
+</section>
+<section id="interface-entity-mapping" class="level3" data-number="25.2.2">
+<h3 data-number="25.2.2" class="anchored" data-anchor-id="interface-entity-mapping"><span class="header-section-number">25.2.2</span> Interface Entity Mapping</h3>
+<pre><code>Rule 5: REST API Interface Detection
+
+Signals Required:
+  - HTTP routing configuration (e.g., app.get, @RequestMapping)
+  - API endpoint definitions (e.g., /api/products, /users/{id})
+  - Controller classes (e.g., @RestController, @Controller)
+
+Confidence: High (0.95)
+
+Evidence:
+  - File: src/main/java/com/myapp/controller/ProductController.java
+  - Pattern: @RestController
+  - Pattern: @GetMapping("/api/products")
+  - Pattern: @PostMapping("/api/products")
+
+Mapping:
+  Entity: ProductAPI
+  Type: API Interface
+  Attributes:
+    - identifier: "ProductAPI"
+    - protocol: "HTTP/REST"
+    - endpoints: ["/api/products", "/api/products/{id}"]
+  Relations:
+    - provided_by: ["ProductService"]
+    - exposes: ["ProductCatalog"]
+
+Rule 6: Event Interface Detection
+
+Signals Required:
+  - Event producer/consumer configuration (e.g., @KafkaListener, @KafkaTemplate)
+  - Topic/queue names (e.g., spring.kafka.topics.input)
+  - Event message definitions (e.g., @Data class, POJOs)
+
+Confidence: Medium (0.8)
+
+Evidence:
+  - Configuration: spring.kafka.topics.input=data-input
+  - Pattern: @KafkaListener(topics = "data-input")
+  - Class: DataEvent.java
+
+Mapping:
+  Entity: DataInputEvent
+  Type: Event Interface
+  Attributes:
+    - identifier: "DataInputEvent"
+    - topic: "data-input"
+    - format: "JSON"
+  Relations:
+    - emitted_by: ["DataIngestionService"]
+    - consumed_by: ["DataTransformationService"]
+
+Rule 7: Command Interface Detection
+
+Signals Required:
+  - CLI framework (e.g., commander, argparse)
+  - Command definitions (e.g., program.command, @Command)
+  - Entry point file with command parsing
+
+Confidence: High (0.9)
+
+Evidence:
+  - File: src/main/java/com/myapp/cli/DataExportCommand.java
+  - Dependency: picocli
+  - Pattern: @Command(name = "export")
+
+Mapping:
+  Entity: DataExportCommand
+  Type: Command Interface
+  Attributes:
+    - identifier: "DataExportCommand"
+    - command: "export"
+    - framework: "Picocli"
+  Relations:
+    - provided_by: ["DataExportService"]
+    - triggers: ["DataExportWorkflow"]</code></pre>
+</section>
+<section id="data-entity-mapping" class="level3" data-number="25.2.3">
+<h3 data-number="25.2.3" class="anchored" data-anchor-id="data-entity-mapping"><span class="header-section-number">25.2.3</span> Data Entity Mapping</h3>
+<pre><code>Rule 8: Business Entity Detection
+
+Signals Required:
+  - Entity/Model classes (e.g., @Entity, @Data)
+  - Repository interfaces (e.g., UserRepository)
+  - Database schema definitions (e.g., CREATE TABLE)
+
+Confidence: High (0.9)
+
+Evidence:
+  - File: src/main/java/com/myapp/entity/Product.java
+  - Pattern: @Entity
+  - Pattern: @Table(name = "products")
+  - Repository: ProductRepository.java
+
+Mapping:
+  Entity: Product
+  Type: Business Entity
+  Attributes:
+    - identifier: "Product"
+    - tableName: "products"
+    - fields: [productId, name, price, inventory]
+  Relations:
+    - owned_by: ["ProductService"]
+    - stored_in: ["ProductDatabase"]
+
+Rule 9: Technical Entity Detection
+
+Signals Required:
+  - DTO classes (e.g., @Data, @Value)
+  - Configuration classes (e.g., @Configuration)
+  - Cache keys, session objects
+
+Confidence: Medium (0.75)
+
+Evidence:
+  - File: src/main/java/com/myapp/dto/ProductDTO.java
+  - Pattern: @Data
+  - Usage: Passed between services
+
+Mapping:
+  Entity: ProductDTO
+  Type: Technical Entity
+  Attributes:
+    - identifier: "ProductDTO"
+    - purpose: "Data transfer"
+  Relations:
+    - used_by: ["ProductService", "OrderService"]</code></pre>
+</section>
+<section id="workflow-entity-mapping" class="level3" data-number="25.2.4">
+<h3 data-number="25.2.4" class="anchored" data-anchor-id="workflow-entity-mapping"><span class="header-section-number">25.2.4</span> Workflow Entity Mapping</h3>
+<pre><code>Rule 10: Workflow Detection (Pipeline)
+
+Signals Required:
+  - Pipeline configuration files (e.g., .github/workflows, Airflow DAG)
+  - Task/job definitions (e.g., @task, job:)
+  - Workflow orchestration dependency (e.g., apache-airflow)
+
+Confidence: High (0.9)
+
+Evidence:
+  - File: dags/data_processing_dag.py
+  - Dependency: apache-airflow
+  - Pattern: @dag(task_ids=["ingest", "transform", "analyze"])
+
+Mapping:
+  Entity: DataProcessingWorkflow
+  Type: Workflow
+  Attributes:
+    - identifier: "DataProcessingWorkflow"
+    - steps: ["ingest", "transform", "analyze"]
+  Relations:
+    - orchestrated_by: ["Airflow"]
+    - involves: ["DataIngestionService", "DataTransformationService", "DataAnalysisService"]
+
+Rule 11: Workflow Detection (Event-Driven)
+
+Signals Required:
+  - Event producer/consumer chains
+  - Event topic dependencies
+  - Event handler methods (e.g., @KafkaListener, @EventListener)
+
+Confidence: Medium (0.8)
+
+Evidence:
+  - Chain: DataIngestionService → MessageQueue → DataTransformationService
+  - Topics: data-input → data-output
+  - Pattern: @KafkaListener(topics = "data-input")
+
+Mapping:
+  Entity: EventDrivenDataFlow
+  Type: Workflow
+  Attributes:
+    - identifier: "EventDrivenDataFlow"
+    - trigger: "DataReceived event"
+  Relations:
+    - involves: ["DataIngestionService", "DataTransformationService"]
+    - uses: ["MessageQueue"]</code></pre>
+</section>
+<section id="relation-entity-mapping" class="level3" data-number="25.2.5">
+<h3 data-number="25.2.5" class="anchored" data-anchor-id="relation-entity-mapping"><span class="header-section-number">25.2.5</span> Relation Entity Mapping</h3>
+<pre><code>Rule 12: Dependency Relation Detection
+
+Signals Required:
+  - Dependency declarations (e.g., package.json, pom.xml)
+  - Import statements (e.g., import, require)
+  - Constructor injection (e.g., @Autowired, constructor parameters)
+
+Confidence: High (0.9)
+
+Evidence:
+  - Dependency: spring-boot-starter-data-jpa
+  - Import: import org.springframework.data.jpa.repository.JpaRepository
+  - Pattern: @Autowired private ProductRepository repository;
+
+Mapping:
+  Relation: depends_on
+  From: ProductService
+  To: ProductRepository
+  Attributes:
+    - type: "depends_on"
+    - strength: "strong"
+  Evidence:
+    - Dependency: spring-boot-starter-data-jpa
+    - Code: @Autowired ProductRepository
+
+Rule 13: Invocation Relation Detection
+
+Signals Required:
+  - Method calls between components
+  - HTTP client usage (e.g., axios, RestTemplate)
+  - Remote service calls (e.g., @FeignClient)
+
+Confidence: High (0.9)
+
+Evidence:
+  - Code: @FeignClient(name = "payment-service")
+  - Method: paymentService.processPayment(paymentRequest)
+
+Mapping:
+  Relation: calls
+  From: OrderService
+  To: PaymentService
+  Attributes:
+    - type: "calls"
+    - protocol: "HTTP/gRPC"
+  Evidence:
+    - Annotation: @FeignClient(name = "payment-service")
+    - Method call: paymentService.processPayment()
+
+Rule 14: Data Flow Relation Detection
+
+Signals Required:
+  - Event emission/consumption (e.g., @KafkaTemplate, @KafkaListener)
+  - Database read/write operations (e.g., repository.save(), repository.findById())
+  - Message queue operations (e.g., queue.publish(), queue.consume())
+
+Confidence: High (0.85)
+
+Evidence:
+  - Code: kafkaTemplate.send("data-output", transformedData)
+  - Code: @KafkaListener(topics = "data-input")
+
+Mapping:
+  Relation: emits
+  From: DataIngestionService
+  To: DataInputEvent
+  Attributes:
+    - type: "emits"
+    - channel: "Kafka topic data-input"
+  Evidence:
+    - Code: kafkaTemplate.send("data-input", dataEvent)</code></pre>
+</section>
+<section id="mapping-rules" class="level3" data-number="25.2.6">
+<h3 data-number="25.2.6" class="anchored" data-anchor-id="mapping-rules"><span class="header-section-number">25.2.6</span> Mapping Rules</h3>
+<p>Signals obtained from repositories must be translated into ontology entities and relations. This translation is performed through <strong>mapping rules</strong>.</p>
+<p>A mapping rule defines how a particular signal corresponds to elements in the ontology.</p>
+<p>For example:</p>
+<ul>
+<li><p>a directory containing an executable entry point may map to a <strong>component entity</strong></p></li>
+<li><p>a configuration referencing a database may map to a <strong>storage component</strong></p></li>
+<li><p>a dependency on a messaging framework may map to a <strong>queue or broker component</strong></p></li>
+<li><p>an HTTP routing configuration may map to an <strong>interface entity</strong></p></li>
+</ul>
+<p>Mapping rules therefore connect observable artifacts to architectural structures.</p>
+<p>In practice, these rules often rely on combinations of signals rather than single indicators. For example, identifying a service component may require the presence of both an executable entry point and a network interface configuration.</p>
+<p>Through these mapping rules, repository signals are transformed into structured ontology graphs representing candidate blueprint architectures.</p>
+</section>
+<section id="representing-ambiguity" class="level3" data-number="25.2.7">
+<h3 data-number="25.2.7" class="anchored" data-anchor-id="representing-ambiguity"><span class="header-section-number">25.2.7</span> Representing Ambiguity</h3>
+<p>Extraction processes inevitably encounter ambiguity.</p>
+<p>Source code structures may not clearly indicate architectural intent, and different architectural interpretations may be possible for the same repository structure.</p>
+<p>For this reason, blueprint extraction must represent uncertainty explicitly.</p>
+<p>Two mechanisms are used for this purpose.</p>
+<p><strong>Confidence</strong></p>
+<p>Each extracted entity or relation can be associated with a confidence score representing the likelihood that the inferred structure is correct.</p>
+<p>Confidence scores are typically derived from the strength and consistency of the signals used during extraction.</p>
+<p><strong>Evidence</strong></p>
+<p>Evidence records the specific repository signals that led to the extraction of a particular entity or relation.</p>
+<p>Examples of evidence include file paths, dependency declarations, or configuration references.</p>
+<p>By recording evidence alongside extracted structures, the system provides traceability and enables human reviewers to understand how architectural inferences were made.</p>
+</section>
+</section>
+<section id="ambiguity-representation-examples" class="level2" data-number="25.3">
+<h2 data-number="25.3" class="anchored" data-anchor-id="ambiguity-representation-examples"><span class="header-section-number">25.3</span> Ambiguity Representation Examples</h2>
+<section id="confidence-score-examples" class="level3" data-number="25.3.1">
+<h3 data-number="25.3.1" class="anchored" data-anchor-id="confidence-score-examples"><span class="header-section-number">25.3.1</span> Confidence Score Examples</h3>
+<pre><code>Example 1: High Confidence Extraction
+
+Extracted Entity: PaymentService
+  Type: API Service
+  Confidence: 0.95 (High)
+
+Evidence:
+  - File: src/main/java/PaymentServiceApplication.java
+    - Contains: @SpringBootApplication annotation
+    - Contains: SpringApplication.run() method
+  - Dependency: spring-boot-starter-web
+  - Configuration: server.port=8080
+  - Controllers: PaymentController.java with @RestController
+
+Confidence Calculation:
+  - Spring Boot application: +0.3
+  - Web dependency: +0.2
+  - Server configuration: +0.2
+  - REST controller: +0.25
+  - Total: 0.95
+
+Interpretation:
+  - Very high confidence that this is an API Service component
+  - Strong evidence from multiple independent signals
+  - Requires minimal human review
+
+Example 2: Medium Confidence Extraction
+
+Extracted Entity: DataProcessor
+  Type: Worker
+  Confidence: 0.75 (Medium)
+
+Evidence:
+  - File: src/main/java/DataProcessor.java
+    - Contains: main() method
+    - Contains: while(true) loop
+  - Dependency: spring-kafka
+  - Pattern: @KafkaListener (found in one method only)
+
+Confidence Calculation:
+  - Main method with loop: +0.3
+  - Kafka dependency: +0.2
+  - Kafka listener: +0.25
+  - Total: 0.75
+
+Interpretation:
+  - Moderate confidence that this is a Worker component
+  - Evidence is consistent but not conclusive
+  - Requires human review to confirm
+
+Uncertainty Factors:
+  - Could be a batch processing job instead of a worker
+  - Only one Kafka listener found
+  - No explicit @Component or @Service annotation
+
+Human Review Questions:
+  - Is this component intended to run continuously?
+  - Does it process messages from Kafka queues?
+  - What is the expected deployment model?
+
+Example 3: Low Confidence Extraction
+
+Extracted Entity: UtilityComponent
+  Type: API Service (Uncertain)
+  Confidence: 0.55 (Low)
+
+Evidence:
+  - File: src/main/java/UtilityComponent.java
+    - Contains: public methods
+  - Dependency: None specific
+  - No HTTP configuration found
+  - No server port configuration
+
+Confidence Calculation:
+  - Public methods: +0.3
+  - Java class: +0.15
+  - No web framework: -0.1
+  - No server config: -0.1
+  - Total: 0.55
+
+Interpretation:
+  - Low confidence in component type
+  - Could be: API Service, Worker, or Utility Library
+  - Requires significant human review
+
+Uncertainty Factors:
+  - No clear entry point
+  - No HTTP framework detected
+  - Could be a shared library instead of a component
+
+Human Review Questions:
+  - What is the purpose of this component?
+  - Is it a standalone service or a shared library?
+  - How does it interact with other components?
+  - What is the deployment strategy?
+
+Possible Outcomes:
+  - Confirm as API Service (add HTTP endpoints)
+  - Re-classify as Worker (add message processing)
+  - Re-classify as Shared Library (remove from component list)</code></pre>
+</section>
+<section id="evidence-recording-examples" class="level3" data-number="25.3.2">
+<h3 data-number="25.3.2" class="anchored" data-anchor-id="evidence-recording-examples"><span class="header-section-number">25.3.2</span> Evidence Recording Examples</h3>
+<pre><code>Example 1: Component Entity Evidence
+
+Extracted Entity: OrderService
+  Type: API Service
+  Confidence: 0.92
+
+Evidence Record:
+  {
+    "entity": "OrderService",
+    "type": "API Service",
+    "confidence": 0.92,
+    "signals": [
+      {
+        "type": "entry_point",
+        "file": "src/main/java/OrderServiceApplication.java",
+        "patterns": [
+          "@SpringBootApplication",
+          "SpringApplication.run(OrderServiceApplication.class, args)"
+        ],
+        "weight": 0.3
+      },
+      {
+        "type": "dependency",
+        "file": "pom.xml",
+        "pattern": "spring-boot-starter-web",
+        "weight": 0.2
+      },
+      {
+        "type": "configuration",
+        "file": "src/main/resources/application.yml",
+        "pattern": "server.port: 8081",
+        "weight": 0.2
+      },
+      {
+        "type": "controller",
+        "file": "src/main/java/com/myapp/controller/OrderController.java",
+        "patterns": [
+          "@RestController",
+          "@RequestMapping(\"/api/orders\")"
+        ],
+        "weight": 0.22
+      }
+    ],
+    "total_confidence": 0.92
+  }
+
+Traceability:
+  - Click on each signal to view source code
+  - View extracted patterns in context
+  - Understand how confidence was calculated
+  - Identify missing or weak signals
+
+Example 2: Relation Entity Evidence
+
+Extracted Relation: calls
+  From: OrderService
+  To: PaymentService
+  Confidence: 0.88
+
+Evidence Record:
+  {
+    "relation": "calls",
+    "from": "OrderService",
+    "to": "PaymentService",
+    "confidence": 0.88,
+    "signals": [
+      {
+        "type": "dependency",
+        "file": "pom.xml",
+        "pattern": "payment-service-client",
+        "weight": 0.3
+      },
+      {
+        "type": "code",
+        "file": "src/main/java/OrderService.java",
+        "line": 45,
+        "pattern": "paymentServiceClient.processPayment(paymentRequest)",
+        "weight": 0.35
+      },
+      {
+        "type": "annotation",
+        "file": "src/main/java/PaymentServiceClient.java",
+        "pattern": "@FeignClient(name = \"payment-service\")",
+        "weight": 0.23
+      }
+    ],
+    "total_confidence": 0.88
+  }
+
+Traceability:
+  - View dependency declaration
+  - See method call in source code
+  - Check Feign client configuration
+  - Verify service name matches
+
+Example 3: Interface Entity Evidence
+
+Extracted Entity: ProductAPI
+  Type: API Interface
+  Confidence: 0.95
+
+Evidence Record:
+  {
+    "entity": "ProductAPI",
+    "type": "API Interface",
+    "confidence": 0.95,
+    "signals": [
+      {
+        "type": "controller",
+        "file": "src/main/java/ProductController.java",
+        "patterns": [
+          "@RestController",
+          "@RequestMapping(\"/api/products\")"
+        ],
+        "weight": 0.4
+      },
+      {
+        "type": "endpoint",
+        "file": "src/main/java/ProductController.java",
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/api/products",
+            "line": 15
+          },
+          {
+            "method": "GET",
+            "path": "/api/products/{id}",
+            "line": 25
+          },
+          {
+            "method": "POST",
+            "path": "/api/products",
+            "line": 35
+          }
+        ],
+        "weight": 0.35
+      },
+      {
+        "type": "documentation",
+        "file": "api-docs/products.yaml",
+        "pattern": "openapi: 3.0.0",
+        "weight": 0.2
+      }
+    ],
+    "total_confidence": 0.95
+  }
+
+Traceability:
+  - View controller class
+  - List all detected endpoints
+  - Check API documentation
+  - Verify endpoint paths match</code></pre>
+</section>
+</section>
+<section id="human-in-the-loop-review-examples" class="level2" data-number="25.4">
+<h2 data-number="25.4" class="anchored" data-anchor-id="human-in-the-loop-review-examples"><span class="header-section-number">25.4</span> Human-in-the-Loop Review Examples</h2>
+<section id="review-workflow-example" class="level3" data-number="25.4.1">
+<h3 data-number="25.4.1" class="anchored" data-anchor-id="review-workflow-example"><span class="header-section-number">25.4.1</span> Review Workflow Example</h3>
+<pre><code>Scenario: Reviewing Extracted Blueprint for E-commerce Platform
+
+Step 1: Initial Extraction
+  System automatically extracts blueprint from repository
+  Generates 15 entities and 25 relations
+  Average confidence: 0.82
+
+Step 2: Prioritization
+  System prioritizes review based on confidence:
+    - Low confidence (&lt; 0.7): 3 entities, 5 relations
+    - Medium confidence (0.7-0.85): 5 entities, 8 relations
+    - High confidence (&gt; 0.85): 7 entities, 12 relations
+
+Step 3: Low Confidence Review
+
+  Entity 1: UtilityComponent (Confidence: 0.55)
+    Reviewer: Senior Architect
+    Action: Investigate component purpose
+    Evidence: Only public methods, no clear entry point
+    Decision: Re-classify as Shared Library
+    Result: Removed from component list
+
+  Relation 1: calls (OrderService → InventoryService) (Confidence: 0.65)
+    Reviewer: System Designer
+    Action: Check code for actual calls
+    Evidence: Only dependency declaration, no code found
+    Decision: Remove relation (no actual invocation)
+    Result: Relation removed
+
+Step 4: Medium Confidence Review
+
+  Entity 2: DataProcessor (Confidence: 0.75)
+    Reviewer: Backend Engineer
+    Action: Verify deployment model
+    Evidence: Kafka listener, while loop
+    Decision: Confirm as Worker component
+    Result: Confidence updated to 0.95
+
+  Relation 2: depends_on (ProductService → ProductDatabase) (Confidence: 0.78)
+    Reviewer: Database Engineer
+    Action: Check database connection configuration
+    Evidence: JDBC URL, Repository interface
+    Decision: Confirm dependency
+    Result: Confidence updated to 0.92
+
+Step 5: High Confidence Review (Spot Check)
+
+  Entity 3: PaymentService (Confidence: 0.95)
+    Reviewer: Junior Architect
+    Action: Quick verification
+    Evidence: Spring Boot app, REST controller
+    Decision: Confirm without changes
+    Result: No action needed
+
+Step 6: Final Validation
+
+  Review results:
+    - Confirmed: 14 entities, 22 relations
+    - Modified: 2 entities (re-classified, confidence updated)
+    - Removed: 1 entity, 1 relation
+    - Added: 0 entities, 0 relations
+
+  Final blueprint:
+    - 14 entities (down from 15)
+    - 22 relations (down from 25)
+    - Average confidence: 0.91 (up from 0.82)
+
+Step 7: Approval
+
+  Reviewer: Lead Architect
+  Decision: Approved for production use
+  Notes: High confidence in most entities, good evidence traceability
+
+Step 8: Publication
+
+  Blueprint published to repository
+  Version: v1.0
+  Reviewers: 4
+  Review time: 2 hours
+  Confidence threshold: 0.85</code></pre>
+</section>
+<section id="review-interface-example" class="level3" data-number="25.4.2">
+<h3 data-number="25.4.2" class="anchored" data-anchor-id="review-interface-example"><span class="header-section-number">25.4.2</span> Review Interface Example</h3>
+<pre><code>Review Interface: Entity Detail View
+
+┌─────────────────────────────────────────────────────────────┐
+│  Entity: DataProcessor                                      │
+│  Type: Worker                                               │
+│  Confidence: 0.75 (Medium)                                  │
+└─────────────────────────────────────────────────────────────┘
+
+Actions: [Confirm] [Modify] [Reject] [Split] [Merge]
+
+┌─────────────────────────────────────────────────────────────┐
+│  Evidence                                                   │
+├─────────────────────────────────────────────────────────────┤
+│  📁 File: src/main/java/DataProcessor.java                  │
+│     Line 5:  @Component                                     │
+│     Line 12: @KafkaListener(topics = "data-input")          │
+│     Line 15: public void processData(String message)        │
+│                                                              │
+│  📦 Dependency: pom.xml                                     │
+│     Line 45: &lt;artifactId&gt;spring-kafka&lt;/artifactId&gt;          │
+│                                                              │
+│  ⚙️  Configuration: application.yml                         │
+│     Line 10: spring.kafka.bootstrap-servers=kafka:9092      │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│  Confidence Breakdown                                       │
+├─────────────────────────────────────────────────────────────┤
+│  @Component annotation:        +0.30                        │
+│  Kafka dependency:              +0.20                        │
+│  @KafkaListener:               +0.25                        │
+│  ──────────────────────────────────────────                 │
+│  Total:                        0.75                         │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│  Questions for Reviewer                                     │
+├─────────────────────────────────────────────────────────────┤
+│  ✓ Is this component intended to run continuously?         │
+│  ✓ Does it process messages from Kafka queues?             │
+│  ✓ What is the expected deployment model?                  │
+│  ✓ Are there other Kafka listeners in this component?      │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│  Related Entities                                           │
+├─────────────────────────────────────────────────────────────┤
+│  → consumes: DataInputEvent                                 │
+│  → part_of: DataPipeline                                    │
+│  → calls: DataTransformationService                        │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│  Review Comments                                             │
+├─────────────────────────────────────────────────────────────┤
+│  [Add comment...]                                            │
+│                                                              │
+│  Previous comments:                                          │
+│  • "Only one Kafka listener found - verify if this is       │
+│    the complete implementation" - Senior Architect          │
+└─────────────────────────────────────────────────────────────┘
+
+[View Source Code] [View Dependencies] [View Similar Entities]</code></pre>
+</section>
+<section id="review-decision-examples" class="level3" data-number="25.4.3">
+<h3 data-number="25.4.3" class="anchored" data-anchor-id="review-decision-examples"><span class="header-section-number">25.4.3</span> Review Decision Examples</h3>
+<pre><code>Decision 1: Confirm Entity
+
+Entity: PaymentService
+Type: API Service
+Confidence: 0.95
+
+Reviewer Action: Confirm
+Reasoning:
+  - Clear Spring Boot application
+  - Well-defined REST controller
+  - Proper configuration
+  - High confidence score
+
+Outcome:
+  - Entity confirmed
+  - Confidence remains 0.95
+  - No changes required
+
+Decision 2: Modify Entity
+
+Entity: DataProcessor
+Type: Worker
+Confidence: 0.75
+
+Reviewer Action: Modify
+Changes:
+  - Add capability: "RealTimeProcessing"
+  - Add relation: depends_on → "KafkaCluster"
+  - Update confidence to 0.90
+
+Reasoning:
+  - Confirmed it's a worker component
+  - Added missing capability
+  - Added missing dependency on Kafka
+  - Increased confidence after manual verification
+
+Outcome:
+  - Entity modified
+  - Confidence updated to 0.90
+  - New capability and relation added
+
+Decision 3: Reject Entity
+
+Entity: UtilityComponent
+Type: API Service
+Confidence: 0.55
+
+Reviewer Action: Reject
+Reasoning:
+  - No clear entry point
+  - No HTTP framework
+  - Actually a shared library, not a component
+  - Should be in shared/ directory
+
+Outcome:
+  - Entity rejected
+  - Moved to shared library classification
+  - Removed from component count
+
+Decision 4: Split Entity
+
+Entity: ProcessingService
+Type: API Service
+Confidence: 0.70
+
+Reviewer Action: Split
+Split Into:
+  1. IngestionService (Worker)
+  2. TransformationService (Worker)
+  3. QueryService (API Service)
+
+Reasoning:
+  - Single file contains multiple distinct responsibilities
+  - Should be split into separate services
+  - Different deployment requirements
+
+Outcome:
+  - Original entity removed
+  - Three new entities created
+  - Each with appropriate type and relations
+
+Decision 5: Merge Entities
+
+Entity 1: ProductServiceV1
+Entity 2: ProductServiceV2
+Type: API Service
+Confidence: 0.80 each
+
+Reviewer Action: Merge
+Merge Into: ProductService
+
+Reasoning:
+  - V1 and V2 are versions of the same service
+  - Should be represented as single entity
+  - Version differences captured in constraints
+
+Outcome:
+  - Two entities merged
+  - Single ProductService entity created
+  - Version constraints added</code></pre>
+</section>
+</section>
+<section id="end-to-end-extraction-example" class="level2" data-number="25.5">
+<h2 data-number="25.5" class="anchored" data-anchor-id="end-to-end-extraction-example"><span class="header-section-number">25.5</span> End-to-End Extraction Example</h2>
+<section id="complete-extraction-workflow" class="level3" data-number="25.5.1">
+<h3 data-number="25.5.1" class="anchored" data-anchor-id="complete-extraction-workflow"><span class="header-section-number">25.5.1</span> Complete Extraction Workflow</h3>
+<pre><code>Scenario: Extract Blueprint from E-commerce Platform Repository
+
+Step 1: Repository Analysis
+
+Input: git@github.com:company/ecommerce-platform.git
+
+Actions:
+  1. Clone repository
+  2. Scan directory structure
+  3. Identify build files (pom.xml, package.json, requirements.txt)
+  4. Locate configuration files (application.yml, docker-compose.yml)
+  5. Find entry points (Application.java, index.js, main.py)
+  6. Extract dependencies from build files
+  7. Parse configuration files
+  8. Analyze source code for patterns
+
+Step 2: Signal Collection
+
+Directory Structure Signals:
+  - services/ directory → Microservices architecture
+  - 4 subdirectories (product, order, payment, user) → 4 services
+  - shared/ directory → Shared library
+
+Dependency Signals:
+  - spring-boot-starter-web → Web framework
+  - spring-boot-starter-data-jpa → Database access
+  - postgresql → PostgreSQL database
+  - spring-kafka → Kafka messaging
+  - spring-cloud-starter-openfeign → External API calls
+
+Entry Point Signals:
+  - 4 × Application.java files → 4 services
+  - Each with @SpringBootApplication → Spring Boot apps
+  - Each with SpringApplication.run() → Main methods
+
+Configuration Signals:
+  - 4 × application.yml files → Service configurations
+  - Database URLs → PostgreSQL connections
+  - Kafka bootstrap servers → Kafka cluster
+  - Server ports (8080-8083) → HTTP interfaces
+
+Step 3: Entity Extraction
+
+Extracted Entities (16 total):
+
+System Entities (1):
+  1. EcommercePlatform
+     - Type: Web Application
+     - Confidence: 1.0
+
+Component Entities (7):
+  2. ProductService
+     - Type: API Service
+     - Confidence: 0.95
+     - Evidence: Spring Boot, REST controller, database config
+
+  3. OrderService
+     - Type: API Service
+     - Confidence: 0.95
+     - Evidence: Spring Boot, REST controller, database config
+
+  4. PaymentService
+     - Type: API Service
+     - Confidence: 0.95
+     - Evidence: Spring Boot, REST controller, external API
+
+  5. UserService
+     - Type: API Service
+     - Confidence: 0.95
+     - Evidence: Spring Boot, REST controller, database config
+
+  6. ProductDatabase
+     - Type: Storage
+     - Confidence: 0.90
+     - Evidence: PostgreSQL driver, datasource config
+
+  7. OrderDatabase
+     - Type: Storage
+     - Confidence: 0.90
+     - Evidence: PostgreSQL driver, datasource config
+
+  8. MessageQueue
+     - Type: Queue/Broker
+     - Confidence: 0.92
+     - Evidence: Kafka dependency, bootstrap servers
+
+Interface Entities (4):
+  9. ProductAPI
+     - Type: API Interface
+     - Confidence: 0.95
+     - Evidence: REST controller, endpoint mappings
+
+  10. OrderAPI
+      - Type: API Interface
+      - Confidence: 0.95
+      - Evidence: REST controller, endpoint mappings
+
+  11. PaymentAPI
+      - Type: API Interface
+      - Confidence: 0.95
+      - Evidence: REST controller, endpoint mappings
+
+  12. UserAPI
+      - Type: API Interface
+      - Confidence: 0.95
+      - Evidence: REST controller, endpoint mappings
+
+Capability Entities (3):
+  13. ProductCatalog
+      - Type: Capability
+      - Confidence: 0.85
+      - Evidence: Controller methods, repository operations
+
+  14. OrderManagement
+      - Type: Capability
+      - Confidence: 0.85
+      - Evidence: Controller methods, repository operations
+
+  15. PaymentProcessing
+      - Type: Capability
+      - Confidence: 0.85
+      - Evidence: Controller methods, external API calls
+
+Data Entity (1):
+  16. SharedLibrary
+      - Type: Technical Entity
+      - Confidence: 0.80
+      - Evidence: shared/ directory, DTO classes
+
+Step 4: Relation Extraction
+
+Extracted Relations (24 total):
+
+contains relations (1):
+  17. EcommercePlatform contains [ProductService, OrderService, PaymentService, UserService]
+
+implements relations (3):
+  18. ProductService implements ProductCatalog
+  19. OrderService implements OrderManagement
+  20. PaymentService implements PaymentProcessing
+
+calls relations (6):
+  21. OrderService calls PaymentService
+  22. OrderService calls ProductService
+  23. ProductService calls ProductDatabase
+  24. OrderService calls OrderDatabase
+  25. ProductService calls MessageQueue
+  26. OrderService calls MessageQueue
+
+provides relations (4):
+  27. ProductService provides ProductAPI
+  28. OrderService provides OrderAPI
+  29. PaymentService provides PaymentAPI
+  30. UserService provides UserAPI
+
+accesses relations (2):
+  31. ProductService accesses ProductDatabase
+  32. OrderService accesses OrderDatabase
+
+uses relations (2):
+  33. ProductService uses MessageQueue
+  34. OrderService uses MessageQueue
+
+depends_on relations (6):
+  35. ProductService depends_on ProductDatabase
+  36. OrderService depends_on OrderDatabase
+  37. OrderService depends_on PaymentService
+  38. ProductService depends_on MessageQueue
+  39. OrderService depends_on MessageQueue
+  40. ProductService depends_on SharedLibrary
+
+Step 5: Ambiguity Assessment
+
+Low Confidence Entities (&lt; 0.7):
+  - None
+
+Medium Confidence Entities (0.7-0.85):
+  - ProductCatalog (0.85)
+  - OrderManagement (0.85)
+  - PaymentProcessing (0.85)
+  - SharedLibrary (0.80)
+
+Low Confidence Relations (&lt; 0.7):
+  - None
+
+Medium Confidence Relations (0.7-0.85):
+  - All capability implementations (0.85)
+  - SharedLibrary dependencies (0.80)
+
+Step 6: Human Review
+
+Reviewer: Senior Architect
+
+Review Actions:
+
+1. Review SharedLibrary (Confidence: 0.80)
+   - Verify: Is it a component or library?
+   - Evidence: shared/ directory, DTO classes
+   - Decision: Confirm as shared library, not component
+   - Action: Change type from "Component" to "Technical Entity"
+
+2. Review ProductCatalog Capability (Confidence: 0.85)
+   - Verify: Is this the complete capability?
+   - Evidence: Controller has CRUD operations
+   - Decision: Confirm capability
+   - Action: Add sub-capabilities (Search, Filter, Details)
+
+3. Review OrderService → PaymentService Relation (Confidence: 0.92)
+   - Verify: Is this a direct call?
+   - Evidence: @FeignClient annotation
+   - Decision: Confirm relation
+   - Action: No changes needed
+
+4. Review MessageQueue Usage (Confidence: 0.92)
+   - Verify: Are both services using the same queue?
+   - Evidence: Same Kafka bootstrap servers
+   - Decision: Confirm usage
+   - Action: Add topic information (product-events, order-events)
+
+Review Results:
+  - Confirmed: 16 entities, 24 relations
+  - Modified: 2 entities (type change, capability enhancement)
+  - Added: 2 relations (topic information)
+  - Removed: 0 entities, 0 relations
+
+Final Blueprint:
+  - 16 entities
+  - 26 relations
+  - Average confidence: 0.91
+
+Step 7: Blueprint Generation
+
+Generated Blueprint File: ecommerce-platform-blueprint.yaml
+
+Contents:
+  - System entity with metadata
+  - 7 component entities with attributes
+  - 4 interface entities with endpoints
+  - 3 capability entities with hierarchies
+  - 1 shared library entity
+  - 26 relations with evidence
+  - Confidence scores for all entities and relations
+  - Evidence links to repository files
+
+Step 8: Validation
+
+Validation Checks:
+  ✓ All entities have unique identifiers
+  ✓ All relations have valid source and target
+  ✓ No circular dependencies detected
+  ✓ All confidence scores above threshold (0.85)
+  ✓ All entities have required attributes
+  ✓ All relations have evidence
+
+Step 9: Publication
+
+Published To: blueprint-registry.company.com/blueprints/ecommerce-platform
+
+Metadata:
+  - Version: v1.0.0
+  - Created: 2026-03-11
+  - Author: Automated Extraction
+  - Reviewer: Senior Architect
+  - Confidence: 0.91
+  - Status: Approved
+
+Step 10: Usage
+
+Usage Examples:
+  - System architects can view the extracted architecture
+  - Developers can understand component relationships
+  - DevOps can plan deployment topology
+  - QA teams can identify integration points
+  - New team members can onboard faster
+
+Benefits:
+  - Reduced manual documentation effort
+  - Consistent architecture representation
+  - Traceability to source code
+  - Easy updates as code evolves
+  - Shared understanding across teams</code></pre>
+</section>
+<section id="extraction-summary-statistics" class="level3" data-number="25.5.2">
+<h3 data-number="25.5.2" class="anchored" data-anchor-id="extraction-summary-statistics"><span class="header-section-number">25.5.2</span> Extraction Summary Statistics</h3>
+<pre><code>Extraction Metrics:
+
+Repository Analysis:
+  - Files scanned: 156
+  - Directories analyzed: 23
+  - Build files parsed: 4
+  - Configuration files parsed: 8
+  - Source files analyzed: 134
+
+Signal Collection:
+  - Directory structure signals: 23
+  - Dependency signals: 42
+  - Entry point signals: 4
+  - Configuration signals: 32
+  - Total signals: 101
+
+Entity Extraction:
+  - Entities extracted: 16
+  - Entity types: 5 (System, Component, Interface, Capability, Data)
+  - Average entities per component: 2.3
+  - Extraction time: 2.3 seconds
+
+Relation Extraction:
+  - Relations extracted: 26
+  - Relation types: 6 (contains, implements, calls, provides, accesses, depends_on)
+  - Average relations per entity: 1.6
+  - Extraction time: 1.8 seconds
+
+Confidence Scores:
+  - High confidence (&gt; 0.85): 24 entities/relations (57%)
+  - Medium confidence (0.7-0.85): 18 entities/relations (43%)
+  - Low confidence (&lt; 0.7): 0 entities/relations (0%)
+  - Average confidence: 0.91
+
+Human Review:
+  - Review time: 1.5 hours
+  - Entities reviewed: 16
+  - Relations reviewed: 26
+  - Confirmed: 42 (100%)
+  - Modified: 2 (5%)
+  - Added: 2 (5%)
+  - Removed: 0 (0%)
+
+Accuracy:
+  - False positives: 0
+  - False negatives: 2 (missing capabilities added during review)
+  - Overall accuracy: 95%
+  - Confidence calibration: Excellent
+
+Performance:
+  - Total extraction time: 4.1 seconds
+  - Total review time: 1.5 hours
+  - Total time: 1.5 hours
+  - Time per entity: 5.6 minutes (including review)
+
+Comparison with Manual Documentation:
+  - Manual documentation time: ~8 hours
+  - Extraction time: 1.5 hours
+  - Time savings: 81%
+  - Quality improvement: Higher consistency, traceability</code></pre>
+</section>
+<section id="human-in-the-loop-review" class="level3" data-number="25.5.3">
+<h3 data-number="25.5.3" class="anchored" data-anchor-id="human-in-the-loop-review"><span class="header-section-number">25.5.3</span> Human-in-the-Loop Review</h3>
+<p>Although automated extraction can generate initial blueprint representations, architectural interpretation often requires human judgment.</p>
+<p>For this reason, blueprint extraction systems incorporate <strong>human-in-the-loop review stages</strong>.</p>
+<p>At these stages, extracted entities and relations are presented to human reviewers who validate, modify, or reject the inferred structures.</p>
+<p>Effective review systems typically include:</p>
+<ul>
+<li><p>visual representations of the extracted architecture graph</p></li>
+<li><p>links to the repository artifacts used as evidence</p></li>
+<li><p>interfaces for editing or confirming extracted entities and relations</p></li>
+</ul>
+<p>Human review transforms automatically generated architectural hypotheses into <strong>verified blueprint representations</strong>.</p>
+<p>This process enables blueprint extraction to scale across large collections of repositories while maintaining architectural accuracy.</p>
+<hr>
+<p>Through repository signals, mapping rules, uncertainty representation, and human review mechanisms, blueprint extraction bridges the gap between <strong>existing software systems and structured architectural knowledge</strong>.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../part-vi/chapter-19.html" class="pagination-link" aria-label="Ontology → Blueprint Kernel Mapping">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Kernel Mapping</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../capstone/chapter-21.html" class="pagination-link" aria-label="Ontology Release, Governance, and Evolution">
+        <span class="nav-page-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Ontology Release, Governance, and Evolution</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

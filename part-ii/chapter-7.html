@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>12&nbsp; Interfaces and Contracts – System Ontology</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../part-ii/chapter-8.html" rel="next">
+<link href="../part-ii/chapter-6.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part-ii/chapter-4.html">Part II - Core Entities</a></li><li class="breadcrumb-item"><a href="../part-ii/chapter-7.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Interfaces and Contracts</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">System Ontology</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About This Book</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Front Matter</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preface — Why Ontology Comes Second</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/reader-contract.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reader Contract</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/notation-conventions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Notation &amp; Conventions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/ontology-as-engineering-artifact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ontology as an Engineering Artifact</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I - Ontology Fundamentals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">What Ontology Is (In Engineering Terms)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Ontology Stack</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ontology Design Principles</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II - Core Entities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">System, Boundary, and Context</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Capability and Requirement Entities</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Components: The Structural Building Blocks</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-7.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Interfaces and Contracts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Entities and State</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Workflow and Execution Units</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III - Core Relations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Relation Types (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Boundaries and Coupling Relations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Interaction Models as Relation Patterns</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV - Type System</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">System Type Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Component Type Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Architecture Style Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Pattern Hooks: Making Ontology Pattern-Aware</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part V - Constraints &amp; Quality Attributes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-v/chapter-17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Quality Attributes as First-Class Entities</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-v/chapter-18.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Risk, Failure Modes, and Trust</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part VI - Mapping</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-vi/chapter-19.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Kernel Mapping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-vi/chapter-20.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Extraction Signals &amp; Mapping Rules</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Capstone</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../capstone/chapter-21.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Ontology Release, Governance, and Evolution</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Appendix A — System Ontology v0.1 (YAML / JSON Schema)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Appendix B — Entity Dictionary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-c.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Appendix C — Relation Dictionary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-d.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Appendix D — System Type Decision Tree</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Appendix E — Example Ontology Instances</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-f.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Appendix F — Glossary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-g.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Appendix G — Projection Mapping Cheat Sheet</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Epilogue — From Ontology to Blueprint Structure</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#interface-interaction-point-entity" id="toc-interface-interaction-point-entity" class="nav-link active" data-scroll-target="#interface-interaction-point-entity"><span class="header-section-number">12.0.1</span> Interface — Interaction Point Entity</a></li>
+  <li><a href="#contract-data-and-behavioral-agreements" id="toc-contract-data-and-behavioral-agreements" class="nav-link" data-scroll-target="#contract-data-and-behavioral-agreements"><span class="header-section-number">12.0.2</span> Contract — Data and Behavioral Agreements</a></li>
+  <li><a href="#unified-representation-of-api-event-and-command" id="toc-unified-representation-of-api-event-and-command" class="nav-link" data-scroll-target="#unified-representation-of-api-event-and-command"><span class="header-section-number">12.0.3</span> Unified Representation of API, Event, and Command</a></li>
+  <li><a href="#interface-examples-by-component-type" id="toc-interface-examples-by-component-type" class="nav-link" data-scroll-target="#interface-examples-by-component-type"><span class="header-section-number">12.1</span> Interface Examples by Component Type</a>
+  <ul class="collapse">
+  <li><a href="#api-gateway-interfaces" id="toc-api-gateway-interfaces" class="nav-link" data-scroll-target="#api-gateway-interfaces"><span class="header-section-number">12.1.1</span> API Gateway Interfaces</a></li>
+  <li><a href="#worker-component-interfaces" id="toc-worker-component-interfaces" class="nav-link" data-scroll-target="#worker-component-interfaces"><span class="header-section-number">12.1.2</span> Worker Component Interfaces</a></li>
+  <li><a href="#database-component-interfaces" id="toc-database-component-interfaces" class="nav-link" data-scroll-target="#database-component-interfaces"><span class="header-section-number">12.1.3</span> Database Component Interfaces</a></li>
+  <li><a href="#interface-versioning" id="toc-interface-versioning" class="nav-link" data-scroll-target="#interface-versioning"><span class="header-section-number">12.1.4</span> Interface Versioning</a></li>
+  </ul></li>
+  <li><a href="#interface-versioning-strategies" id="toc-interface-versioning-strategies" class="nav-link" data-scroll-target="#interface-versioning-strategies"><span class="header-section-number">12.2</span> Interface Versioning Strategies</a>
+  <ul class="collapse">
+  <li><a href="#strategy-1-uri-versioning" id="toc-strategy-1-uri-versioning" class="nav-link" data-scroll-target="#strategy-1-uri-versioning"><span class="header-section-number">12.2.1</span> Strategy 1: URI Versioning</a></li>
+  <li><a href="#strategy-2-header-versioning" id="toc-strategy-2-header-versioning" class="nav-link" data-scroll-target="#strategy-2-header-versioning"><span class="header-section-number">12.2.2</span> Strategy 2: Header Versioning</a></li>
+  <li><a href="#strategy-3-content-negotiation" id="toc-strategy-3-content-negotiation" class="nav-link" data-scroll-target="#strategy-3-content-negotiation"><span class="header-section-number">12.2.3</span> Strategy 3: Content Negotiation</a></li>
+  </ul></li>
+  <li><a href="#interface-evolution-patterns" id="toc-interface-evolution-patterns" class="nav-link" data-scroll-target="#interface-evolution-patterns"><span class="header-section-number">12.3</span> Interface Evolution Patterns</a>
+  <ul class="collapse">
+  <li><a href="#additive-changes-compatible" id="toc-additive-changes-compatible" class="nav-link" data-scroll-target="#additive-changes-compatible"><span class="header-section-number">12.3.1</span> Additive Changes (Compatible)</a></li>
+  <li><a href="#non-breaking-modifications-compatible" id="toc-non-breaking-modifications-compatible" class="nav-link" data-scroll-target="#non-breaking-modifications-compatible"><span class="header-section-number">12.3.2</span> Non-Breaking Modifications (Compatible)</a></li>
+  <li><a href="#breaking-changes-new-version-required" id="toc-breaking-changes-new-version-required" class="nav-link" data-scroll-target="#breaking-changes-new-version-required"><span class="header-section-number">12.3.3</span> Breaking Changes (New Version Required)</a></li>
+  </ul></li>
+  <li><a href="#interface-lifecycle-management" id="toc-interface-lifecycle-management" class="nav-link" data-scroll-target="#interface-lifecycle-management"><span class="header-section-number">12.4</span> Interface Lifecycle Management</a>
+  <ul class="collapse">
+  <li><a href="#version-introduction" id="toc-version-introduction" class="nav-link" data-scroll-target="#version-introduction"><span class="header-section-number">12.4.1</span> Version Introduction</a></li>
+  <li><a href="#version-deprecation" id="toc-version-deprecation" class="nav-link" data-scroll-target="#version-deprecation"><span class="header-section-number">12.4.2</span> Version Deprecation</a></li>
+  <li><a href="#version-removal" id="toc-version-removal" class="nav-link" data-scroll-target="#version-removal"><span class="header-section-number">12.4.3</span> Version Removal</a></li>
+  </ul></li>
+  <li><a href="#interface-versioning-best-practices" id="toc-interface-versioning-best-practices" class="nav-link" data-scroll-target="#interface-versioning-best-practices"><span class="header-section-number">12.5</span> Interface Versioning Best Practices</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part-ii/chapter-4.html">Part II - Core Entities</a></li><li class="breadcrumb-item"><a href="../part-ii/chapter-7.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Interfaces and Contracts</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Interfaces and Contracts</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Components do not exist in isolation. Systems emerge from the <strong>interactions between components</strong>, and these interactions must occur through well-defined structural points. In the ontology, these interaction points are represented as <strong>interfaces</strong>.</p>
+<p>Interfaces define the boundaries through which components communicate. They expose capabilities, define data exchange structures, and regulate interaction behavior. Without explicit interfaces, component dependencies become implicit and architectural structures become difficult to analyze.</p>
+<p>Closely associated with interfaces are <strong>contracts</strong>. While interfaces define the interaction point, contracts define the <strong>rules governing that interaction</strong>. Together, interfaces and contracts form the foundation of system interoperability and architectural stability.</p>
+<section id="interface-interaction-point-entity" class="level3" data-number="12.0.1">
+<h3 data-number="12.0.1" class="anchored" data-anchor-id="interface-interaction-point-entity"><span class="header-section-number">12.0.1</span> Interface — Interaction Point Entity</h3>
+<p>An <strong>interface</strong> represents a point of interaction between components or between a system and its external context.</p>
+<p>Interfaces define how requests, events, or commands enter and exit components. They represent the formal connection points through which architectural elements communicate.</p>
+<p>Interfaces typically expose several structural properties:</p>
+<ul>
+<li><p>the <strong>operation or interaction type</strong></p></li>
+<li><p>the <strong>input and output data structures</strong></p></li>
+<li><p>the <strong>communication protocol</strong></p></li>
+<li><p>the <strong>interaction semantics</strong></p></li>
+</ul>
+<p>Interfaces may take different concrete forms depending on the architectural style of the system. Common examples include:</p>
+<ul>
+<li><p>HTTP endpoints</p></li>
+<li><p>RPC methods</p></li>
+<li><p>event streams</p></li>
+<li><p>message queue topics</p></li>
+<li><p>command-line interfaces</p></li>
+<li><p>internal function entry points</p></li>
+</ul>
+<p>In the ontology, interfaces are represented as <strong>distinct entities rather than attributes of components</strong>. This separation allows interfaces to be referenced, versioned, and governed independently of the components that implement them.</p>
+<p>Interfaces therefore function as the <strong>structural connectors</strong> of the system architecture.</p>
+</section>
+<section id="contract-data-and-behavioral-agreements" class="level3" data-number="12.0.2">
+<h3 data-number="12.0.2" class="anchored" data-anchor-id="contract-data-and-behavioral-agreements"><span class="header-section-number">12.0.2</span> Contract — Data and Behavioral Agreements</h3>
+<p>While interfaces identify the interaction point, <strong>contracts define the expectations governing that interaction</strong>.</p>
+<p>A contract specifies the rules that participants must follow when communicating through an interface. These rules ensure that interacting components remain compatible even as internal implementations evolve.</p>
+<p>Two forms of contracts are particularly important.</p>
+<p><strong>Data contracts</strong></p>
+<p>Data contracts define the structure and format of information exchanged through an interface. They specify the schema of request and response data, including field definitions, data types, and validation rules.</p>
+<p>Examples include API schemas, event payload structures, and message formats.</p>
+<p><strong>Behavioral contracts</strong></p>
+<p>Behavioral contracts define the expected behavior of an interaction. They describe how components should respond to requests, what side effects may occur, and what guarantees are provided.</p>
+<p>Behavioral contracts may include elements such as:</p>
+<ul>
+<li><p>idempotency guarantees</p></li>
+<li><p>ordering constraints</p></li>
+<li><p>retry behavior</p></li>
+<li><p>error handling semantics</p></li>
+</ul>
+<p>Together, data contracts and behavioral contracts ensure that interactions remain predictable and stable.</p>
+</section>
+<section id="unified-representation-of-api-event-and-command" class="level3" data-number="12.0.3">
+<h3 data-number="12.0.3" class="anchored" data-anchor-id="unified-representation-of-api-event-and-command"><span class="header-section-number">12.0.3</span> Unified Representation of API, Event, and Command</h3>
+<p>Modern systems employ multiple interaction models. Components may communicate through synchronous requests, asynchronous events, or command-based control signals.</p>
+<p>Despite these differences, these interaction forms share a common conceptual structure. Each represents an <strong>invocation of behavior across a system boundary</strong>.</p>
+<p>For this reason, the ontology represents APIs, events, and commands using a unified interface model.</p>
+<p>An interface interaction can be characterized by three elements:</p>
+<ul>
+<li><p>the <strong>interaction initiator</strong></p></li>
+<li><p>the <strong>target component</strong></p></li>
+<li><p>the <strong>contract governing the interaction</strong></p></li>
+</ul>
+<p>Different interaction styles correspond to different patterns of this structure.</p>
+<p>An <strong>API interaction</strong> represents a synchronous request-response invocation.</p>
+<p><strong>Example: REST API Interface</strong></p>
+<pre><code>Interface: User API
+Type: api
+Protocol: HTTPS
+Version: v2
+
+Data Contract:
+  Request: { "user_id": "string", "include_preferences": "boolean" }
+  Response: { "user_id": "string", "name": "string", "email": "string", "preferences": {...} }
+
+Behavior Contract:
+  - Synchronous request-response
+  - Idempotent for GET requests
+  - Requires authentication
+  - Returns 404 if user not found</code></pre>
+<p>An <strong>event interaction</strong> represents an asynchronous publication where producers emit events that consumers may process.</p>
+<p><strong>Example: Event Interface</strong></p>
+<pre><code>Interface: Order Created Event
+Type: event
+Protocol: Kafka Topic
+Version: v1
+
+Data Contract:
+  Event Schema: { "order_id": "string", "user_id": "string", "items": [...], "total": "number", "timestamp": "datetime" }
+
+Behavior Contract:
+  - At-least-once delivery
+  - Consumers must handle duplicate events
+  - No ordering guarantee across consumers
+  - Event persists for 7 days</code></pre>
+<p>A <strong>command interaction</strong> represents a directed instruction that requests a specific action from a target component.</p>
+<p><strong>Example: Command Interface</strong></p>
+<pre><code>Interface: Shutdown Command
+Type: command
+Protocol: Internal Message Queue
+Version: v1
+
+Data Contract:
+  Command Schema: { "component_id": "string", "grace_period_seconds": "number", "reason": "string" }
+
+Behavior Contract:
+  - Initiates graceful shutdown
+  - Acknowledges command receipt
+  - Reports completion status
+  - Cannot be cancelled once initiated</code></pre>
+<p>By modeling these interaction types within a unified interface structure, the ontology can represent diverse communication models while maintaining a consistent architectural vocabulary.</p>
+</section>
+<section id="interface-examples-by-component-type" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="interface-examples-by-component-type"><span class="header-section-number">12.1</span> Interface Examples by Component Type</h2>
+<section id="api-gateway-interfaces" class="level3" data-number="12.1.1">
+<h3 data-number="12.1.1" class="anchored" data-anchor-id="api-gateway-interfaces"><span class="header-section-number">12.1.1</span> API Gateway Interfaces</h3>
+<pre><code>API Gateway Component
+├── Public User API (api)
+│   - Endpoint: POST /api/users
+│   - Purpose: Create new user accounts
+│   - Contract: UserCreationRequest → UserResponse
+│   - Version: v2
+│
+├── Public Order API (api)
+│   - Endpoint: POST /api/orders
+│   - Purpose: Submit new orders
+│   - Contract: OrderCreationRequest → OrderResponse
+│   - Version: v3
+│
+└── Internal Health Check API (api)
+    - Endpoint: GET /health
+    - Purpose: Service health monitoring
+    - Contract: Empty → HealthStatus
+    - Version: v1</code></pre>
+</section>
+<section id="worker-component-interfaces" class="level3" data-number="12.1.2">
+<h3 data-number="12.1.2" class="anchored" data-anchor-id="worker-component-interfaces"><span class="header-section-number">12.1.2</span> Worker Component Interfaces</h3>
+<pre><code>Data Processing Worker
+├── Task Queue Interface (event)
+│   - Topic: data_processing_tasks
+│   - Purpose: Receive processing tasks
+│   - Contract: ProcessingTask → TaskResult
+│   - Version: v1
+│
+├── Progress Event Interface (event)
+│   - Topic: processing_progress
+│   - Purpose: Publish processing progress
+│   - Contract: ProgressEvent → (consumed by monitoring)
+│   - Version: v1
+│
+└── Completion Callback Interface (api)
+    - Endpoint: POST /callback/completion
+    - Purpose: Report task completion
+    - Contract: CompletionRequest → CompletionResponse
+    - Version: v1</code></pre>
+</section>
+<section id="database-component-interfaces" class="level3" data-number="12.1.3">
+<h3 data-number="12.1.3" class="anchored" data-anchor-id="database-component-interfaces"><span class="header-section-number">12.1.3</span> Database Component Interfaces</h3>
+<pre><code>Database Component
+├── Query Interface (api)
+│   - Protocol: JDBC/ODBC
+│   - Purpose: Execute read queries
+│   - Contract: SQL Query → ResultSet
+│   - Version: N/A (protocol-defined)
+│
+├── Transaction Interface (api)
+│   - Protocol: Database-specific
+│   - Purpose: Begin, commit, rollback transactions
+│   - Contract: TransactionOperation → TransactionResult
+│   - Version: N/A (protocol-defined)
+│
+└── Change Data Capture Interface (event)
+    - Topic: database_changes
+    - Purpose: Emit data modification events
+    - Contract: DataChangeEvent → (consumed by CDC consumers)
+    - Version: v1</code></pre>
+</section>
+<section id="interface-versioning" class="level3" data-number="12.1.4">
+<h3 data-number="12.1.4" class="anchored" data-anchor-id="interface-versioning"><span class="header-section-number">12.1.4</span> Interface Versioning</h3>
+<p>Interfaces are among the most stable elements of a system architecture. While internal component implementations may evolve frequently, interfaces often persist over long periods because they define integration boundaries between systems.</p>
+<p>For this reason, <strong>interface versioning becomes a key mechanism for managing architectural evolution</strong>.</p>
+<p>When an interface changes in ways that may affect compatibility, a new version must be introduced. Version identifiers allow multiple interface definitions to coexist while clients gradually migrate to newer versions.</p>
+<p>Interface versioning serves several architectural functions.</p>
+<p>First, it provides a stable reference point for system integrations. External systems can depend on a specific interface version without being affected by internal system changes.</p>
+<p>Second, versioning enables <strong>incremental evolution</strong> of system architecture. New capabilities can be introduced through new interface versions while maintaining compatibility with existing integrations.</p>
+<p>Third, interface versions function as <strong>historical markers</strong> of system architecture. By examining interface evolution over time, it becomes possible to analyze how a system’s structure and capabilities have changed.</p>
+<p>Within the ontology, interfaces therefore carry explicit version identifiers and version relationships. These relationships capture how interface definitions evolve across system releases.</p>
+<p>Through this mechanism, interface versioning becomes a central index of architectural change.</p>
+</section>
+</section>
+<section id="interface-versioning-strategies" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="interface-versioning-strategies"><span class="header-section-number">12.2</span> Interface Versioning Strategies</h2>
+<section id="strategy-1-uri-versioning" class="level3" data-number="12.2.1">
+<h3 data-number="12.2.1" class="anchored" data-anchor-id="strategy-1-uri-versioning"><span class="header-section-number">12.2.1</span> Strategy 1: URI Versioning</h3>
+<p>Version is embedded in the interface URI:</p>
+<pre><code>Version 1: /api/v1/users
+Version 2: /api/v2/users
+Version 3: /api/v3/users
+
+Advantages:
+  - Clear separation between versions
+  - Easy to route requests to appropriate handlers
+  - Can deprecate old versions by removing endpoints
+
+Disadvantages:
+  - URI changes require client updates
+  - Version is exposed in client code
+  - Multiple versions increase API surface area</code></pre>
+</section>
+<section id="strategy-2-header-versioning" class="level3" data-number="12.2.2">
+<h3 data-number="12.2.2" class="anchored" data-anchor-id="strategy-2-header-versioning"><span class="header-section-number">12.2.2</span> Strategy 2: Header Versioning</h3>
+<p>Version is specified in request headers:</p>
+<pre><code>Endpoint: /api/users
+Header: API-Version: v1
+
+Version 1 Request:
+  GET /api/users
+  API-Version: v1
+
+Version 2 Request:
+  GET /api/users
+  API-Version: v2
+
+Advantages:
+  - Clean URIs without version information
+  - Same endpoint can handle multiple versions
+  - Version can be negotiated dynamically
+
+Disadvantages:
+  - Less discoverable
+  - Requires header support in all clients
+  - Harder to cache responses</code></pre>
+</section>
+<section id="strategy-3-content-negotiation" class="level3" data-number="12.2.3">
+<h3 data-number="12.2.3" class="anchored" data-anchor-id="strategy-3-content-negotiation"><span class="header-section-number">12.2.3</span> Strategy 3: Content Negotiation</h3>
+<p>Version is specified via content negotiation:</p>
+<pre><code>Accept header specifies version:
+  Accept: application/vnd.api.v1+json
+  Accept: application/vnd.api.v2+json
+
+Advantages:
+  - HTTP-standard approach
+  - Can negotiate other aspects simultaneously (format, language)
+  - Clean separation of concerns
+
+Disadvantages:
+  - Complex to implement
+  - Requires content negotiation support
+  - Not all clients support this pattern</code></pre>
+</section>
+</section>
+<section id="interface-evolution-patterns" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="interface-evolution-patterns"><span class="header-section-number">12.3</span> Interface Evolution Patterns</h2>
+<section id="additive-changes-compatible" class="level3" data-number="12.3.1">
+<h3 data-number="12.3.1" class="anchored" data-anchor-id="additive-changes-compatible"><span class="header-section-number">12.3.1</span> Additive Changes (Compatible)</h3>
+<p>Adding new fields or operations without breaking existing functionality:</p>
+<pre><code>Original Interface (v1):
+  POST /api/users
+  Request: { "name": "string", "email": "string" }
+  Response: { "user_id": "string", "name": "string", "email": "string" }
+
+Evolved Interface (v2):
+  POST /api/users
+  Request: { "name": "string", "email": "string", "phone": "string" }
+  Response: { "user_id": "string", "name": "string", "email": "string", "phone": "string" }
+
+Strategy:
+  - Keep v1 interface unchanged
+  - Introduce v2 with additional fields
+  - v1 requests ignore new fields
+  - Gradually migrate clients to v2</code></pre>
+</section>
+<section id="non-breaking-modifications-compatible" class="level3" data-number="12.3.2">
+<h3 data-number="12.3.2" class="anchored" data-anchor-id="non-breaking-modifications-compatible"><span class="header-section-number">12.3.2</span> Non-Breaking Modifications (Compatible)</h3>
+<p>Changing interface semantics without breaking existing clients:</p>
+<pre><code>Original Interface (v1):
+  POST /api/orders
+  Behavior: Creates order synchronously
+
+Evolved Interface (v2):
+  POST /api/orders
+  Behavior: Creates order asynchronously, returns job ID
+  New Endpoint: GET /api/orders/{job_id}
+  Purpose: Check order creation status
+
+Strategy:
+  - v2 provides enhanced async behavior
+  - v1 clients continue to work with synchronous mode
+  - New clients can use async mode for better performance</code></pre>
+</section>
+<section id="breaking-changes-new-version-required" class="level3" data-number="12.3.3">
+<h3 data-number="12.3.3" class="anchored" data-anchor-id="breaking-changes-new-version-required"><span class="header-section-number">12.3.3</span> Breaking Changes (New Version Required)</h3>
+<p>Changes that require clients to be updated:</p>
+<pre><code>Original Interface (v1):
+  GET /api/users/{id}
+  Response: { "user_id": "string", "name": "string", "email": "string" }
+
+Breaking Change (v2):
+  GET /api/users/{id}
+  Response: { "user_id": "string", "full_name": "string", "contact_email": "string" }
+
+Strategy:
+  - Maintain v1 interface alongside v2
+  - Document migration path from v1 to v2
+  - Set deprecation date for v1 (e.g., 6 months)
+  - Monitor v1 usage before removal
+  - Remove v1 after migration period</code></pre>
+</section>
+</section>
+<section id="interface-lifecycle-management" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="interface-lifecycle-management"><span class="header-section-number">12.4</span> Interface Lifecycle Management</h2>
+<section id="version-introduction" class="level3" data-number="12.4.1">
+<h3 data-number="12.4.1" class="anchored" data-anchor-id="version-introduction"><span class="header-section-number">12.4.1</span> Version Introduction</h3>
+<ol type="1">
+<li><strong>Design</strong> - Define new interface version with clear contract</li>
+<li><strong>Implement</strong> - Deploy new version alongside existing versions</li>
+<li><strong>Document</strong> - Provide migration guide and examples</li>
+<li><strong>Announce</strong> - Notify users of new version availability</li>
+<li><strong>Monitor</strong> - Track adoption and usage patterns</li>
+</ol>
+</section>
+<section id="version-deprecation" class="level3" data-number="12.4.2">
+<h3 data-number="12.4.2" class="anchored" data-anchor-id="version-deprecation"><span class="header-section-number">12.4.2</span> Version Deprecation</h3>
+<ol type="1">
+<li><strong>Announce Deprecation</strong> - Publish deprecation notice with timeline</li>
+<li><strong>Provide Migration Guide</strong> - Offer clear steps for migrating to newer version</li>
+<li><strong>Add Warnings</strong> - Return deprecation warnings in responses</li>
+<li><strong>Monitor Usage</strong> - Track remaining clients using deprecated version</li>
+<li><strong>Schedule Removal</strong> - Set final removal date</li>
+</ol>
+</section>
+<section id="version-removal" class="level3" data-number="12.4.3">
+<h3 data-number="12.4.3" class="anchored" data-anchor-id="version-removal"><span class="header-section-number">12.4.3</span> Version Removal</h3>
+<ol type="1">
+<li><strong>Verify Migration</strong> - Confirm no active clients using deprecated version</li>
+<li><strong>Remove Endpoint</strong> - Delete deprecated interface implementation</li>
+<li><strong>Update Documentation</strong> - Remove deprecated version from docs</li>
+<li><strong>Clean Up Tests</strong> - Remove tests for deprecated version</li>
+<li><strong>Archive Specifications</strong> - Keep record of removed versions for reference</li>
+</ol>
+</section>
+</section>
+<section id="interface-versioning-best-practices" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="interface-versioning-best-practices"><span class="header-section-number">12.5</span> Interface Versioning Best Practices</h2>
+<p><strong>Use Semantic Versioning</strong> - MAJOR version: Breaking changes - MINOR version: Additive changes - PATCH version: Bug fixes, documentation updates</p>
+<p><strong>Maintain Backward Compatibility</strong> - Prefer additive changes over breaking changes - Use default values for new fields - Support both old and new request formats when possible</p>
+<p><strong>Document Version Changes</strong> - Maintain changelog for each version - Provide migration guides - Include example requests/responses - Document deprecation timelines</p>
+<p><strong>Monitor Version Usage</strong> - Track which versions clients are using - Set up alerts for deprecated version usage - Gather feedback on new versions - Analyze migration patterns</p>
+<p><strong>Plan Deprecation Carefully</strong> - Provide ample migration time (typically 6-12 months) - Offer direct support for migration - Consider grandfather clauses for long-term clients - Communicate deprecation early and frequently</p>
+<hr>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../part-ii/chapter-6.html" class="pagination-link" aria-label="Components: The Structural Building Blocks">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Components: The Structural Building Blocks</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../part-ii/chapter-8.html" class="pagination-link" aria-label="Data Entities and State">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Entities and State</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

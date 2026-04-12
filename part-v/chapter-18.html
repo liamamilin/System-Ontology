@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>23&nbsp; Risk, Failure Modes, and Trust – System Ontology</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../part-vi/chapter-19.html" rel="next">
+<link href="../part-v/chapter-17.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part-v/chapter-17.html">Part V - Constraints &amp; Quality Attributes</a></li><li class="breadcrumb-item"><a href="../part-v/chapter-18.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Risk, Failure Modes, and Trust</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">System Ontology</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About This Book</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Front Matter</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preface — Why Ontology Comes Second</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/reader-contract.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reader Contract</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/notation-conventions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Notation &amp; Conventions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/ontology-as-engineering-artifact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ontology as an Engineering Artifact</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I - Ontology Fundamentals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">What Ontology Is (In Engineering Terms)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Ontology Stack</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ontology Design Principles</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II - Core Entities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">System, Boundary, and Context</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Capability and Requirement Entities</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Components: The Structural Building Blocks</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Interfaces and Contracts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Entities and State</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Workflow and Execution Units</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III - Core Relations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Relation Types (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Boundaries and Coupling Relations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Interaction Models as Relation Patterns</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV - Type System</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">System Type Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Component Type Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Architecture Style Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Pattern Hooks: Making Ontology Pattern-Aware</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part V - Constraints &amp; Quality Attributes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-v/chapter-17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Quality Attributes as First-Class Entities</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-v/chapter-18.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Risk, Failure Modes, and Trust</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part VI - Mapping</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-vi/chapter-19.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Kernel Mapping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-vi/chapter-20.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Extraction Signals &amp; Mapping Rules</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Capstone</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../capstone/chapter-21.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Ontology Release, Governance, and Evolution</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Appendix A — System Ontology v0.1 (YAML / JSON Schema)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Appendix B — Entity Dictionary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-c.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Appendix C — Relation Dictionary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-d.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Appendix D — System Type Decision Tree</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Appendix E — Example Ontology Instances</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-f.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Appendix F — Glossary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-g.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Appendix G — Projection Mapping Cheat Sheet</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Epilogue — From Ontology to Blueprint Structure</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#failure-modes-as-explicit-entities" id="toc-failure-modes-as-explicit-entities" class="nav-link active" data-scroll-target="#failure-modes-as-explicit-entities"><span class="header-section-number">23.0.1</span> Failure Modes as Explicit Entities</a></li>
+  <li><a href="#reliability-hooks" id="toc-reliability-hooks" class="nav-link" data-scroll-target="#reliability-hooks"><span class="header-section-number">23.0.2</span> Reliability Hooks</a></li>
+  <li><a href="#security-hooks" id="toc-security-hooks" class="nav-link" data-scroll-target="#security-hooks"><span class="header-section-number">23.0.3</span> Security Hooks</a></li>
+  <li><a href="#trust-boundaries" id="toc-trust-boundaries" class="nav-link" data-scroll-target="#trust-boundaries"><span class="header-section-number">23.0.4</span> Trust Boundaries</a></li>
+  <li><a href="#failure-mode-examples" id="toc-failure-mode-examples" class="nav-link" data-scroll-target="#failure-mode-examples"><span class="header-section-number">23.1</span> Failure Mode Examples</a>
+  <ul class="collapse">
+  <li><a href="#component-failure-modes" id="toc-component-failure-modes" class="nav-link" data-scroll-target="#component-failure-modes"><span class="header-section-number">23.1.1</span> Component Failure Modes</a></li>
+  <li><a href="#network-failure-modes" id="toc-network-failure-modes" class="nav-link" data-scroll-target="#network-failure-modes"><span class="header-section-number">23.1.2</span> Network Failure Modes</a></li>
+  <li><a href="#data-failure-modes" id="toc-data-failure-modes" class="nav-link" data-scroll-target="#data-failure-modes"><span class="header-section-number">23.1.3</span> Data Failure Modes</a></li>
+  <li><a href="#external-dependency-failure-modes" id="toc-external-dependency-failure-modes" class="nav-link" data-scroll-target="#external-dependency-failure-modes"><span class="header-section-number">23.1.4</span> External Dependency Failure Modes</a></li>
+  </ul></li>
+  <li><a href="#reliability-hooks-examples" id="toc-reliability-hooks-examples" class="nav-link" data-scroll-target="#reliability-hooks-examples"><span class="header-section-number">23.2</span> Reliability Hooks Examples</a>
+  <ul class="collapse">
+  <li><a href="#retry-mechanisms" id="toc-retry-mechanisms" class="nav-link" data-scroll-target="#retry-mechanisms"><span class="header-section-number">23.2.1</span> Retry Mechanisms</a></li>
+  <li><a href="#idempotency" id="toc-idempotency" class="nav-link" data-scroll-target="#idempotency"><span class="header-section-number">23.2.2</span> Idempotency</a></li>
+  <li><a href="#graceful-degradation" id="toc-graceful-degradation" class="nav-link" data-scroll-target="#graceful-degradation"><span class="header-section-number">23.2.3</span> Graceful Degradation</a></li>
+  <li><a href="#isolation" id="toc-isolation" class="nav-link" data-scroll-target="#isolation"><span class="header-section-number">23.2.4</span> Isolation</a></li>
+  </ul></li>
+  <li><a href="#security-hooks-examples" id="toc-security-hooks-examples" class="nav-link" data-scroll-target="#security-hooks-examples"><span class="header-section-number">23.3</span> Security Hooks Examples</a>
+  <ul class="collapse">
+  <li><a href="#authentication-authn" id="toc-authentication-authn" class="nav-link" data-scroll-target="#authentication-authn"><span class="header-section-number">23.3.1</span> Authentication (Authn)</a></li>
+  <li><a href="#authorization-authz" id="toc-authorization-authz" class="nav-link" data-scroll-target="#authorization-authz"><span class="header-section-number">23.3.2</span> Authorization (Authz)</a></li>
+  <li><a href="#secret-boundaries" id="toc-secret-boundaries" class="nav-link" data-scroll-target="#secret-boundaries"><span class="header-section-number">23.3.3</span> Secret Boundaries</a></li>
+  </ul></li>
+  <li><a href="#trust-boundary-examples" id="toc-trust-boundary-examples" class="nav-link" data-scroll-target="#trust-boundary-examples"><span class="header-section-number">23.4</span> Trust Boundary Examples</a>
+  <ul class="collapse">
+  <li><a href="#network-trust-boundaries" id="toc-network-trust-boundaries" class="nav-link" data-scroll-target="#network-trust-boundaries"><span class="header-section-number">23.4.1</span> Network Trust Boundaries</a></li>
+  <li><a href="#application-trust-boundaries" id="toc-application-trust-boundaries" class="nav-link" data-scroll-target="#application-trust-boundaries"><span class="header-section-number">23.4.2</span> Application Trust Boundaries</a></li>
+  <li><a href="#data-trust-boundaries" id="toc-data-trust-boundaries" class="nav-link" data-scroll-target="#data-trust-boundaries"><span class="header-section-number">23.4.3</span> Data Trust Boundaries</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part-v/chapter-17.html">Part V - Constraints &amp; Quality Attributes</a></li><li class="breadcrumb-item"><a href="../part-v/chapter-18.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Risk, Failure Modes, and Trust</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Risk, Failure Modes, and Trust</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Architectural representations that describe only the <em>intended behavior</em> of systems are incomplete. Real systems operate under uncertainty, partial failure, and adversarial conditions. A complete architectural ontology must therefore represent not only structure and functionality, but also the <strong>risks, failure modes, and trust boundaries</strong> that shape system behavior under abnormal conditions.</p>
+<p>Within the Blueprint Architecture ontology, these concerns are incorporated through explicit entities and structural hooks. Failure modes capture how systems can break, reliability hooks describe mechanisms that mitigate failure, and trust boundaries define how systems control access and protect sensitive resources.</p>
+<p>Together, these elements extend the ontology beyond nominal operation and into the domain of <strong>resilient and trustworthy system design</strong>.</p>
+<section id="failure-modes-as-explicit-entities" class="level3" data-number="23.0.1">
+<h3 data-number="23.0.1" class="anchored" data-anchor-id="failure-modes-as-explicit-entities"><span class="header-section-number">23.0.1</span> Failure Modes as Explicit Entities</h3>
+<p>A <strong>failure mode</strong> represents a specific way in which a system component, interface, or workflow can fail.</p>
+<p>Rather than treating failures as external incidents, the ontology models them as explicit entities associated with architectural elements. This representation allows architects to reason about failure behavior as part of the structural design of the system.</p>
+<p>Failure modes may arise from multiple sources, including:</p>
+<ul>
+<li><p>component crashes or service unavailability</p></li>
+<li><p>network communication failures</p></li>
+<li><p>data inconsistency or corruption</p></li>
+<li><p>resource exhaustion</p></li>
+<li><p>unexpected input or invalid requests</p></li>
+</ul>
+<p>Each failure mode can be linked to the architectural elements it affects and to the mechanisms designed to mitigate it.</p>
+<p>By modeling failure modes explicitly, the architecture representation can capture not only how the system operates under normal conditions, but also how it behaves under degraded or exceptional conditions.</p>
+</section>
+<section id="reliability-hooks" class="level3" data-number="23.0.2">
+<h3 data-number="23.0.2" class="anchored" data-anchor-id="reliability-hooks"><span class="header-section-number">23.0.2</span> Reliability Hooks</h3>
+<p>Reliability hooks represent architectural mechanisms designed to mitigate failure modes and maintain system availability.</p>
+<p>These hooks correspond to recurring reliability patterns that appear across distributed systems.</p>
+<p><strong>Retry mechanisms</strong></p>
+<p>Retry mechanisms allow failed operations to be attempted again after transient errors such as network disruptions or temporary service unavailability.</p>
+<p>Retries improve resilience but must be carefully controlled to avoid cascading failures.</p>
+<p><strong>Idempotency</strong></p>
+<p>Idempotent operations ensure that repeated execution of the same request produces the same result. This property allows retry mechanisms to operate safely without introducing duplicate effects.</p>
+<p>Idempotency is particularly important in distributed systems where network interruptions may cause requests to be repeated.</p>
+<p><strong>Graceful degradation</strong></p>
+<p>Degradation mechanisms allow a system to continue operating with reduced functionality when certain components become unavailable.</p>
+<p>For example, a recommendation service may be temporarily disabled while the rest of the system continues to function.</p>
+<p><strong>Isolation</strong></p>
+<p>Isolation mechanisms prevent failures in one component from propagating to other parts of the system.</p>
+<p>Common isolation strategies include circuit breakers, resource partitioning, and service-level boundaries.</p>
+<p>These reliability hooks represent <strong>structural resilience mechanisms</strong> that can be attached to workflows, interfaces, or components within the ontology.</p>
+</section>
+<section id="security-hooks" class="level3" data-number="23.0.3">
+<h3 data-number="23.0.3" class="anchored" data-anchor-id="security-hooks"><span class="header-section-number">23.0.3</span> Security Hooks</h3>
+<p>In addition to reliability concerns, systems must enforce security controls that protect data and operations from unauthorized access.</p>
+<p>Security hooks represent the architectural elements responsible for enforcing these protections.</p>
+<p><strong>Authentication (Authn)</strong></p>
+<p>Authentication mechanisms verify the identity of users, services, or processes interacting with the system.</p>
+<p>Examples include credential verification, token-based authentication, and identity federation systems.</p>
+<p><strong>Authorization (Authz)</strong></p>
+<p>Authorization mechanisms determine whether an authenticated actor has permission to perform a specific operation.</p>
+<p>Authorization rules often appear as policy engines or access control mechanisms associated with interfaces.</p>
+<p><strong>Secret boundaries</strong></p>
+<p>Secret boundaries define where sensitive information such as credentials, tokens, or encryption keys are stored and accessed.</p>
+<p>These boundaries ensure that sensitive data remains isolated from components that do not require access.</p>
+<p>Security hooks therefore represent the architectural structures that enforce <strong>identity, permission, and secrecy controls</strong>.</p>
+</section>
+<section id="trust-boundaries" class="level3" data-number="23.0.4">
+<h3 data-number="23.0.4" class="anchored" data-anchor-id="trust-boundaries"><span class="header-section-number">23.0.4</span> Trust Boundaries</h3>
+<p>A <strong>trust boundary</strong> represents a transition point between parts of the system that operate under different levels of trust.</p>
+<p>Trust boundaries are critical in systems where components interact across security domains, organizational boundaries, or infrastructure layers.</p>
+<p>Examples include:</p>
+<ul>
+<li><p>boundaries between external clients and internal services</p></li>
+<li><p>boundaries between public networks and internal infrastructure</p></li>
+<li><p>boundaries between services with different permission levels</p></li>
+</ul>
+<p>Trust boundaries influence several aspects of system architecture.</p>
+<p>First, they determine where authentication and authorization mechanisms must be applied.</p>
+<p>Second, they influence data protection mechanisms such as encryption or access control policies.</p>
+<p>Third, they shape system design decisions related to data exposure and privilege management.</p>
+<p>Within the ontology, trust boundaries are associated with interfaces and data flows. They indicate where sensitive interactions occur and where additional security controls must be applied.</p>
+<p>By representing failure modes, reliability mechanisms, security hooks, and trust boundaries explicitly, the ontology allows system architecture to capture not only <strong>how systems function</strong>, but also <strong>how they remain reliable and secure in the presence of risk and uncertainty</strong>.</p>
+<p>These structures also provide the foundation for later architectural projections such as security views, reliability analyses, and operational risk assessments.</p>
+</section>
+<section id="failure-mode-examples" class="level2" data-number="23.1">
+<h2 data-number="23.1" class="anchored" data-anchor-id="failure-mode-examples"><span class="header-section-number">23.1</span> Failure Mode Examples</h2>
+<section id="component-failure-modes" class="level3" data-number="23.1.1">
+<h3 data-number="23.1.1" class="anchored" data-anchor-id="component-failure-modes"><span class="header-section-number">23.1.1</span> Component Failure Modes</h3>
+<pre><code>Component: API Service
+
+Failure Mode 1: Service Crash
+  Trigger: Out of memory exception
+  Impact: Service unavailable until restart
+  Detection: Health check fails
+  Recovery: Auto-restart by orchestration system
+
+Failure Mode 2: Database Connection Exhaustion
+  Trigger: High load, connection leaks
+  Impact: Cannot process requests
+  Detection: Connection timeout errors
+  Recovery: Restart connections, implement connection pooling
+
+Failure Mode 3: Rate Limiting Triggered
+  Trigger: Excessive requests from single client
+  Impact: Returns 429 Too Many Requests
+  Detection: Rate limit monitoring
+  Recovery: Automatic reset after time window</code></pre>
+</section>
+<section id="network-failure-modes" class="level3" data-number="23.1.2">
+<h3 data-number="23.1.2" class="anchored" data-anchor-id="network-failure-modes"><span class="header-section-number">23.1.2</span> Network Failure Modes</h3>
+<pre><code>Network: Service Communication
+
+Failure Mode 1: Network Timeout
+  Trigger: Network congestion, firewall blocking
+  Impact: Request fails or times out
+  Detection: Timeout exceptions
+  Recovery: Retry with exponential backoff
+
+Failure Mode 2: DNS Resolution Failure
+  Trigger: DNS server issues, network problems
+  Impact: Cannot resolve service addresses
+  Detection: DNS resolution errors
+  Recovery: Use fallback DNS servers
+
+Failure Mode 3: Packet Loss
+  Trigger: Network quality issues
+  Impact: Data corruption, request failures
+  Detection: Checksum failures, incomplete data
+  Recovery: Retransmission, TCP handles automatically</code></pre>
+</section>
+<section id="data-failure-modes" class="level3" data-number="23.1.3">
+<h3 data-number="23.1.3" class="anchored" data-anchor-id="data-failure-modes"><span class="header-section-number">23.1.3</span> Data Failure Modes</h3>
+<pre><code>Data: Database Storage
+
+Failure Mode 1: Disk Failure
+  Trigger: Hard drive failure
+  Impact: Data loss, service interruption
+  Detection: Disk errors, SMART monitoring
+  Recovery: Failover to replica, disk replacement
+
+Failure Mode 2: Data Corruption
+  Trigger: Software bugs, hardware issues
+  Impact: Incorrect data, application errors
+  Detection: Checksum failures, consistency checks
+  Recovery: Restore from backup, data repair
+
+Failure Mode 3: Inconsistent State
+  Trigger: Partial transaction commit
+  Impact: Data inconsistency, transaction errors
+  Detection: Consistency checks, constraint violations
+  Recovery: Transaction rollback, manual reconciliation</code></pre>
+</section>
+<section id="external-dependency-failure-modes" class="level3" data-number="23.1.4">
+<h3 data-number="23.1.4" class="anchored" data-anchor-id="external-dependency-failure-modes"><span class="header-section-number">23.1.4</span> External Dependency Failure Modes</h3>
+<pre><code>Dependency: External Payment Gateway
+
+Failure Mode 1: Service Unavailable
+  Trigger: Payment gateway downtime
+  Impact: Cannot process payments
+  Detection: Service health checks, API errors
+  Recovery: Retry with backoff, switch to backup provider
+
+Failure Mode 2: API Changes
+  Trigger: Payment gateway updates API
+  Impact: Integration breaks, errors
+  Detection: API contract violations
+  Recovery: Update integration, version compatibility layer
+
+Failure Mode 3: Rate Limiting Exceeded
+  Trigger: Exceeds API call limits
+  Impact: Cannot process transactions
+  Detection: 429 responses, rate limit headers
+  Recovery: Implement request queuing, upgrade plan</code></pre>
+</section>
+</section>
+<section id="reliability-hooks-examples" class="level2" data-number="23.2">
+<h2 data-number="23.2" class="anchored" data-anchor-id="reliability-hooks-examples"><span class="header-section-number">23.2</span> Reliability Hooks Examples</h2>
+<section id="retry-mechanisms" class="level3" data-number="23.2.1">
+<h3 data-number="23.2.1" class="anchored" data-anchor-id="retry-mechanisms"><span class="header-section-number">23.2.1</span> Retry Mechanisms</h3>
+<pre><code>Component: Order Service
+
+Retry Configuration:
+  - Retry attempts: 3
+  - Backoff strategy: exponential
+  - Initial delay: 100ms
+  - Maximum delay: 10s
+  - Retry for: Network errors, Timeouts
+  
+Retry Logic:
+  1. Attempt operation
+  2. If fails with retryable error:
+     - Wait: 100ms * (2^attempt)
+     - Retry operation
+  3. If fails again after 3 attempts:
+     - Give up, return error
+  
+Benefits:
+  - Handles transient failures
+  - Reduces cascading failures
+  - Improves system resilience
+  
+Risks:
+  - Can amplify load if many retries
+  - Can hide underlying issues
+  - Can cause inconsistent state</code></pre>
+</section>
+<section id="idempotency" class="level3" data-number="23.2.2">
+<h3 data-number="23.2.2" class="anchored" data-anchor-id="idempotency"><span class="header-section-number">23.2.2</span> Idempotency</h3>
+<pre><code>Component: Payment Service
+
+Idempotent Operations:
+  - Process Payment (idempotent)
+    - Same payment request multiple times
+    - Result: Only one charge, same response
+  
+  - Create Order (idempotent)
+    - Same order request multiple times
+    - Result: Only one order created
+  
+Idempotency Keys:
+  - Unique identifier per operation
+  - Generated by client
+  - Stored with operation results
+  
+Implementation:
+  1. Check if idempotency key exists
+  2. If exists, return cached result
+  3. If not, process operation
+  4. Store result with idempotency key
+  
+Benefits:
+  - Safe retry without side effects
+  - Prevents duplicate operations
+  - Enables reliable systems
+  
+Use Cases:
+  - Payment processing
+  - Order creation
+  - Event processing</code></pre>
+</section>
+<section id="graceful-degradation" class="level3" data-number="23.2.3">
+<h3 data-number="23.2.3" class="anchored" data-anchor-id="graceful-degradation"><span class="header-section-number">23.2.3</span> Graceful Degradation</h3>
+<pre><code>System: E-commerce Platform
+
+Degradation Levels:
+  - Level 1 (Normal): All features available
+  - Level 2 (Partial): Recommendations disabled
+  - Level 3 (Limited): Read-only mode
+  - Level 4 (Critical): Maintenance mode
+
+Degradation Triggers:
+  - High load: Disable recommendations
+  - Database issues: Read-only mode
+  - Critical failures: Maintenance mode
+
+Implementation:
+  1. Monitor system health
+  2. Detect degradation conditions
+  3. Switch to appropriate level
+  4. Notify users of degradation
+  
+Example Scenarios:
+  - Search service down: Hide search UI
+  - Recommendation service slow: Show cached results
+  - Payment gateway issues: Show checkout unavailable
+  
+Benefits:
+  - System remains functional
+  - User experience preserved
+  - Prevents complete failure
+  
+Risks:
+  - Reduced functionality
+  - User confusion
+  - Complex state management</code></pre>
+</section>
+<section id="isolation" class="level3" data-number="23.2.4">
+<h3 data-number="23.2.4" class="anchored" data-anchor-id="isolation"><span class="header-section-number">23.2.4</span> Isolation</h3>
+<pre><code>Component: Multi-tenant Platform
+
+Isolation Strategies:
+  - Resource quotas per tenant
+  - Separate database schemas
+  - Sandboxed execution environments
+  - Network segmentation
+
+Isolation Boundaries:
+  - Tenant A cannot affect Tenant B
+  - Failed tenant doesn't crash platform
+  - Resource limits prevent abuse
+  - Security isolation between tenants
+
+Implementation:
+  - Per-tenant resource limits
+  - Containerization
+  - Database schema separation
+  - Network namespaces
+
+Benefits:
+  - Multi-tenancy support
+  - Fault isolation
+  - Resource fairness
+  - Security boundaries
+
+Example:
+  - Tenant A high load doesn't affect Tenant B
+  - Tenant C crash doesn't crash platform
+  - Tenant D resource abuse is limited by quota</code></pre>
+</section>
+</section>
+<section id="security-hooks-examples" class="level2" data-number="23.3">
+<h2 data-number="23.3" class="anchored" data-anchor-id="security-hooks-examples"><span class="header-section-number">23.3</span> Security Hooks Examples</h2>
+<section id="authentication-authn" class="level3" data-number="23.3.1">
+<h3 data-number="23.3.1" class="anchored" data-anchor-id="authentication-authn"><span class="header-section-number">23.3.1</span> Authentication (Authn)</h3>
+<pre><code>Component: Authentication Service
+
+Authentication Methods:
+  - Username/Password
+  - OAuth 2.0 / OpenID Connect
+  - SAML SSO
+  - API Keys
+  - JWT Tokens
+
+Authentication Flow:
+  1. User provides credentials
+  2. Authentication Service validates
+  3. If valid, issues token/session
+  4. Token includes user info and permissions
+
+Implementation:
+  - Password hashing (bcrypt, argon2)
+  - Session management
+  - Token validation
+  - Multi-factor authentication
+
+Security Measures:
+  - Rate limiting on login attempts
+  - Password complexity requirements
+  - Session timeout
+  - Secure token storage
+
+Benefits:
+  - Identity verification
+  - Access control
+  - Audit trail
+  - Single Sign-On support</code></pre>
+</section>
+<section id="authorization-authz" class="level3" data-number="23.3.2">
+<h3 data-number="23.3.2" class="anchored" data-anchor-id="authorization-authz"><span class="header-section-number">23.3.2</span> Authorization (Authz)</h3>
+<pre><code>Component: Authorization Service
+
+Authorization Models:
+  - Role-Based Access Control (RBAC)
+  - Attribute-Based Access Control (ABAC)
+  - Policy-Based Access Control
+
+Authorization Flow:
+  1. User attempts operation
+  2. Authorization Service checks permissions
+   - RBAC: Check user roles against required roles
+   - ABAC: Check user attributes against policy rules
+  3. If authorized, allow operation
+  - If not, deny access
+
+Implementation:
+  - Permission models: resource:action
+  - Role definitions and assignments
+  - Policy rule engine
+  - Permission caching
+
+Security Measures:
+  - Principle of least privilege
+  - Permission audit logging
+  - Permission revocation
+  - Regular permission reviews
+
+Benefits:
+  - Access control enforcement
+  - Security policy implementation
+  - Regulatory compliance
+  - Audit capability</code></pre>
+</section>
+<section id="secret-boundaries" class="level3" data-number="23.3.3">
+<h3 data-number="23.3.3" class="anchored" data-anchor-id="secret-boundaries"><span class="header-section-number">23.3.3</span> Secret Boundaries</h3>
+<pre><code>Component: Secret Management
+
+Secret Types:
+  - Database credentials
+  - API keys
+  - Encryption keys
+  - Certificates
+  - OAuth tokens
+
+Secret Storage:
+  - Encrypted storage
+  - Access logs
+  - Rotation policies
+  - Revocation support
+
+Secret Access:
+  - Role-based access
+  - Just-in-time access
+  - Temporary credentials
+  - Audit trails
+
+Implementation:
+  - Secrets manager service
+  - Environment variable injection
+  - Secret rotation automation
+  - Secret scanning
+
+Security Measures:
+  - Encryption at rest and in transit
+  - Access monitoring
+  - Secret rotation
+  - Zero-trust architecture
+
+Example:
+  - Database credentials stored in secrets manager
+  - Application retrieves credentials at startup
+  - Credentials rotated automatically
+  - Access logged and audited</code></pre>
+</section>
+</section>
+<section id="trust-boundary-examples" class="level2" data-number="23.4">
+<h2 data-number="23.4" class="anchored" data-anchor-id="trust-boundary-examples"><span class="header-section-number">23.4</span> Trust Boundary Examples</h2>
+<section id="network-trust-boundaries" class="level3" data-number="23.4.1">
+<h3 data-number="23.4.1" class="anchored" data-anchor-id="network-trust-boundaries"><span class="header-section-number">23.4.1</span> Network Trust Boundaries</h3>
+<pre><code>Trust Boundary: DMZ (Demilitarized Zone)
+
+Components:
+  - External network: Internet
+  - DMZ: Public-facing servers
+  - Internal network: Internal services
+
+Trust Levels:
+  - External: Low trust
+  - DMZ: Medium trust
+  - Internal: High trust
+
+Security Controls:
+  - Firewall between external and DMZ
+  - Firewall between DMZ and internal
+  - Network segmentation
+  - Traffic monitoring
+
+Crossing Boundaries:
+  - External → DMZ: HTTPS, authentication
+  - DMZ → Internal: VPN, mutual TLS
+  - Internal → DMZ: Service calls with authentication</code></pre>
+</section>
+<section id="application-trust-boundaries" class="level3" data-number="23.4.2">
+<h3 data-number="23.4.2" class="anchored" data-anchor-id="application-trust-boundaries"><span class="header-section-number">23.4.2</span> Application Trust Boundaries</h3>
+<pre><code>Trust Boundary: Admin vs User Access
+
+Trust Levels:
+  - Admin: High trust, full access
+  - User: Low trust, limited access
+
+Security Controls:
+  - Separate admin interfaces
+  - Role-based permissions
+  - Admin action logging
+  - Two-factor authentication for admin
+
+Crossing Boundaries:
+  - User → Admin: Privilege elevation requires approval
+  - Admin → User: Direct access allowed
+  - Both: Activity monitoring and logging</code></pre>
+</section>
+<section id="data-trust-boundaries" class="level3" data-number="23.4.3">
+<h3 data-number="23.4.3" class="anchored" data-anchor-id="data-trust-boundaries"><span class="header-section-number">23.4.3</span> Data Trust Boundaries</h3>
+<pre><code>Trust Boundary: Sensitive Data Access
+
+Data Classification:
+  - Public: No restrictions
+  - Internal: Organization access only
+  - Confidential: Restricted access
+  - Secret: Highly restricted
+
+Security Controls:
+  - Data encryption at rest
+  - Data encryption in transit
+  - Access control lists
+  - Data masking and redaction
+
+Access Examples:
+  - Public data: No authentication required
+  - Internal data: Employee login required
+  - Confidential data: Role-based access
+  - Secret data: Need-to-know basis + audit
+
+Crossing Boundaries:
+  - Public → Internal: Authentication required
+  - Internal → Confidential: Authorization required
+  - Confidential → Secret: Additional approval needed</code></pre>
+<hr>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../part-v/chapter-17.html" class="pagination-link" aria-label="Quality Attributes as First-Class Entities">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Quality Attributes as First-Class Entities</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../part-vi/chapter-19.html" class="pagination-link" aria-label="Ontology → Blueprint Kernel Mapping">
+        <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Kernel Mapping</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

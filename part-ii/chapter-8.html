@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>13&nbsp; Data Entities and State – System Ontology</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../part-ii/chapter-9.html" rel="next">
+<link href="../part-ii/chapter-7.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part-ii/chapter-4.html">Part II - Core Entities</a></li><li class="breadcrumb-item"><a href="../part-ii/chapter-8.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Entities and State</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">System Ontology</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About This Book</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Front Matter</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preface — Why Ontology Comes Second</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/reader-contract.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reader Contract</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/notation-conventions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Notation &amp; Conventions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/ontology-as-engineering-artifact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ontology as an Engineering Artifact</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I - Ontology Fundamentals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">What Ontology Is (In Engineering Terms)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Ontology Stack</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ontology Design Principles</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II - Core Entities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">System, Boundary, and Context</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Capability and Requirement Entities</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Components: The Structural Building Blocks</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Interfaces and Contracts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-8.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Entities and State</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Workflow and Execution Units</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III - Core Relations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Relation Types (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Boundaries and Coupling Relations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Interaction Models as Relation Patterns</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV - Type System</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">System Type Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Component Type Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Architecture Style Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Pattern Hooks: Making Ontology Pattern-Aware</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part V - Constraints &amp; Quality Attributes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-v/chapter-17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Quality Attributes as First-Class Entities</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-v/chapter-18.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Risk, Failure Modes, and Trust</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part VI - Mapping</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-vi/chapter-19.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Kernel Mapping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-vi/chapter-20.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Extraction Signals &amp; Mapping Rules</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Capstone</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../capstone/chapter-21.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Ontology Release, Governance, and Evolution</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Appendix A — System Ontology v0.1 (YAML / JSON Schema)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Appendix B — Entity Dictionary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-c.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Appendix C — Relation Dictionary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-d.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Appendix D — System Type Decision Tree</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Appendix E — Example Ontology Instances</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-f.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Appendix F — Glossary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-g.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Appendix G — Projection Mapping Cheat Sheet</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Epilogue — From Ontology to Blueprint Structure</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#data-entity-business-entities-vs-technical-entities" id="toc-data-entity-business-entities-vs-technical-entities" class="nav-link active" data-scroll-target="#data-entity-business-entities-vs-technical-entities"><span class="header-section-number">13.0.1</span> Data Entity — Business Entities vs Technical Entities</a></li>
+  <li><a href="#state-system-component-and-session-state" id="toc-state-system-component-and-session-state" class="nav-link" data-scroll-target="#state-system-component-and-session-state"><span class="header-section-number">13.0.2</span> State — System, Component, and Session State</a></li>
+  <li><a href="#persistence-storage-and-lifecycle" id="toc-persistence-storage-and-lifecycle" class="nav-link" data-scroll-target="#persistence-storage-and-lifecycle"><span class="header-section-number">13.0.3</span> Persistence — Storage and Lifecycle</a></li>
+  <li><a href="#data-flow-data-as-a-first-class-architectural-element" id="toc-data-flow-data-as-a-first-class-architectural-element" class="nav-link" data-scroll-target="#data-flow-data-as-a-first-class-architectural-element"><span class="header-section-number">13.0.4</span> Data Flow — Data as a First-Class Architectural Element</a></li>
+  <li><a href="#data-entity-examples" id="toc-data-entity-examples" class="nav-link" data-scroll-target="#data-entity-examples"><span class="header-section-number">13.1</span> Data Entity Examples</a>
+  <ul class="collapse">
+  <li><a href="#business-entity-examples" id="toc-business-entity-examples" class="nav-link" data-scroll-target="#business-entity-examples"><span class="header-section-number">13.1.1</span> Business Entity Examples</a></li>
+  <li><a href="#technical-entity-examples" id="toc-technical-entity-examples" class="nav-link" data-scroll-target="#technical-entity-examples"><span class="header-section-number">13.1.2</span> Technical Entity Examples</a></li>
+  </ul></li>
+  <li><a href="#state-examples-by-level" id="toc-state-examples-by-level" class="nav-link" data-scroll-target="#state-examples-by-level"><span class="header-section-number">13.2</span> State Examples by Level</a>
+  <ul class="collapse">
+  <li><a href="#system-state-examples" id="toc-system-state-examples" class="nav-link" data-scroll-target="#system-state-examples"><span class="header-section-number">13.2.1</span> System State Examples</a></li>
+  <li><a href="#component-state-examples" id="toc-component-state-examples" class="nav-link" data-scroll-target="#component-state-examples"><span class="header-section-number">13.2.2</span> Component State Examples</a></li>
+  <li><a href="#session-state-examples" id="toc-session-state-examples" class="nav-link" data-scroll-target="#session-state-examples"><span class="header-section-number">13.2.3</span> Session State Examples</a></li>
+  </ul></li>
+  <li><a href="#data-flow-patterns" id="toc-data-flow-patterns" class="nav-link" data-scroll-target="#data-flow-patterns"><span class="header-section-number">13.3</span> Data Flow Patterns</a>
+  <ul class="collapse">
+  <li><a href="#request-response-data-flow" id="toc-request-response-data-flow" class="nav-link" data-scroll-target="#request-response-data-flow"><span class="header-section-number">13.3.1</span> Request-Response Data Flow</a></li>
+  <li><a href="#event-driven-data-flow" id="toc-event-driven-data-flow" class="nav-link" data-scroll-target="#event-driven-data-flow"><span class="header-section-number">13.3.2</span> Event-Driven Data Flow</a></li>
+  <li><a href="#pipeline-data-flow" id="toc-pipeline-data-flow" class="nav-link" data-scroll-target="#pipeline-data-flow"><span class="header-section-number">13.3.3</span> Pipeline Data Flow</a></li>
+  <li><a href="#fan-outfan-in-data-flow" id="toc-fan-outfan-in-data-flow" class="nav-link" data-scroll-target="#fan-outfan-in-data-flow"><span class="header-section-number">13.3.4</span> Fan-Out/Fan-In Data Flow</a></li>
+  <li><a href="#broadcast-data-flow" id="toc-broadcast-data-flow" class="nav-link" data-scroll-target="#broadcast-data-flow"><span class="header-section-number">13.3.5</span> Broadcast Data Flow</a></li>
+  </ul></li>
+  <li><a href="#state-management-patterns" id="toc-state-management-patterns" class="nav-link" data-scroll-target="#state-management-patterns"><span class="header-section-number">13.4</span> State Management Patterns</a>
+  <ul class="collapse">
+  <li><a href="#stateless-component-pattern" id="toc-stateless-component-pattern" class="nav-link" data-scroll-target="#stateless-component-pattern"><span class="header-section-number">13.4.1</span> Stateless Component Pattern</a></li>
+  <li><a href="#stateful-component-pattern" id="toc-stateful-component-pattern" class="nav-link" data-scroll-target="#stateful-component-pattern"><span class="header-section-number">13.4.2</span> Stateful Component Pattern</a></li>
+  <li><a href="#caching-layer-pattern" id="toc-caching-layer-pattern" class="nav-link" data-scroll-target="#caching-layer-pattern"><span class="header-section-number">13.4.3</span> Caching Layer Pattern</a></li>
+  <li><a href="#event-sourcing-pattern" id="toc-event-sourcing-pattern" class="nav-link" data-scroll-target="#event-sourcing-pattern"><span class="header-section-number">13.4.4</span> Event Sourcing Pattern</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part-ii/chapter-4.html">Part II - Core Entities</a></li><li class="breadcrumb-item"><a href="../part-ii/chapter-8.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Entities and State</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Entities and State</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Software systems exist not only to perform computation but also to <strong>create, transform, store, and transmit data</strong>. Data therefore occupies a central role in architectural representation. Components process data, workflows move data between components, and system behavior often depends on the state encoded in stored information.</p>
+<p>For this reason, the ontology treats <strong>data entities and state</strong> as first-class elements of system architecture. Explicitly representing data structures and their lifecycle allows system architectures to be analyzed in terms of data ownership, flow patterns, and persistence boundaries.</p>
+<section id="data-entity-business-entities-vs-technical-entities" class="level3" data-number="13.0.1">
+<h3 data-number="13.0.1" class="anchored" data-anchor-id="data-entity-business-entities-vs-technical-entities"><span class="header-section-number">13.0.1</span> Data Entity — Business Entities vs Technical Entities</h3>
+<p>A <strong>Data Entity</strong> represents a structured unit of information managed by a system.</p>
+<p>Data entities capture the logical structures through which information is represented, stored, and exchanged. They may correspond to domain concepts, operational records, or technical artifacts used internally by the system.</p>
+<p>Two categories of data entities are particularly important.</p>
+<p><strong>Business Entities</strong></p>
+<p>Business entities represent domain concepts that are meaningful within the problem domain of the system. These entities correspond to real-world objects, processes, or relationships that the system models.</p>
+<p>Examples may include:</p>
+<ul>
+<li><p>user accounts</p></li>
+<li><p>orders</p></li>
+<li><p>transactions</p></li>
+<li><p>documents</p></li>
+<li><p>events generated by business processes</p></li>
+</ul>
+<p>Business entities typically form the conceptual core of the system’s data model. Their structure often remains stable even as implementation technologies change.</p>
+<p><strong>Technical Entities</strong></p>
+<p>Technical entities represent data structures created for operational or infrastructural purposes. These entities support system execution rather than representing domain concepts.</p>
+<p>Examples may include:</p>
+<ul>
+<li><p>session records</p></li>
+<li><p>cache entries</p></li>
+<li><p>job queues</p></li>
+<li><p>log records</p></li>
+<li><p>configuration objects</p></li>
+</ul>
+<p>While business entities model domain reality, technical entities support system functionality.</p>
+<p>Distinguishing between these categories helps clarify the role of different data structures within system architecture.</p>
+</section>
+<section id="state-system-component-and-session-state" class="level3" data-number="13.0.2">
+<h3 data-number="13.0.2" class="anchored" data-anchor-id="state-system-component-and-session-state"><span class="header-section-number">13.0.2</span> State — System, Component, and Session State</h3>
+<p>Data entities give rise to <strong>state</strong>, which represents the current condition of a system or one of its components.</p>
+<p>State reflects the accumulation of information over time. It influences how the system behaves and determines the outcomes of future operations.</p>
+<p>State may appear at several levels.</p>
+<p><strong>System State</strong></p>
+<p>System state represents the global condition of the entire system. It may include aggregated data structures or shared storage resources that influence system-wide behavior.</p>
+<p>Examples include global configuration settings or shared datasets.</p>
+<p><strong>Component State</strong></p>
+<p>Component state represents the internal state maintained by individual components. Components may store intermediate results, operational metadata, or internal caches that influence their behavior.</p>
+<p>Some components operate statelessly, meaning that they do not maintain persistent state between interactions. Stateless components are often easier to scale and replicate.</p>
+<p><strong>Session State</strong></p>
+<p>Session state represents temporary information associated with a particular user interaction or workflow execution. This type of state often persists only for the duration of a session or task.</p>
+<p>Examples include authentication sessions, temporary workflow contexts, or transient request metadata.</p>
+<p>Explicitly modeling these forms of state allows architectural analysis of system reliability, scalability, and failure behavior.</p>
+</section>
+<section id="persistence-storage-and-lifecycle" class="level3" data-number="13.0.3">
+<h3 data-number="13.0.3" class="anchored" data-anchor-id="persistence-storage-and-lifecycle"><span class="header-section-number">13.0.3</span> Persistence — Storage and Lifecycle</h3>
+<p>State becomes durable through <strong>persistence mechanisms</strong>.</p>
+<p>Persistence refers to the storage of data beyond the immediate execution context of a component. Persisted data survives process restarts, system redeployments, and other runtime events.</p>
+<p>Persistence introduces several architectural considerations.</p>
+<p>First, persistence mechanisms determine <strong>where data resides</strong>. Data may be stored in relational databases, document stores, object storage systems, or distributed key-value stores.</p>
+<p>Second, persistence determines <strong>data ownership boundaries</strong>. Different components may own different data entities, which affects system coupling and coordination.</p>
+<p>Third, persistence defines the <strong>lifecycle of data</strong>. Data entities may have lifetimes ranging from temporary caches to long-term historical records.</p>
+<p>Representing persistence explicitly in the ontology allows architectural descriptions to capture storage responsibilities and data durability requirements.</p>
+</section>
+<section id="data-flow-data-as-a-first-class-architectural-element" class="level3" data-number="13.0.4">
+<h3 data-number="13.0.4" class="anchored" data-anchor-id="data-flow-data-as-a-first-class-architectural-element"><span class="header-section-number">13.0.4</span> Data Flow — Data as a First-Class Architectural Element</h3>
+<p>Data does not remain static within a system. It moves through components, workflows, and interfaces as it is processed and transformed.</p>
+<p>These movements form <strong>data flows</strong>.</p>
+<p>A data flow represents the transfer of information between architectural elements. It may correspond to:</p>
+<ul>
+<li><p>API requests carrying structured payloads</p></li>
+<li><p>events propagating through messaging systems</p></li>
+<li><p>batch data transfers in pipelines</p></li>
+<li><p>streaming data flows in real-time processing systems</p></li>
+</ul>
+<p>Treating data flow as a first-class architectural element allows the ontology to capture how information travels through the system.</p>
+<p>This perspective provides several benefits.</p>
+<p>First, it reveals <strong>dependency relationships</strong> between components. Components that consume the same data sources or produce downstream outputs often become structurally coupled.</p>
+<p>Second, it exposes <strong>processing pipelines</strong> that define system behavior. Many modern architectures are fundamentally organized around data pipelines rather than control flows.</p>
+<p>Third, explicit data flow modeling enables analysis of system performance, reliability, and scalability.</p>
+<p>Within the ontology, data flows connect components, workflows, and interfaces, forming a graph that describes how information moves across the architecture.</p>
+<p>By representing data entities, state, persistence, and data flow explicitly, the ontology captures the informational dimension of system architecture alongside its structural and behavioral aspects.</p>
+</section>
+<section id="data-entity-examples" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="data-entity-examples"><span class="header-section-number">13.1</span> Data Entity Examples</h2>
+<section id="business-entity-examples" class="level3" data-number="13.1.1">
+<h3 data-number="13.1.1" class="anchored" data-anchor-id="business-entity-examples"><span class="header-section-number">13.1.1</span> Business Entity Examples</h3>
+<p><strong>E-commerce Domain</strong>:</p>
+<pre><code>User (Business Entity):
+  - user_id: string
+  - email: string
+  - name: string
+  - created_at: datetime
+  - roles: [string]
+  - lifetime: persistent
+
+Order (Business Entity):
+  - order_id: string
+  - user_id: string
+  - items: [OrderItem]
+  - total: number
+  - status: enum
+  - created_at: datetime
+  - lifetime: persistent
+
+Product (Business Entity):
+  - product_id: string
+  - name: string
+  - description: string
+  - price: number
+  - inventory: number
+  - lifetime: persistent</code></pre>
+<p><strong>Healthcare Domain</strong>:</p>
+<pre><code>Patient (Business Entity):
+  - patient_id: string
+  - name: string
+  - date_of_birth: date
+  - medical_history: [MedicalRecord]
+  - lifetime: persistent
+
+Treatment (Business Entity):
+  - treatment_id: string
+  - patient_id: string
+  - treatment_type: string
+  - start_date: date
+  - end_date: date
+  - lifetime: persistent
+
+MedicalRecord (Business Entity):
+  - record_id: string
+  - patient_id: string
+  - diagnosis: string
+  - prescription: string
+  - created_at: datetime
+  - lifetime: persistent</code></pre>
+<p><strong>Financial Domain</strong>:</p>
+<pre><code>Account (Business Entity):
+  - account_id: string
+  - owner_id: string
+  - account_type: enum
+  - balance: number
+  - currency: string
+  - lifetime: persistent
+
+Transaction (Business Entity):
+  - transaction_id: string
+  - from_account: string
+  - to_account: string
+  - amount: number
+  - timestamp: datetime
+  - lifetime: persistent
+
+Portfolio (Business Entity):
+  - portfolio_id: string
+  - owner_id: string
+  - holdings: [Asset]
+  - total_value: number
+  - lifetime: persistent</code></pre>
+</section>
+<section id="technical-entity-examples" class="level3" data-number="13.1.2">
+<h3 data-number="13.1.2" class="anchored" data-anchor-id="technical-entity-examples"><span class="header-section-number">13.1.2</span> Technical Entity Examples</h3>
+<p><strong>Session Management</strong>:</p>
+<pre><code>Session (Technical Entity):
+  - session_id: string
+  - user_id: string
+  - created_at: datetime
+  - expires_at: datetime
+  - data: object
+  - lifetime: session
+
+AuthToken (Technical Entity):
+  - token_id: string
+  - user_id: string
+  - issued_at: datetime
+  - expires_at: datetime
+  - scopes: [string]
+  - lifetime: session</code></pre>
+<p><strong>Job Processing</strong>:</p>
+<pre><code>JobQueue (Technical Entity):
+  - job_id: string
+  - job_type: string
+  - payload: object
+  - status: enum
+  - created_at: datetime
+  - priority: number
+  - lifetime: transient
+
+JobResult (Technical Entity):
+  - job_id: string
+  - result: object
+  - error: string
+  - completed_at: datetime
+  - lifetime: transient</code></pre>
+<p><strong>Monitoring and Logging</strong>:</p>
+<pre><code>LogEntry (Technical Entity):
+  - log_id: string
+  - timestamp: datetime
+  - level: enum
+  - message: string
+  - context: object
+  - lifetime: transient (retention policy applies)
+
+MetricData (Technical Entity):
+  - metric_id: string
+  - name: string
+  - value: number
+  - timestamp: datetime
+  - labels: object
+  - lifetime: transient (time-series data)</code></pre>
+<p><strong>Caching</strong>:</p>
+<pre><code>CacheEntry (Technical Entity):
+  - cache_key: string
+  - value: object
+  - created_at: datetime
+  - ttl: number
+  - hit_count: number
+  - lifetime: transient</code></pre>
+</section>
+</section>
+<section id="state-examples-by-level" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="state-examples-by-level"><span class="header-section-number">13.2</span> State Examples by Level</h2>
+<section id="system-state-examples" class="level3" data-number="13.2.1">
+<h3 data-number="13.2.1" class="anchored" data-anchor-id="system-state-examples"><span class="header-section-number">13.2.1</span> System State Examples</h3>
+<pre><code>System State: E-commerce Platform
+  - Feature flags: { "new_checkout_ui": true, "recommendations_enabled": false }
+  - Global configuration: { "maintenance_mode": false, "max_cart_items": 100 }
+  - Resource availability: { "payment_gateway_status": "operational", "email_service_status": "operational" }
+  - Operational mode: "normal"
+  - Performance metrics: { "p95_latency_ms": 250, "throughput_rps": 850 }</code></pre>
+</section>
+<section id="component-state-examples" class="level3" data-number="13.2.2">
+<h3 data-number="13.2.2" class="anchored" data-anchor-id="component-state-examples"><span class="header-section-number">13.2.2</span> Component State Examples</h3>
+<pre><code>Component State: API Service
+  - Connection pool: { "active_connections": 45, "available_connections": 55 }
+  - In-memory cache: { "user_cache_size": 1000, "product_cache_size": 5000 }
+  - Rate limiting: { "requests_per_minute": 5000, "current_rate": 3200 }
+  - Health status: { "status": "healthy", "last_check": "2024-01-15T10:30:00Z" }</code></pre>
+</section>
+<section id="session-state-examples" class="level3" data-number="13.2.3">
+<h3 data-number="13.2.3" class="anchored" data-anchor-id="session-state-examples"><span class="header-section-number">13.2.3</span> Session State Examples</h3>
+<pre><code>Session State: User Session
+  - Session ID: "sess_abc123"
+  - User ID: "user_456"
+  - Authentication: { "authenticated": true, "auth_time": "2024-01-15T10:00:00Z" }
+  - Shopping cart: { "items": [...], "total": 125.50 }
+  - Form progress: { "current_step": 3, "completed_steps": [1, 2] }
+  - Expires at: "2024-01-15T18:00:00Z"</code></pre>
+</section>
+</section>
+<section id="data-flow-patterns" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="data-flow-patterns"><span class="header-section-number">13.3</span> Data Flow Patterns</h2>
+<section id="request-response-data-flow" class="level3" data-number="13.3.1">
+<h3 data-number="13.3.1" class="anchored" data-anchor-id="request-response-data-flow"><span class="header-section-number">13.3.1</span> Request-Response Data Flow</h3>
+<pre><code>Client Request → Component A (reads cache) → [cache miss] → Component B (reads database) → Response
+                  ↓
+              [writes to cache]
+
+Characteristics:
+  - Synchronous interaction
+  - Client waits for response
+  - Often includes caching layers
+  - Used in web applications and APIs</code></pre>
+</section>
+<section id="event-driven-data-flow" class="level3" data-number="13.3.2">
+<h3 data-number="13.3.2" class="anchored" data-anchor-id="event-driven-data-flow"><span class="header-section-number">13.3.2</span> Event-Driven Data Flow</h3>
+<pre><code>Component A (emits event) → Message Broker → Component B (consumes event)
+                                        ↓
+                                   Component C (consumes event)
+                                        ↓
+                                   Component D (consumes event)
+
+Characteristics:
+  - Asynchronous interaction
+  - Producers don't know consumers
+  - Multiple consumers possible
+  - Loose coupling between components</code></pre>
+</section>
+<section id="pipeline-data-flow" class="level3" data-number="13.3.3">
+<h3 data-number="13.3.3" class="anchored" data-anchor-id="pipeline-data-flow"><span class="header-section-number">13.3.3</span> Pipeline Data Flow</h3>
+<pre><code>Input Data → Stage 1 (transform) → Stage 2 (transform) → Stage 3 (transform) → Output Data
+
+Characteristics:
+  - Sequential data transformation
+  - Each stage processes data in order
+  - Often used in data processing systems
+  - Can be batch or streaming</code></pre>
+</section>
+<section id="fan-outfan-in-data-flow" class="level3" data-number="13.3.4">
+<h3 data-number="13.3.4" class="anchored" data-anchor-id="fan-outfan-in-data-flow"><span class="header-section-number">13.3.4</span> Fan-Out/Fan-In Data Flow</h3>
+<pre><code>Component A → Component B → Component E (aggregates)
+            → Component C →
+            → Component D →
+
+Characteristics:
+  - Parallel processing of same data
+  - Results aggregated later
+  - Used for distributed computation
+  - Improves performance for independent operations</code></pre>
+</section>
+<section id="broadcast-data-flow" class="level3" data-number="13.3.5">
+<h3 data-number="13.3.5" class="anchored" data-anchor-id="broadcast-data-flow"><span class="header-section-number">13.3.5</span> Broadcast Data Flow</h3>
+<pre><code>Component A (publishes) → Component B (subscribes)
+                     → Component C (subscribes)
+                     → Component D (subscribes)
+
+Characteristics:
+  - One producer, multiple consumers
+  - Same data sent to all consumers
+  - Used for notifications and events
+  - Loose coupling between publisher and subscribers</code></pre>
+</section>
+</section>
+<section id="state-management-patterns" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="state-management-patterns"><span class="header-section-number">13.4</span> State Management Patterns</h2>
+<section id="stateless-component-pattern" class="level3" data-number="13.4.1">
+<h3 data-number="13.4.1" class="anchored" data-anchor-id="stateless-component-pattern"><span class="header-section-number">13.4.1</span> Stateless Component Pattern</h3>
+<pre><code>Component processes requests without maintaining internal state:
+  - All state stored externally (database, cache)
+  - Requests are independent
+  - Easy to scale horizontally
+  - No session affinity required
+
+Example: Stateless API Service
+  - Request contains all needed context
+  - Database stores all persistent data
+  - Redis stores temporary session data
+  - Multiple instances can handle any request</code></pre>
+</section>
+<section id="stateful-component-pattern" class="level3" data-number="13.4.2">
+<h3 data-number="13.4.2" class="anchored" data-anchor-id="stateful-component-pattern"><span class="header-section-number">13.4.2</span> Stateful Component Pattern</h3>
+<pre><code>Component maintains internal state:
+  - State persists across requests
+  - Session affinity may be required
+  - More complex to scale
+  - Lower latency for state-dependent operations
+
+Example: Stateful Workflow Engine
+  - Maintains workflow execution state
+  - Tracks progress across multiple steps
+  - Coordinates complex business processes
+  - May require sticky sessions</code></pre>
+</section>
+<section id="caching-layer-pattern" class="level3" data-number="13.4.3">
+<h3 data-number="13.4.3" class="anchored" data-anchor-id="caching-layer-pattern"><span class="header-section-number">13.4.3</span> Caching Layer Pattern</h3>
+<pre><code>Cache layer reduces load on persistent storage:
+  - Frequently accessed data cached
+  - Reduces latency
+  - Improves throughput
+  - Introduces consistency challenges
+
+Example: Read-Through Cache
+  - Component A requests data
+  - Cache checked first
+  - Cache miss → fetch from database
+  - Result stored in cache
+  - Subsequent requests served from cache</code></pre>
+</section>
+<section id="event-sourcing-pattern" class="level3" data-number="13.4.4">
+<h3 data-number="13.4.4" class="anchored" data-anchor-id="event-sourcing-pattern"><span class="header-section-number">13.4.4</span> Event Sourcing Pattern</h3>
+<pre><code>State derived from sequence of events:
+  - All state changes recorded as events
+  - Current state computed from event history
+  - Enables audit trails and replay
+  - Different from CRUD operations
+
+Example: Order System with Event Sourcing
+  - Events: OrderCreated, PaymentReceived, OrderShipped
+  - Current order state computed from events
+  - Can reconstruct state at any point in time
+  - Supports event-driven architecture</code></pre>
+<hr>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../part-ii/chapter-7.html" class="pagination-link" aria-label="Interfaces and Contracts">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Interfaces and Contracts</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../part-ii/chapter-9.html" class="pagination-link" aria-label="Workflow and Execution Units">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Workflow and Execution Units</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

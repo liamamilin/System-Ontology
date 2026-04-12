@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>4&nbsp; Notation &amp; Conventions – System Ontology</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../front-matter/ontology-as-engineering-artifact.html" rel="next">
+<link href="../front-matter/reader-contract.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../front-matter/preface.html">Front Matter</a></li><li class="breadcrumb-item"><a href="../front-matter/notation-conventions.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Notation &amp; Conventions</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">System Ontology</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About This Book</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Front Matter</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preface — Why Ontology Comes Second</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/reader-contract.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reader Contract</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/notation-conventions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Notation &amp; Conventions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/ontology-as-engineering-artifact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ontology as an Engineering Artifact</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I - Ontology Fundamentals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">What Ontology Is (In Engineering Terms)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Ontology Stack</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ontology Design Principles</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II - Core Entities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">System, Boundary, and Context</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Capability and Requirement Entities</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Components: The Structural Building Blocks</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Interfaces and Contracts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Entities and State</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Workflow and Execution Units</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III - Core Relations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Relation Types (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Boundaries and Coupling Relations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Interaction Models as Relation Patterns</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV - Type System</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">System Type Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Component Type Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Architecture Style Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Pattern Hooks: Making Ontology Pattern-Aware</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part V - Constraints &amp; Quality Attributes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-v/chapter-17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Quality Attributes as First-Class Entities</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-v/chapter-18.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Risk, Failure Modes, and Trust</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part VI - Mapping</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-vi/chapter-19.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Kernel Mapping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-vi/chapter-20.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Extraction Signals &amp; Mapping Rules</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Capstone</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../capstone/chapter-21.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Ontology Release, Governance, and Evolution</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Appendix A — System Ontology v0.1 (YAML / JSON Schema)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Appendix B — Entity Dictionary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-c.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Appendix C — Relation Dictionary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-d.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Appendix D — System Type Decision Tree</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Appendix E — Example Ontology Instances</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-f.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Appendix F — Glossary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-g.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Appendix G — Projection Mapping Cheat Sheet</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Epilogue — From Ontology to Blueprint Structure</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#why-conventions-matter" id="toc-why-conventions-matter" class="nav-link active" data-scroll-target="#why-conventions-matter"><span class="header-section-number">4.1</span> Why Conventions Matter</a></li>
+  <li><a href="#the-core-conceptual-framework" id="toc-the-core-conceptual-framework" class="nav-link" data-scroll-target="#the-core-conceptual-framework"><span class="header-section-number">4.2</span> The Core Conceptual Framework</a></li>
+  <li><a href="#entity" id="toc-entity" class="nav-link" data-scroll-target="#entity"><span class="header-section-number">4.3</span> Entity</a>
+  <ul class="collapse">
+  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition"><span class="header-section-number">4.3.1</span> Definition</a></li>
+  <li><a href="#role-in-the-ontology" id="toc-role-in-the-ontology" class="nav-link" data-scroll-target="#role-in-the-ontology"><span class="header-section-number">4.3.2</span> Role in the Ontology</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">4.3.3</span> Examples</a></li>
+  <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties"><span class="header-section-number">4.3.4</span> Properties</a></li>
+  <li><a href="#visual-representation" id="toc-visual-representation" class="nav-link" data-scroll-target="#visual-representation"><span class="header-section-number">4.3.5</span> Visual Representation</a></li>
+  </ul></li>
+  <li><a href="#attribute" id="toc-attribute" class="nav-link" data-scroll-target="#attribute"><span class="header-section-number">4.4</span> Attribute</a>
+  <ul class="collapse">
+  <li><a href="#definition-1" id="toc-definition-1" class="nav-link" data-scroll-target="#definition-1"><span class="header-section-number">4.4.1</span> Definition</a></li>
+  <li><a href="#role-in-the-ontology-1" id="toc-role-in-the-ontology-1" class="nav-link" data-scroll-target="#role-in-the-ontology-1"><span class="header-section-number">4.4.2</span> Role in the Ontology</a></li>
+  <li><a href="#key-principle" id="toc-key-principle" class="nav-link" data-scroll-target="#key-principle"><span class="header-section-number">4.4.3</span> Key Principle</a></li>
+  <li><a href="#examples-1" id="toc-examples-1" class="nav-link" data-scroll-target="#examples-1"><span class="header-section-number">4.4.4</span> Examples</a></li>
+  <li><a href="#visual-representation-1" id="toc-visual-representation-1" class="nav-link" data-scroll-target="#visual-representation-1"><span class="header-section-number">4.4.5</span> Visual Representation</a></li>
+  </ul></li>
+  <li><a href="#relation" id="toc-relation" class="nav-link" data-scroll-target="#relation"><span class="header-section-number">4.5</span> Relation</a>
+  <ul class="collapse">
+  <li><a href="#definition-2" id="toc-definition-2" class="nav-link" data-scroll-target="#definition-2"><span class="header-section-number">4.5.1</span> Definition</a></li>
+  <li><a href="#role-in-the-ontology-2" id="toc-role-in-the-ontology-2" class="nav-link" data-scroll-target="#role-in-the-ontology-2"><span class="header-section-number">4.5.2</span> Role in the Ontology</a></li>
+  <li><a href="#examples-2" id="toc-examples-2" class="nav-link" data-scroll-target="#examples-2"><span class="header-section-number">4.5.3</span> Examples</a></li>
+  <li><a href="#properties-1" id="toc-properties-1" class="nav-link" data-scroll-target="#properties-1"><span class="header-section-number">4.5.4</span> Properties</a></li>
+  <li><a href="#visual-representation-2" id="toc-visual-representation-2" class="nav-link" data-scroll-target="#visual-representation-2"><span class="header-section-number">4.5.5</span> Visual Representation</a></li>
+  </ul></li>
+  <li><a href="#constraint" id="toc-constraint" class="nav-link" data-scroll-target="#constraint"><span class="header-section-number">4.6</span> Constraint</a>
+  <ul class="collapse">
+  <li><a href="#definition-3" id="toc-definition-3" class="nav-link" data-scroll-target="#definition-3"><span class="header-section-number">4.6.1</span> Definition</a></li>
+  <li><a href="#role-in-the-ontology-3" id="toc-role-in-the-ontology-3" class="nav-link" data-scroll-target="#role-in-the-ontology-3"><span class="header-section-number">4.6.2</span> Role in the Ontology</a></li>
+  <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure"><span class="header-section-number">4.6.3</span> Structure</a></li>
+  <li><a href="#examples-3" id="toc-examples-3" class="nav-link" data-scroll-target="#examples-3"><span class="header-section-number">4.6.4</span> Examples</a></li>
+  <li><a href="#visual-representation-3" id="toc-visual-representation-3" class="nav-link" data-scroll-target="#visual-representation-3"><span class="header-section-number">4.6.5</span> Visual Representation</a></li>
+  </ul></li>
+  <li><a href="#view" id="toc-view" class="nav-link" data-scroll-target="#view"><span class="header-section-number">4.7</span> View</a>
+  <ul class="collapse">
+  <li><a href="#definition-4" id="toc-definition-4" class="nav-link" data-scroll-target="#definition-4"><span class="header-section-number">4.7.1</span> Definition</a></li>
+  <li><a href="#why-views-matter" id="toc-why-views-matter" class="nav-link" data-scroll-target="#why-views-matter"><span class="header-section-number">4.7.2</span> Why Views Matter</a></li>
+  <li><a href="#common-views" id="toc-common-views" class="nav-link" data-scroll-target="#common-views"><span class="header-section-number">4.7.3</span> Common Views</a></li>
+  <li><a href="#visual-representation-4" id="toc-visual-representation-4" class="nav-link" data-scroll-target="#visual-representation-4"><span class="header-section-number">4.7.4</span> Visual Representation</a></li>
+  </ul></li>
+  <li><a href="#layer" id="toc-layer" class="nav-link" data-scroll-target="#layer"><span class="header-section-number">4.8</span> Layer</a>
+  <ul class="collapse">
+  <li><a href="#definition-5" id="toc-definition-5" class="nav-link" data-scroll-target="#definition-5"><span class="header-section-number">4.8.1</span> Definition</a></li>
+  <li><a href="#typical-layers" id="toc-typical-layers" class="nav-link" data-scroll-target="#typical-layers"><span class="header-section-number">4.8.2</span> Typical Layers</a></li>
+  <li><a href="#layering-principles" id="toc-layering-principles" class="nav-link" data-scroll-target="#layering-principles"><span class="header-section-number">4.8.3</span> Layering Principles</a></li>
+  <li><a href="#visual-representation-5" id="toc-visual-representation-5" class="nav-link" data-scroll-target="#visual-representation-5"><span class="header-section-number">4.8.4</span> Visual Representation</a></li>
+  </ul></li>
+  <li><a href="#granularity" id="toc-granularity" class="nav-link" data-scroll-target="#granularity"><span class="header-section-number">4.9</span> Granularity</a>
+  <ul class="collapse">
+  <li><a href="#definition-6" id="toc-definition-6" class="nav-link" data-scroll-target="#definition-6"><span class="header-section-number">4.9.1</span> Definition</a></li>
+  <li><a href="#granularity-levels" id="toc-granularity-levels" class="nav-link" data-scroll-target="#granularity-levels"><span class="header-section-number">4.9.2</span> Granularity Levels</a></li>
+  <li><a href="#choosing-the-right-level" id="toc-choosing-the-right-level" class="nav-link" data-scroll-target="#choosing-the-right-level"><span class="header-section-number">4.9.3</span> Choosing the Right Level</a></li>
+  <li><a href="#practical-boundary" id="toc-practical-boundary" class="nav-link" data-scroll-target="#practical-boundary"><span class="header-section-number">4.9.4</span> Practical Boundary</a></li>
+  <li><a href="#visual-representation-6" id="toc-visual-representation-6" class="nav-link" data-scroll-target="#visual-representation-6"><span class="header-section-number">4.9.5</span> Visual Representation</a></li>
+  </ul></li>
+  <li><a href="#projection" id="toc-projection" class="nav-link" data-scroll-target="#projection"><span class="header-section-number">4.10</span> Projection</a>
+  <ul class="collapse">
+  <li><a href="#definition-7" id="toc-definition-7" class="nav-link" data-scroll-target="#definition-7"><span class="header-section-number">4.10.1</span> Definition</a></li>
+  <li><a href="#projections-vs.-views" id="toc-projections-vs.-views" class="nav-link" data-scroll-target="#projections-vs.-views"><span class="header-section-number">4.10.2</span> Projections vs.&nbsp;Views</a></li>
+  <li><a href="#examples-4" id="toc-examples-4" class="nav-link" data-scroll-target="#examples-4"><span class="header-section-number">4.10.3</span> Examples</a></li>
+  <li><a href="#projection-pipeline" id="toc-projection-pipeline" class="nav-link" data-scroll-target="#projection-pipeline"><span class="header-section-number">4.10.4</span> Projection Pipeline</a></li>
+  <li><a href="#benefits" id="toc-benefits" class="nav-link" data-scroll-target="#benefits"><span class="header-section-number">4.10.5</span> Benefits</a></li>
+  </ul></li>
+  <li><a href="#putting-it-all-together" id="toc-putting-it-all-together" class="nav-link" data-scroll-target="#putting-it-all-together"><span class="header-section-number">4.11</span> Putting It All Together</a>
+  <ul class="collapse">
+  <li><a href="#example-a-simple-e-commerce-system" id="toc-example-a-simple-e-commerce-system" class="nav-link" data-scroll-target="#example-a-simple-e-commerce-system"><span class="header-section-number">4.11.1</span> Example: A Simple E-commerce System</a></li>
+  </ul></li>
+  <li><a href="#summary-of-conventions" id="toc-summary-of-conventions" class="nav-link" data-scroll-target="#summary-of-conventions"><span class="header-section-number">4.12</span> Summary of Conventions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../front-matter/preface.html">Front Matter</a></li><li class="breadcrumb-item"><a href="../front-matter/notation-conventions.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Notation &amp; Conventions</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Notation &amp; Conventions</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This volume introduces a formal ontology for describing software systems. To ensure conceptual clarity and consistency across chapters, a small set of core notational conventions is used throughout the text.</p>
+<p>These conventions define how system structures are expressed and how different levels of abstraction are represented. Understanding these conventions is essential for correctly interpreting the diagrams, examples, and formal definitions presented in this book.</p>
+<section id="why-conventions-matter" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="why-conventions-matter"><span class="header-section-number">4.1</span> Why Conventions Matter</h2>
+<p>In technical writing, especially in works introducing new conceptual frameworks, consistent notation serves several critical purposes:</p>
+<ul>
+<li><strong>Precision</strong>: Eliminates ambiguity in how concepts are described</li>
+<li><strong>Communication</strong>: Provides a shared language for discussing architectural structures</li>
+<li><strong>Analysis</strong>: Enables formal reasoning about architectural properties</li>
+<li><strong>Automation</strong>: Supports machine processing of architectural descriptions</li>
+</ul>
+<p>Without these conventions, readers might interpret diagrams and definitions differently, leading to misunderstandings and inconsistent application of the ontology.</p>
+</section>
+<section id="the-core-conceptual-framework" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="the-core-conceptual-framework"><span class="header-section-number">4.2</span> The Core Conceptual Framework</h2>
+<p>The ontology is built on four fundamental conceptual building blocks:</p>
+<pre><code>┌─────────────────────────────────────────────────────────┐
+│              Ontology Conceptual Framework               │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  Entities  →  The "things" that exist in systems        │
+│  Relations  →  How entities connect and interact        │
+│  Attributes →  Properties that describe entities        │
+│  Constraints→  Rules that govern system behavior        │
+│                                                         │
+└─────────────────────────────────────────────────────────┘</code></pre>
+<p>In addition to these core elements, the ontology supports several structural concepts that help organize and present architectural knowledge: Views, Layers, Granularity, and Projections.</p>
+<p>Let us examine each of these in detail.</p>
+</section>
+<section id="entity" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="entity"><span class="header-section-number">4.3</span> Entity</h2>
+<p>An <strong>Entity</strong> represents a distinct conceptual element that exists within a system.</p>
+<section id="definition" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="definition"><span class="header-section-number">4.3.1</span> Definition</h3>
+<p>Entities correspond to identifiable architectural elements such as components, interfaces, data objects, workflows, or capabilities. Each entity represents something that can be described, referenced, and related to other entities within the ontology.</p>
+</section>
+<section id="role-in-the-ontology" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="role-in-the-ontology"><span class="header-section-number">4.3.2</span> Role in the Ontology</h3>
+<p>Entities form the <strong>nodes of the system representation graph</strong>. They are the nouns of the architectural language—the things we can point to, name, and describe.</p>
+</section>
+<section id="examples" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="examples"><span class="header-section-number">4.3.3</span> Examples</h3>
+<p>Common entities include:</p>
+<ul>
+<li><strong>System</strong>: The bounded architectural unit with a defined goal</li>
+<li><strong>Component</strong>: A structural building block that encapsulates responsibilities</li>
+<li><strong>Interface</strong>: An interaction boundary through which components communicate</li>
+<li><strong>Capability</strong>: A functional ability that the system provides</li>
+<li><strong>Data Entity</strong>: A structured unit of information managed by the system</li>
+<li><strong>Workflow</strong>: A coordinated sequence of execution steps</li>
+<li><strong>Constraint</strong>: A requirement or quality attribute</li>
+</ul>
+</section>
+<section id="properties" class="level3" data-number="4.3.4">
+<h3 data-number="4.3.4" class="anchored" data-anchor-id="properties"><span class="header-section-number">4.3.4</span> Properties</h3>
+<p>Every entity has the following inherent properties:</p>
+<ul>
+<li><strong>Identity</strong>: A unique identifier that distinguishes it from other entities</li>
+<li><strong>Type</strong>: The entity category (e.g., Component, Interface, Workflow)</li>
+<li><strong>Name</strong>: A human-readable label for the entity</li>
+<li><strong>Description</strong>: An explanation of the entity’s role and purpose</li>
+</ul>
+<p>Entities may also have additional attributes specific to their type, discussed below.</p>
+</section>
+<section id="visual-representation" class="level3" data-number="4.3.5">
+<h3 data-number="4.3.5" class="anchored" data-anchor-id="visual-representation"><span class="header-section-number">4.3.5</span> Visual Representation</h3>
+<p>In architectural diagrams, entities are typically represented as:</p>
+<pre><code>┌─────────────────┐
+│   Entity Name   │
+│   (Type)        │
+└─────────────────┘</code></pre>
+<p>For example:</p>
+<pre><code>┌─────────────────┐
+│   Order Service │
+│   (Component)   │
+└─────────────────┘</code></pre>
+</section>
+</section>
+<section id="attribute" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="attribute"><span class="header-section-number">4.4</span> Attribute</h2>
+<p>An <strong>Attribute</strong> describes a property of an entity.</p>
+<section id="definition-1" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="definition-1"><span class="header-section-number">4.4.1</span> Definition</h3>
+<p>Attributes provide structured metadata that characterizes an entity without introducing new structural elements into the system model. They capture information such as identifiers, responsibilities, configuration parameters, or descriptive properties.</p>
+</section>
+<section id="role-in-the-ontology-1" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="role-in-the-ontology-1"><span class="header-section-number">4.4.2</span> Role in the Ontology</h3>
+<p>Attributes enable entities to be precisely described while keeping the ontology compact. They provide detail without complexity.</p>
+</section>
+<section id="key-principle" class="level3" data-number="4.4.3">
+<h3 data-number="4.4.3" class="anchored" data-anchor-id="key-principle"><span class="header-section-number">4.4.3</span> Key Principle</h3>
+<p><strong>Attributes do not create new entities; they only describe existing ones.</strong></p>
+<p>This distinction is crucial. For example, “version” is an attribute of a component, not a separate entity. We don’t create a “Version” entity—we simply record the version number as an attribute of the component.</p>
+</section>
+<section id="examples-1" class="level3" data-number="4.4.4">
+<h3 data-number="4.4.4" class="anchored" data-anchor-id="examples-1"><span class="header-section-number">4.4.4</span> Examples</h3>
+<p>Typical attributes include:</p>
+<ul>
+<li><strong>name</strong>: The human-readable identifier</li>
+<li><strong>type</strong>: The entity category</li>
+<li><strong>description</strong>: A textual explanation</li>
+<li><strong>version</strong>: The current version number</li>
+<li><strong>owner</strong>: The team or individual responsible</li>
+<li><strong>lifecycle_status</strong>: The current state (e.g., active, deprecated)</li>
+</ul>
+</section>
+<section id="visual-representation-1" class="level3" data-number="4.4.5">
+<h3 data-number="4.4.5" class="anchored" data-anchor-id="visual-representation-1"><span class="header-section-number">4.4.5</span> Visual Representation</h3>
+<p>Attributes are typically shown as properties within an entity diagram:</p>
+<pre><code>┌─────────────────────────┐
+│   Order Service         │
+│   (Component)           │
+│   ───────────────────   │
+│   version: 2.1.0        │
+│   owner: payments team  │
+│   status: active        │
+└─────────────────────────┘</code></pre>
+<p><strong>Additional example with multiple attributes</strong>:</p>
+<pre><code>┌─────────────────────────────┐
+│   User Authentication        │
+│   (Component)               │
+│   ───────────────────────   │
+│   component_type: api_service│
+│   responsibility: auth       │
+│   statefulness: stateless    │
+│   inputs: credentials       │
+│   outputs: tokens           │
+└─────────────────────────────┘</code></pre>
+</section>
+</section>
+<section id="relation" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="relation"><span class="header-section-number">4.5</span> Relation</h2>
+<p>A <strong>Relation</strong> describes a structured connection between two or more entities.</p>
+<section id="definition-2" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="definition-2"><span class="header-section-number">4.5.1</span> Definition</h3>
+<p>Relations define how architectural elements interact, depend on each other, or form part of a larger structure. Unlike attributes, relations introduce <strong>explicit structural semantics</strong> into the system model.</p>
+</section>
+<section id="role-in-the-ontology-2" class="level3" data-number="4.5.2">
+<h3 data-number="4.5.2" class="anchored" data-anchor-id="role-in-the-ontology-2"><span class="header-section-number">4.5.2</span> Role in the Ontology</h3>
+<p>Relations form the <strong>edges of the system representation graph</strong>. They are the verbs of the architectural language—how entities act on and relate to each other.</p>
+</section>
+<section id="examples-2" class="level3" data-number="4.5.3">
+<h3 data-number="4.5.3" class="anchored" data-anchor-id="examples-2"><span class="header-section-number">4.5.3</span> Examples</h3>
+<p>Examples of relations include:</p>
+<ul>
+<li><code>contains</code> / <code>part_of</code>: Structural composition</li>
+<li><code>depends_on</code>: Dependency relationships</li>
+<li><code>calls</code> / <code>invokes</code>: Invocation relationships</li>
+<li><code>emits</code> / <code>consumes</code>: Event relationships</li>
+<li><code>reads</code> / <code>writes</code>: Data access relationships</li>
+<li><code>implements</code> / <code>conforms_to</code>: Contract compliance</li>
+</ul>
+</section>
+<section id="properties-1" class="level3" data-number="4.5.4">
+<h3 data-number="4.5.4" class="anchored" data-anchor-id="properties-1"><span class="header-section-number">4.5.4</span> Properties</h3>
+<p>Relations have the following properties:</p>
+<ul>
+<li><strong>Type</strong>: The kind of relationship (e.g., contains, depends_on)</li>
+<li><strong>Direction</strong>: Whether the relationship is directed (A→B) or undirected</li>
+<li><strong>Source</strong>: The entity initiating the relationship</li>
+<li><strong>Target</strong>: The entity receiving the relationship</li>
+<li><strong>Cardinality</strong>: How many instances can participate (one-to-one, one-to-many, etc.)</li>
+</ul>
+</section>
+<section id="visual-representation-2" class="level3" data-number="4.5.5">
+<h3 data-number="4.5.5" class="anchored" data-anchor-id="visual-representation-2"><span class="header-section-number">4.5.5</span> Visual Representation</h3>
+<p>Relations are typically shown as arrows connecting entities:</p>
+<pre><code>┌───────────┐          ┌───────────┐
+│ Component │ ────&gt;   │ Interface │
+│    A      │  calls  │    B      │
+└───────────┘          └───────────┘</code></pre>
+<p>Different relation types may use different arrow styles to distinguish them.</p>
+<p><strong>Additional examples</strong>:</p>
+<pre><code>Dependency relation:
+┌─────────────┐         depends_on          ┌─────────────┐
+│ Order       │ ───────────────────────&gt;   │ Inventory   │
+│ Service     │                            │ Service     │
+└─────────────┘                            └─────────────┘
+
+Event relation:
+┌─────────────┐       emits       ┌─────────────┐
+│ Order       │ ────────────────&gt; │ Order Placed│
+│ Service     │                   │   Event     │
+└─────────────┘                   └─────────────┘
+                                        │
+                                        │ consumes
+                                        ↓
+                                ┌─────────────┐
+                                │ Payment     │
+                                │ Service     │
+                                └─────────────┘
+
+Data access relation:
+┌─────────────┐       reads       ┌─────────────┐
+│ Analytics   │ ────────────────&gt; │ Orders DB   │
+│ Engine      │                   └─────────────┘
+└─────────────┘</code></pre>
+</section>
+</section>
+<section id="constraint" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="constraint"><span class="header-section-number">4.6</span> Constraint</h2>
+<p>A <strong>Constraint</strong> represents a condition or requirement that restricts the behavior or structure of a system.</p>
+<section id="definition-3" class="level3" data-number="4.6.1">
+<h3 data-number="4.6.1" class="anchored" data-anchor-id="definition-3"><span class="header-section-number">4.6.1</span> Definition</h3>
+<p>Constraints typically encode non-functional requirements or operational limitations. They define measurable conditions that must be satisfied by a system, component, or interface.</p>
+</section>
+<section id="role-in-the-ontology-3" class="level3" data-number="4.6.2">
+<h3 data-number="4.6.2" class="anchored" data-anchor-id="role-in-the-ontology-3"><span class="header-section-number">4.6.2</span> Role in the Ontology</h3>
+<p>By representing constraints as explicit ontology elements, system requirements become analyzable and attachable to architectural structures. This transforms quality attributes from narrative descriptions into formal, enforceable conditions.</p>
+</section>
+<section id="structure" class="level3" data-number="4.6.3">
+<h3 data-number="4.6.3" class="anchored" data-anchor-id="structure"><span class="header-section-number">4.6.3</span> Structure</h3>
+<p>A constraint typically contains three core elements:</p>
+<ol type="1">
+<li><strong>Metric</strong>: What is being measured
+<ul>
+<li>Examples: latency, availability, throughput, error rate</li>
+</ul></li>
+<li><strong>Threshold</strong>: The acceptable limit or target value
+<ul>
+<li>Examples: ≤300ms, ≥99.9%, 1000 req/sec, &lt;0.1%</li>
+</ul></li>
+<li><strong>Scope</strong>: The entity to which the constraint applies
+<ul>
+<li>Can be system, component, interface, or workflow level</li>
+</ul></li>
+</ol>
+</section>
+<section id="examples-3" class="level3" data-number="4.6.4">
+<h3 data-number="4.6.4" class="anchored" data-anchor-id="examples-3"><span class="header-section-number">4.6.4</span> Examples</h3>
+<ul>
+<li><strong>Performance</strong>: “API response time must be ≤300ms (p95)”</li>
+<li><strong>Reliability</strong>: “System availability must be ≥99.9%”</li>
+<li><strong>Security</strong>: “All data must be encrypted at rest”</li>
+<li><strong>Compliance</strong>: “User data must be retained for 7 years”</li>
+</ul>
+</section>
+<section id="visual-representation-3" class="level3" data-number="4.6.5">
+<h3 data-number="4.6.5" class="anchored" data-anchor-id="visual-representation-3"><span class="header-section-number">4.6.5</span> Visual Representation</h3>
+<p>Constraints are often shown attached to the entity they govern:</p>
+<pre><code>┌─────────────────┐
+│   API Service   │
+│                 │
+│   ┌───────────┐ │
+│   │ latency   │ │
+│   │ ≤ 300ms   │ │
+│   └───────────┘ │
+└─────────────────┘</code></pre>
+<p><strong>Additional examples</strong>:</p>
+<pre><code>Component with multiple constraints:
+┌─────────────────────────┐
+│   Payment Gateway       │
+│   (Component)           │
+│                         │
+│   ┌─────────────────┐   │
+│   │ Performance     │   │
+│   │ latency ≤ 200ms │   │
+│   └─────────────────┘   │
+│                         │
+│   ┌─────────────────┐   │
+│   │ Reliability     │   │
+│   │ availability ≥  │   │
+│   │ 99.95%          │   │
+│   └─────────────────┘   │
+│                         │
+│   ┌─────────────────┐   │
+│   │ Security        │   │
+│   │ encryption at   │   │
+│   │ rest            │   │
+│   └─────────────────┘   │
+└─────────────────────────┘
+
+System-level constraint:
+┌──────────────────────────────────────────┐
+│           E-commerce Platform             │
+│              (System)                     │
+│                                          │
+│   ┌──────────────────────────────────┐   │
+│   │ System-wide constraint:          │   │
+│   │ Maximum concurrent users: 10,000 │   │
+│   └──────────────────────────────────┘   │
+└──────────────────────────────────────────┘
+
+Interface-level constraint:
+┌─────────────────────────┐
+│   User Auth API         │
+│   (Interface)           │
+│                         │
+│   ┌─────────────────┐   │
+│   │ Rate limiting   │   │
+│   │ 100 req/min per │   │
+│   │ user            │   │
+│   └─────────────────┘   │
+└─────────────────────────┘</code></pre>
+</section>
+</section>
+<section id="view" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="view"><span class="header-section-number">4.7</span> View</h2>
+<p>A <strong>View</strong> is a representation of a system that focuses on a particular concern or audience.</p>
+<section id="definition-4" class="level3" data-number="4.7.1">
+<h3 data-number="4.7.1" class="anchored" data-anchor-id="definition-4"><span class="header-section-number">4.7.1</span> Definition</h3>
+<p>Different stakeholders require different perspectives on the same system. Views allow the same underlying ontology instance to be projected into representations optimized for different purposes.</p>
+</section>
+<section id="why-views-matter" class="level3" data-number="4.7.2">
+<h3 data-number="4.7.2" class="anchored" data-anchor-id="why-views-matter"><span class="header-section-number">4.7.2</span> Why Views Matter</h3>
+<p>No single representation can serve all needs:</p>
+<ul>
+<li><strong>Architects</strong> need to understand component dependencies and data flows</li>
+<li><strong>Product managers</strong> need to understand capabilities and user interactions</li>
+<li><strong>Operators</strong> need to understand deployment topology and monitoring</li>
+<li><strong>Security analysts</strong> need to understand trust boundaries and access controls</li>
+</ul>
+<p>Views allow all these perspectives to be derived from the same underlying ontology.</p>
+</section>
+<section id="common-views" class="level3" data-number="4.7.3">
+<h3 data-number="4.7.3" class="anchored" data-anchor-id="common-views"><span class="header-section-number">4.7.3</span> Common Views</h3>
+<ul>
+<li><strong>Architecture View</strong>: Focuses on structural relationships between components, interfaces, and data flows</li>
+<li><strong>Specification View</strong>: Focuses on system capabilities, interfaces, and behavioral requirements</li>
+<li><strong>Operations View</strong>: Focuses on runtime behavior, deployment topology, and operational concerns</li>
+<li><strong>Deployment View</strong>: Focuses on how components are instantiated and distributed across infrastructure</li>
+<li><strong>Security View</strong>: Focuses on trust boundaries, authentication, and authorization</li>
+</ul>
+</section>
+<section id="visual-representation-4" class="level3" data-number="4.7.4">
+<h3 data-number="4.7.4" class="anchored" data-anchor-id="visual-representation-4"><span class="header-section-number">4.7.4</span> Visual Representation</h3>
+<p>Views are often shown as filtered projections of the full ontology:</p>
+<pre><code>Full Ontology Graph
+        ↓
+    [Filter]
+        ↓
+Architecture View (components, interfaces, dependencies)
+        ↓
+Specification View (capabilities, contracts, constraints)
+        ↓
+Operations View (runtime, triggers, reliability)</code></pre>
+</section>
+</section>
+<section id="layer" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="layer"><span class="header-section-number">4.8</span> Layer</h2>
+<p>A <strong>Layer</strong> represents a structural level within a system architecture.</p>
+<section id="definition-5" class="level3" data-number="4.8.1">
+<h3 data-number="4.8.1" class="anchored" data-anchor-id="definition-5"><span class="header-section-number">4.8.1</span> Definition</h3>
+<p>Layers organize entities into hierarchical or conceptual strata that reflect responsibility boundaries. Layering is commonly used to separate concerns such as user interaction, application logic, data management, and infrastructure.</p>
+</section>
+<section id="typical-layers" class="level3" data-number="4.8.2">
+<h3 data-number="4.8.2" class="anchored" data-anchor-id="typical-layers"><span class="header-section-number">4.8.2</span> Typical Layers</h3>
+<p>Common architectural layers include:</p>
+<ul>
+<li><strong>Presentation Layer / Interface Layer</strong>: User interfaces and external interaction points</li>
+<li><strong>Application Layer / Service Layer</strong>: Business logic and application services</li>
+<li><strong>Domain Layer</strong>: Core business rules and domain models</li>
+<li><strong>Data Layer / Persistence Layer</strong>: Data storage and access mechanisms</li>
+<li><strong>Infrastructure Layer</strong>: External services, messaging systems, and platform services</li>
+</ul>
+</section>
+<section id="layering-principles" class="level3" data-number="4.8.3">
+<h3 data-number="4.8.3" class="anchored" data-anchor-id="layering-principles"><span class="header-section-number">4.8.3</span> Layering Principles</h3>
+<p>Effective layering follows these principles:</p>
+<ol type="1">
+<li><strong>Unidirectional dependencies</strong>: Dependencies typically flow downward (presentation → application → data)</li>
+<li><strong>Clear boundaries</strong>: Each layer has a well-defined responsibility</li>
+<li><strong>Minimal coupling</strong>: Layers interact through defined interfaces</li>
+<li><strong>Independent evolution</strong>: Layers can evolve independently to some degree</li>
+</ol>
+</section>
+<section id="visual-representation-5" class="level3" data-number="4.8.4">
+<h3 data-number="4.8.4" class="anchored" data-anchor-id="visual-representation-5"><span class="header-section-number">4.8.4</span> Visual Representation</h3>
+<p>Layers are typically shown as horizontal bands:</p>
+<pre><code>┌─────────────────────────────────┐
+│     Presentation Layer          │
+│  (UI, CLI, API Gateway)         │
+├─────────────────────────────────┤
+│     Application Layer           │
+│  (Services, Workflows)          │
+├─────────────────────────────────┤
+│     Domain Layer                │
+│  (Business Logic, Models)       │
+├─────────────────────────────────┤
+│     Data Layer                  │
+│  (Databases, Caches, Queues)    │
+├─────────────────────────────────┤
+│     Infrastructure Layer        │
+│  (External Services, Platform)   │
+└─────────────────────────────────┘</code></pre>
+</section>
+</section>
+<section id="granularity" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="granularity"><span class="header-section-number">4.9</span> Granularity</h2>
+<p><strong>Granularity</strong> describes the level of detail at which a system is represented.</p>
+<section id="definition-6" class="level3" data-number="4.9.1">
+<h3 data-number="4.9.1" class="anchored" data-anchor-id="definition-6"><span class="header-section-number">4.9.1</span> Definition</h3>
+<p>The ontology supports multiple levels of granularity so that the same system can be described at different scales. Different tasks require different levels of detail.</p>
+</section>
+<section id="granularity-levels" class="level3" data-number="4.9.2">
+<h3 data-number="4.9.2" class="anchored" data-anchor-id="granularity-levels"><span class="header-section-number">4.9.2</span> Granularity Levels</h3>
+<p>Typical granularity levels include:</p>
+<ul>
+<li><strong>System level</strong>: The entire application or platform as a single unit</li>
+<li><strong>Subsystem level</strong>: Major functional areas or modules within the architecture</li>
+<li><strong>Component level</strong>: Deployable or logically independent units</li>
+<li><strong>Module level</strong>: Internal groupings within components</li>
+<li><strong>Function level</strong>: Individual routines or methods</li>
+</ul>
+</section>
+<section id="choosing-the-right-level" class="level3" data-number="4.9.3">
+<h3 data-number="4.9.3" class="anchored" data-anchor-id="choosing-the-right-level"><span class="header-section-number">4.9.3</span> Choosing the Right Level</h3>
+<p>The appropriate level of granularity depends on the purpose:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Purpose</th>
+<th>Recommended Level</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Portfolio management</td>
+<td>System level</td>
+</tr>
+<tr class="even">
+<td>Integration planning</td>
+<td>Subsystem level</td>
+</tr>
+<tr class="odd">
+<td>Architecture design</td>
+<td>Component level</td>
+</tr>
+<tr class="even">
+<td>Implementation</td>
+<td>Module level</td>
+</tr>
+<tr class="odd">
+<td>Performance analysis</td>
+<td>Function level</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="practical-boundary" class="level3" data-number="4.9.4">
+<h3 data-number="4.9.4" class="anchored" data-anchor-id="practical-boundary"><span class="header-section-number">4.9.4</span> Practical Boundary</h3>
+<p>Within the Blueprint Architecture framework, the <strong>component level</strong> serves as the typical boundary for architectural description.</p>
+<p>Below this level, structural knowledge tends to become implementation-specific. Function-level representations often belong to source code analysis rather than architecture representation.</p>
+<p>Maintaining this boundary preserves the purpose of the blueprint: representing <strong>system architecture</strong>, not program implementation.</p>
+</section>
+<section id="visual-representation-6" class="level3" data-number="4.9.5">
+<h3 data-number="4.9.5" class="anchored" data-anchor-id="visual-representation-6"><span class="header-section-number">4.9.5</span> Visual Representation</h3>
+<p>Granularity can be shown as a hierarchy of detail:</p>
+<pre><code>System (Level 1)
+    ↓
+    ├── Subsystem A (Level 2)
+    │   ↓
+    │   ├── Component A1 (Level 3)
+    │   └── Component A2 (Level 3)
+    │
+    └── Subsystem B (Level 2)
+        ↓
+        └── Component B1 (Level 3)</code></pre>
+</section>
+</section>
+<section id="projection" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="projection"><span class="header-section-number">4.10</span> Projection</h2>
+<p>A <strong>Projection</strong> is a derived representation generated from the underlying ontology model.</p>
+<section id="definition-7" class="level3" data-number="4.10.1">
+<h3 data-number="4.10.1" class="anchored" data-anchor-id="definition-7"><span class="header-section-number">4.10.1</span> Definition</h3>
+<p>Projections reorganize entities and relations into formats suited for specific tasks such as documentation, specification, visualization, or operational analysis.</p>
+</section>
+<section id="projections-vs.-views" class="level3" data-number="4.10.2">
+<h3 data-number="4.10.2" class="anchored" data-anchor-id="projections-vs.-views"><span class="header-section-number">4.10.2</span> Projections vs.&nbsp;Views</h3>
+<p>While related, projections and views serve different purposes:</p>
+<ul>
+<li><strong>Views</strong> emphasize <strong>perspective</strong>—what aspects are shown to which audience</li>
+<li><strong>Projections</strong> emphasize <strong>format</strong>—how the information is transformed for a specific purpose</li>
+</ul>
+<p>Think of it this way:</p>
+<blockquote class="blockquote">
+<p>A view selects a subset of the ontology for a particular audience. A projection transforms that subset into a specific format.</p>
+</blockquote>
+</section>
+<section id="examples-4" class="level3" data-number="4.10.3">
+<h3 data-number="4.10.3" class="anchored" data-anchor-id="examples-4"><span class="header-section-number">4.10.3</span> Examples</h3>
+<p>Examples of projections include:</p>
+<ul>
+<li><strong>Blueprint kernel views</strong>: Mapping ontology entities to the six-slot blueprint structure</li>
+<li><strong>Architectural diagrams</strong>: Visual representations of component structures and relationships</li>
+<li><strong>Specification documents</strong>: Human-readable descriptions of capabilities and interfaces</li>
+<li><strong>Dependency graphs</strong>: Focused views showing only dependency relationships</li>
+<li><strong>Operational dashboards</strong>: Real-time views of system state and metrics</li>
+<li><strong>Code generation templates</strong>: Transforming ontology into implementation code</li>
+</ul>
+</section>
+<section id="projection-pipeline" class="level3" data-number="4.10.4">
+<h3 data-number="4.10.4" class="anchored" data-anchor-id="projection-pipeline"><span class="header-section-number">4.10.4</span> Projection Pipeline</h3>
+<pre><code>Ontology Instance
+        ↓
+    [Mapping Rules]
+        ↓
+Blueprint Kernel
+        ↓
+    [Projection Filters]
+        ↓
+Multiple Projections
+    ├── Architecture Diagram
+    ├── Specification Document
+    ├── Dependency Graph
+    └── Operational Dashboard</code></pre>
+</section>
+<section id="benefits" class="level3" data-number="4.10.5">
+<h3 data-number="4.10.5" class="anchored" data-anchor-id="benefits"><span class="header-section-number">4.10.5</span> Benefits</h3>
+<p>Projections provide several key benefits:</p>
+<ol type="1">
+<li><strong>Single source of truth</strong>: All representations derive from the same ontology</li>
+<li><strong>Consistency</strong>: Different views are guaranteed to be consistent</li>
+<li><strong>Automation</strong>: Projections can be generated automatically</li>
+<li><strong>Flexibility</strong>: New projections can be added without modifying the ontology</li>
+</ol>
+</section>
+</section>
+<section id="putting-it-all-together" class="level2" data-number="4.11">
+<h2 data-number="4.11" class="anchored" data-anchor-id="putting-it-all-together"><span class="header-section-number">4.11</span> Putting It All Together</h2>
+<section id="example-a-simple-e-commerce-system" class="level3" data-number="4.11.1">
+<h3 data-number="4.11.1" class="anchored" data-anchor-id="example-a-simple-e-commerce-system"><span class="header-section-number">4.11.1</span> Example: A Simple E-commerce System</h3>
+<p>Let’s see how these conventions work together in practice. Consider a simple e-commerce system with:</p>
+<ul>
+<li>A web frontend for users</li>
+<li>An order service for processing orders</li>
+<li>A payment service for handling transactions</li>
+<li>A database for storing orders</li>
+</ul>
+<section id="entities" class="level4" data-number="4.11.1.1">
+<h4 data-number="4.11.1.1" class="anchored" data-anchor-id="entities"><span class="header-section-number">4.11.1.1</span> Entities</h4>
+<pre><code>System: E-commerce Platform
+Components: Web Frontend, Order Service, Payment Service, Database
+Interfaces: User Interface, Order API, Payment API
+Data Entities: Order, Payment, User
+Workflow: Order Processing Workflow</code></pre>
+</section>
+<section id="visual-entity-diagram" class="level4" data-number="4.11.1.2">
+<h4 data-number="4.11.1.2" class="anchored" data-anchor-id="visual-entity-diagram"><span class="header-section-number">4.11.1.2</span> Visual Entity Diagram</h4>
+<pre><code>┌─────────────────────────────────────┐
+│      E-commerce Platform            │
+│           (System)                  │
+│                                     │
+│  ┌──────────┐  ┌──────────┐       │
+│  │   Web    │  │   Order  │       │
+│  │ Frontend │  │  Service │       │
+│  │ (Component)│ │(Component)│      │
+│  └──────────┘  └──────────┘       │
+│                                     │
+│  ┌──────────┐  ┌──────────┐       │
+│  │ Payment  │  │ Database │       │
+│  │  Service │  │ (Storage)│       │
+│  │(Component)│ │(Component)│      │
+│  └──────────┘  └──────────┘       │
+└─────────────────────────────────────┘</code></pre>
+</section>
+<section id="relations" class="level4" data-number="4.11.1.3">
+<h4 data-number="4.11.1.3" class="anchored" data-anchor-id="relations"><span class="header-section-number">4.11.1.3</span> Relations</h4>
+<pre><code>System contains Web Frontend, Order Service, Payment Service, Database
+Web Frontend calls Order API
+Order Service implements Order API
+Order Service depends_on Payment Service
+Order Service writes Order
+Order Service writes Payment
+Order Service reads User</code></pre>
+</section>
+<section id="visual-relation-diagram" class="level4" data-number="4.11.1.4">
+<h4 data-number="4.11.1.4" class="anchored" data-anchor-id="visual-relation-diagram"><span class="header-section-number">4.11.1.4</span> Visual Relation Diagram</h4>
+<pre><code>┌──────────────┐      calls     ┌──────────────┐
+│  Web         │ ─────────────&gt; │  Order       │
+│  Frontend    │                │  Service     │
+└──────────────┘                └──────────────┘
+                                        │
+                                        │ depends_on
+                                        ↓
+                                ┌──────────────┐
+                                │  Payment     │
+                                │  Service     │
+                                └──────────────┘
+
+Data flow:
+┌──────────────┐      writes     ┌──────────────┐
+│  Order       │ ─────────────&gt; │  Database    │
+│  Service     │                │              │
+└──────────────┘                └──────────────┘</code></pre>
+</section>
+<section id="attributes" class="level4" data-number="4.11.1.5">
+<h4 data-number="4.11.1.5" class="anchored" data-anchor-id="attributes"><span class="header-section-number">4.11.1.5</span> Attributes</h4>
+<pre><code>Order Service:
+  - version: 3.2.1
+  - owner: checkout team
+  - statefulness: stateless
+  - responsibility: Process orders
+  - inputs: Order requests
+  - outputs: Order confirmations</code></pre>
+</section>
+<section id="constraints" class="level4" data-number="4.11.1.6">
+<h4 data-number="4.11.1.6" class="anchored" data-anchor-id="constraints"><span class="header-section-number">4.11.1.6</span> Constraints</h4>
+<pre><code>Order API:
+  - latency ≤ 500ms (p95)
+  - availability ≥ 99.5%
+
+Order Processing Workflow:
+  - completion time ≤ 30 seconds</code></pre>
+</section>
+<section id="visual-constraints" class="level4" data-number="4.11.1.7">
+<h4 data-number="4.11.1.7" class="anchored" data-anchor-id="visual-constraints"><span class="header-section-number">4.11.1.7</span> Visual Constraints</h4>
+<pre><code>┌─────────────────────────────┐
+│   Order API                 │
+│   (Interface)               │
+│                             │
+│   ┌─────────────────────┐   │
+│   │ Performance:        │   │
+│   │ latency ≤ 500ms p95 │   │
+│   └─────────────────────┘   │
+│                             │
+│   ┌─────────────────────┐   │
+│   │ Reliability:        │   │
+│   │ availability ≥ 99.5%│   │
+│   └─────────────────────┘   │
+└─────────────────────────────┘</code></pre>
+</section>
+<section id="layers" class="level4" data-number="4.11.1.8">
+<h4 data-number="4.11.1.8" class="anchored" data-anchor-id="layers"><span class="header-section-number">4.11.1.8</span> Layers</h4>
+<pre><code>┌─────────────────────────────────────┐
+│     Presentation Layer              │
+│  (Web Frontend)                     │
+├─────────────────────────────────────┤
+│     Application Layer               │
+│  (Order Service, Payment Service)   │
+├─────────────────────────────────────┤
+│     Data Layer                      │
+│  (Database)                        │
+└─────────────────────────────────────┘</code></pre>
+</section>
+<section id="views" class="level4" data-number="4.11.1.9">
+<h4 data-number="4.11.1.9" class="anchored" data-anchor-id="views"><span class="header-section-number">4.11.1.9</span> Views</h4>
+<pre><code>Architecture View: Shows component structure and dependencies
+Specification View: Shows capabilities and API contracts
+Operations View: Shows deployment topology and monitoring</code></pre>
+<p><strong>Architecture View example</strong>: - Focuses on: Components, Interfaces, Relations, Data Flow - Shows: How components connect, depend on each other, and exchange data - Used by: System architects, developers</p>
+<p><strong>Specification View example</strong>: - Focuses on: Goal, Capabilities, Interfaces, Constraints - Shows: What the system does, what APIs it exposes, and quality requirements - Used by: Product managers, integration partners</p>
+<p><strong>Operations View example</strong>: - Focuses on: Runtime, Triggers, Reliability, Dependencies - Shows: How the system is deployed, how it scales, and how failures are handled - Used by: DevOps engineers, SREs</p>
+</section>
+</section>
+</section>
+<section id="summary-of-conventions" class="level2" data-number="4.12">
+<h2 data-number="4.12" class="anchored" data-anchor-id="summary-of-conventions"><span class="header-section-number">4.12</span> Summary of Conventions</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Purpose</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Entity</td>
+<td>Represents architectural elements</td>
+<td>Component, Interface, Workflow</td>
+</tr>
+<tr class="even">
+<td>Attribute</td>
+<td>Describes entity properties</td>
+<td>version, owner, status</td>
+</tr>
+<tr class="odd">
+<td>Relation</td>
+<td>Connects entities</td>
+<td>contains, depends_on, calls</td>
+</tr>
+<tr class="even">
+<td>Constraint</td>
+<td>Governs behavior or structure</td>
+<td>latency ≤ 300ms</td>
+</tr>
+<tr class="odd">
+<td>View</td>
+<td>Focuses on perspective</td>
+<td>Architecture View, Ops View</td>
+</tr>
+<tr class="even">
+<td>Layer</td>
+<td>Organizes by responsibility</td>
+<td>Presentation, Application, Data</td>
+</tr>
+<tr class="odd">
+<td>Granularity</td>
+<td>Controls detail level</td>
+<td>System, Subsystem, Component</td>
+</tr>
+<tr class="even">
+<td>Projection</td>
+<td>Transforms for specific use</td>
+<td>Diagrams, Specifications, Dashboards</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>These conventions establish the basic language used throughout this volume. Entities and relations describe what exists in a system and how those elements connect, while attributes and constraints provide additional descriptive structure.</p>
+<p>Views, layers, granularity levels, and projections determine how this structural knowledge is interpreted and presented for different purposes.</p>
+<p>By understanding these conventions, you will be able to:</p>
+<ul>
+<li><strong>Interpret diagrams</strong> and examples consistently</li>
+<li><strong>Apply the ontology</strong> to real systems correctly</li>
+<li><strong>Communicate about architecture</strong> using precise terminology</li>
+<li><strong>Generate appropriate views</strong> for different stakeholders</li>
+</ul>
+<p>The remainder of this volume builds on this foundation to define the complete System Ontology v0.1.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../front-matter/reader-contract.html" class="pagination-link" aria-label="Reader Contract">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reader Contract</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../front-matter/ontology-as-engineering-artifact.html" class="pagination-link" aria-label="Ontology as an Engineering Artifact">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ontology as an Engineering Artifact</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

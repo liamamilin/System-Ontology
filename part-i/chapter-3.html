@@ -1,0 +1,2172 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>8&nbsp; Ontology Design Principles – System Ontology</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../part-ii/chapter-4.html" rel="next">
+<link href="../part-i/chapter-2.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>
+/* Copy Full Text Button Styling */
+.copy-text-btn {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1000;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  background-color: #0d6efd;
+  color: white;
+}
+
+.copy-text-btn:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.copy-text-btn:active {
+  transform: translateY(0);
+}
+
+.copy-text-btn i {
+  margin-right: 6px;
+}
+
+@media (max-width: 768px) {
+  .copy-text-btn {
+    top: 60px;
+    right: 10px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+</style>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part-i/chapter-1.html">Part I - Ontology Fundamentals</a></li><li class="breadcrumb-item"><a href="../part-i/chapter-3.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ontology Design Principles</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">System Ontology</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About This Book</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Front Matter</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Preface — Why Ontology Comes Second</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/reader-contract.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reader Contract</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/notation-conventions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Notation &amp; Conventions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../front-matter/ontology-as-engineering-artifact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ontology as an Engineering Artifact</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I - Ontology Fundamentals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">What Ontology Is (In Engineering Terms)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Ontology Stack</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-i/chapter-3.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ontology Design Principles</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II - Core Entities</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">System, Boundary, and Context</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Capability and Requirement Entities</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Components: The Structural Building Blocks</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Interfaces and Contracts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Entities and State</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-ii/chapter-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Workflow and Execution Units</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III - Core Relations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Relation Types (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Boundaries and Coupling Relations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iii/chapter-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Interaction Models as Relation Patterns</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV - Type System</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">System Type Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Component Type Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Architecture Style Taxonomy (v0.1)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-iv/chapter-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Pattern Hooks: Making Ontology Pattern-Aware</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part V - Constraints &amp; Quality Attributes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-v/chapter-17.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Quality Attributes as First-Class Entities</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-v/chapter-18.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Risk, Failure Modes, and Trust</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part VI - Mapping</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-vi/chapter-19.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Kernel Mapping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../part-vi/chapter-20.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Ontology → Blueprint Extraction Signals &amp; Mapping Rules</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Capstone</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../capstone/chapter-21.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Ontology Release, Governance, and Evolution</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-a.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Appendix A — System Ontology v0.1 (YAML / JSON Schema)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Appendix B — Entity Dictionary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-c.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Appendix C — Relation Dictionary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-d.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Appendix D — System Type Decision Tree</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-e.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Appendix E — Example Ontology Instances</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-f.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Appendix F — Glossary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices/appendix-g.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Appendix G — Projection Mapping Cheat Sheet</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Epilogue — From Ontology to Blueprint Structure</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-engineering-context" id="toc-the-engineering-context" class="nav-link active" data-scroll-target="#the-engineering-context"><span class="header-section-number">8.1</span> The Engineering Context</a>
+  <ul class="collapse">
+  <li><a href="#the-use-cases" id="toc-the-use-cases" class="nav-link" data-scroll-target="#the-use-cases"><span class="header-section-number">8.1.1</span> The Use Cases</a></li>
+  <li><a href="#the-challenges" id="toc-the-challenges" class="nav-link" data-scroll-target="#the-challenges"><span class="header-section-number">8.1.2</span> The Challenges</a></li>
+  </ul></li>
+  <li><a href="#principle-1-minimality" id="toc-principle-1-minimality" class="nav-link" data-scroll-target="#principle-1-minimality"><span class="header-section-number">8.2</span> Principle 1: Minimality</a>
+  <ul class="collapse">
+  <li><a href="#the-principle" id="toc-the-principle" class="nav-link" data-scroll-target="#the-principle"><span class="header-section-number">8.2.1</span> The Principle</a></li>
+  <li><a href="#the-problem-with-complexity" id="toc-the-problem-with-complexity" class="nav-link" data-scroll-target="#the-problem-with-complexity"><span class="header-section-number">8.2.2</span> The Problem with Complexity</a></li>
+  <li><a href="#the-solution-core-vocabulary" id="toc-the-solution-core-vocabulary" class="nav-link" data-scroll-target="#the-solution-core-vocabulary"><span class="header-section-number">8.2.3</span> The Solution: Core Vocabulary</a></li>
+  <li><a href="#what-minimal-means" id="toc-what-minimal-means" class="nav-link" data-scroll-target="#what-minimal-means"><span class="header-section-number">8.2.4</span> What “Minimal” Means</a></li>
+  <li><a href="#what-minimal-does-not-mean" id="toc-what-minimal-does-not-mean" class="nav-link" data-scroll-target="#what-minimal-does-not-mean"><span class="header-section-number">8.2.5</span> What “Minimal” Does NOT Mean</a></li>
+  <li><a href="#the-benefits-of-minimality" id="toc-the-benefits-of-minimality" class="nav-link" data-scroll-target="#the-benefits-of-minimality"><span class="header-section-number">8.2.6</span> The Benefits of Minimality</a></li>
+  <li><a href="#minimalism-in-practice" id="toc-minimalism-in-practice" class="nav-link" data-scroll-target="#minimalism-in-practice"><span class="header-section-number">8.2.7</span> Minimalism in Practice</a></li>
+  </ul></li>
+  <li><a href="#principle-2-composability" id="toc-principle-2-composability" class="nav-link" data-scroll-target="#principle-2-composability"><span class="header-section-number">8.3</span> Principle 2: Composability</a>
+  <ul class="collapse">
+  <li><a href="#the-principle-1" id="toc-the-principle-1" class="nav-link" data-scroll-target="#the-principle-1"><span class="header-section-number">8.3.1</span> The Principle</a></li>
+  <li><a href="#the-importance-of-composition" id="toc-the-importance-of-composition" class="nav-link" data-scroll-target="#the-importance-of-composition"><span class="header-section-number">8.3.2</span> The Importance of Composition</a></li>
+  <li><a href="#the-composability-requirements" id="toc-the-composability-requirements" class="nav-link" data-scroll-target="#the-composability-requirements"><span class="header-section-number">8.3.3</span> The Composability Requirements</a></li>
+  <li><a href="#composability-in-the-ontology" id="toc-composability-in-the-ontology" class="nav-link" data-scroll-target="#composability-in-the-ontology"><span class="header-section-number">8.3.4</span> Composability in the Ontology</a></li>
+  <li><a href="#the-benefits-of-composability" id="toc-the-benefits-of-composability" class="nav-link" data-scroll-target="#the-benefits-of-composability"><span class="header-section-number">8.3.5</span> The Benefits of Composability</a></li>
+  <li><a href="#composability-vs.-monolithic-design" id="toc-composability-vs.-monolithic-design" class="nav-link" data-scroll-target="#composability-vs.-monolithic-design"><span class="header-section-number">8.3.6</span> Composability vs.&nbsp;Monolithic Design</a></li>
+  </ul></li>
+  <li><a href="#principle-3-extensibility" id="toc-principle-3-extensibility" class="nav-link" data-scroll-target="#principle-3-extensibility"><span class="header-section-number">8.4</span> Principle 3: Extensibility</a>
+  <ul class="collapse">
+  <li><a href="#the-principle-2" id="toc-the-principle-2" class="nav-link" data-scroll-target="#the-principle-2"><span class="header-section-number">8.4.1</span> The Principle</a></li>
+  <li><a href="#the-challenge-of-evolution" id="toc-the-challenge-of-evolution" class="nav-link" data-scroll-target="#the-challenge-of-evolution"><span class="header-section-number">8.4.2</span> The Challenge of Evolution</a></li>
+  <li><a href="#the-extensibility-requirements" id="toc-the-extensibility-requirements" class="nav-link" data-scroll-target="#the-extensibility-requirements"><span class="header-section-number">8.4.3</span> The Extensibility Requirements</a></li>
+  <li><a href="#extensibility-mechanisms" id="toc-extensibility-mechanisms" class="nav-link" data-scroll-target="#extensibility-mechanisms"><span class="header-section-number">8.4.4</span> Extensibility Mechanisms</a></li>
+  <li><a href="#the-benefits-of-extensibility" id="toc-the-benefits-of-extensibility" class="nav-link" data-scroll-target="#the-benefits-of-extensibility"><span class="header-section-number">8.4.5</span> The Benefits of Extensibility</a></li>
+  <li><a href="#extensibility-vs.-bloat" id="toc-extensibility-vs.-bloat" class="nav-link" data-scroll-target="#extensibility-vs.-bloat"><span class="header-section-number">8.4.6</span> Extensibility vs.&nbsp;Bloat</a></li>
+  </ul></li>
+  <li><a href="#principle-4-consistency" id="toc-principle-4-consistency" class="nav-link" data-scroll-target="#principle-4-consistency"><span class="header-section-number">8.5</span> Principle 4: Consistency</a>
+  <ul class="collapse">
+  <li><a href="#the-principle-3" id="toc-the-principle-3" class="nav-link" data-scroll-target="#the-principle-3"><span class="header-section-number">8.5.1</span> The Principle</a></li>
+  <li><a href="#the-consistency-requirements" id="toc-the-consistency-requirements" class="nav-link" data-scroll-target="#the-consistency-requirements"><span class="header-section-number">8.5.2</span> The Consistency Requirements</a></li>
+  <li><a href="#terminological-consistency" id="toc-terminological-consistency" class="nav-link" data-scroll-target="#terminological-consistency"><span class="header-section-number">8.5.3</span> Terminological Consistency</a></li>
+  <li><a href="#structural-consistency" id="toc-structural-consistency" class="nav-link" data-scroll-target="#structural-consistency"><span class="header-section-number">8.5.4</span> Structural Consistency</a></li>
+  <li><a href="#the-consequences-of-inconsistency" id="toc-the-consequences-of-inconsistency" class="nav-link" data-scroll-target="#the-consequences-of-inconsistency"><span class="header-section-number">8.5.5</span> The Consequences of Inconsistency</a></li>
+  <li><a href="#consistency-enables" id="toc-consistency-enables" class="nav-link" data-scroll-target="#consistency-enables"><span class="header-section-number">8.5.6</span> Consistency Enables:</a></li>
+  </ul></li>
+  <li><a href="#principle-5-evolvability" id="toc-principle-5-evolvability" class="nav-link" data-scroll-target="#principle-5-evolvability"><span class="header-section-number">8.6</span> Principle 5: Evolvability</a>
+  <ul class="collapse">
+  <li><a href="#the-principle-4" id="toc-the-principle-4" class="nav-link" data-scroll-target="#the-principle-4"><span class="header-section-number">8.6.1</span> The Principle</a></li>
+  <li><a href="#the-evolution-challenge" id="toc-the-evolution-challenge" class="nav-link" data-scroll-target="#the-evolution-challenge"><span class="header-section-number">8.6.2</span> The Evolution Challenge</a></li>
+  <li><a href="#the-evolvability-requirements" id="toc-the-evolvability-requirements" class="nav-link" data-scroll-target="#the-evolvability-requirements"><span class="header-section-number">8.6.3</span> The Evolvability Requirements</a></li>
+  <li><a href="#evolution-strategies" id="toc-evolution-strategies" class="nav-link" data-scroll-target="#evolution-strategies"><span class="header-section-number">8.6.4</span> Evolution Strategies</a></li>
+  <li><a href="#the-benefits-of-evolvability" id="toc-the-benefits-of-evolvability" class="nav-link" data-scroll-target="#the-benefits-of-evolvability"><span class="header-section-number">8.6.5</span> The Benefits of Evolvability</a></li>
+  </ul></li>
+  <li><a href="#the-principles-in-harmony" id="toc-the-principles-in-harmony" class="nav-link" data-scroll-target="#the-principles-in-harmony"><span class="header-section-number">8.7</span> The Principles in Harmony</a>
+  <ul class="collapse">
+  <li><a href="#the-balance" id="toc-the-balance" class="nav-link" data-scroll-target="#the-balance"><span class="header-section-number">8.7.1</span> The Balance</a></li>
+  </ul></li>
+  <li><a href="#design-principles-decision-matrix" id="toc-design-principles-decision-matrix" class="nav-link" data-scroll-target="#design-principles-decision-matrix"><span class="header-section-number">8.8</span> Design Principles Decision Matrix</a>
+  <ul class="collapse">
+  <li><a href="#principle-comparison-matrix" id="toc-principle-comparison-matrix" class="nav-link" data-scroll-target="#principle-comparison-matrix"><span class="header-section-number">8.8.1</span> Principle Comparison Matrix</a></li>
+  <li><a href="#decision-framework-when-to-apply-each-principle" id="toc-decision-framework-when-to-apply-each-principle" class="nav-link" data-scroll-target="#decision-framework-when-to-apply-each-principle"><span class="header-section-number">8.8.2</span> Decision Framework: When to Apply Each Principle</a></li>
+  <li><a href="#trade-off-analysis-framework" id="toc-trade-off-analysis-framework" class="nav-link" data-scroll-target="#trade-off-analysis-framework"><span class="header-section-number">8.8.3</span> Trade-off Analysis Framework</a></li>
+  <li><a href="#principle-interaction-matrix" id="toc-principle-interaction-matrix" class="nav-link" data-scroll-target="#principle-interaction-matrix"><span class="header-section-number">8.8.4</span> Principle Interaction Matrix</a></li>
+  <li><a href="#decision-making-checklist" id="toc-decision-making-checklist" class="nav-link" data-scroll-target="#decision-making-checklist"><span class="header-section-number">8.8.5</span> Decision-Making Checklist</a></li>
+  <li><a href="#practical-decision-examples" id="toc-practical-decision-examples" class="nav-link" data-scroll-target="#practical-decision-examples"><span class="header-section-number">8.8.6</span> Practical Decision Examples</a></li>
+  <li><a href="#anti-patterns-to-avoid" id="toc-anti-patterns-to-avoid" class="nav-link" data-scroll-target="#anti-patterns-to-avoid"><span class="header-section-number">8.8.7</span> Anti-Patterns to Avoid</a></li>
+  <li><a href="#guiding-questions-for-decision-making" id="toc-guiding-questions-for-decision-making" class="nav-link" data-scroll-target="#guiding-questions-for-decision-making"><span class="header-section-number">8.8.8</span> Guiding Questions for Decision Making</a></li>
+  <li><a href="#the-interdependencies" id="toc-the-interdependencies" class="nav-link" data-scroll-target="#the-interdependencies"><span class="header-section-number">8.8.9</span> The Interdependencies</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">8.9</span> Summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../part-i/chapter-1.html">Part I - Ontology Fundamentals</a></li><li class="breadcrumb-item"><a href="../part-i/chapter-3.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ontology Design Principles</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Ontology Design Principles</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>An engineering ontology must satisfy a set of design constraints that differ from those of purely descriptive knowledge models. In the context of system architecture, the ontology must support reuse, structural analysis, dataset construction, and computational reasoning. This requires a language that is both <strong>stable and adaptable</strong>, capable of representing diverse systems while remaining simple enough to be applied consistently.</p>
+<p>The ontology used in the Blueprint Architecture framework is therefore guided by several core design principles. These principles ensure that the ontology remains usable across projects, domains, and future evolutions of the framework.</p>
+<section id="the-engineering-context" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="the-engineering-context"><span class="header-section-number">8.1</span> The Engineering Context</h2>
+<p>Before examining the principles, it’s important to understand the engineering context in which this ontology operates.</p>
+<section id="the-use-cases" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="the-use-cases"><span class="header-section-number">8.1.1</span> The Use Cases</h3>
+<p>The ontology must support:</p>
+<p><strong>1. Human Communication</strong> - Architects discussing system designs - Teams collaborating on architectural decisions - Organizations sharing architectural knowledge - Documentation of system structures</p>
+<p><strong>2. Computational Processing</strong> - Automated analysis of architectural patterns - Search and retrieval across blueprint repositories - Validation of architectural constraints - Generation of architectural diagrams and specifications</p>
+<p><strong>3. Long-Term Knowledge Accumulation</strong> - Building architectural pattern libraries - Creating architecture datasets - Training AI systems on architectural knowledge - Supporting continuous learning and improvement</p>
+<p><strong>4. Cross-Project Reusability</strong> - Comparing architectures across different systems - Transferring patterns between projects - Standardizing architectural practices - Enabling systematic architectural reviews</p>
+</section>
+<section id="the-challenges" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="the-challenges"><span class="header-section-number">8.1.2</span> The Challenges</h3>
+<p>These use cases create specific challenges:</p>
+<ul>
+<li><strong>Diversity</strong>: Must work for different types of systems (web apps, data pipelines, CLI tools, etc.)</li>
+<li><strong>Stability</strong>: Must remain consistent over time as technologies evolve</li>
+<li><strong>Precision</strong>: Must be specific enough for computational analysis</li>
+<li><strong>Simplicity</strong>: Must be simple enough for humans to understand and use</li>
+<li><strong>Extensibility</strong>: Must accommodate new architectural concepts</li>
+</ul>
+<p>The design principles address these challenges systematically.</p>
+</section>
+</section>
+<section id="principle-1-minimality" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="principle-1-minimality"><span class="header-section-number">8.2</span> Principle 1: Minimality</h2>
+<section id="the-principle" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="the-principle"><span class="header-section-number">8.2.1</span> The Principle</h3>
+<p>The ontology must remain <strong>small, stable, and conceptually minimal</strong>.</p>
+</section>
+<section id="the-problem-with-complexity" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="the-problem-with-complexity"><span class="header-section-number">8.2.2</span> The Problem with Complexity</h3>
+<p>An overly large ontology introduces unnecessary complexity:</p>
+<pre><code>Too Many Entity Types:
+  - Service, Microservice, Component, Module, Object, Agent, Worker,
+    Task, Process, Function, Routine, Method, Procedure, Handler...
+  - 50+ entity types all describing similar concepts
+
+Consequences:
+  - Different teams use different types for the same thing
+  - Confusion about when to use which type
+  - Incompatible representations
+  - Reduced interoperability</code></pre>
+<p><strong>Practical consequence</strong>: If an ontology has 50 entity types, an architect must memorize when to use each one. When teams across an organization use different subsets of these types, their blueprints become incompatible. A repository query for “all components that handle payments” returns incomplete results because different teams used different entity types for the same concept.</p>
+</section>
+<section id="the-solution-core-vocabulary" class="level3" data-number="8.2.3">
+<h3 data-number="8.2.3" class="anchored" data-anchor-id="the-solution-core-vocabulary"><span class="header-section-number">8.2.3</span> The Solution: Core Vocabulary</h3>
+<p>Minimality ensures that the ontology contains only the entities and relations that are <strong>essential</strong> for describing system structure.</p>
+<p>The objective is not to capture every possible architectural concept, but to define a <strong>core vocabulary</strong> that appears in most systems.</p>
+<p><strong>Example</strong>:</p>
+<pre><code>Minimal approach:
+  Core entity types: System, Component, Interface, Data, Workflow
+  Core relation types: contains, depends_on, calls, reads, writes
+
+This captures 90% of architectural structures with minimal complexity.</code></pre>
+<p><strong>Practical example</strong>: A minimal ontology with 7 core entity types can represent: - A CLI tool (3 components: CLI interface, processing engine, file storage) - A web application (5 components: UI, API service, database, cache, queue) - A data pipeline (4 components: ingestion, transformation, storage, monitoring)</p>
+<p>All three systems use the same vocabulary, enabling cross-system comparison and pattern detection.</p>
+</section>
+<section id="what-minimal-means" class="level3" data-number="8.2.4">
+<h3 data-number="8.2.4" class="anchored" data-anchor-id="what-minimal-means"><span class="header-section-number">8.2.4</span> What “Minimal” Means</h3>
+<p>Minimal means:</p>
+<ul>
+<li><strong>Essential only</strong>: Include only what’s necessary for architectural representation</li>
+<li><strong>No redundancy</strong>: Don’t define multiple entities for the same concept</li>
+<li><strong>Clear boundaries</strong>: Each entity has a distinct, unambiguous purpose</li>
+<li><strong>Stable core</strong>: Core elements change very slowly</li>
+</ul>
+</section>
+<section id="what-minimal-does-not-mean" class="level3" data-number="8.2.5">
+<h3 data-number="8.2.5" class="anchored" data-anchor-id="what-minimal-does-not-mean"><span class="header-section-number">8.2.5</span> What “Minimal” Does NOT Mean</h3>
+<p>Minimal does NOT mean:</p>
+<ul>
+<li><strong>Incomplete</strong>: The ontology must still capture essential architectural structures</li>
+<li><strong>Incapable</strong>: It must still support the required use cases</li>
+<li><strong>Rigid</strong>: It must still allow for extensions when needed</li>
+</ul>
+</section>
+<section id="the-benefits-of-minimality" class="level3" data-number="8.2.6">
+<h3 data-number="8.2.6" class="anchored" data-anchor-id="the-benefits-of-minimality"><span class="header-section-number">8.2.6</span> The Benefits of Minimality</h3>
+<p><strong>1. Stability</strong></p>
+<p>Fewer elements mean fewer things to change. The core vocabulary remains stable over time.</p>
+<p><strong>Practical example</strong>: An ontology with 7 core entities can remain stable for 5+ years, while an ontology with 50 entities may require annual revisions as technologies change and new patterns emerge.</p>
+<p><strong>2. Learnability</strong></p>
+<p>A small ontology is easier to learn and remember. Architects can master the vocabulary quickly.</p>
+<p><strong>Practical example</strong>: New team members can learn a 7-entity ontology in 1-2 hours, while a 50-entity ontology requires days or weeks of training and ongoing reference materials.</p>
+<p><strong>3. Consistency</strong></p>
+<p>With fewer entity types, there’s less ambiguity about when to use which type.</p>
+<p><strong>Practical example</strong>: With only “Component” as a core type, there’s no debate about whether something is a “service,” “microservice,” or “module”—it’s always a Component, with optional subtypes for specificity.</p>
+<p><strong>4. Interoperability</strong></p>
+<p>A minimal vocabulary increases the likelihood that different teams use it consistently.</p>
+<p><strong>Practical example</strong>: In an organization with 10 teams, a minimal ontology achieves 95% consistent usage across teams, while a complex ontology drops to 60% consistency due to interpretive differences.</p>
+<p><strong>5. Tool Support</strong></p>
+<p>Smaller ontologies are easier to build tools for. Validation, analysis, and generation become simpler.</p>
+<p><strong>Practical example</strong>: Building a blueprint validation tool for a 7-entity ontology takes 2-3 weeks, while a 50-entity ontology requires 3-4 months and produces more false positives due to ambiguous rules.</p>
+</section>
+<section id="minimalism-in-practice" class="level3" data-number="8.2.7">
+<h3 data-number="8.2.7" class="anchored" data-anchor-id="minimalism-in-practice"><span class="header-section-number">8.2.7</span> Minimalism in Practice</h3>
+<p><strong>Core entities (minimal)</strong>: - System, Component, Interface, Capability, Data, Workflow, Constraint</p>
+<p><strong>Not included (can be derived)</strong>: - Microservice (derived from Component + deployment characteristics) - Module (implementation detail, not architectural) - Function (too fine-grained) - Object (implementation detail)</p>
+<p><strong>Extensibility</strong>: - Additional component types can be added as extensions (api_service, worker, storage, etc.) - Core remains minimal while allowing domain-specific extensions</p>
+<p><strong>Practical example</strong>: An organization starts with the core ontology and adds 5 domain-specific component types over 3 years. All blueprints remain compatible because the core hasn’t changed—only extensions have been added. New teams use the core vocabulary immediately, adopting domain-specific extensions only when needed.</p>
+</section>
+</section>
+<section id="principle-2-composability" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="principle-2-composability"><span class="header-section-number">8.3</span> Principle 2: Composability</h2>
+<section id="the-principle-1" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="the-principle-1"><span class="header-section-number">8.3.1</span> The Principle</h3>
+<p>The ontology must support <strong>system composition</strong>—the ability to combine smaller architectural units into larger systems.</p>
+</section>
+<section id="the-importance-of-composition" class="level3" data-number="8.3.2">
+<h3 data-number="8.3.2" class="anchored" data-anchor-id="the-importance-of-composition"><span class="header-section-number">8.3.2</span> The Importance of Composition</h3>
+<p>Modern software systems are rarely constructed entirely from first principles. Instead, they are composed from recurring architectural fragments:</p>
+<pre><code>Common Architectural Fragments:
+  - API Gateway + Routing
+  - Message Queue + Workers
+  - Cache + Database
+  - Authentication Service + Authorization
+  - Workflow Orchestrator + Tasks
+
+Systems are built by combining these fragments:
+  E-commerce System = Auth Pattern + Order Pattern + Payment Pattern + Inventory Pattern</code></pre>
+</section>
+<section id="the-composability-requirements" class="level3" data-number="8.3.3">
+<h3 data-number="8.3.3" class="anchored" data-anchor-id="the-composability-requirements"><span class="header-section-number">8.3.3</span> The Composability Requirements</h3>
+<p>For the ontology to support composition, entities and relations must be:</p>
+<p><strong>1. Structurally Compatible</strong></p>
+<p>Fragments must have compatible interfaces for connection:</p>
+<pre><code>Fragment A: Payment Processing
+  Interface: ProcessPayment(request)
+  
+Fragment B: Order Processing
+  Requires: Something that can ProcessPayment(request)
+
+Result: Can compose A and B</code></pre>
+<p><strong>2. Clearly Defined Boundaries</strong></p>
+<p>Each fragment must have well-defined inputs and outputs:</p>
+<pre><code>Good:
+  Component A has Interface X (Input: Request, Output: Response)
+  Component B requires something with Interface X
+  
+Bad:
+  Component A "does something with data"
+  Component B "needs data processing"
+  
+Result: Ambiguous, cannot compose reliably</code></pre>
+<p><strong>3. Independent of Internal Details</strong></p>
+<p>Composition should depend only on external interfaces:</p>
+<pre><code>Good:
+  Compose based on Interface definitions
+  Internal implementation doesn't matter
+  
+Bad:
+  Composition depends on knowing internal implementation
+  Breaking internal implementation breaks composition</code></pre>
+</section>
+<section id="composability-in-the-ontology" class="level3" data-number="8.3.4">
+<h3 data-number="8.3.4" class="anchored" data-anchor-id="composability-in-the-ontology"><span class="header-section-number">8.3.4</span> Composability in the Ontology</h3>
+<p><strong>1. Entity Definitions Support Composition</strong></p>
+<p>Components have clearly defined interfaces and responsibilities:</p>
+<pre><code>Component: Order Service
+  - Responsibility: Process orders
+  - Interface: REST API
+  - Inputs: Order requests
+  - Outputs: Order confirmations</code></pre>
+<p><strong>2. Relation Types Enable Connection</strong></p>
+<p>Standardized relation types allow predictable composition:</p>
+<pre><code>Relation: calls
+  - Semantics: A invokes B through an interface
+  - Composition: Can wire A and B through this relation</code></pre>
+<p><strong>3. Pattern Representation</strong></p>
+<p>Patterns can be represented as structured subgraphs:</p>
+<pre><code>Pattern: Event Processing
+  Entities:
+    - Producer (Component)
+    - Queue (Component)
+    - Consumer (Component)
+  Relations:
+    - Producer emits (to Queue)
+    - Queue contains messages
+    - Consumer consumes (from Queue)
+
+This pattern can be embedded in any system.</code></pre>
+</section>
+<section id="the-benefits-of-composability" class="level3" data-number="8.3.5">
+<h3 data-number="8.3.5" class="anchored" data-anchor-id="the-benefits-of-composability"><span class="header-section-number">8.3.5</span> The Benefits of Composability</h3>
+<p><strong>1. Architectural Reuse</strong></p>
+<p>Patterns and fragments can be reused across systems:</p>
+<pre><code>Pattern Library:
+  - Authentication Pattern
+  - Caching Pattern
+  - Event-Driven Pattern
+  - Circuit Breaker Pattern
+
+Each pattern can be composed into multiple systems.</code></pre>
+<p><strong>2. Faster Development</strong></p>
+<p>Start with proven patterns rather than designing from scratch:</p>
+<pre><code>Without composition:
+  - Design authentication from scratch
+  - Design caching from scratch
+  - Design event handling from scratch
+  - High effort, high risk
+
+With composition:
+  - Select Authentication Pattern
+  - Select Caching Pattern
+  - Select Event-Driven Pattern
+  - Compose and customize
+  - Lower effort, lower risk</code></pre>
+<p><strong>3. Consistency</strong></p>
+<p>Reusing the same patterns ensures architectural consistency:</p>
+<pre><code>All systems using the Authentication Pattern:
+  - Have consistent authentication structure
+  - Use consistent terminology
+  - Follow consistent security practices</code></pre>
+<p><strong>4. Scalability of Knowledge</strong></p>
+<p>As more patterns are created, the knowledge base grows:</p>
+<pre><code>Pattern 1 → Pattern 2 → Pattern 3 → ...
+    ↓          ↓          ↓
+  System A   System B   System C
+
+Each new pattern can be used in multiple systems.</code></pre>
+</section>
+<section id="composability-vs.-monolithic-design" class="level3" data-number="8.3.6">
+<h3 data-number="8.3.6" class="anchored" data-anchor-id="composability-vs.-monolithic-design"><span class="header-section-number">8.3.6</span> Composability vs.&nbsp;Monolithic Design</h3>
+<p><strong>Monolithic approach</strong>:</p>
+<pre><code>Single, complex entity types that try to cover everything
+  - Difficult to understand
+  - Difficult to reuse
+  - Difficult to maintain</code></pre>
+<p><strong>Composable approach</strong>:</p>
+<pre><code>Simple, focused entity types that combine effectively
+  - Easy to understand
+  - Easy to reuse
+  - Easy to maintain</code></pre>
+</section>
+</section>
+<section id="principle-3-extensibility" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="principle-3-extensibility"><span class="header-section-number">8.4</span> Principle 3: Extensibility</h2>
+<section id="the-principle-2" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="the-principle-2"><span class="header-section-number">8.4.1</span> The Principle</h3>
+<p>Although the ontology core must remain minimal, it must also support <strong>incremental extension</strong>.</p>
+</section>
+<section id="the-challenge-of-evolution" class="level3" data-number="8.4.2">
+<h3 data-number="8.4.2" class="anchored" data-anchor-id="the-challenge-of-evolution"><span class="header-section-number">8.4.2</span> The Challenge of Evolution</h3>
+<p>Software architecture evolves continuously:</p>
+<pre><code>New Technologies:
+  - Serverless computing → New deployment patterns
+  - Edge computing → New architectural concerns
+  - AI agents → New interaction models
+  - Blockchain → New trust and consensus patterns
+
+New Requirements:
+  - Real-time processing → New architectural patterns
+  - Global deployment → New distribution patterns
+  - Regulatory compliance → New constraint types</code></pre>
+<p>A rigid ontology that cannot incorporate new concepts quickly becomes obsolete.</p>
+</section>
+<section id="the-extensibility-requirements" class="level3" data-number="8.4.3">
+<h3 data-number="8.4.3" class="anchored" data-anchor-id="the-extensibility-requirements"><span class="header-section-number">8.4.3</span> The Extensibility Requirements</h3>
+<p><strong>1. Additive Extensions</strong></p>
+<p>New concepts should be added without modifying existing definitions:</p>
+<pre><code>Good:
+  v1.0: Core entities (System, Component, Interface)
+  v1.1: Add new entity type: ServerlessFunction
+  v1.2: Add new relation type: triggers
+  (All backward compatible)
+
+Bad:
+  v1.0: Core entities (System, Component, Interface)
+  v2.0: Redefine Component to include serverless functions
+  (Breaking change, requires migration)</code></pre>
+<p><strong>2. Extension Points</strong></p>
+<p>The ontology should provide clear extension points:</p>
+<pre><code>Core Ontology:
+  - Component (base type)
+  - Interface (base type)
+  - Relation types (base vocabulary)
+
+Extensions:
+  - API Service (subtype of Component)
+  - Worker (subtype of Component)
+  - Message Broker (subtype of Component)</code></pre>
+<p><strong>3. Domain-Specific Extensions</strong></p>
+<p>Domains should be able to extend the ontology for their specific needs:</p>
+<pre><code>Core Ontology:
+  - Component, Interface, Data
+
+E-commerce Domain Extension:
+  - Order (specialized Data)
+  - Payment (specialized Workflow)
+  - ShoppingCart (specialized Component)
+
+Healthcare Domain Extension:
+  - Patient (specialized Data)
+  - Treatment (specialized Workflow)
+  - MedicalDevice (specialized Component)</code></pre>
+</section>
+<section id="extensibility-mechanisms" class="level3" data-number="8.4.4">
+<h3 data-number="8.4.4" class="anchored" data-anchor-id="extensibility-mechanisms"><span class="header-section-number">8.4.4</span> Extensibility Mechanisms</h3>
+<p><strong>1. Subtype Hierarchies</strong></p>
+<pre><code>Component (core)
+  ├── API Service (extension)
+  ├── Worker (extension)
+  ├── Storage (extension)
+  └── [future types can be added]</code></pre>
+<p><strong>2. Attribute Extensions</strong></p>
+<pre><code>Core Component has:
+  - id, name, responsibility, inputs, outputs
+
+Extension can add:
+  - deployment_type (for serverless)
+  - scaling_policy (for auto-scaling)
+  - cost_model (for cost optimization)</code></pre>
+<p><strong>3. Enumeration Extensions</strong></p>
+<pre><code>Core component types:
+  - api_service, worker, storage, queue
+
+Extension can add:
+  - serverless_function
+  - edge_component
+  - blockchain_contract</code></pre>
+<p><strong>4. Relation Extensions</strong></p>
+<pre><code>Core relations:
+  - contains, depends_on, calls, reads, writes
+
+Extension can add:
+  - triggers (for event-driven systems)
+  - streams (for real-time processing)
+  - contracts (for smart contracts)</code></pre>
+</section>
+<section id="the-benefits-of-extensibility" class="level3" data-number="8.4.5">
+<h3 data-number="8.4.5" class="anchored" data-anchor-id="the-benefits-of-extensibility"><span class="header-section-number">8.4.5</span> The Benefits of Extensibility</h3>
+<p><strong>1. Future-Proof</strong></p>
+<p>The ontology can adapt to new technologies and patterns:</p>
+<pre><code>New architectural pattern emerges:
+  - Add new entity/relation types
+  - Core ontology remains unchanged
+  - Existing blueprints remain valid</code></pre>
+<p><strong>2. Domain Adaptation</strong></p>
+<p>Different domains can extend the ontology for their needs:</p>
+<pre><code>Financial domain adds:
+  - Transaction, Portfolio, RiskAnalysis
+
+Healthcare domain adds:
+  - Patient, Treatment, MedicalRecord
+
+Both extend the same core ontology.</code></pre>
+<p><strong>3. Community Innovation</strong></p>
+<p>The community can contribute extensions:</p>
+<pre><code>Core team maintains:
+  - Stable core ontology
+
+Community contributes:
+  - Domain-specific extensions
+  - New entity types
+  - New relation types</code></pre>
+<p><strong>4. Gradual Adoption</strong></p>
+<p>Teams can start with the core and adopt extensions as needed:</p>
+<pre><code>Phase 1: Use core ontology
+Phase 2: Add domain-specific extensions
+Phase 3: Contribute new extensions back to community</code></pre>
+</section>
+<section id="extensibility-vs.-bloat" class="level3" data-number="8.4.6">
+<h3 data-number="8.4.6" class="anchored" data-anchor-id="extensibility-vs.-bloat"><span class="header-section-number">8.4.6</span> Extensibility vs.&nbsp;Bloat</h3>
+<p><strong>The risk</strong>: Excessive extensibility can lead to ontology bloat.</p>
+<p><strong>The solution</strong>: - Maintain clear extension guidelines - Review extensions for compatibility - Keep core ontology truly minimal - Encourage reusable extensions</p>
+</section>
+</section>
+<section id="principle-4-consistency" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="principle-4-consistency"><span class="header-section-number">8.5</span> Principle 4: Consistency</h2>
+<section id="the-principle-3" class="level3" data-number="8.5.1">
+<h3 data-number="8.5.1" class="anchored" data-anchor-id="the-principle-3"><span class="header-section-number">8.5.1</span> The Principle</h3>
+<p>Consistency ensures that architectural knowledge can be compared and aggregated across systems.</p>
+</section>
+<section id="the-consistency-requirements" class="level3" data-number="8.5.2">
+<h3 data-number="8.5.2" class="anchored" data-anchor-id="the-consistency-requirements"><span class="header-section-number">8.5.2</span> The Consistency Requirements</h3>
+<p>Two forms of consistency are particularly important:</p>
+<p><strong>1. Terminological Consistency</strong></p>
+<p>Identical terms must represent identical concepts.</p>
+<p><strong>2. Structural Consistency</strong></p>
+<p>Semantically equivalent structures must be represented using similar patterns.</p>
+</section>
+<section id="terminological-consistency" class="level3" data-number="8.5.3">
+<h3 data-number="8.5.3" class="anchored" data-anchor-id="terminological-consistency"><span class="header-section-number">8.5.3</span> Terminological Consistency</h3>
+<p><strong>The principle</strong>: When the same entity name appears in different blueprint representations, it must refer to the same conceptual structure.</p>
+<p><strong>Example</strong>:</p>
+<pre><code>Good consistency:
+  System A: "api_service" → Component with network interface
+  System B: "api_service" → Component with network interface
+  System C: "api_service" → Component with network interface
+  (All identical, can compare and combine)
+
+Bad inconsistency:
+  System A: "service" → Network-accessible component
+  System B: "service" → Background processing component
+  System C: "service" → Any executable unit
+  (Same name, different meanings, cannot compare)</code></pre>
+<p><strong>How the ontology ensures this</strong>:</p>
+<ol type="1">
+<li><strong>Clear definitions</strong>: Each entity type has a precise definition</li>
+<li><strong>Naming conventions</strong>: Consistent naming patterns</li>
+<li><strong>Documentation</strong>: Explicit documentation of what each type means</li>
+<li><strong>Examples</strong>: Examples showing correct usage</li>
+</ol>
+</section>
+<section id="structural-consistency" class="level3" data-number="8.5.4">
+<h3 data-number="8.5.4" class="anchored" data-anchor-id="structural-consistency"><span class="header-section-number">8.5.4</span> Structural Consistency</h3>
+<p><strong>The principle</strong>: When two architectures implement the same pattern, their ontology representations should appear structurally similar.</p>
+<p><strong>Example</strong>:</p>
+<pre><code>Pattern: Event-driven order processing
+
+System A's representation:
+  Component: OrderService
+    - emits: OrderPlaced event
+  Component: PaymentService
+    - consumes: OrderPlaced event
+    - emits: PaymentCompleted event
+  Component: NotificationService
+    - consumes: PaymentCompleted event
+
+System B's representation:
+  Component: OrderProcessor
+    - emits: order_created
+  Component: PaymentProcessor
+    - consumes: order_created
+    - emits: payment_done
+  Component: EmailNotifier
+    - consumes: payment_done
+
+Structurally similar:
+  - Both have 3 components
+  - Both use emits/consumes relations
+  - Both represent the same event-driven pattern
+
+(Despite different entity names, the structure is consistent)</code></pre>
+<p><strong>How the ontology ensures this</strong>:</p>
+<ol type="1">
+<li><strong>Canonical relation types</strong>: Limited set of well-defined relation types</li>
+<li><strong>Pattern guidelines</strong>: Guidelines for representing common patterns</li>
+<li><strong>Validation rules</strong>: Rules that check for structural consistency</li>
+<li><strong>Examples</strong>: Examples showing canonical representations</li>
+</ol>
+</section>
+<section id="the-consequences-of-inconsistency" class="level3" data-number="8.5.5">
+<h3 data-number="8.5.5" class="anchored" data-anchor-id="the-consequences-of-inconsistency"><span class="header-section-number">8.5.5</span> The Consequences of Inconsistency</h3>
+<p><strong>Without consistency</strong>:</p>
+<pre><code>Blueprint Repository:
+  - System A uses "service" for network components
+  - System B uses "service" for background components
+  - System C uses "component" for everything
+
+Result:
+  - Cannot search for all network components
+  - Cannot compare architectures
+  - Cannot combine patterns
+  - Repository becomes fragmented</code></pre>
+<p><strong>With consistency</strong>:</p>
+<pre><code>Blueprint Repository:
+  - All systems use "api_service" for network components
+  - All systems use "worker" for background processing
+  - All systems use "component" as general term
+
+Result:
+  - Can search for all api_service components
+  - Can compare architectures
+  - Can combine patterns
+  - Repository becomes coherent</code></pre>
+</section>
+<section id="consistency-enables" class="level3" data-number="8.5.6">
+<h3 data-number="8.5.6" class="anchored" data-anchor-id="consistency-enables"><span class="header-section-number">8.5.6</span> Consistency Enables:</h3>
+<p><strong>1. Architectural Datasets</strong></p>
+<p>Consistent representations enable large-scale architectural analysis:</p>
+<pre><code>Dataset of 1000 systems:
+  - All use consistent terminology
+  - All use consistent structure
+  - Can analyze patterns across all systems</code></pre>
+<p><strong>2. Pattern Mining</strong></p>
+<p>Consistency allows algorithms to find patterns:</p>
+<pre><code>Algorithm searches for:
+  - Component A emits event
+  - Component B consumes event
+  - Component B emits another event
+  - Component C consumes second event
+
+Finds all event-driven pipelines in the dataset.</code></pre>
+<p><strong>3. Knowledge Transfer</strong></p>
+<p>Consistency enables learning from one system and applying to another:</p>
+<pre><code>Learn from System A:
+  - Identified good pattern for event processing
+
+Apply to System B:
+  - Recognize similar structure
+  - Apply same pattern</code></pre>
+</section>
+</section>
+<section id="principle-5-evolvability" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="principle-5-evolvability"><span class="header-section-number">8.6</span> Principle 5: Evolvability</h2>
+<section id="the-principle-4" class="level3" data-number="8.6.1">
+<h3 data-number="8.6.1" class="anchored" data-anchor-id="the-principle-4"><span class="header-section-number">8.6.1</span> The Principle</h3>
+<p>The ontology must be capable of <strong>controlled evolution</strong>—changing and improving over time without breaking existing blueprints.</p>
+</section>
+<section id="the-evolution-challenge" class="level3" data-number="8.6.2">
+<h3 data-number="8.6.2" class="anchored" data-anchor-id="the-evolution-challenge"><span class="header-section-number">8.6.2</span> The Evolution Challenge</h3>
+<p>Architectural knowledge accumulates over time, and new system styles will inevitably require modifications to the ontology:</p>
+<pre><code>Timeline:
+  v1.0: Initial ontology (web apps, APIs)
+  v1.5: Add event-driven patterns
+  v2.0: Add serverless and edge computing
+  v2.5: Add AI agents and workflows
+  ...
+
+Each evolution must not break existing blueprints.</code></pre>
+<p>Uncontrolled changes can invalidate existing blueprint datasets.</p>
+</section>
+<section id="the-evolvability-requirements" class="level3" data-number="8.6.3">
+<h3 data-number="8.6.3" class="anchored" data-anchor-id="the-evolvability-requirements"><span class="header-section-number">8.6.3</span> The Evolvability Requirements</h3>
+<p><strong>1. Explicit Versioning</strong></p>
+<p>Every change must be associated with a version number:</p>
+<pre><code>v1.0.0 → v1.1.0 → v1.2.0 → v2.0.0 → v2.1.0
+  ↑        ↑        ↑        ↑        ↑
+stable   additive  additive  breaking  additive</code></pre>
+<p><strong>2. Clear Change Types</strong></p>
+<p>Distinguish between different kinds of changes:</p>
+<pre><code>Additive changes (minor version):
+  - Add new entity types
+  - Add new relation types
+  - Add new attributes
+  - Add new enumeration values
+
+Breaking changes (major version):
+  - Redefine existing entities
+  - Remove entity types
+  - Change relation semantics
+  - Modify core structures</code></pre>
+<p><strong>3. Migration Support</strong></p>
+<p>When breaking changes are necessary, provide migration paths:</p>
+<pre><code>v1.0 → v2.0 (breaking change):
+  - Document what changed
+  - Provide migration rules
+  - Offer migration tools
+  - Allow transition period</code></pre>
+</section>
+<section id="evolution-strategies" class="level3" data-number="8.6.4">
+<h3 data-number="8.6.4" class="anchored" data-anchor-id="evolution-strategies"><span class="header-section-number">8.6.4</span> Evolution Strategies</h3>
+<p><strong>1. Additive Evolution First</strong></p>
+<p>Prefer adding new elements over modifying existing ones:</p>
+<pre><code>Preferred:
+  v1.0: service (component type)
+  v1.1: Add worker (component type)
+  v1.2: Add function (component type)
+  (All additive, backward compatible)
+
+Avoid:
+  v1.0: service (component type)
+  v2.0: Redefine service to include workers and functions
+  (Breaking change, requires migration)</code></pre>
+<p><strong>2. Semantic Stability</strong></p>
+<p>Keep entity definitions stable over time:</p>
+<pre><code>Good:
+  v1.0: api_service = component with network interface
+  v1.5: api_service = component with network interface (unchanged)
+  v2.0: api_service = component with network interface (unchanged)
+
+Bad:
+  v1.0: api_service = component with network interface
+  v2.0: api_service = any service component (breaking change)</code></pre>
+<p><strong>3. Deprecation Before Removal</strong></p>
+<p>When elements must be removed, deprecate them first:</p>
+<pre><code>v1.0: service (component type)
+v1.5: service marked as deprecated
+       - Introduce api_service, worker as replacements
+v2.0: service removed
+       - Sufficient time for migration</code></pre>
+</section>
+<section id="the-benefits-of-evolvability" class="level3" data-number="8.6.5">
+<h3 data-number="8.6.5" class="anchored" data-anchor-id="the-benefits-of-evolvability"><span class="header-section-number">8.6.5</span> The Benefits of Evolvability</h3>
+<p><strong>1. Long-Term Sustainability</strong></p>
+<p>The ontology can serve as a stable foundation for years:</p>
+<pre><code>2024: v1.0 (initial release)
+2025: v1.2 (additive extensions)
+2026: v2.0 (breaking changes with migration)
+2027: v2.3 (additive extensions)
+...
+2030: Still usable, evolved but stable</code></pre>
+<p><strong>2. Knowledge Preservation</strong></p>
+<p>Existing architectural knowledge is preserved:</p>
+<pre><code>Blueprints created with v1.0:
+  - Remain valid in v1.1, v1.2
+  - Can be migrated to v2.0
+  - Knowledge is not lost</code></pre>
+<p><strong>3. Community Trust</strong></p>
+<p>Controlled evolution builds community trust:</p>
+<pre><code>Community reaction:
+  - v1.0: Excited, starts using it
+  - v1.1: Confident, no breaking changes
+  - v2.0: Cautious, but migration path is clear
+  - v2.1: Confident again, additive changes</code></pre>
+</section>
+</section>
+<section id="the-principles-in-harmony" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="the-principles-in-harmony"><span class="header-section-number">8.7</span> The Principles in Harmony</h2>
+<p>These five principles work together to create a balanced ontology:</p>
+<pre><code>Minimality
+    ↓ keeps it
+Composability
+    ↓ enables
+Extensibility
+    ↓ supports
+Consistency
+    ↓ maintains
+Evolvability</code></pre>
+<section id="the-balance" class="level3" data-number="8.7.1">
+<h3 data-number="8.7.1" class="anchored" data-anchor-id="the-balance"><span class="header-section-number">8.7.1</span> The Balance</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Extreme</th>
+<th>Problem</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Too Minimal</td>
+<td>Can’t represent needed structures</td>
+</tr>
+<tr class="even">
+<td>Too Complex</td>
+<td>Hard to learn and use</td>
+</tr>
+<tr class="odd">
+<td>Too Stable</td>
+<td>Can’t adapt to new patterns</td>
+</tr>
+<tr class="even">
+<td>Too Flexible</td>
+<td>Breaks compatibility</td>
+</tr>
+</tbody>
+</table>
+<p>The principles find the right balance.</p>
+</section>
+</section>
+<section id="design-principles-decision-matrix" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="design-principles-decision-matrix"><span class="header-section-number">8.8</span> Design Principles Decision Matrix</h2>
+<section id="principle-comparison-matrix" class="level3" data-number="8.8.1">
+<h3 data-number="8.8.1" class="anchored" data-anchor-id="principle-comparison-matrix"><span class="header-section-number">8.8.1</span> Principle Comparison Matrix</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 33%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Principle</th>
+<th>Focus</th>
+<th>Primary Benefit</th>
+<th>Trade-off</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Minimality</td>
+<td>Core size, Learnability, Consistency</td>
+<td>Stability, Learnability, Consistency</td>
+<td>May require extensions for specific domains</td>
+</tr>
+<tr class="even">
+<td>Composability</td>
+<td>Combination, Modularity, Scalability</td>
+<td>Reusability, Modularity, Scalability</td>
+<td>Requires consistent interfaces</td>
+</tr>
+<tr class="odd">
+<td>Extensibility</td>
+<td>Growth, Future-proofing, Domain support</td>
+<td>Adaptability, Future-proofing, Domain support</td>
+<td>Risk of fragmentation if uncontrolled</td>
+</tr>
+<tr class="even">
+<td>Consistency</td>
+<td>Uniformity, Predictability, Tool support</td>
+<td>Interoperability, Predictability, Tool support</td>
+<td>May limit creative solutions</td>
+</tr>
+<tr class="odd">
+<td>Evolvability</td>
+<td>Change, Compatibility, Version control</td>
+<td>Longevity, Compatibility, Version control</td>
+<td>Requires migration effort</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="decision-framework-when-to-apply-each-principle" class="level3" data-number="8.8.2">
+<h3 data-number="8.8.2" class="anchored" data-anchor-id="decision-framework-when-to-apply-each-principle"><span class="header-section-number">8.8.2</span> Decision Framework: When to Apply Each Principle</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 58%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Decision Scenario</th>
+<th>Primary Principle(s) to Apply</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Defining core entity types</td>
+<td>Minimality, Consistency</td>
+</tr>
+<tr class="even">
+<td>Designing new relation types</td>
+<td>Minimality, Consistency</td>
+</tr>
+<tr class="odd">
+<td>Planning for domain-specific extensions</td>
+<td>Extensibility</td>
+</tr>
+<tr class="even">
+<td>Creating reusable architectural fragments</td>
+<td>Composability</td>
+</tr>
+<tr class="odd">
+<td>Handling technology evolution</td>
+<td>Evolvability, Extensibility</td>
+</tr>
+<tr class="even">
+<td>Merging multiple blueprints</td>
+<td>Consistency, Composability</td>
+</tr>
+<tr class="odd">
+<td>Supporting multiple teams</td>
+<td>Consistency, Minimality</td>
+</tr>
+<tr class="even">
+<td>Long-term knowledge accumulation</td>
+<td>Evolvability, Consistency</td>
+</tr>
+<tr class="odd">
+<td>Rapid prototyping</td>
+<td>Extensibility, Composability</td>
+</tr>
+<tr class="even">
+<td>Production system design</td>
+<td>All principles (balanced)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="trade-off-analysis-framework" class="level3" data-number="8.8.3">
+<h3 data-number="8.8.3" class="anchored" data-anchor-id="trade-off-analysis-framework"><span class="header-section-number">8.8.3</span> Trade-off Analysis Framework</h3>
+<section id="scenario-1-adding-new-entity-type" class="level4" data-number="8.8.3.1">
+<h4 data-number="8.8.3.1" class="anchored" data-anchor-id="scenario-1-adding-new-entity-type"><span class="header-section-number">8.8.3.1</span> Scenario 1: Adding New Entity Type</h4>
+<p><strong>Decision:</strong> Add new “InferenceServer” component type for ML systems</p>
+<p><strong>Apply Principles:</strong> - <strong>Minimality:</strong> Is this essential? Yes, ML inference has unique characteristics - <strong>Extensibility:</strong> Can this be added as extension? Yes, to core Component type - <strong>Consistency:</strong> Does it align with existing patterns? Yes, follows Component pattern - <strong>Composability:</strong> Can it be composed with other components? Yes</p>
+<p><strong>Trade-offs:</strong> - (+) Better representation of ML systems - (+) Enables ML-specific patterns - (-) Adds complexity to ontology - (-) Requires documentation and training</p>
+<p><strong>Recommendation:</strong> Add as extension to Component type</p>
+<hr>
+</section>
+<section id="scenario-2-simplifying-relation-types" class="level4" data-number="8.8.3.2">
+<h4 data-number="8.8.3.2" class="anchored" data-anchor-id="scenario-2-simplifying-relation-types"><span class="header-section-number">8.8.3.2</span> Scenario 2: Simplifying Relation Types</h4>
+<p><strong>Decision:</strong> Merge “calls” and “invokes” relations into single “invokes” type</p>
+<p><strong>Apply Principles:</strong> - <strong>Minimality:</strong> Reduces redundancy? Yes, both mean similar things - <strong>Consistency:</strong> Breaks existing blueprints? Yes, breaking change - <strong>Evolvability:</strong> Can this be migrated? Yes, with migration script - <strong>Composability:</strong> Does this improve composition? No, neutral effect</p>
+<p><strong>Trade-offs:</strong> - (+) Simpler ontology - (+) Reduced learning curve - (-) Breaking change requires migration - (-) Existing blueprints become incompatible - (-) Loss of semantic distinction (sync vs async)</p>
+<p><strong>Recommendation:</strong> Keep both relations, document semantic differences</p>
+<hr>
+</section>
+<section id="scenario-3-supporting-domain-specific-concepts" class="level4" data-number="8.8.3.3">
+<h4 data-number="8.8.3.3" class="anchored" data-anchor-id="scenario-3-supporting-domain-specific-concepts"><span class="header-section-number">8.8.3.3</span> Scenario 3: Supporting Domain-Specific Concepts</h4>
+<p><strong>Decision:</strong> Add healthcare-specific entities (Patient, Treatment, Diagnosis)</p>
+<p><strong>Apply Principles:</strong> - <strong>Extensibility:</strong> Supports domain needs? Yes - <strong>Composability:</strong> Can be composed with core? Yes - <strong>Minimality:</strong> Adds domain-specific bloat? Yes, but necessary - <strong>Consistency:</strong> Follows domain conventions? Yes - <strong>Evolvability:</strong> Can evolve independently? Yes</p>
+<p><strong>Trade-offs:</strong> - (+) Better support for healthcare domain - (+) Enables domain-specific patterns - (-) Makes ontology larger - (-) Other domains may find confusing - (-) Requires domain expertise</p>
+<p><strong>Recommendation:</strong> Add as domain-specific extension module</p>
+<hr>
+</section>
+<section id="scenario-4-handling-technology-evolution" class="level4" data-number="8.8.3.4">
+<h4 data-number="8.8.3.4" class="anchored" data-anchor-id="scenario-4-handling-technology-evolution"><span class="header-section-number">8.8.3.4</span> Scenario 4: Handling Technology Evolution</h4>
+<p><strong>Decision:</strong> How to represent serverless functions vs traditional services?</p>
+<p><strong>Apply Principles:</strong> - <strong>Evolvability:</strong> Adapts to new paradigm? Yes - <strong>Minimality:</strong> Do we need new type? Maybe, characteristics differ - <strong>Consistency:</strong> Can we use existing types? Yes, with attributes - <strong>Composability:</strong> Can both be composed? Yes - <strong>Extensibility:</strong> Can we extend existing? Yes</p>
+<p><strong>Trade-offs:</strong> - <strong>New type:</strong> Clear distinction, better pattern detection; but more complexity - <strong>Extension:</strong> Maintain core minimality, add specificity; but may be insufficient for serverless uniqueness</p>
+<p><strong>Recommendation:</strong> Use Component type with <code>deployment_mode</code> attribute</p>
+</section>
+</section>
+<section id="principle-interaction-matrix" class="level3" data-number="8.8.4">
+<h3 data-number="8.8.4" class="anchored" data-anchor-id="principle-interaction-matrix"><span class="header-section-number">8.8.4</span> Principle Interaction Matrix</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Minimality</th>
+<th>Composability</th>
+<th>Extensibility</th>
+<th>Consistency</th>
+<th>Evolvability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Minimality</td>
+<td>—</td>
+<td>Positive</td>
+<td>Negative</td>
+<td>Positive</td>
+<td>Positive</td>
+</tr>
+<tr class="even">
+<td>Composability</td>
+<td>Positive</td>
+<td>—</td>
+<td>Positive</td>
+<td>Positive</td>
+<td>Neutral</td>
+</tr>
+<tr class="odd">
+<td>Extensibility</td>
+<td>Negative</td>
+<td>Positive</td>
+<td>—</td>
+<td>Negative</td>
+<td>Positive</td>
+</tr>
+<tr class="even">
+<td>Consistency</td>
+<td>Positive</td>
+<td>Positive</td>
+<td>Negative</td>
+<td>—</td>
+<td>Positive</td>
+</tr>
+<tr class="odd">
+<td>Evolvability</td>
+<td>Positive</td>
+<td>Neutral</td>
+<td>Positive</td>
+<td>Positive</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Legend:</strong> - <strong>Positive:</strong> Supports/enables (beneficial interaction) - <strong>Negative:</strong> Constrains/requires care (tension) - <strong>Neutral:</strong> Depends on context</p>
+<p><strong>Key Interactions:</strong> - Minimality + Composability: Simpler core easier to compose - Minimality vs Extensibility: Minimal core needs extensions for richness - Composability + Consistency: Consistent patterns enable composition - Extensibility vs Consistency: Extensions may create inconsistency if uncontrolled - Consistency + Evolvability: Consistent base enables controlled evolution</p>
+</section>
+<section id="decision-making-checklist" class="level3" data-number="8.8.5">
+<h3 data-number="8.8.5" class="anchored" data-anchor-id="decision-making-checklist"><span class="header-section-number">8.8.5</span> Decision-Making Checklist</h3>
+<p>When making ontology design decisions, check each principle:</p>
+<p><strong>Minimality Check:</strong> - [ ] Is this entity/relation essential? - [ ] Can existing entities/relations represent this? - [ ] Will this add unnecessary complexity? - [ ] Is the vocabulary minimal yet complete?</p>
+<p><strong>Composability Check:</strong> - [ ] Can this be composed with other elements? - [ ] Does this follow consistent composition patterns? - [ ] Will this enable reusable fragments? - [ ] Does this support modular design?</p>
+<p><strong>Extensibility Check:</strong> - [ ] Can this be extended without breaking changes? - [ ] Does this support domain-specific extensions? - [ ] Is this flexible enough for future needs? - [ ] Can this evolve independently?</p>
+<p><strong>Consistency Check:</strong> - [ ] Does this follow existing naming conventions? - [ ] Is this consistent with similar concepts? - [ ] Will teams use this consistently? - [ ] Does this align with tool requirements?</p>
+<p><strong>Evolvability Check:</strong> - [ ] Can this change gracefully over time? - [ ] Is versioning strategy clear? - [ ] Can this be migrated if needed? - [ ] Does this support backward compatibility?</p>
+<p><strong>Overall Balance:</strong> - [ ] Do the benefits outweigh the costs? - [ ] Is this consistent with all principles? - [ ] Will this serve long-term goals? - [ ] Is this the right time for this change?</p>
+</section>
+<section id="practical-decision-examples" class="level3" data-number="8.8.6">
+<h3 data-number="8.8.6" class="anchored" data-anchor-id="practical-decision-examples"><span class="header-section-number">8.8.6</span> Practical Decision Examples</h3>
+<section id="example-1-should-we-add-microservice-entity-type" class="level4" data-number="8.8.6.1">
+<h4 data-number="8.8.6.1" class="anchored" data-anchor-id="example-1-should-we-add-microservice-entity-type"><span class="header-section-number">8.8.6.1</span> Example 1: Should We Add “Microservice” Entity Type?</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Principle</th>
+<th>Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Minimality</td>
+<td>“Microservice” is deployment pattern, not architectural entity</td>
+</tr>
+<tr class="even">
+<td>Composability</td>
+<td>Doesn’t add composition value over “Component”</td>
+</tr>
+<tr class="odd">
+<td>Extensibility</td>
+<td>Could be extension, but not necessary</td>
+</tr>
+<tr class="even">
+<td>Consistency</td>
+<td>Conflicts with “Component” type</td>
+</tr>
+<tr class="odd">
+<td>Evolvability</td>
+<td>“Microservice” term may change over time</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Decision:</strong> NO</p>
+<p><strong>Reasoning:</strong> Use “Component” with deployment characteristics instead</p>
+<p><strong>Alternative:</strong> Add <code>deployment_pattern</code> attribute to Component entity</p>
+<hr>
+</section>
+<section id="example-2-should-we-add-optimizes-relation-type" class="level4" data-number="8.8.6.2">
+<h4 data-number="8.8.6.2" class="anchored" data-anchor-id="example-2-should-we-add-optimizes-relation-type"><span class="header-section-number">8.8.6.2</span> Example 2: Should We Add “Optimizes” Relation Type?</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Principle</th>
+<th>Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Minimality</td>
+<td>Captures unique optimization relationships</td>
+</tr>
+<tr class="even">
+<td>Composability</td>
+<td>Enables composition patterns</td>
+</tr>
+<tr class="odd">
+<td>Extensibility</td>
+<td>Can be added as extension</td>
+</tr>
+<tr class="even">
+<td>Consistency</td>
+<td>Follows existing relation naming</td>
+</tr>
+<tr class="odd">
+<td>Evolvability</td>
+<td>Stable concept, won’t change</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Decision:</strong> YES</p>
+<p><strong>Reasoning:</strong> Adds semantic value without breaking changes</p>
+<p><strong>Implementation:</strong> Add as new relation type in next minor version</p>
+<hr>
+</section>
+<section id="example-3-should-we-split-component-into-multiple-types" class="level4" data-number="8.8.6.3">
+<h4 data-number="8.8.6.3" class="anchored" data-anchor-id="example-3-should-we-split-component-into-multiple-types"><span class="header-section-number">8.8.6.3</span> Example 3: Should We Split “Component” into Multiple Types?</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Principle</th>
+<th>Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Minimality</td>
+<td>Increases complexity without clear benefit</td>
+</tr>
+<tr class="even">
+<td>Composability</td>
+<td>Could improve type-specific composition</td>
+</tr>
+<tr class="odd">
+<td>Extensibility</td>
+<td>Makes extension harder</td>
+</tr>
+<tr class="even">
+<td>Consistency</td>
+<td>Breaks existing blueprints</td>
+</tr>
+<tr class="odd">
+<td>Evolvability</td>
+<td>Major breaking change</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Decision:</strong> NO</p>
+<p><strong>Reasoning:</strong> Current “Component” type is sufficient</p>
+<p><strong>Alternative:</strong> Use subtypes or attributes for specificity</p>
+<hr>
+</section>
+<section id="example-4-should-we-add-version-attribute-to-all-entities" class="level4" data-number="8.8.6.4">
+<h4 data-number="8.8.6.4" class="anchored" data-anchor-id="example-4-should-we-add-version-attribute-to-all-entities"><span class="header-section-number">8.8.6.4</span> Example 4: Should We Add Version Attribute to All Entities?</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Principle</th>
+<th>Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Minimality</td>
+<td>Optional attribute, doesn’t increase complexity</td>
+</tr>
+<tr class="even">
+<td>Composability</td>
+<td>Enables version-aware composition</td>
+</tr>
+<tr class="odd">
+<td>Extensibility</td>
+<td>Supports evolution without breaking changes</td>
+</tr>
+<tr class="even">
+<td>Consistency</td>
+<td>Consistent with versioning best practices</td>
+</tr>
+<tr class="odd">
+<td>Evolvability</td>
+<td>Supports migration and evolution</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Decision:</strong> YES</p>
+<p><strong>Reasoning:</strong> Optional attribute provides significant value</p>
+<p><strong>Implementation:</strong> Add optional <code>version</code> attribute to all entities</p>
+</section>
+</section>
+<section id="anti-patterns-to-avoid" class="level3" data-number="8.8.7">
+<h3 data-number="8.8.7" class="anchored" data-anchor-id="anti-patterns-to-avoid"><span class="header-section-number">8.8.7</span> Anti-Patterns to Avoid</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 45%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Anti-Pattern</th>
+<th>Violated Principles</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Too Many Entity Types (50+ types)</td>
+<td>Minimality, Consistency</td>
+<td>Confusion, inconsistency</td>
+</tr>
+<tr class="even">
+<td>Breaking Changes Frequently (Every minor version)</td>
+<td>Evolvability, Consistency</td>
+<td>Migration overhead, blueprints break</td>
+</tr>
+<tr class="odd">
+<td>Uncontrolled Extensions (Domain modules diverge)</td>
+<td>Consistency, Extensibility</td>
+<td>Fragmentation, incompatibility</td>
+</tr>
+<tr class="even">
+<td>Ignoring Naming Conventions (Inconsistent terminology)</td>
+<td>Consistency</td>
+<td>Confusion, tool errors</td>
+</tr>
+<tr class="odd">
+<td>Over-Engineering (Capturing implementation details)</td>
+<td>Minimality, Composability</td>
+<td>Unnecessary complexity, reduced usability</td>
+</tr>
+<tr class="even">
+<td>No Versioning Strategy (Ad-hoc changes)</td>
+<td>Evolvability, Consistency</td>
+<td>Cannot evolve gracefully</td>
+</tr>
+<tr class="odd">
+<td>Inconsistent Composition Rules (Different patterns per team)</td>
+<td>Composability, Consistency</td>
+<td>Fragile compositions</td>
+</tr>
+<tr class="even">
+<td>Ignoring Trade-offs (Optimizing single principle)</td>
+<td>All principles</td>
+<td>Poor decisions, unbalanced design</td>
+</tr>
+<tr class="odd">
+<td>Premature Optimization (Adding for future needs)</td>
+<td>Minimality, Evolvability</td>
+<td>Unnecessary complexity, YAGNI violation</td>
+</tr>
+<tr class="even">
+<td>No Migration Planning (Assuming compatibility)</td>
+<td>Evolvability, Consistency</td>
+<td>Breaking changes, blueprint corruption</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="guiding-questions-for-decision-making" class="level3" data-number="8.8.8">
+<h3 data-number="8.8.8" class="anchored" data-anchor-id="guiding-questions-for-decision-making"><span class="header-section-number">8.8.8</span> Guiding Questions for Decision Making</h3>
+<p>When faced with a design decision, ask:</p>
+<p><strong>1. Minimality Questions:</strong> - Do we absolutely need this? - Can existing concepts represent this? - What’s the minimal viable approach?</p>
+<p><strong>2. Composability Questions:</strong> - How will this be composed with other elements? - Does this enable or hinder composition? - Are there reusable fragments here?</p>
+<p><strong>3. Extensibility Questions:</strong> - How will this evolve? - Can this be extended without breaking? - What extensions might be needed?</p>
+<p><strong>4. Consistency Questions:</strong> - Is this consistent with existing patterns? - Will teams use this consistently? - Does this follow naming conventions?</p>
+<p><strong>5. Evolvability Questions:</strong> - How will this change over time? - What’s the versioning strategy? - Can this be migrated?</p>
+<p><strong>6. Overall Questions:</strong> - Does this serve our long-term goals? - What are the trade-offs? - Is this the right time? - What’s the impact on existing blueprints?</p>
+</section>
+<section id="the-interdependencies" class="level3" data-number="8.8.9">
+<h3 data-number="8.8.9" class="anchored" data-anchor-id="the-interdependencies"><span class="header-section-number">8.8.9</span> The Interdependencies</h3>
+<ul>
+<li><strong>Minimality + Extensibility</strong>: Core stays minimal, extensions add richness</li>
+<li><strong>Composability + Consistency</strong>: Consistent patterns enable composition</li>
+<li><strong>Evolvability + Consistency</strong>: Controlled evolution maintains consistency</li>
+<li><strong>All together</strong>: A stable, useful, adaptable ontology</li>
+</ul>
+</section>
+</section>
+<section id="summary" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="summary"><span class="header-section-number">8.9</span> Summary</h2>
+<p>The five design principles guide the creation and evolution of the System Ontology:</p>
+<ol type="1">
+<li><strong>Minimality</strong>: Small, stable, essential vocabulary</li>
+<li><strong>Composability</strong>: Support for combining architectural fragments</li>
+<li><strong>Extensibility</strong>: Ability to add new concepts without breaking changes</li>
+<li><strong>Consistency</strong>: Uniform terminology and structure across systems</li>
+<li><strong>Evolvability</strong>: Controlled change with clear versioning and migration</li>
+</ol>
+<p>Together, these principles ensure that the ontology:</p>
+<ul>
+<li>Remains learnable and usable</li>
+<li>Supports the required use cases</li>
+<li>Can adapt to future needs</li>
+<li>Maintains compatibility over time</li>
+<li>Enables large-scale architectural knowledge management</li>
+</ul>
+<p>These principles allow the ontology to function as a <strong>durable language</strong> for representing system architecture across projects, organizations, and generations of technology.</p>
+<p>With these principles established, we can now explore the detailed structure of the System Ontology v0.1 in the following chapters, beginning with the core entities that describe what exists in software systems.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+// Copy Full Text Button
+document.addEventListener('DOMContentLoaded', function() {
+  const copyButton = document.createElement('button');
+  copyButton.id = 'copy-full-text-btn';
+  copyButton.className = 'btn btn-primary copy-text-btn';
+  copyButton.innerHTML = '<i class="bi bi-clipboard"></i> Copy Full Text';
+  copyButton.title = 'Copy the full text of this chapter to clipboard';
+  
+  const titleElement = document.querySelector('.title');
+  if (titleElement) {
+    titleElement.parentNode.insertBefore(copyButton, titleElement.nextSibling);
+  }
+  
+  copyButton.addEventListener('click', async function() {
+    try {
+      const content = document.querySelector('.level1') || 
+                      document.querySelector('main') || 
+                      document.body;
+      
+      let text = content.innerText;
+      text = text.replace(/Copy Full Text/g, '');
+      text = text.replace(/Copied!/g, '');
+      
+      await navigator.clipboard.writeText(text.trim());
+      
+      const originalHTML = copyButton.innerHTML;
+      copyButton.innerHTML = '<i class="bi bi-clipboard-check"></i> Copied!';
+      copyButton.classList.remove('btn-primary');
+      copyButton.classList.add('btn-success');
+      
+      setTimeout(() => {
+        copyButton.innerHTML = originalHTML;
+        copyButton.classList.remove('btn-success');
+        copyButton.classList.add('btn-primary');
+      }, 2000);
+      
+    } catch (err) {
+      console.error('Failed to copy text:', err);
+      copyButton.innerHTML = '<i class="bi bi-x-circle"></i> Failed to copy';
+      copyButton.classList.remove('btn-primary');
+      copyButton.classList.add('btn-danger');
+      
+      setTimeout(() => {
+        copyButton.innerHTML = '<i class="bi bi-clipboard"></i> Copy Full Text';
+        copyButton.classList.remove('btn-danger');
+        copyButton.classList.add('btn-primary');
+      }, 2000);
+    }
+  });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../part-i/chapter-2.html" class="pagination-link" aria-label="The Ontology Stack">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Ontology Stack</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../part-ii/chapter-4.html" class="pagination-link" aria-label="System, Boundary, and Context">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">System, Boundary, and Context</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
