@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>8&nbsp; Ontology Design Principles – System Ontology</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,15 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../part-i/chapter-2.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -136,9 +138,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">System Ontology</a> 
     </div>
@@ -541,7 +541,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#guiding-questions-for-decision-making" id="toc-guiding-questions-for-decision-making" class="nav-link" data-scroll-target="#guiding-questions-for-decision-making"><span class="header-section-number">8.8.8</span> Guiding Questions for Decision Making</a></li>
   <li><a href="#the-interdependencies" id="toc-the-interdependencies" class="nav-link" data-scroll-target="#the-interdependencies"><span class="header-section-number">8.8.9</span> The Interdependencies</a></li>
   </ul></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">8.9</span> Summary</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">8.9</span> Summary</a>
+  <ul class="collapse">
+  <li><a href="#core-knowledge-must-remember" id="toc-core-knowledge-must-remember" class="nav-link" data-scroll-target="#core-knowledge-must-remember"><span class="header-section-number">8.9.1</span> Core Knowledge — Must Remember</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1677,26 +1680,54 @@ Evolvability</code></pre>
 </section>
 <section id="summary" class="level2" data-number="8.9">
 <h2 data-number="8.9" class="anchored" data-anchor-id="summary"><span class="header-section-number">8.9</span> Summary</h2>
-<p>The five design principles guide the creation and evolution of the System Ontology:</p>
-<ol type="1">
-<li><strong>Minimality</strong>: Small, stable, essential vocabulary</li>
-<li><strong>Composability</strong>: Support for combining architectural fragments</li>
-<li><strong>Extensibility</strong>: Ability to add new concepts without breaking changes</li>
-<li><strong>Consistency</strong>: Uniform terminology and structure across systems</li>
-<li><strong>Evolvability</strong>: Controlled change with clear versioning and migration</li>
-</ol>
-<p>Together, these principles ensure that the ontology:</p>
-<ul>
-<li>Remains learnable and usable</li>
-<li>Supports the required use cases</li>
-<li>Can adapt to future needs</li>
-<li>Maintains compatibility over time</li>
-<li>Enables large-scale architectural knowledge management</li>
-</ul>
-<p>These principles allow the ontology to function as a <strong>durable language</strong> for representing system architecture across projects, organizations, and generations of technology.</p>
-<p>With these principles established, we can now explore the detailed structure of the System Ontology v0.1 in the following chapters, beginning with the core entities that describe what exists in software systems.</p>
+<p>The five design principles — Minimality, Composability, Extensibility, Consistency, and Evolvability — work together as a balanced framework for creating a durable architectural ontology. They prevent common pitfalls: excessive complexity (too many entity types), rigidity (cannot adapt to new patterns), terminological drift (inconsistent usage across teams), and uncontrolled evolution (breaking changes without migration).</p>
+<section id="core-knowledge-must-remember" class="level3" data-number="8.9.1">
+<h3 data-number="8.9.1" class="anchored" data-anchor-id="core-knowledge-must-remember"><span class="header-section-number">8.9.1</span> Core Knowledge — Must Remember</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 29%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Principle</th>
+<th>Core Idea</th>
+<th>Key Trade-off</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Minimality</strong></td>
+<td>Keep the core small, stable, and essential — only what is necessary for architectural representation</td>
+<td>May require domain-specific extensions for specialized needs</td>
+</tr>
+<tr class="even">
+<td><strong>Composability</strong></td>
+<td>Support combining smaller architectural fragments into larger systems through well-defined interfaces and relations</td>
+<td>Requires consistent interface design across fragments</td>
+</tr>
+<tr class="odd">
+<td><strong>Extensibility</strong></td>
+<td>Allow incremental addition of new concepts (subtypes, attributes, relations) without modifying existing definitions</td>
+<td>Risk of fragmentation if extensions are ungoverned</td>
+</tr>
+<tr class="even">
+<td><strong>Consistency</strong></td>
+<td>Ensure identical terms mean the same thing; equivalent structures use similar patterns across all systems</td>
+<td>May constrain creative or unconventional designs</td>
+</tr>
+<tr class="odd">
+<td><strong>Evolvability</strong></td>
+<td>Support controlled change through explicit versioning, clear change types (additive vs breaking), and migration paths</td>
+<td>Requires migration effort and governance discipline</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How they work together</strong>: Minimality keeps the ontology learnable; Composability enables reuse; Extensibility allows growth; Consistency ensures interoperability; Evolvability provides long-term sustainability. The five principles form a chain — each supports the next, and neglecting any one weakens the entire framework.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

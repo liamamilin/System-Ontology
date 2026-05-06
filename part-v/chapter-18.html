@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>23&nbsp; Risk, Failure Modes, and Trust – System Ontology</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,15 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../part-v/chapter-17.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,6 +72,46 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+/* Copy Full Text Button Styling */
+.copy-text-btn {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1000;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  background-color: #0d6efd;
+  color: white;
+}
+
+.copy-text-btn:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.copy-text-btn:active {
+  transform: translateY(0);
+}
+
+.copy-text-btn i {
+  margin-right: 6px;
+}
+
+@media (max-width: 768px) {
+  .copy-text-btn {
+    top: 60px;
+    right: 10px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+</style>
 
 
 </head>
@@ -96,9 +138,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">System Ontology</a> 
     </div>
@@ -464,6 +504,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#network-trust-boundaries" id="toc-network-trust-boundaries" class="nav-link" data-scroll-target="#network-trust-boundaries"><span class="header-section-number">23.4.1</span> Network Trust Boundaries</a></li>
   <li><a href="#application-trust-boundaries" id="toc-application-trust-boundaries" class="nav-link" data-scroll-target="#application-trust-boundaries"><span class="header-section-number">23.4.2</span> Application Trust Boundaries</a></li>
   <li><a href="#data-trust-boundaries" id="toc-data-trust-boundaries" class="nav-link" data-scroll-target="#data-trust-boundaries"><span class="header-section-number">23.4.3</span> Data Trust Boundaries</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">23.5</span> Summary</a>
+  <ul class="collapse">
+  <li><a href="#core-knowledge-must-remember" id="toc-core-knowledge-must-remember" class="nav-link" data-scroll-target="#core-knowledge-must-remember"><span class="header-section-number">23.5.1</span> Core Knowledge — Must Remember</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -971,13 +1015,102 @@ Crossing Boundaries:
   - Public → Internal: Authentication required
   - Internal → Confidential: Authorization required
   - Confidential → Secret: Additional approval needed</code></pre>
-<hr>
+</section>
+</section>
+<section id="summary" class="level2" data-number="23.5">
+<h2 data-number="23.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">23.5</span> Summary</h2>
+<p>A complete architectural ontology must represent not only intended behavior but also <strong>risks, failure modes, and trust boundaries</strong>. Failure modes are explicit entities linked to architectural elements they affect. Reliability hooks (retry, idempotency, graceful degradation, isolation) are structural mechanisms that mitigate failure. Trust boundaries define security domains and control access between them.</p>
+<section id="core-knowledge-must-remember" class="level3" data-number="23.5.1">
+<h3 data-number="23.5.1" class="anchored" data-anchor-id="core-knowledge-must-remember"><span class="header-section-number">23.5.1</span> Core Knowledge — Must Remember</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 59%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Key Insight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Failure Mode</strong></td>
+<td>An explicit entity representing a specific way a component, interface, or workflow can fail. Linked to the elements it affects and the mechanisms designed to mitigate it. Sources: component crashes, network failures, data corruption, resource exhaustion, invalid input.</td>
+</tr>
+<tr class="even">
+<td><strong>Reliability Hooks</strong></td>
+<td>Structural resilience mechanisms: <strong>Retry</strong> (transient error recovery with exponential backoff), <strong>Idempotency</strong> (safe retry without duplicate effects — essential in distributed systems), <strong>Graceful degradation</strong> (reduced functionality instead of complete failure), <strong>Isolation</strong> (prevent cascading failures via circuit breakers, resource partitioning).</td>
+</tr>
+<tr class="odd">
+<td><strong>Security Hooks</strong></td>
+<td>Architectural elements enforcing protection: <strong>Authentication (Authn)</strong> — verifying identity, <strong>Authorization (Authz)</strong> — determining permissions (RBAC, ABAC), <strong>Secret boundaries</strong> — isolating sensitive information (credentials, keys, tokens).</td>
+</tr>
+<tr class="even">
+<td><strong>Trust Boundary</strong></td>
+<td>A transition point between parts of the system operating under different trust levels. Determines where authentication, authorization, encryption, and access controls must be applied. Examples: DMZ between external and internal networks, admin vs user access boundaries, sensitive data classification boundaries.</td>
+</tr>
+</tbody>
+</table>
+<p>The ontology captures not only <em>how systems function</em> under normal conditions, but also <em>how they remain reliable and secure</em> in the presence of risk and uncertainty — providing the foundation for security views, reliability analyses, and operational risk assessments.</p>
 
 
 </section>
 </section>
 
 </main> <!-- /main -->
+<script>
+// Copy Full Text Button
+document.addEventListener('DOMContentLoaded', function() {
+  const copyButton = document.createElement('button');
+  copyButton.id = 'copy-full-text-btn';
+  copyButton.className = 'btn btn-primary copy-text-btn';
+  copyButton.innerHTML = '<i class="bi bi-clipboard"></i> Copy Full Text';
+  copyButton.title = 'Copy the full text of this chapter to clipboard';
+  
+  const titleElement = document.querySelector('.title');
+  if (titleElement) {
+    titleElement.parentNode.insertBefore(copyButton, titleElement.nextSibling);
+  }
+  
+  copyButton.addEventListener('click', async function() {
+    try {
+      const content = document.querySelector('.level1') || 
+                      document.querySelector('main') || 
+                      document.body;
+      
+      let text = content.innerText;
+      text = text.replace(/Copy Full Text/g, '');
+      text = text.replace(/Copied!/g, '');
+      
+      await navigator.clipboard.writeText(text.trim());
+      
+      const originalHTML = copyButton.innerHTML;
+      copyButton.innerHTML = '<i class="bi bi-clipboard-check"></i> Copied!';
+      copyButton.classList.remove('btn-primary');
+      copyButton.classList.add('btn-success');
+      
+      setTimeout(() => {
+        copyButton.innerHTML = originalHTML;
+        copyButton.classList.remove('btn-success');
+        copyButton.classList.add('btn-primary');
+      }, 2000);
+      
+    } catch (err) {
+      console.error('Failed to copy text:', err);
+      copyButton.innerHTML = '<i class="bi bi-x-circle"></i> Failed to copy';
+      copyButton.classList.remove('btn-primary');
+      copyButton.classList.add('btn-danger');
+      
+      setTimeout(() => {
+        copyButton.innerHTML = '<i class="bi bi-clipboard"></i> Copy Full Text';
+        copyButton.classList.remove('btn-danger');
+        copyButton.classList.add('btn-primary');
+      }, 2000);
+    }
+  });
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

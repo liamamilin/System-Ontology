@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>24&nbsp; Ontology → Blueprint Kernel Mapping – System Ontology</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,15 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../part-v/chapter-18.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,6 +72,46 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+/* Copy Full Text Button Styling */
+.copy-text-btn {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1000;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  background-color: #0d6efd;
+  color: white;
+}
+
+.copy-text-btn:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.copy-text-btn:active {
+  transform: translateY(0);
+}
+
+.copy-text-btn i {
+  margin-right: 6px;
+}
+
+@media (max-width: 768px) {
+  .copy-text-btn {
+    top: 60px;
+    right: 10px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+</style>
 
 
 </head>
@@ -96,9 +138,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">System Ontology</a> 
     </div>
@@ -467,6 +507,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#generated-specification-view" id="toc-generated-specification-view" class="nav-link" data-scroll-target="#generated-specification-view"><span class="header-section-number">24.4.3</span> Generated Specification View</a></li>
   <li><a href="#generated-operations-view" id="toc-generated-operations-view" class="nav-link" data-scroll-target="#generated-operations-view"><span class="header-section-number">24.4.4</span> Generated Operations View</a></li>
   <li><a href="#view-transformation-summary" id="toc-view-transformation-summary" class="nav-link" data-scroll-target="#view-transformation-summary"><span class="header-section-number">24.4.5</span> View Transformation Summary</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">24.5</span> Summary</a>
+  <ul class="collapse">
+  <li><a href="#core-knowledge-must-remember" id="toc-core-knowledge-must-remember" class="nav-link" data-scroll-target="#core-knowledge-must-remember"><span class="header-section-number">24.5.1</span> Core Knowledge — Must Remember</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -2076,14 +2120,119 @@ Benefits:
 <pre><code>
 ### Mapping Best Practices
 </code></pre>
-<p>┌─────────────────────────────────────────────────────────────────────────────────────────┐ │ MAPPING BEST PRACTICES │ ├─────────────────────────────────────────────────────────────────────────────────────────┤ │ │ │ PRACTICE 1: Validate Before Mapping │ │ │ │ ✓ Validate ontology structure before mapping │ │ ✓ Check for required entities and relations │ │ ✗ Don’t map invalid or incomplete ontologies │ │ │ │ Example: Ensure system entity exists before mapping to Goal slot │ │ │ │ PRACTICE 2: Follow Kernel Slot Definitions │ │ │ │ ✓ Use kernel slot definitions as mapping guide │ │ ✓ Ensure entities match slot requirements │ │ ✗ Don’t force-fit entities into inappropriate slots │ │ │ │ Example: Map capability entities to Capabilities slot, not Components slot │ │ │ │ PRACTICE 3: Maintain Bidirectional Relations │ │ │ │ ✓ Ensure relations are bidirectional (contains/part_of) │ │ ✓ Validate relation consistency │ │ ✗ Don’t create one-way relations │ │ │ │ Example: If A contains B, ensure B part_of A │ │ │ │ PRACTICE 4: Use Minimal Attribute Sets │ │ │ │ ✓ Include only required attributes (identifier, type, description) │ │ ✓ Add optional attributes only when necessary │ │ ✗ Don’t include unnecessary or redundant attributes │ │ │ │ Example: Include version attribute only if versioning is required │ │ │ │ PRACTICE 5: Generate Views for Multiple Stakeholders │ │ │ │ ✓ Generate all three views (Architecture, Specification, Operations) │ │ ✓ Tailor views to stakeholder needs │ │ ✗ Don’t generate only one view │ │ │ │ Example: Generate Architecture view for architects, Operations view for DevOps │ │ │ │ PRACTICE 6: Validate Output Quality │ │ │ │ ✓ Validate blueprint against schema │ │ ✓ Check for completeness and consistency │ │ ✗ Don’t publish unvalidated blueprints │ │ │ │ Example: Run schema validation before publishing │ │ │ │ PRACTICE 7: Version Blueprints Consistently │ │ │ │ ✓ Use semantic versioning (MAJOR.MINOR.PATCH) │ │ ✓ Document changes between versions │ │ ✗ Don’t use arbitrary version numbers │ │ │ │ Example: v1.0.0 → v1.1.0 (additive), v1.1.0 → v2.0.0 (breaking) │ │ │ │ PRACTICE 8: Document Mapping Decisions │ │ │ │ ✓ Record mapping decisions and rationale │ │ ✓ Document edge cases and exceptions │ │ ✗ Don’t make undocumented mapping decisions │ │ │ │ Example: Document why an entity was mapped to a specific slot │</p>
-<pre><code></code></pre>
+<p>┌─────────────────────────────────────────────────────────────────────────────────────────┐ │ MAPPING BEST PRACTICES │ ├─────────────────────────────────────────────────────────────────────────────────────────┤ │ │ │ PRACTICE 1: Validate Before Mapping │ │ │ │ ✓ Validate ontology structure before mapping │ │ ✓ Check for required entities and relations │ │ ✗ Don’t map invalid or incomplete ontologies │ │ │ │ Example: Ensure system entity exists before mapping to Goal slot │ │ │ │ PRACTICE 2: Follow Kernel Slot Definitions │ │ │ │ ✓ Use kernel slot definitions as mapping guide │ │ ✓ Ensure entities match slot requirements │ │ ✗ Don’t force-fit entities into inappropriate slots │ │ │ │ Example: Map capability entities to Capabilities slot, not Components slot │ │ │ │ PRACTICE 3: Maintain Bidirectional Relations │ │ │ │ ✓ Ensure relations are bidirectional (contains/part_of) │ │ ✓ Validate relation consistency │ │ ✗ Don’t create one-way relations │ │ │ │ Example: If A contains B, ensure B part_of A │ │ │ │ PRACTICE 4: Use Minimal Attribute Sets │ │ │ │ ✓ Include only required attributes (identifier, type, description) │ │ ✓ Add optional attributes only when necessary │ │ ✗ Don’t include unnecessary or redundant attributes │ │ │ │ Example: Include version attribute only if versioning is required │ │ │ │ PRACTICE 5: Generate Views for Multiple Stakeholders │ │ │ │ ✓ Generate all three views (Architecture, Specification, Operations) │ │ ✓ Tailor views to stakeholder needs │ │ ✗ Don’t generate only one view │ │ │ │ Example: Generate Architecture view for architects, Operations view for DevOps │ │ │ │ PRACTICE 6: Validate Output Quality │ │ │ │ ✓ Validate blueprint against schema │ │ ✓ Check for completeness and consistency │ │ ✗ Don’t publish unvalidated blueprints │ │ │ │ Example: Run schema validation before publishing │ │ │ │ PRACTICE 7: Version Blueprints Consistently │ │ │ │ ✓ Use semantic versioning (MAJOR.MINOR.PATCH) │ │ ✓ Document changes between versions │ │ ✗ Don’t use arbitrary version numbers │ │ │ │ Example: v1.0.0 → v1.1.0 (additive), v1.1.0 → v2.0.0 (breaking) │ │ │ │ PRACTICE 8: Document Mapping Decisions │ │ │ │ ✓ Record mapping decisions and rationale │ │ ✓ Document edge cases and exceptions │ │ ✗ Don’t make undocumented mapping decisions │ │ │ │ Example: Document why an entity was mapped to a specific slot │ ```</p>
+</section>
+</section>
+<section id="summary" class="level2" data-number="24.5">
+<h2 data-number="24.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">24.5</span> Summary</h2>
+<p>This chapter defines the <strong>mapping rules</strong> that translate ontology instances into Blueprint Kernel slots. The kernel has six structural slots — Goal, Capabilities, Components, Interfaces, Data, Workflows — and each ontology entity type maps to a specific slot with its required attribute set. Multiple architectural views (Architecture, Specification, Operations) can be generated from the same ontology instance through different projection mappings.</p>
+<section id="core-knowledge-must-remember" class="level3" data-number="24.5.1">
+<h3 data-number="24.5.1" class="anchored" data-anchor-id="core-knowledge-must-remember"><span class="header-section-number">24.5.1</span> Core Knowledge — Must Remember</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 33%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Kernel Slot</th>
+<th>Ontology Source</th>
+<th>Required Attributes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Goal</strong></td>
+<td>System entity</td>
+<td><code>identifier</code>, <code>description</code></td>
+</tr>
+<tr class="even">
+<td><strong>Capabilities</strong></td>
+<td>Capability entities</td>
+<td><code>identifier</code>, <code>description</code>, <code>contains</code> (tree structure)</td>
+</tr>
+<tr class="odd">
+<td><strong>Components</strong></td>
+<td>Component entities</td>
+<td><code>identifier</code>, <code>type</code>, <code>calls</code>, <code>implements</code>, <code>owns</code></td>
+</tr>
+<tr class="even">
+<td><strong>Interfaces</strong></td>
+<td>Interface entities</td>
+<td><code>identifier</code>, <code>type</code>, <code>provided_by</code>, <code>exposes</code>, <code>operations</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Data</strong></td>
+<td>Data entities</td>
+<td><code>identifier</code>, <code>type</code> (Business/Technical), <code>owned_by</code>, <code>attributes</code></td>
+</tr>
+<tr class="even">
+<td><strong>Workflows</strong></td>
+<td>Workflow entities</td>
+<td><code>identifier</code>, <code>type</code>, <code>orchestrated_by</code>, <code>steps</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mapping rules must be validated</strong>: Required entities must exist before mapping, entities must match slot requirements, relations must be bidirectional where applicable, and minimal attribute sets should be used. The same ontology can produce different views for different stakeholders by varying which entities and relations are projected. The complete end-to-end mapping example (E-commerce Platform → Blueprint YAML) demonstrates how ontology elements populate each slot and how the resulting blueprint can be generated in multiple formats.</p>
 
 
 </section>
 </section>
 
 </main> <!-- /main -->
+<script>
+// Copy Full Text Button
+document.addEventListener('DOMContentLoaded', function() {
+  const copyButton = document.createElement('button');
+  copyButton.id = 'copy-full-text-btn';
+  copyButton.className = 'btn btn-primary copy-text-btn';
+  copyButton.innerHTML = '<i class="bi bi-clipboard"></i> Copy Full Text';
+  copyButton.title = 'Copy the full text of this chapter to clipboard';
+  
+  const titleElement = document.querySelector('.title');
+  if (titleElement) {
+    titleElement.parentNode.insertBefore(copyButton, titleElement.nextSibling);
+  }
+  
+  copyButton.addEventListener('click', async function() {
+    try {
+      const content = document.querySelector('.level1') || 
+                      document.querySelector('main') || 
+                      document.body;
+      
+      let text = content.innerText;
+      text = text.replace(/Copy Full Text/g, '');
+      text = text.replace(/Copied!/g, '');
+      
+      await navigator.clipboard.writeText(text.trim());
+      
+      const originalHTML = copyButton.innerHTML;
+      copyButton.innerHTML = '<i class="bi bi-clipboard-check"></i> Copied!';
+      copyButton.classList.remove('btn-primary');
+      copyButton.classList.add('btn-success');
+      
+      setTimeout(() => {
+        copyButton.innerHTML = originalHTML;
+        copyButton.classList.remove('btn-success');
+        copyButton.classList.add('btn-primary');
+      }, 2000);
+      
+    } catch (err) {
+      console.error('Failed to copy text:', err);
+      copyButton.innerHTML = '<i class="bi bi-x-circle"></i> Failed to copy';
+      copyButton.classList.remove('btn-primary');
+      copyButton.classList.add('btn-danger');
+      
+      setTimeout(() => {
+        copyButton.innerHTML = '<i class="bi bi-clipboard"></i> Copy Full Text';
+        copyButton.classList.remove('btn-danger');
+        copyButton.classList.add('btn-primary');
+      }, 2000);
+    }
+  });
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

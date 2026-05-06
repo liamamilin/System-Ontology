@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>19&nbsp; Component Type Taxonomy (v0.1) – System Ontology</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,15 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../part-iv/chapter-13.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,6 +72,46 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+/* Copy Full Text Button Styling */
+.copy-text-btn {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1000;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  background-color: #0d6efd;
+  color: white;
+}
+
+.copy-text-btn:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.copy-text-btn:active {
+  transform: translateY(0);
+}
+
+.copy-text-btn i {
+  margin-right: 6px;
+}
+
+@media (max-width: 768px) {
+  .copy-text-btn {
+    top: 60px;
+    right: 10px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+</style>
 
 
 </head>
@@ -96,9 +138,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">System Ontology</a> 
     </div>
@@ -440,6 +480,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#storage-components" id="toc-storage-components" class="nav-link" data-scroll-target="#storage-components"><span class="header-section-number">19.0.3</span> Storage Components</a></li>
   <li><a href="#coordination-components" id="toc-coordination-components" class="nav-link" data-scroll-target="#coordination-components"><span class="header-section-number">19.0.4</span> Coordination Components</a></li>
   <li><a href="#observability-components" id="toc-observability-components" class="nav-link" data-scroll-target="#observability-components"><span class="header-section-number">19.0.5</span> Observability Components</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">19.1</span> Summary</a>
+  <ul class="collapse">
+  <li><a href="#core-knowledge-must-remember" id="toc-core-knowledge-must-remember" class="nav-link" data-scroll-target="#core-knowledge-must-remember"><span class="header-section-number">19.1.1</span> Core Knowledge — Must Remember</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -772,11 +816,143 @@ User Journey Tracing:
 <hr>
 <p>Together, these component types form a minimal taxonomy capable of describing the primary structural roles present in most system architectures.</p>
 <p>By categorizing components according to their architectural function, the ontology enables blueprint representations to remain consistent across different technologies while preserving the essential structural characteristics of the system.</p>
+</section>
+<section id="summary" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">19.1</span> Summary</h2>
+<p>Component types classify the <strong>functional role</strong> of a component within the architecture, not its implementation details. The ontology v0.1 taxonomy covers five primary categories: Frontend/Interface, Compute (Services, Workers, Engines), Storage/Cache, Coordination (Queues, Schedulers, Orchestrators), and Observability (Logging, Metrics, Tracing).</p>
+<section id="core-knowledge-must-remember" class="level3" data-number="19.1.1">
+<h3 data-number="19.1.1" class="anchored" data-anchor-id="core-knowledge-must-remember"><span class="header-section-number">19.1.1</span> Core Knowledge — Must Remember</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 13%">
+<col style="width: 22%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Role</th>
+<th>Examples</th>
+<th>Key Characteristic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Frontend / Interface</strong></td>
+<td>Points of interaction with external actors</td>
+<td>Web UI, REST API, CLI, Event Stream, Mobile App</td>
+<td>Expose system capabilities while maintaining controlled boundaries</td>
+</tr>
+<tr class="even">
+<td><strong>Compute: Service</strong></td>
+<td>Request processing with business logic</td>
+<td>API Service, Business Logic Service, Integration Service</td>
+<td>Active request processing, often stateless</td>
+</tr>
+<tr class="odd">
+<td><strong>Compute: Worker</strong></td>
+<td>Background asynchronous processing</td>
+<td>Job Worker, Data Processing Worker, Notification Worker</td>
+<td>Event-driven or scheduled, fault-tolerant</td>
+</tr>
+<tr class="even">
+<td><strong>Compute: Engine</strong></td>
+<td>Specialized execution logic</td>
+<td>Workflow Engine, Rule Engine, ML Inference Engine</td>
+<td>Encapsulated domain-specific computation</td>
+</tr>
+<tr class="odd">
+<td><strong>Storage / Cache</strong></td>
+<td>Persistence and retrieval of data</td>
+<td>Relational DB, Document DB, Key-Value Store, CDN</td>
+<td>Durable state — often critical architectural dependencies</td>
+</tr>
+<tr class="even">
+<td><strong>Coordination: Queue</strong></td>
+<td>Async message buffering between components</td>
+<td>Message Queue (RabbitMQ), Task Queue (Celery), Event Queue (Kafka)</td>
+<td>Decouple producers and consumers</td>
+</tr>
+<tr class="odd">
+<td><strong>Coordination: Scheduler</strong></td>
+<td>Time/event-based task initiation</td>
+<td>Cron Scheduler (Quartz), Event Scheduler (Temporal)</td>
+<td>Trigger execution based on conditions</td>
+</tr>
+<tr class="even">
+<td><strong>Coordination: Orchestrator</strong></td>
+<td>Multi-step workflow management</td>
+<td>Workflow Orchestrator (Airflow), Service Orchestrator (Kubernetes)</td>
+<td>Centralized coordination</td>
+</tr>
+<tr class="odd">
+<td><strong>Observability</strong></td>
+<td>Visibility into system behavior</td>
+<td>Logger, Metrics Collector (Prometheus), Distributed Tracing (Jaeger)</td>
+<td>No business logic — critical for reliability</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key insight</strong>: The same component type can be implemented with many different technologies (e.g., PostgreSQL, MongoDB, or S3 are all “Storage”). The architectural role remains constant even as implementation technology evolves.</p>
 
 
 </section>
+</section>
 
 </main> <!-- /main -->
+<script>
+// Copy Full Text Button
+document.addEventListener('DOMContentLoaded', function() {
+  const copyButton = document.createElement('button');
+  copyButton.id = 'copy-full-text-btn';
+  copyButton.className = 'btn btn-primary copy-text-btn';
+  copyButton.innerHTML = '<i class="bi bi-clipboard"></i> Copy Full Text';
+  copyButton.title = 'Copy the full text of this chapter to clipboard';
+  
+  const titleElement = document.querySelector('.title');
+  if (titleElement) {
+    titleElement.parentNode.insertBefore(copyButton, titleElement.nextSibling);
+  }
+  
+  copyButton.addEventListener('click', async function() {
+    try {
+      const content = document.querySelector('.level1') || 
+                      document.querySelector('main') || 
+                      document.body;
+      
+      let text = content.innerText;
+      text = text.replace(/Copy Full Text/g, '');
+      text = text.replace(/Copied!/g, '');
+      
+      await navigator.clipboard.writeText(text.trim());
+      
+      const originalHTML = copyButton.innerHTML;
+      copyButton.innerHTML = '<i class="bi bi-clipboard-check"></i> Copied!';
+      copyButton.classList.remove('btn-primary');
+      copyButton.classList.add('btn-success');
+      
+      setTimeout(() => {
+        copyButton.innerHTML = originalHTML;
+        copyButton.classList.remove('btn-success');
+        copyButton.classList.add('btn-primary');
+      }, 2000);
+      
+    } catch (err) {
+      console.error('Failed to copy text:', err);
+      copyButton.innerHTML = '<i class="bi bi-x-circle"></i> Failed to copy';
+      copyButton.classList.remove('btn-primary');
+      copyButton.classList.add('btn-danger');
+      
+      setTimeout(() => {
+        copyButton.innerHTML = '<i class="bi bi-clipboard"></i> Copy Full Text';
+        copyButton.classList.remove('btn-danger');
+        copyButton.classList.add('btn-primary');
+      }, 2000);
+    }
+  });
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

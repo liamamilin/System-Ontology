@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>17&nbsp; Interaction Models as Relation Patterns – System Ontology</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,15 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../part-iii/chapter-11.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,6 +72,46 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+/* Copy Full Text Button Styling */
+.copy-text-btn {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1000;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  background-color: #0d6efd;
+  color: white;
+}
+
+.copy-text-btn:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.copy-text-btn:active {
+  transform: translateY(0);
+}
+
+.copy-text-btn i {
+  margin-right: 6px;
+}
+
+@media (max-width: 768px) {
+  .copy-text-btn {
+    top: 60px;
+    right: 10px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+</style>
 
 
 </head>
@@ -96,9 +138,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">System Ontology</a> 
     </div>
@@ -453,6 +493,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#pipeline-and-stream" id="toc-pipeline-and-stream" class="nav-link" data-scroll-target="#pipeline-and-stream"><span class="header-section-number">17.2.4</span> Pipeline and Stream</a></li>
   <li><a href="#orchestration-vs-choreography" id="toc-orchestration-vs-choreography" class="nav-link" data-scroll-target="#orchestration-vs-choreography"><span class="header-section-number">17.2.5</span> Orchestration vs Choreography</a></li>
   <li><a href="#agentic-tool-calling" id="toc-agentic-tool-calling" class="nav-link" data-scroll-target="#agentic-tool-calling"><span class="header-section-number">17.2.6</span> Agentic Tool-Calling</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">17.3</span> Summary</a>
+  <ul class="collapse">
+  <li><a href="#core-knowledge-must-remember" id="toc-core-knowledge-must-remember" class="nav-link" data-scroll-target="#core-knowledge-must-remember"><span class="header-section-number">17.3.1</span> Core Knowledge — Must Remember</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1051,12 +1095,126 @@ Choose Agentic when:
 <p>This interaction model is increasingly relevant in systems that integrate AI agents, automated planning systems, and adaptive workflows.</p>
 <hr>
 <p>By representing interaction models as relation patterns rather than fixed constructs, the ontology allows architectural structures to be described flexibly while still capturing the recurring coordination patterns that shape system behavior.</p>
+</section>
+</section>
+<section id="summary" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="summary"><span class="header-section-number">17.3</span> Summary</h2>
+<p>Interaction models are <strong>recurring patterns of relations</strong> that define how components coordinate behavior, exchange information, and produce system outcomes. They are not separate entity types — they are recognizable subgraph structures within the ontology graph. Each model has distinct coupling characteristics, making it suitable for different architectural contexts.</p>
+<section id="core-knowledge-must-remember" class="level3" data-number="17.3.1">
+<h3 data-number="17.3.1" class="anchored" data-anchor-id="core-knowledge-must-remember"><span class="header-section-number">17.3.1</span> Core Knowledge — Must Remember</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 27%">
+<col style="width: 27%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Coupling</th>
+<th>Key Idea</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Request-Response</strong></td>
+<td>High (synchronous)</td>
+<td>One component sends a request and waits for a response. Clear control flow, predictable semantics.</td>
+<td>Simple interactions, strong consistency, low-latency APIs.</td>
+</tr>
+<tr class="even">
+<td><strong>Event-Driven</strong></td>
+<td>Low (asynchronous)</td>
+<td>Components emit events; other components consume them. Producers don’t know which consumers exist.</td>
+<td>Loose coupling, high throughput, multiple independent consumers.</td>
+</tr>
+<tr class="odd">
+<td><strong>Pipeline</strong></td>
+<td>Medium (sequential)</td>
+<td>Data flows through a sequence of processing stages; each stage transforms data.</td>
+<td>Data ETL, analytics workflows, ML pipelines, content processing.</td>
+</tr>
+<tr class="even">
+<td><strong>Orchestration</strong></td>
+<td>High (centralized)</td>
+<td>A central controller explicitly directs the execution of other components.</td>
+<td>Complex multi-step business processes, transactional operations.</td>
+</tr>
+<tr class="odd">
+<td><strong>Choreography</strong></td>
+<td>Low (decentralized)</td>
+<td>Coordination emerges from event interactions — no central controller. Each component reacts independently.</td>
+<td>Event-driven architectures, high scalability, independent evolution.</td>
+</tr>
+<tr class="even">
+<td><strong>Agentic Tool-Calling</strong></td>
+<td>Variable (dynamic)</td>
+<td>An agent dynamically selects and invokes tools based on runtime reasoning, not predetermined sequences.</td>
+<td>AI-powered automation, complex unstructured tasks, adaptive workflows.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key takeaway</strong>: The same ontology vocabulary (entities + relations) can represent all six interaction models. They are distinguished by <em>how</em> the relations are configured — not by adding new entity types. Choosing the right model means trading off temporal coupling, resilience, scalability, and control.</p>
 
 
 </section>
 </section>
 
 </main> <!-- /main -->
+<script>
+// Copy Full Text Button
+document.addEventListener('DOMContentLoaded', function() {
+  const copyButton = document.createElement('button');
+  copyButton.id = 'copy-full-text-btn';
+  copyButton.className = 'btn btn-primary copy-text-btn';
+  copyButton.innerHTML = '<i class="bi bi-clipboard"></i> Copy Full Text';
+  copyButton.title = 'Copy the full text of this chapter to clipboard';
+  
+  const titleElement = document.querySelector('.title');
+  if (titleElement) {
+    titleElement.parentNode.insertBefore(copyButton, titleElement.nextSibling);
+  }
+  
+  copyButton.addEventListener('click', async function() {
+    try {
+      const content = document.querySelector('.level1') || 
+                      document.querySelector('main') || 
+                      document.body;
+      
+      let text = content.innerText;
+      text = text.replace(/Copy Full Text/g, '');
+      text = text.replace(/Copied!/g, '');
+      
+      await navigator.clipboard.writeText(text.trim());
+      
+      const originalHTML = copyButton.innerHTML;
+      copyButton.innerHTML = '<i class="bi bi-clipboard-check"></i> Copied!';
+      copyButton.classList.remove('btn-primary');
+      copyButton.classList.add('btn-success');
+      
+      setTimeout(() => {
+        copyButton.innerHTML = originalHTML;
+        copyButton.classList.remove('btn-success');
+        copyButton.classList.add('btn-primary');
+      }, 2000);
+      
+    } catch (err) {
+      console.error('Failed to copy text:', err);
+      copyButton.innerHTML = '<i class="bi bi-x-circle"></i> Failed to copy';
+      copyButton.classList.remove('btn-primary');
+      copyButton.classList.add('btn-danger');
+      
+      setTimeout(() => {
+        copyButton.innerHTML = '<i class="bi bi-clipboard"></i> Copy Full Text';
+        copyButton.classList.remove('btn-danger');
+        copyButton.classList.add('btn-primary');
+      }, 2000);
+    }
+  });
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

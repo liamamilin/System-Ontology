@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>20&nbsp; Architecture Style Taxonomy (v0.1) – System Ontology</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,15 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../part-iv/chapter-14.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,6 +72,46 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+/* Copy Full Text Button Styling */
+.copy-text-btn {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1000;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  background-color: #0d6efd;
+  color: white;
+}
+
+.copy-text-btn:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.copy-text-btn:active {
+  transform: translateY(0);
+}
+
+.copy-text-btn i {
+  margin-right: 6px;
+}
+
+@media (max-width: 768px) {
+  .copy-text-btn {
+    top: 60px;
+    right: 10px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+</style>
 
 
 </head>
@@ -96,9 +138,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">System Ontology</a> 
     </div>
@@ -443,6 +483,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#plugin-based-architecture" id="toc-plugin-based-architecture" class="nav-link" data-scroll-target="#plugin-based-architecture"><span class="header-section-number">20.0.6</span> Plugin-Based Architecture</a></li>
   <li><a href="#hybrid-architectures" id="toc-hybrid-architectures" class="nav-link" data-scroll-target="#hybrid-architectures"><span class="header-section-number">20.0.7</span> Hybrid Architectures</a></li>
   <li><a href="#identifying-architecture-styles" id="toc-identifying-architecture-styles" class="nav-link" data-scroll-target="#identifying-architecture-styles"><span class="header-section-number">20.0.8</span> Identifying Architecture Styles</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">20.1</span> Summary</a>
+  <ul class="collapse">
+  <li><a href="#core-knowledge-must-remember" id="toc-core-knowledge-must-remember" class="nav-link" data-scroll-target="#core-knowledge-must-remember"><span class="header-section-number">20.1.1</span> Core Knowledge — Must Remember</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -815,11 +859,125 @@ Result: System combines multiple architectural styles to address different needs
 <p>Configuration files referencing message brokers or event streams may indicate event-driven architectures.</p>
 <p>These structural signals form the basis for automated architecture detection methods introduced in later volumes of the series, particularly in the context of <strong>Blueprint Extraction</strong>.</p>
 <p>By identifying architectural styles through observable structural patterns, blueprint representations can classify and analyze large collections of systems with greater consistency and accuracy.</p>
+</section>
+<section id="summary" class="level2" data-number="20.1">
+<h2 data-number="20.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">20.1</span> Summary</h2>
+<p>Architecture styles describe <strong>how the internal structure of a system is organized</strong> — they are recurring structural arrangements of components, interfaces, and interaction patterns. Unlike system types (which classify <em>what kind</em> of system), styles describe <em>how it is organized internally</em>. In practice, many systems are <strong>hybrid architectures</strong> that combine elements from multiple styles.</p>
+<section id="core-knowledge-must-remember" class="level3" data-number="20.1.1">
+<h3 data-number="20.1.1" class="anchored" data-anchor-id="core-knowledge-must-remember"><span class="header-section-number">20.1.1</span> Core Knowledge — Must Remember</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 43%">
+<col style="width: 19%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Style</th>
+<th>Organization Principle</th>
+<th>Benefits</th>
+<th>Challenges</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Layered</strong></td>
+<td>Components organized into hierarchical layers; dependencies flow downward</td>
+<td>Separation of concerns, testability, reusability</td>
+<td>Can become rigid; performance overhead across layers</td>
+</tr>
+<tr class="even">
+<td><strong>Modular Monolith</strong></td>
+<td>Single deployable unit with strong internal module boundaries</td>
+<td>Simple deployment, clear boundaries, good starting point</td>
+<td>Scaling limitations, single point of failure</td>
+</tr>
+<tr class="odd">
+<td><strong>Microservices</strong></td>
+<td>Independently deployable services with network-based communication</td>
+<td>Independent scaling, team autonomy, fault isolation</td>
+<td>Operational complexity, distributed systems challenges, data consistency</td>
+</tr>
+<tr class="even">
+<td><strong>Event-Driven</strong></td>
+<td>Behavior organized around asynchronous event propagation</td>
+<td>Loose coupling, temporal decoupling, high scalability</td>
+<td>Eventual consistency, debugging complexity, event ordering</td>
+</tr>
+<tr class="odd">
+<td><strong>Pipeline</strong></td>
+<td>Sequential processing stages through which data flows</td>
+<td>Clear data flow, modular stages, easy to monitor</td>
+<td>Sequential bottlenecks, backpressure management</td>
+</tr>
+<tr class="even">
+<td><strong>Plugin-Based</strong></td>
+<td>Core system with dynamically loadable extension modules</td>
+<td>Extensibility, third-party ecosystem, customization</td>
+<td>Plugin compatibility, version management, security</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block"><strong>Architecture styles</strong> can be inferred from structural signals in repositories: directory layout, dependency patterns, entry points, and messaging infrastructure. Automated detection of these signals is the foundation for <strong>Blueprint Extraction</strong>. |</div>
 
 
 </section>
+</section>
 
 </main> <!-- /main -->
+<script>
+// Copy Full Text Button
+document.addEventListener('DOMContentLoaded', function() {
+  const copyButton = document.createElement('button');
+  copyButton.id = 'copy-full-text-btn';
+  copyButton.className = 'btn btn-primary copy-text-btn';
+  copyButton.innerHTML = '<i class="bi bi-clipboard"></i> Copy Full Text';
+  copyButton.title = 'Copy the full text of this chapter to clipboard';
+  
+  const titleElement = document.querySelector('.title');
+  if (titleElement) {
+    titleElement.parentNode.insertBefore(copyButton, titleElement.nextSibling);
+  }
+  
+  copyButton.addEventListener('click', async function() {
+    try {
+      const content = document.querySelector('.level1') || 
+                      document.querySelector('main') || 
+                      document.body;
+      
+      let text = content.innerText;
+      text = text.replace(/Copy Full Text/g, '');
+      text = text.replace(/Copied!/g, '');
+      
+      await navigator.clipboard.writeText(text.trim());
+      
+      const originalHTML = copyButton.innerHTML;
+      copyButton.innerHTML = '<i class="bi bi-clipboard-check"></i> Copied!';
+      copyButton.classList.remove('btn-primary');
+      copyButton.classList.add('btn-success');
+      
+      setTimeout(() => {
+        copyButton.innerHTML = originalHTML;
+        copyButton.classList.remove('btn-success');
+        copyButton.classList.add('btn-primary');
+      }, 2000);
+      
+    } catch (err) {
+      console.error('Failed to copy text:', err);
+      copyButton.innerHTML = '<i class="bi bi-x-circle"></i> Failed to copy';
+      copyButton.classList.remove('btn-primary');
+      copyButton.classList.add('btn-danger');
+      
+      setTimeout(() => {
+        copyButton.innerHTML = '<i class="bi bi-clipboard"></i> Copy Full Text';
+        copyButton.classList.remove('btn-danger');
+        copyButton.classList.add('btn-primary');
+      }, 2000);
+    }
+  });
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

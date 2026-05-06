@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>10&nbsp; Capability and Requirement Entities – System Ontology</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,15 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../part-ii/chapter-4.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,6 +72,46 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+/* Copy Full Text Button Styling */
+.copy-text-btn {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1000;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  background-color: #0d6efd;
+  color: white;
+}
+
+.copy-text-btn:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.copy-text-btn:active {
+  transform: translateY(0);
+}
+
+.copy-text-btn i {
+  margin-right: 6px;
+}
+
+@media (max-width: 768px) {
+  .copy-text-btn {
+    top: 60px;
+    right: 10px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+</style>
 
 
 </head>
@@ -96,9 +138,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">System Ontology</a> 
     </div>
@@ -456,6 +496,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#example-constraints-by-type" id="toc-example-constraints-by-type" class="nav-link" data-scroll-target="#example-constraints-by-type"><span class="header-section-number">10.3.1</span> Example Constraints by Type</a></li>
   <li><a href="#constraint-conflicts-and-trade-offs" id="toc-constraint-conflicts-and-trade-offs" class="nav-link" data-scroll-target="#constraint-conflicts-and-trade-offs"><span class="header-section-number">10.3.2</span> Constraint Conflicts and Trade-offs</a></li>
   </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">10.4</span> Summary</a>
+  <ul class="collapse">
+  <li><a href="#core-knowledge-must-remember" id="toc-core-knowledge-must-remember" class="nav-link" data-scroll-target="#core-knowledge-must-remember"><span class="header-section-number">10.4.1</span> Core Knowledge — Must Remember</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -783,13 +827,108 @@ Trade-off decision:
   - Use strong consistency only for financial operations
   - Use eventual consistency for analytics queries
   - Implement different consistency levels per operation type</code></pre>
-<hr>
+</section>
+</section>
+<section id="summary" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="summary"><span class="header-section-number">10.4</span> Summary</h2>
+<p>Capabilities describe <em>what</em> a system can do (functional ability units), while constraints specify the conditions under which those capabilities must operate. Capabilities are <strong>stable functional anchors</strong> — they persist even as implementation technology changes. They are not the same as components: a component is a structural unit, a capability represents the behavior realized through components and workflows.</p>
+<section id="core-knowledge-must-remember" class="level3" data-number="10.4.1">
+<h3 data-number="10.4.1" class="anchored" data-anchor-id="core-knowledge-must-remember"><span class="header-section-number">10.4.1</span> Core Knowledge — Must Remember</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 26%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Entity</th>
+<th>Purpose</th>
+<th>Key Distinction</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Capability</strong></td>
+<td>Represents something the system can perform — a functional ability unit</td>
+<td><em>Capabilities ≠ Components</em>: A capability describes <em>what</em> the system does; a component describes <em>how</em> it is implemented. The same capability can be realized through different component configurations.</td>
+</tr>
+<tr class="even">
+<td><strong>Constraint</strong></td>
+<td>A structured requirement or limit attached to an architectural entity</td>
+<td>Each constraint has three elements: <strong>Metric</strong> (what is measured), <strong>Threshold</strong> (acceptable value), <strong>Scope</strong> (which entity it applies to)</td>
+</tr>
+<tr class="odd">
+<td><strong>Capability Tree</strong></td>
+<td>Hierarchical decomposition of capabilities from broad abilities to specific sub-capabilities</td>
+<td>Capability decomposition follows three rules: (1) each capability has a coherent functional responsibility, (2) decompose only until mappable to workflows, (3) remain technology-independent</td>
+</tr>
+<tr class="even">
+<td><strong>Use Case / User Story</strong></td>
+<td>Not primary ontology entities — they are <strong>projections</strong> of underlying capabilities and interfaces</td>
+<td>They are narrative views generated from the ontology, not elements of the ontology itself</td>
+</tr>
+</tbody>
+</table>
+<p>Constraints inevitably conflict (e.g., performance vs security, availability vs cost, consistency vs latency). These tradeoffs must be documented explicitly — the ontology captures the chosen balance, not just the individual requirements.</p>
 
 
 </section>
 </section>
 
 </main> <!-- /main -->
+<script>
+// Copy Full Text Button
+document.addEventListener('DOMContentLoaded', function() {
+  const copyButton = document.createElement('button');
+  copyButton.id = 'copy-full-text-btn';
+  copyButton.className = 'btn btn-primary copy-text-btn';
+  copyButton.innerHTML = '<i class="bi bi-clipboard"></i> Copy Full Text';
+  copyButton.title = 'Copy the full text of this chapter to clipboard';
+  
+  const titleElement = document.querySelector('.title');
+  if (titleElement) {
+    titleElement.parentNode.insertBefore(copyButton, titleElement.nextSibling);
+  }
+  
+  copyButton.addEventListener('click', async function() {
+    try {
+      const content = document.querySelector('.level1') || 
+                      document.querySelector('main') || 
+                      document.body;
+      
+      let text = content.innerText;
+      text = text.replace(/Copy Full Text/g, '');
+      text = text.replace(/Copied!/g, '');
+      
+      await navigator.clipboard.writeText(text.trim());
+      
+      const originalHTML = copyButton.innerHTML;
+      copyButton.innerHTML = '<i class="bi bi-clipboard-check"></i> Copied!';
+      copyButton.classList.remove('btn-primary');
+      copyButton.classList.add('btn-success');
+      
+      setTimeout(() => {
+        copyButton.innerHTML = originalHTML;
+        copyButton.classList.remove('btn-success');
+        copyButton.classList.add('btn-primary');
+      }, 2000);
+      
+    } catch (err) {
+      console.error('Failed to copy text:', err);
+      copyButton.innerHTML = '<i class="bi bi-x-circle"></i> Failed to copy';
+      copyButton.classList.remove('btn-primary');
+      copyButton.classList.add('btn-danger');
+      
+      setTimeout(() => {
+        copyButton.innerHTML = '<i class="bi bi-clipboard"></i> Copy Full Text';
+        copyButton.classList.remove('btn-danger');
+        copyButton.classList.add('btn-primary');
+      }, 2000);
+    }
+  });
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
